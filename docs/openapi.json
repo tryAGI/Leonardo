@@ -1,0 +1,1664 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"description": "Leonardo.Ai API OpenAPI specification.",
+		"title": "Rest Endpoints",
+		"version": "v1.0.0"
+	},
+	"servers": [
+		{
+			"url": "https://cloud.leonardo.ai/api/rest/v1",
+			"description": "Leonardo.Ai API server"
+		}
+	],
+	"tags": [
+		{
+			"name": "User"
+		},
+		{
+			"name": "Generation"
+		},
+		{
+			"name": "InitImage"
+		},
+		{
+			"name": "Variation"
+		},
+		{
+			"name": "Dataset"
+		},
+		{
+			"name": "Model"
+		}
+	],
+	"paths": {
+		"/me": {
+			"get": {
+				"tags": [
+					"User"
+				],
+				"summary": "Get user information",
+				"description": "This endpoint will return your user such as your user id, username, token renewal date and current amounts of the following: subscription tokens, gpt (prompt generation) tokens, model training tokens and api credit (which is used via a production api key). Please note that the api credit unit is the millicent, ie. 100,000 credits = $1",
+				"operationId": "getUserSelf",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"user_details": {
+											"items": {
+												"description": "columns and relationships of \"user_details\"",
+												"nullable": false,
+												"properties": {
+													"showNsfw": {
+														"nullable": false,
+														"title": "Boolean",
+														"type": "boolean"
+													},
+													"user": {
+														"description": "columns and relationships of \"users\"",
+														"nullable": true,
+														"properties": {
+															"id": {
+																"$ref": "#/components/schemas/uuid"
+															},
+															"username": {
+																"nullable": true,
+																"title": "String",
+																"type": "string"
+															}
+														},
+														"title": "users",
+														"type": "object"
+													}
+												},
+												"title": "user_details",
+												"type": "object"
+											},
+											"nullable": false,
+											"type": "array"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for GET /me"
+					}
+				}
+			}
+		},
+		"/generations": {
+			"post": {
+				"tags": [
+					"Generation"
+				],
+				"summary": "Create a Generation of Images",
+				"description": "This endpoint will generate images",
+				"operationId": "createGeneration",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"prompt": {
+										"nullable": false,
+										"title": "String",
+										"type": "string",
+										"description": "The prompt used to generate images",
+										"default": "An oil painting of a cat"
+									},
+									"negative_prompt": {
+										"nullable": true,
+										"title": "String",
+										"type": "string",
+										"description": "The negative prompt used for the image generation"
+									},
+									"modelId": {
+										"nullable": true,
+										"title": "String",
+										"type": "string",
+										"description": "The model ID used for the image generation. If not provided uses sd_version to determine the version of Stable Diffusion to use.\n\n_Leonardo Creative_: 6bef9f1b-29cb-40c7-b9df-32b51c1f67d3\n_Leonardo Select_: cd2b2a15-9760-4174-a5ff-4d2925057376\n_Leonardo Signature_: 291be633-cb24-434f-898f-e662799936ad",
+										"default": "6bef9f1b-29cb-40c7-b9df-32b51c1f67d3"
+									},
+									"sd_version": {
+										"$ref": "#/components/schemas/sd_versions"
+									},
+									"num_images": {
+										"nullable": true,
+										"title": "Int",
+										"type": "integer",
+										"description": "The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4."
+									},
+									"width": {
+										"nullable": true,
+										"title": "Int",
+										"type": "integer",
+										"description": "The width of the images. Must be between 32 and 1024 and be a multiple of 8.",
+										"default": 512
+									},
+									"height": {
+										"nullable": true,
+										"title": "Int",
+										"type": "integer",
+										"description": "The height of the images. Must be between 32 and 1024 and be a multiple of 8.",
+										"default": 512
+									},
+									"num_inference_steps": {
+										"nullable": true,
+										"title": "Int",
+										"type": "integer",
+										"description": "The number of inference steps to use for the generation. Must be between 30 and 60."
+									},
+									"guidance_scale": {
+										"nullable": true,
+										"title": "Int",
+										"type": "integer",
+										"description": "How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20."
+									},
+									"init_generation_image_id": {
+										"nullable": true,
+										"title": "String",
+										"type": "string",
+										"description": "The ID of an existing image to use in image2image."
+									},
+									"init_image_id": {
+										"nullable": true,
+										"title": "String",
+										"type": "string",
+										"description": "The ID of an Init Image to use in image2image."
+									},
+									"init_strength": {
+										"nullable": true,
+										"title": "Float",
+										"type": "number",
+										"description": "How strongly the generated images should reflect the original image in image2image. Must be a float between 0.1 and 0.9."
+									},
+									"scheduler": {
+										"$ref": "#/components/schemas/sd_generation_schedulers"
+									},
+									"presetStyle": {
+										"$ref": "#/components/schemas/sd_generation_style"
+									},
+									"tiling": {
+										"nullable": true,
+										"title": "Boolean",
+										"type": "boolean",
+										"description": "Whether the generated images should tile on all axis."
+									},
+									"public": {
+										"nullable": true,
+										"title": "Boolean",
+										"type": "boolean",
+										"description": "Whether the generated images should show in the community feed."
+									},
+									"promptMagic": {
+										"nullable": true,
+										"title": "Boolean",
+										"type": "boolean",
+										"description": "Enable to use Prompt Magic."
+									},
+									"controlNet": {
+										"nullable": true,
+										"title": "Boolean",
+										"type": "boolean",
+										"description": "Enable to use ControlNet. Requires an init image to be provided. Requires a model based on SD v1.5"
+									},
+									"controlNetType": {
+										"$ref": "#/components/schemas/controlnet_type"
+									}
+								},
+								"type": "object",
+								"required": [
+									"prompt"
+								]
+							}
+						}
+					},
+					"description": "Query parameters to be provided in the request body as a JSON object",
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"sdGenerationJob": {
+											"nullable": true,
+											"properties": {
+												"generationId": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												}
+											},
+											"title": "SDGenerationOutput",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for POST /generations"
+					}
+				}
+			}
+		},
+		"/generations/{id}": {
+			"get": {
+				"tags": [
+					"Generation"
+				],
+				"summary": "Get a Single Generation",
+				"description": "This endpoint will provide information about a specific generation",
+				"operationId": "getGenerationById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "The ID of the generation to return.",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"generations_by_pk": {
+											"description": "columns and relationships of \"generations\"",
+											"nullable": true,
+											"properties": {
+												"generated_images": {
+													"items": {
+														"description": "columns and relationships of \"generated_images\"",
+														"nullable": false,
+														"properties": {
+															"generated_image_variation_generics": {
+																"items": {
+																	"description": "columns and relationships of \"generated_image_variation_generic\"",
+																	"nullable": false,
+																	"properties": {
+																		"id": {
+																			"$ref": "#/components/schemas/uuid"
+																		},
+																		"status": {
+																			"$ref": "#/components/schemas/job_status"
+																		},
+																		"transformType": {
+																			"$ref": "#/components/schemas/VARIATION_TYPE"
+																		},
+																		"url": {
+																			"nullable": true,
+																			"title": "String",
+																			"type": "string"
+																		}
+																	},
+																	"title": "generated_image_variation_generic",
+																	"type": "object"
+																},
+																"nullable": false,
+																"type": "array"
+															},
+															"id": {
+																"$ref": "#/components/schemas/uuid"
+															},
+															"likeCount": {
+																"nullable": false,
+																"title": "Int",
+																"type": "integer"
+															},
+															"nsfw": {
+																"nullable": false,
+																"title": "Boolean",
+																"type": "boolean"
+															},
+															"url": {
+																"nullable": false,
+																"title": "String",
+																"type": "string"
+															}
+														},
+														"title": "generated_images",
+														"type": "object"
+													},
+													"nullable": false,
+													"type": "array"
+												},
+												"guidanceScale": {
+													"$ref": "#/components/schemas/float8"
+												},
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												},
+												"imageHeight": {
+													"nullable": false,
+													"title": "Int",
+													"type": "integer"
+												},
+												"imageWidth": {
+													"nullable": false,
+													"title": "Int",
+													"type": "integer"
+												},
+												"inferenceSteps": {
+													"nullable": true,
+													"title": "Int",
+													"type": "integer"
+												},
+												"initStrength": {
+													"$ref": "#/components/schemas/float8"
+												},
+												"modelId": {
+													"$ref": "#/components/schemas/uuid"
+												},
+												"negativePrompt": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"presetStyle": {
+													"$ref": "#/components/schemas/sd_generation_style"
+												},
+												"prompt": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												},
+												"public": {
+													"nullable": false,
+													"title": "Boolean",
+													"type": "boolean"
+												},
+												"scheduler": {
+													"$ref": "#/components/schemas/sd_generation_schedulers"
+												},
+												"sdVersion": {
+													"$ref": "#/components/schemas/sd_versions"
+												},
+												"seed": {
+													"$ref": "#/components/schemas/bigint"
+												},
+												"status": {
+													"$ref": "#/components/schemas/job_status"
+												},
+												"createdAt": {
+													"$ref": "#/components/schemas/timestamp"
+												}
+											},
+											"title": "generations",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for GET /generations/{id}"
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Generation"
+				],
+				"summary": "Delete a Single Generation",
+				"description": "This endpoint deletes a specific generation",
+				"operationId": "deleteGenerationById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "The ID of the generation to delete.",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"delete_generations_by_pk": {
+											"description": "columns and relationships of \"generations\"",
+											"nullable": true,
+											"properties": {
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												}
+											},
+											"title": "generations",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for DELETE /generations/{id}"
+					}
+				}
+			}
+		},
+		"/generations/user/{userId}": {
+			"get": {
+				"tags": [
+					"Generation"
+				],
+				"summary": "Get generations by user ID",
+				"description": "This endpoint returns all generations by a specific user",
+				"operationId": "getGenerationsByUserId",
+				"parameters": [
+					{
+						"in": "query",
+						"name": "offset",
+						"schema": {
+							"default": 0,
+							"type": "integer"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"schema": {
+							"default": 10,
+							"type": "integer"
+						}
+					},
+					{
+						"required": true,
+						"in": "path",
+						"name": "userId",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"generations": {
+											"items": {
+												"description": "columns and relationships of \"generations\"",
+												"nullable": false,
+												"properties": {
+													"generated_images": {
+														"items": {
+															"description": "columns and relationships of \"generated_images\"",
+															"nullable": false,
+															"properties": {
+																"generated_image_variation_generics": {
+																	"items": {
+																		"description": "columns and relationships of \"generated_image_variation_generic\"",
+																		"nullable": false,
+																		"properties": {
+																			"id": {
+																				"$ref": "#/components/schemas/uuid"
+																			},
+																			"status": {
+																				"$ref": "#/components/schemas/job_status"
+																			},
+																			"transformType": {
+																				"$ref": "#/components/schemas/VARIATION_TYPE"
+																			},
+																			"url": {
+																				"nullable": true,
+																				"title": "String",
+																				"type": "string"
+																			}
+																		},
+																		"title": "generated_image_variation_generic",
+																		"type": "object"
+																	},
+																	"nullable": false,
+																	"type": "array"
+																},
+																"id": {
+																	"$ref": "#/components/schemas/uuid"
+																},
+																"likeCount": {
+																	"nullable": false,
+																	"title": "Int",
+																	"type": "integer"
+																},
+																"nsfw": {
+																	"nullable": false,
+																	"title": "Boolean",
+																	"type": "boolean"
+																},
+																"url": {
+																	"nullable": false,
+																	"title": "String",
+																	"type": "string"
+																}
+															},
+															"title": "generated_images",
+															"type": "object"
+														},
+														"nullable": false,
+														"type": "array"
+													},
+													"guidanceScale": {
+														"$ref": "#/components/schemas/float8"
+													},
+													"id": {
+														"$ref": "#/components/schemas/uuid"
+													},
+													"imageHeight": {
+														"nullable": false,
+														"title": "Int",
+														"type": "integer"
+													},
+													"imageWidth": {
+														"nullable": false,
+														"title": "Int",
+														"type": "integer"
+													},
+													"inferenceSteps": {
+														"nullable": true,
+														"title": "Int",
+														"type": "integer"
+													},
+													"initStrength": {
+														"$ref": "#/components/schemas/float8"
+													},
+													"modelId": {
+														"$ref": "#/components/schemas/uuid"
+													},
+													"negativePrompt": {
+														"nullable": true,
+														"title": "String",
+														"type": "string"
+													},
+													"presetStyle": {
+														"$ref": "#/components/schemas/sd_generation_style"
+													},
+													"prompt": {
+														"nullable": false,
+														"title": "String",
+														"type": "string"
+													},
+													"public": {
+														"nullable": false,
+														"title": "Boolean",
+														"type": "boolean"
+													},
+													"scheduler": {
+														"$ref": "#/components/schemas/sd_generation_schedulers"
+													},
+													"sdVersion": {
+														"$ref": "#/components/schemas/sd_versions"
+													},
+													"seed": {
+														"$ref": "#/components/schemas/bigint"
+													},
+													"status": {
+														"$ref": "#/components/schemas/job_status"
+													},
+													"createdAt": {
+														"$ref": "#/components/schemas/timestamp"
+													}
+												},
+												"title": "generations",
+												"type": "object"
+											},
+											"nullable": false,
+											"type": "array"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for GET /generations/user/{userId}"
+					}
+				}
+			}
+		},
+		"/init-image": {
+			"post": {
+				"tags": [
+					"InitImage"
+				],
+				"summary": "Upload init image",
+				"description": "This endpoint returns presigned details to upload an init image to S3",
+				"operationId": "uploadInitImage",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"extension": {
+										"nullable": false,
+										"title": "String",
+										"type": "string",
+										"description": "Has to be png, jpg, jpeg, or webp."
+									}
+								},
+								"required": [
+									"extension"
+								],
+								"type": "object"
+							}
+						}
+					},
+					"description": "Query parameters provided in the request body as a JSON object",
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"uploadInitImage": {
+											"nullable": true,
+											"properties": {
+												"__typename": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												},
+												"fields": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"id": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"key": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"url": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												}
+											},
+											"title": "InitImageUploadOutput",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for POST /init-image"
+					}
+				}
+			}
+		},
+		"/init-image/{id}": {
+			"get": {
+				"tags": [
+					"InitImage"
+				],
+				"summary": "Get single init image",
+				"description": "This endpoint will return a single init image",
+				"operationId": "getInitImageById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "_\"id\" is required_",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"init_images_by_pk": {
+											"description": "columns and relationships of \"init_images\"",
+											"nullable": true,
+											"properties": {
+												"createdAt": {
+													"$ref": "#/components/schemas/timestamp"
+												},
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												},
+												"url": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												}
+											},
+											"title": "init_images",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for GET /init-image/{id}"
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"InitImage"
+				],
+				"summary": "Delete init image",
+				"description": "This endpoint deletes an init image",
+				"operationId": "deleteInitImageById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "_\"id\" is required_",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"delete_init_images_by_pk": {
+											"description": "columns and relationships of \"init_images\"",
+											"nullable": true,
+											"properties": {
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												}
+											},
+											"title": "init_images",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for DELETE /init-image/{id}"
+					}
+				}
+			}
+		},
+		"/variations/upscale": {
+			"post": {
+				"tags": [
+					"Variation"
+				],
+				"summary": "Create upscale",
+				"description": "This endpoint will create an upscale for the provided image ID",
+				"operationId": "createVariationUpscale",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"id": {
+										"nullable": false,
+										"title": "String",
+										"type": "string"
+									}
+								},
+								"required": [
+									"id"
+								],
+								"type": "object"
+							}
+						}
+					},
+					"description": "Query parameters are provided in the request body as a JSON object",
+					"required": false
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"sdUpscaleJob": {
+											"nullable": true,
+											"properties": {
+												"id": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												}
+											},
+											"title": "SDUpscaleJobOutput",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for POST /variations/upscale"
+					}
+				}
+			}
+		},
+		"/variations/{id}": {
+			"get": {
+				"tags": [
+					"Variation"
+				],
+				"summary": "Get variation by ID",
+				"description": "This endpoint will get the variation by ID",
+				"operationId": "getVariationById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "\"id\" is required",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"generated_image_variation_generic": {
+											"items": {
+												"description": "columns and relationships of \"generated_image_variation_generic\"",
+												"nullable": false,
+												"properties": {
+													"createdAt": {
+														"$ref": "#/components/schemas/timestamp"
+													},
+													"id": {
+														"$ref": "#/components/schemas/uuid"
+													},
+													"status": {
+														"$ref": "#/components/schemas/job_status"
+													},
+													"transformType": {
+														"$ref": "#/components/schemas/VARIATION_TYPE"
+													},
+													"url": {
+														"nullable": true,
+														"title": "String",
+														"type": "string"
+													}
+												},
+												"title": "generated_image_variation_generic",
+												"type": "object"
+											},
+											"nullable": false,
+											"type": "array"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for GET /variations/{id}"
+					}
+				}
+			}
+		},
+		"/datasets": {
+			"post": {
+				"tags": [
+					"Dataset"
+				],
+				"summary": "Create a Dataset",
+				"description": "This endpoint creates a new dataset",
+				"operationId": "createDataset",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"name": {
+										"nullable": false,
+										"title": "String",
+										"type": "string",
+										"description": "The name of the dataset."
+									},
+									"description": {
+										"nullable": true,
+										"title": "String",
+										"type": "string",
+										"description": "A description for the dataset."
+									}
+								},
+								"required": [
+									"name"
+								],
+								"type": "object"
+							}
+						}
+					},
+					"description": "Query parameters to be provided in the request body as a JSON object",
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"insert_datasets_one": {
+											"description": "columns and relationships of \"datasets\"",
+											"nullable": true,
+											"properties": {
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												}
+											},
+											"title": "datasets",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for POST /datasets"
+					}
+				}
+			}
+		},
+		"/datasets/{id}": {
+			"get": {
+				"tags": [
+					"Dataset"
+				],
+				"summary": "Get a Single Dataset by ID",
+				"description": "This endpoint gets the specific dataset",
+				"operationId": "getDatasetById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "The ID of the dataset to return.",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"datasets_by_pk": {
+											"description": "columns and relationships of \"datasets\"",
+											"nullable": true,
+											"properties": {
+												"createdAt": {
+													"$ref": "#/components/schemas/timestamp"
+												},
+												"dataset_images": {
+													"items": {
+														"description": "columns and relationships of \"dataset_images\"",
+														"nullable": false,
+														"properties": {
+															"createdAt": {
+																"$ref": "#/components/schemas/timestamp"
+															},
+															"id": {
+																"$ref": "#/components/schemas/uuid"
+															},
+															"url": {
+																"nullable": false,
+																"title": "String",
+																"type": "string"
+															}
+														},
+														"title": "dataset_images",
+														"type": "object"
+													},
+													"nullable": false,
+													"type": "array"
+												},
+												"description": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												},
+												"name": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												},
+												"updatedAt": {
+													"$ref": "#/components/schemas/timestamp"
+												}
+											},
+											"title": "datasets",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for GET /datasets/{id}"
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Dataset"
+				],
+				"summary": "Delete a Single Dataset by ID",
+				"description": "This endpoint deletes the specific dataset",
+				"operationId": "deleteDatasetById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "The ID of the dataset to delete.",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"delete_datasets_by_pk": {
+											"description": "columns and relationships of \"datasets\"",
+											"nullable": true,
+											"properties": {
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												}
+											},
+											"title": "datasets",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for DELETE /datasets/{id}"
+					}
+				}
+			}
+		},
+		"/datasets/{datasetId}/upload": {
+			"post": {
+				"tags": [
+					"Dataset"
+				],
+				"summary": "Upload dataset image",
+				"description": "This endpoint returns presigned details to upload a dataset image to S3",
+				"operationId": "uploadDatasetImage",
+				"parameters": [
+					{
+						"required": true,
+						"description": "_\"datasetId\" is required",
+						"in": "path",
+						"name": "datasetId",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"extension": {
+										"nullable": false,
+										"title": "String",
+										"type": "string",
+										"description": "Has to be png, jpg, jpeg, or webp."
+									}
+								},
+								"required": [
+									"extension"
+								],
+								"type": "object"
+							}
+						}
+					},
+					"description": "Query parameters provided in the request body as a JSON object",
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"uploadDatasetImage": {
+											"nullable": true,
+											"properties": {
+												"fields": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"id": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"key": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"url": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												}
+											},
+											"title": "DatasetUploadOutput",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for POST /datasets/{datasetId}/upload"
+					}
+				}
+			}
+		},
+		"/datasets/{datasetId}/upload/gen": {
+			"post": {
+				"tags": [
+					"Dataset"
+				],
+				"summary": "Upload a Single Generated Image to a Dataset",
+				"description": "This endpoint will upload a previously generated image to the dataset",
+				"operationId": "uploadDatasetImageFromGen",
+				"parameters": [
+					{
+						"required": true,
+						"description": "The ID of the dataset to upload the image to.",
+						"in": "path",
+						"name": "datasetId",
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"generatedImageId": {
+										"nullable": false,
+										"title": "String",
+										"type": "string",
+										"description": "The ID of the image to upload to the dataset."
+									}
+								},
+								"required": [
+									"generatedImageId"
+								],
+								"type": "object"
+							}
+						}
+					},
+					"description": "Query parameters to be provided in the request body as a JSON object",
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"uploadDatasetImageFromGen": {
+											"nullable": true,
+											"properties": {
+												"id": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												}
+											},
+											"title": "DatasetGenUploadOutput",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for POST /datasets/{datasetId}/upload/gen"
+					}
+				}
+			}
+		},
+		"/models": {
+			"post": {
+				"tags": [
+					"Model"
+				],
+				"summary": "Train a Custom Model",
+				"description": "This endpoint will train a new custom model",
+				"operationId": "createModel",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"name": {
+										"nullable": false,
+										"title": "String",
+										"type": "string",
+										"description": "The name of the model."
+									},
+									"description": {
+										"default": "",
+										"nullable": true,
+										"title": "String",
+										"type": "string",
+										"description": "The description of the model."
+									},
+									"datasetId": {
+										"nullable": false,
+										"title": "String",
+										"type": "string",
+										"description": "The ID of the dataset to train the model on."
+									},
+									"instance_prompt": {
+										"nullable": false,
+										"title": "String",
+										"type": "string",
+										"description": "The instance prompt to use during training."
+									},
+									"modelType": {
+										"$ref": "#/components/schemas/custom_model_type"
+									},
+									"nsfw": {
+										"default": false,
+										"nullable": true,
+										"title": "Boolean",
+										"type": "boolean",
+										"description": "Whether or not the model is NSFW."
+									},
+									"resolution": {
+										"default": 512,
+										"nullable": true,
+										"title": "Int",
+										"type": "integer",
+										"description": "The resolution for training. Must be 512 or 768."
+									},
+									"sd_Version": {
+										"$ref": "#/components/schemas/sd_versions"
+									},
+									"strength": {
+										"$ref": "#/components/schemas/strength"
+									}
+								},
+								"required": [
+									"name",
+									"datasetId",
+									"instance_prompt"
+								],
+								"type": "object"
+							}
+						}
+					},
+					"description": "Query parameters to be provided in the request body as a JSON object",
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"sdTrainingJob": {
+											"nullable": true,
+											"properties": {
+												"customModelId": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												}
+											},
+											"title": "SDTrainingOutput",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for POST /models"
+					}
+				}
+			}
+		},
+		"/models/{id}": {
+			"get": {
+				"tags": [
+					"Model"
+				],
+				"summary": "Get a Single Custom Model by ID",
+				"description": "This endpoint gets the specific custom model",
+				"operationId": "getModelById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "The ID of the custom model to return.",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"custom_models_by_pk": {
+											"description": "columns and relationships of \"custom_models\"",
+											"nullable": true,
+											"properties": {
+												"createdAt": {
+													"$ref": "#/components/schemas/timestamp"
+												},
+												"description": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												},
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												},
+												"instancePrompt": {
+													"nullable": true,
+													"title": "String",
+													"type": "string"
+												},
+												"modelHeight": {
+													"nullable": false,
+													"title": "Int",
+													"type": "integer"
+												},
+												"modelWidth": {
+													"nullable": false,
+													"title": "Int",
+													"type": "integer"
+												},
+												"name": {
+													"nullable": false,
+													"title": "String",
+													"type": "string"
+												},
+												"public": {
+													"nullable": false,
+													"title": "Boolean",
+													"type": "boolean"
+												},
+												"sdVersion": {
+													"$ref": "#/components/schemas/sd_versions"
+												},
+												"status": {
+													"$ref": "#/components/schemas/job_status"
+												},
+												"type": {
+													"$ref": "#/components/schemas/custom_model_type"
+												},
+												"updatedAt": {
+													"$ref": "#/components/schemas/timestamp"
+												}
+											},
+											"title": "custom_models",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for GET /models/{id}"
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"Model"
+				],
+				"summary": "Delete a Single Custom Model by ID",
+				"description": "This endpoint will delete a specific custom model",
+				"operationId": "deleteModelById",
+				"parameters": [
+					{
+						"required": true,
+						"description": "The ID of the model to delete.",
+						"in": "path",
+						"name": "id",
+						"schema": {
+							"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"delete_custom_models_by_pk": {
+											"description": "columns and relationships of \"custom_models\"",
+											"nullable": true,
+											"properties": {
+												"id": {
+													"$ref": "#/components/schemas/uuid"
+												}
+											},
+											"title": "custom_models",
+											"type": "object"
+										}
+									}
+								}
+							}
+						},
+						"description": "Responses for DELETE /models/{id}"
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"sd_versions": {
+				"type": "string",
+				"nullable": false,
+				"title": "sd_versions",
+				"enum": [
+					"v1_5",
+					"v2"
+				],
+				"description": "The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5."
+			},
+			"strength": {
+				"type": "string",
+				"nullable": false,
+				"title": "strength",
+				"enum": [
+					"VERY_LOW",
+					"LOW",
+					"MEDIUM",
+					"HIGH"
+				],
+				"description": "When training using the PIXEL_ART model type, this influences the training strength.",
+				"default": "MEDIUM"
+			},
+			"job_status": {
+				"type": "string",
+				"nullable": false,
+				"title": "job_status",
+				"enum": [
+					"PENDING",
+					"COMPLETE",
+					"FAILED"
+				],
+				"description": "The status of the current task."
+			},
+			"custom_model_type": {
+				"type": "string",
+				"default": "GENERAL",
+				"nullable": false,
+				"title": "custom_model_type",
+				"enum": [
+					"GENERAL",
+					"BUILDINGS",
+					"CHARACTERS",
+					"ENVIRONMENTS",
+					"FASHION",
+					"ILLUSTRATIONS",
+					"GAME_ITEMS",
+					"GRAPHICAL_ELEMENTS",
+					"PHOTOGRAPHY",
+					"PIXEL_ART",
+					"PRODUCT_DESIGN",
+					"TEXTURES",
+					"UI_ELEMENTS",
+					"VECTOR"
+				],
+				"description": "The category the most accurately reflects the model."
+			},
+			"sd_generation_schedulers": {
+				"type": "string",
+				"nullable": false,
+				"title": "sd_generation_schedulers",
+				"enum": [
+					"KLMS",
+					"EULER_ANCESTRAL_DISCRETE",
+					"EULER_DISCRETE",
+					"DDIM",
+					"DPM_SOLVER",
+					"PNDM"
+				],
+				"description": "The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified."
+			},
+			"VARIATION_TYPE": {
+				"type": "string",
+				"nullable": false,
+				"title": "VARIATION_TYPE",
+				"enum": [
+					"OUTPAINT",
+					"INPAINT",
+					"UPSCALE",
+					"UNZOOM",
+					"NOBG"
+				],
+				"description": "The type of variation."
+			},
+			"timestamp": {
+				"type": "string",
+				"nullable": false,
+				"title": "timestamp"
+			},
+			"float8": {
+				"type": "number",
+				"nullable": true,
+				"title": "float8"
+			},
+			"bigint": {
+				"type": "integer",
+				"nullable": true,
+				"title": "bigint"
+			},
+			"sd_generation_style": {
+				"type": "string",
+				"nullable": false,
+				"title": "sd_generation_style",
+				"enum": [
+					"LEONARDO",
+					"NONE"
+				],
+				"description": "The style to generate images with."
+			},
+			"controlnet_type": {
+				"type": "string",
+				"nullable": false,
+				"title": "controlnet_type",
+				"enum": [
+					"POSE",
+					"CANNY",
+					"DEPTH"
+				],
+				"description": "The type of ControlNet to use."
+			},
+			"uuid": {
+				"nullable": true,
+				"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}",
+				"title": "uuid",
+				"type": "string"
+			}
+		},
+		"securitySchemes": {
+			"bearerAuth": {
+				"type": "http",
+				"bearerFormat": "auth-scheme",
+				"description": "Bearer HTTP authentication. Allowed headers `Authorization: Bearer <api_key>`",
+				"scheme": "bearer"
+			}
+		}
+	},
+	"security": [
+		{
+			"bearerAuth": []
+		}
+	]
+}
