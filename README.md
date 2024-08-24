@@ -5,8 +5,13 @@
 [![License: MIT](https://img.shields.io/github/license/tryAGI/Leonardo)](https://github.com/tryAGI/Leonardo/blob/main/LICENSE.txt)
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
-Generated C# SDK based on Leonardo OpenAPI specification using NSwag.  
-
+## Features 🔥
+- Fully generated C# SDK based on [official OpenAPI specification](https://api-docs-nine-delta.vercel.app/cloud/openapi.json) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)
+- Same day update to support new features
+- Updated and supported automatically if there are no breaking changes
+- All modern .NET features - nullability, trimming, NativeAOT, etc.
+- Support .Net Framework/.Net Standard 2.0
+- 
 ### Usage
 ```csharp
 using Leonardo;
