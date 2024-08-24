@@ -16,8 +16,7 @@
 ```csharp
 using Leonardo;
 
-using var api = new LeonardoApi();
-api.AuthorizeUsingBearer(apiKey);
+using var api = new LeonardoApi(apiKey);
 
 var createResponse = await api.Image.CreateGenerationAsync(
     prompt: "Generate cat");
