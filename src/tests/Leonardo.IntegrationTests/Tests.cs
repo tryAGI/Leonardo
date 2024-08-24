@@ -9,8 +9,7 @@ public partial class Tests
             Environment.GetEnvironmentVariable("LEONARDO_API_KEY") ??
             throw new AssertInconclusiveException("LEONARDO_API_KEY environment variable is not found.");
 
-        var api = new LeonardoApi();
-        api.AuthorizeUsingBearer(apiKey);
+        var api = new LeonardoApi(apiKey);
 
         return api;
     }
