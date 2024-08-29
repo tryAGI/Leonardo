@@ -1,6 +1,6 @@
 # Leonardo
 
-[![Nuget package](https://img.shields.io/nuget/vpre/tryAGI.Leonardo)](https://www.nuget.org/packages/tryAGI.Leonardo/)
+[![Nuget package](https://img.shields.io/nuget/vpre/LeonardoAI](https://www.nuget.org/packages/LeonardoAI/)
 [![dotnet](https://github.com/tryAGI/Leonardo/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/tryAGI/Leonardo/actions/workflows/dotnet.yml)
 [![License: MIT](https://img.shields.io/github/license/tryAGI/Leonardo)](https://github.com/tryAGI/Leonardo/blob/main/LICENSE.txt)
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
