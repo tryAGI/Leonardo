@@ -2566,6 +2566,11 @@ paths:
                           type: integer
                           description: The total cost of controlnets input.
                           nullable: true
+                        isPhoenix:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use Phoenix model.
+                          nullable: true
                         isSDXL:
                           title: Boolean
                           type: boolean

@@ -81,6 +81,12 @@ namespace Leonardo
         public int? ControlnetsCost { get; set; }
 
         /// <summary>
+        /// Enable to use Phoenix model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("isPhoenix")]
+        public bool? IsPhoenix { get; set; }
+
+        /// <summary>
         /// Enable to use SDXL model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isSDXL")]
