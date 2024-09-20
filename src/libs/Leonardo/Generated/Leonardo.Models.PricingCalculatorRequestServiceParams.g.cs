@@ -51,6 +51,12 @@ namespace Leonardo
         public global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? UNIVERSALUPSCALER { get; set; }
 
         /// <summary>
+        /// Parameters for UNIVERSAL_UPSCALER_ULTRA service
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("UNIVERSAL_UPSCALER_ULTRA")]
+        public global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALERULTRA? UNIVERSALUPSCALERULTRA { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

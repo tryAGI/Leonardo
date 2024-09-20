@@ -152,6 +152,12 @@ namespace Leonardo
         public global::Leonardo.JobStatus? Status { get; set; }
 
         /// <summary>
+        /// If ultra generation mode was used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ultra")]
+        public bool? Ultra { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

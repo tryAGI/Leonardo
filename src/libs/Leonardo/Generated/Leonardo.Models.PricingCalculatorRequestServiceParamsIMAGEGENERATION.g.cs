@@ -99,6 +99,12 @@ namespace Leonardo
         public bool? IsSDXLLightning { get; set; }
 
         /// <summary>
+        /// Enable to use Ultra mode.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ultra")]
+        public bool? Ultra { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

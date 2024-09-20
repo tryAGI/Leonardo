@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// The style to upscale images using universal upscaler with.<br/>
+    /// The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle.<br/>
     /// Default Value: GENERAL
     /// </summary>
     public enum UniversalUpscalerStyle

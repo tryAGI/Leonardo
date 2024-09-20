@@ -241,6 +241,11 @@ paths:
                   type: string
                   description: Which type of transparency this image should use
                   nullable: true
+                ultra:
+                  title: Boolean
+                  type: boolean
+                  description: 'Enable to use Ultra mode. Note: can not be used with Alchemy.'
+                  nullable: true
                 unzoom:
                   title: Boolean
                   type: boolean
@@ -474,6 +479,8 @@ paths:
                         $ref: '#/components/schemas/bigint'
                       status:
                         $ref: '#/components/schemas/job_status'
+                      ultra:
+                        $ref: '#/components/schemas/sd_generation_ultra'
                     description: columns and relationships of "generations"
                     nullable: true
     delete:
@@ -672,6 +679,8 @@ paths:
                           $ref: '#/components/schemas/bigint'
                         status:
                           $ref: '#/components/schemas/job_status'
+                        ultra:
+                          $ref: '#/components/schemas/sd_generation_ultra'
                       description: columns and relationships of "generations"
   /generations-texture:
     post:
@@ -1859,39 +1868,51 @@ paths:
             schema:
               type: object
               properties:
-                initImageId:
-                  title: String
-                  type: string
-                  description: The ID of the init image uploaded
+                creativityStrength:
+                  title: Int
+                  type: integer
+                  description: The creativity strength of the universal upscaler. Must be between 1 and 10.
+                  default: 5
+                  nullable: true
+                detailContrast:
+                  title: Int
+                  type: integer
+                  description: The detail contrast of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle.
                   nullable: true
                 generatedImageId:
                   title: String
                   type: string
-                  description: The ID of the generated image
+                  description: The ID of the generated image.
                   nullable: true
-                variationId:
+                initImageId:
                   title: String
                   type: string
-                  description: The ID of the variation image
-                  nullable: true
-                upscalerStyle:
-                  $ref: '#/components/schemas/universal_upscaler_style'
-                creativityStrength:
-                  title: Int
-                  type: integer
-                  description: 'The creativity strength of the universal upscaler, must be integer between 1 and 10'
-                  default: 5
-                  nullable: true
-                upscaleMultiplier:
-                  title: Float
-                  type: number
-                  description: 'The upscale multiplier of the universal upscaler, must be number between 1.00 and 2.00'
-                  default: 1.5
+                  description: The ID of the init image uploaded.
                   nullable: true
                 prompt:
                   title: String
                   type: string
-                  description: The prompt for the universal upscaler
+                  description: The prompt for the universal upscaler.
+                  nullable: true
+                similarity:
+                  title: Int
+                  type: integer
+                  description: The similarity of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle.
+                  nullable: true
+                ultraUpscaleStyle:
+                  $ref: '#/components/schemas/universal_upscaler_ultra_style'
+                upscaleMultiplier:
+                  title: Float
+                  type: number
+                  description: The upscale multiplier of the universal upscaler. Must be between 1.0 and 2.0.
+                  default: 1.5
+                  nullable: true
+                upscalerStyle:
+                  $ref: '#/components/schemas/universal_upscaler_style'
+                variationId:
+                  title: String
+                  type: string
+                  description: The ID of the variation image.
                   nullable: true
         required: true
       responses:
@@ -2581,6 +2602,11 @@ paths:
                           type: boolean
                           description: Enable to use SDXL Lightning model.
                           nullable: true
+                        ultra:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use Ultra mode.
+                          nullable: true
                       description: Parameters for IMAGE_GENERATION service
                       nullable: true
                     FANTASY_AVATAR_GENERATION:
@@ -2659,6 +2685,25 @@ paths:
                           type: integer
                           description: The maximum upscaled image size is 20 megapixels.
                       description: Parameters for UNIVERSAL_UPSCALER service
+                      nullable: true
+                    UNIVERSAL_UPSCALER_ULTRA:
+                      title: Object
+                      type: object
+                      properties:
+                        inputWidth:
+                          title: Int
+                          type: integer
+                          description: The input width of the image.
+                        inputHeight:
+                          title: Int
+                          type: integer
+                          description: The input height of the image.
+                        upscaleMultiplier:
+                          title: Float
+                          type: number
+                          description: The upscale multiplier of the universal upscaler. Must be between 1.00 and 2.00.
+                          default: 1.5
+                      description: Parameters for UNIVERSAL_UPSCALER_ULTRA service
                       nullable: true
                   description: Parameters for the service
       responses:
@@ -2978,8 +3023,16 @@ components:
         - 2D ART & ILLUSTRATION
         - CG ART & GAME ASSETS
       type: string
-      description: The style to upscale images using universal upscaler with.
+      description: The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle.
       default: GENERAL
+      nullable: true
+    universal_upscaler_ultra_style:
+      title: universal_upscaler_ultra_style
+      enum:
+        - ARTISTIC
+        - REALISTIC
+      type: string
+      description: The ultra style to upscale images using universal upscaler with. Can not be used with upscalerStyle.
       nullable: true
     controlnet_type:
       title: controlnet_type
@@ -3060,6 +3113,7 @@ components:
         - MODEL_TRAINING
         - TEXTURE_GENERATION
         - UNIVERSAL_UPSCALER
+        - UNIVERSAL_UPSCALER_ULTRA
       type: string
       description: The services to be chosen for calculating the API credit cost.
     imageHeight:
@@ -3083,6 +3137,11 @@ components:
         - IMG2IMG
       type: string
       description: The type of request for the Canvas Editor.
+      nullable: true
+    sd_generation_ultra:
+      title: Boolean
+      type: boolean
+      description: If ultra generation mode was used.
       nullable: true
   securitySchemes:
     bearerAuth:

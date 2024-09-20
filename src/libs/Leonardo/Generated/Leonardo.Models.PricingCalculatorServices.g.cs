@@ -36,6 +36,10 @@ namespace Leonardo
         /// 
         /// </summary>
         UNIVERSALUPSCALER,
+        /// <summary>
+        /// 
+        /// </summary>
+        UNIVERSALUPSCALERULTRA,
     }
 
     /// <summary>
@@ -57,6 +61,7 @@ namespace Leonardo
                 PricingCalculatorServices.MODELTRAINING => "MODEL_TRAINING",
                 PricingCalculatorServices.TEXTUREGENERATION => "TEXTURE_GENERATION",
                 PricingCalculatorServices.UNIVERSALUPSCALER => "UNIVERSAL_UPSCALER",
+                PricingCalculatorServices.UNIVERSALUPSCALERULTRA => "UNIVERSAL_UPSCALER_ULTRA",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +79,7 @@ namespace Leonardo
                 "MODEL_TRAINING" => PricingCalculatorServices.MODELTRAINING,
                 "TEXTURE_GENERATION" => PricingCalculatorServices.TEXTUREGENERATION,
                 "UNIVERSAL_UPSCALER" => PricingCalculatorServices.UNIVERSALUPSCALER,
+                "UNIVERSAL_UPSCALER_ULTRA" => PricingCalculatorServices.UNIVERSALUPSCALERULTRA,
                 _ => null,
             };
         }
