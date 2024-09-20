@@ -218,6 +218,12 @@ namespace Leonardo
         public global::Leonardo.CreateGenerationRequestTransparency? Transparency { get; set; }
 
         /// <summary>
+        /// Enable to use Ultra mode. Note: can not be used with Alchemy.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ultra")]
+        public bool? Ultra { get; set; }
+
+        /// <summary>
         /// Whether the generated images should be unzoomed (requires unzoomAmount and init_image_id to be set).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unzoom")]

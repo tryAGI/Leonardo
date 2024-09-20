@@ -37,6 +37,8 @@ namespace Leonardo
             typeof(global::OpenApiGenerator.JsonConverters.LcmGenerationStyleNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.UniversalUpscalerStyleJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.UniversalUpscalerStyleNullableJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.UniversalUpscalerUltraStyleJsonConverter),
+            typeof(global::OpenApiGenerator.JsonConverters.UniversalUpscalerUltraStyleNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ControlnetTypeJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.ControlnetTypeNullableJsonConverter),
             typeof(global::OpenApiGenerator.JsonConverters.PricingCalculatorServicesJsonConverter),

@@ -194,6 +194,9 @@ namespace Leonardo
         /// <param name="transparency">
         /// Which type of transparency this image should use
         /// </param>
+        /// <param name="ultra">
+        /// Enable to use Ultra mode. Note: can not be used with Alchemy.
+        /// </param>
         /// <param name="unzoom">
         /// Whether the generated images should be unzoomed (requires unzoomAmount and init_image_id to be set).
         /// </param>
@@ -255,6 +258,7 @@ namespace Leonardo
             int? seed = default,
             bool? tiling = default,
             global::Leonardo.CreateGenerationRequestTransparency? transparency = default,
+            bool? ultra = default,
             bool? unzoom = default,
             double? unzoomAmount = default,
             double? upscaleRatio = default,
@@ -300,6 +304,7 @@ namespace Leonardo
                 Seed = seed,
                 Tiling = tiling,
                 Transparency = transparency,
+                Ultra = ultra,
                 Unzoom = unzoom,
                 UnzoomAmount = unzoomAmount,
                 UpscaleRatio = upscaleRatio,
