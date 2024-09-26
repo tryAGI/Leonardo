@@ -149,7 +149,7 @@ namespace Leonardo
         /// Default Value: DYNAMIC
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presetStyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SdGenerationStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdGenerationStyleJsonConverter))]
         public global::Leonardo.SdGenerationStyle? PresetStyle { get; set; } = global::Leonardo.SdGenerationStyle.DYNAMIC;
 
         /// <summary>
@@ -188,14 +188,14 @@ namespace Leonardo
         /// The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scheduler")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SdGenerationSchedulersJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdGenerationSchedulersJsonConverter))]
         public global::Leonardo.SdGenerationSchedulers? Scheduler { get; set; }
 
         /// <summary>
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SdVersionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdVersionsJsonConverter))]
         public global::Leonardo.SdVersions? SdVersion { get; set; }
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace Leonardo
         /// Which type of transparency this image should use
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transparency")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CreateGenerationRequestTransparencyJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateGenerationRequestTransparencyJsonConverter))]
         public global::Leonardo.CreateGenerationRequestTransparency? Transparency { get; set; }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Leonardo
         /// This parameter will be deprecated in September 2024. Please use the controlnets array instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controlNetType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ControlnetTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.ControlnetTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::Leonardo.ControlnetType? ControlNetType { get; set; }
 
@@ -280,7 +280,7 @@ namespace Leonardo
         /// The type of request for the Canvas Editor.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("canvasRequestType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CanvasRequestTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CanvasRequestTypeJsonConverter))]
         public global::Leonardo.CanvasRequestType? CanvasRequestType { get; set; }
 
         /// <summary>

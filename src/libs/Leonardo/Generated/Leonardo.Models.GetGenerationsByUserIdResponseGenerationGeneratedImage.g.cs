@@ -30,7 +30,7 @@ namespace Leonardo
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("likeCount")]
-        public int LikeCount { get; set; }
+        public int? LikeCount { get; set; }
 
         /// <summary>
         /// If generation is of motion type.
@@ -60,7 +60,7 @@ namespace Leonardo
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nsfw")]
-        public bool Nsfw { get; set; }
+        public bool? Nsfw { get; set; }
 
         /// <summary>
         /// 

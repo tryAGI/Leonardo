@@ -19,7 +19,7 @@ namespace Leonardo
         /// Default Value: NORMAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MODELASSETTEXTURETYPESJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.MODELASSETTEXTURETYPESJsonConverter))]
         public global::Leonardo.MODELASSETTEXTURETYPES? Type { get; set; } = global::Leonardo.MODELASSETTEXTURETYPES.NORMAL;
 
         /// <summary>

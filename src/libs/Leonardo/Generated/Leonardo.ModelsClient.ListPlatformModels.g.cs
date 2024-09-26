@@ -33,9 +33,13 @@ namespace Leonardo
             PrepareListPlatformModelsArguments(
                 httpClient: _httpClient);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/platformModels",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/platformModels", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -77,7 +81,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Leonardo.SourceGenerationContext.Default.ListPlatformModelsResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.ListPlatformModelsResponse), JsonSerializerContext) as global::Leonardo.ListPlatformModelsResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

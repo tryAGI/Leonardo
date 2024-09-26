@@ -38,9 +38,13 @@ namespace Leonardo
                 httpClient: _httpClient,
                 id: ref id);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/variations/{id}",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/variations/{id}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -83,7 +87,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Leonardo.SourceGenerationContext.Default.GetVariationByIdResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.GetVariationByIdResponse), JsonSerializerContext) as global::Leonardo.GetVariationByIdResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

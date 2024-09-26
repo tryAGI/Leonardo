@@ -40,10 +40,14 @@ namespace Leonardo
                 httpClient: _httpClient,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: "/variations/nobg",
+                baseUri: _httpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/variations/nobg", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::Leonardo.SourceGenerationContext.Default.CreateVariationNoBGRequest);
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -91,7 +95,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Leonardo.SourceGenerationContext.Default.CreateVariationNoBGResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.CreateVariationNoBGResponse), JsonSerializerContext) as global::Leonardo.CreateVariationNoBGResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -105,7 +109,7 @@ namespace Leonardo
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.CreateVariationNoBGResponse> CreateVariationNoBGAsync(
             string id,
-            bool isVariation = default,
+            bool? isVariation = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Leonardo.CreateVariationNoBGRequest

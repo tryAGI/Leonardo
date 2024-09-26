@@ -8,7 +8,7 @@ namespace Leonardo
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class LeonardoApi : global::System.IDisposable
+    public sealed partial class LeonardoApi : global::Leonardo.ILeonardoApi, global::System.IDisposable
     {
         /// <summary>
         /// Leonardo.Ai API server
@@ -17,71 +17,115 @@ namespace Leonardo
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::Leonardo.SourceGenerationContext.Default;
+
 
         /// <summary>
         /// 
         /// </summary>
-        public DatasetClient Dataset => new DatasetClient(_httpClient);
+        public DatasetClient Dataset => new DatasetClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ElementsClient Elements => new ElementsClient(_httpClient);
+        public ElementsClient Elements => new ElementsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ImageClient Image => new ImageClient(_httpClient);
+        public ImageClient Image => new ImageClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public InitImagesClient InitImages => new InitImagesClient(_httpClient);
+        public InitImagesClient InitImages => new InitImagesClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public MotionClient Motion => new MotionClient(_httpClient);
+        public MotionClient Motion => new MotionClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient);
+        public ModelsClient Models => new ModelsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public PricingCalculatorClient PricingCalculator => new PricingCalculatorClient(_httpClient);
+        public PricingCalculatorClient PricingCalculator => new PricingCalculatorClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public PromptClient Prompt => new PromptClient(_httpClient);
+        public PromptClient Prompt => new PromptClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeCanvasClient RealtimeCanvas => new RealtimeCanvasClient(_httpClient);
+        public RealtimeCanvasClient RealtimeCanvas => new RealtimeCanvasClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public TextureClient Texture => new TextureClient(_httpClient);
+        public TextureClient Texture => new TextureClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User => new UserClient(_httpClient);
+        public UserClient User => new UserClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public VariationClient Variation => new VariationClient(_httpClient);
+        public VariationClient Variation => new VariationClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// 
         /// </summary>
-        public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(_httpClient);
+        public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(_httpClient)
+        {
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// Creates a new instance of the LeonardoApi.
@@ -92,8 +136,7 @@ namespace Leonardo
         /// <param name="baseUri"></param> 
         public LeonardoApi(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null 
-            )
+            global::System.Uri? baseUri = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);

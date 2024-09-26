@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Leonardo.JsonConverters
 {
     /// <inheritdoc />
     public sealed class ControlnetInputInitImageTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Leonardo.ControlnetInputInitImageType?>

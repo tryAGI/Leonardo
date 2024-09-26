@@ -7,14 +7,14 @@ namespace Leonardo
     {
         partial void PrepareGetGenerationsByUserIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref string userId);
         partial void PrepareGetGenerationsByUserIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             string userId);
         partial void ProcessGetGenerationsByUserIdResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,8 +40,8 @@ namespace Leonardo
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.GetGenerationsByUserIdResponse> GetGenerationsByUserIdAsync(
             string userId,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -52,9 +52,17 @@ namespace Leonardo
                 limit: ref limit,
                 userId: ref userId);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/generations/user/{userId}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/generations/user/{userId}?offset={offset}&limit={limit}", global::System.UriKind.RelativeOrAbsolute));
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
                 client: _httpClient,
@@ -99,7 +107,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Leonardo.SourceGenerationContext.Default.GetGenerationsByUserIdResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.GetGenerationsByUserIdResponse), JsonSerializerContext) as global::Leonardo.GetGenerationsByUserIdResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

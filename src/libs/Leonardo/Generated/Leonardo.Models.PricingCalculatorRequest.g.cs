@@ -12,7 +12,7 @@ namespace Leonardo
         /// The services to be chosen for calculating the API credit cost.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.PricingCalculatorServicesJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.PricingCalculatorServicesJsonConverter))]
         public global::Leonardo.PricingCalculatorServices? Service { get; set; }
 
         /// <summary>

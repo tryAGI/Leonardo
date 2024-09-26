@@ -40,7 +40,7 @@ namespace Leonardo
         /// Default Value: GENERAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.CustomModelTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CustomModelTypeJsonConverter))]
         public global::Leonardo.CustomModelType? ModelType { get; set; } = global::Leonardo.CustomModelType.GENERAL;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Leonardo
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_Version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SdVersionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdVersionsJsonConverter))]
         public global::Leonardo.SdVersions? SdVersion { get; set; }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Leonardo
         /// Default Value: MEDIUM
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strength")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.StrengthJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.StrengthJsonConverter))]
         public global::Leonardo.Strength? Strength { get; set; } = global::Leonardo.Strength.MEDIUM;
 
         /// <summary>

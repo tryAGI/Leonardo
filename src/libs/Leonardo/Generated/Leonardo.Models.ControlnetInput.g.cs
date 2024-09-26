@@ -18,14 +18,14 @@ namespace Leonardo
         /// Type indicating whether the init image is uploaded or generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("initImageType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ControlnetInputInitImageTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.ControlnetInputInitImageTypeJsonConverter))]
         public global::Leonardo.ControlnetInputInitImageType? InitImageType { get; set; }
 
         /// <summary>
         /// ID of the controlnet. A list of compatible IDs can be found in our guides.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preprocessorId")]
-        public double PreprocessorId { get; set; }
+        public double? PreprocessorId { get; set; }
 
         /// <summary>
         /// Weight for the controlnet
@@ -37,7 +37,7 @@ namespace Leonardo
         /// Strength type for the controlnet. Can only be used for Style, Character and Content Reference controlnets.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strengthType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ControlnetInputStrengthTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.ControlnetInputStrengthTypeJsonConverter))]
         public global::Leonardo.ControlnetInputStrengthType? StrengthType { get; set; }
 
         /// <summary>

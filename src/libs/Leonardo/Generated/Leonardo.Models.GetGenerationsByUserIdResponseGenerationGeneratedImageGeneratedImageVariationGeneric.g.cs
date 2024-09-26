@@ -18,14 +18,14 @@ namespace Leonardo
         /// The status of the current task.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.JobStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.JobStatusJsonConverter))]
         public global::Leonardo.JobStatus? Status { get; set; }
 
         /// <summary>
         /// The type of variation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.VARIATIONTYPEJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.VARIATIONTYPEJsonConverter))]
         public global::Leonardo.VARIATIONTYPE? TransformType { get; set; }
 
         /// <summary>

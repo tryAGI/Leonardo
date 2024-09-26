@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Leonardo.JsonConverters
 {
     /// <inheritdoc />
     public sealed class LcmGenerationStyleNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Leonardo.LcmGenerationStyle?>

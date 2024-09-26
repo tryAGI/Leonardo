@@ -49,7 +49,7 @@ namespace Leonardo
         /// The ultra style to upscale images using universal upscaler with. Can not be used with upscalerStyle.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ultraUpscaleStyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UniversalUpscalerUltraStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.UniversalUpscalerUltraStyleJsonConverter))]
         public global::Leonardo.UniversalUpscalerUltraStyle? UltraUpscaleStyle { get; set; }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Leonardo
         /// Default Value: GENERAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upscalerStyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.UniversalUpscalerStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.UniversalUpscalerStyleJsonConverter))]
         public global::Leonardo.UniversalUpscalerStyle? UpscalerStyle { get; set; } = global::Leonardo.UniversalUpscalerStyle.GENERAL;
 
         /// <summary>

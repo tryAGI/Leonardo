@@ -51,7 +51,7 @@ namespace Leonardo
         /// The style to generate LCM images with.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.LcmGenerationStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.LcmGenerationStyleJsonConverter))]
         public global::Leonardo.LcmGenerationStyle? Style { get; set; }
 
         /// <summary>

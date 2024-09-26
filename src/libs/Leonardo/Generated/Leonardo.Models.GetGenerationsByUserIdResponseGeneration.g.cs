@@ -42,13 +42,13 @@ namespace Leonardo
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageHeight")]
-        public int ImageHeight { get; set; }
+        public int? ImageHeight { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageWidth")]
-        public int ImageWidth { get; set; }
+        public int? ImageWidth { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace Leonardo
         /// Default Value: DYNAMIC
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presetStyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SdGenerationStyleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdGenerationStyleJsonConverter))]
         public global::Leonardo.SdGenerationStyle? PresetStyle { get; set; } = global::Leonardo.SdGenerationStyle.DYNAMIC;
 
         /// <summary>
@@ -122,20 +122,20 @@ namespace Leonardo
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
-        public bool Public { get; set; }
+        public bool? Public { get; set; }
 
         /// <summary>
         /// The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scheduler")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SdGenerationSchedulersJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdGenerationSchedulersJsonConverter))]
         public global::Leonardo.SdGenerationSchedulers? Scheduler { get; set; }
 
         /// <summary>
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sdVersion")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.SdVersionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdVersionsJsonConverter))]
         public global::Leonardo.SdVersions? SdVersion { get; set; }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Leonardo
         /// The status of the current task.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.JobStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.JobStatusJsonConverter))]
         public global::Leonardo.JobStatus? Status { get; set; }
 
         /// <summary>

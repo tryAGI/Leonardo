@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Leonardo.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CustomModelTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Leonardo.CustomModelType>

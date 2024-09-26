@@ -7,15 +7,15 @@ namespace Leonardo
     {
         partial void PrepareGetTextureGenerationsByModelIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref string modelId,
             global::Leonardo.GetTextureGenerationsByModelIdRequest request);
         partial void PrepareGetTextureGenerationsByModelIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             string modelId,
             global::Leonardo.GetTextureGenerationsByModelIdRequest request);
         partial void ProcessGetTextureGenerationsByModelIdResponse(
@@ -44,8 +44,8 @@ namespace Leonardo
         public async global::System.Threading.Tasks.Task<global::Leonardo.GetTextureGenerationsByModelIdResponse> GetTextureGenerationsByModelIdAsync(
             string modelId,
             global::Leonardo.GetTextureGenerationsByModelIdRequest request,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -59,10 +59,18 @@ namespace Leonardo
                 modelId: ref modelId,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/generations-texture/model/{modelId}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/generations-texture/model/{modelId}?offset={offset}&limit={limit}", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::Leonardo.SourceGenerationContext.Default.GetTextureGenerationsByModelIdRequest);
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -113,7 +121,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Leonardo.SourceGenerationContext.Default.GetTextureGenerationsByModelIdResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.GetTextureGenerationsByModelIdResponse), JsonSerializerContext) as global::Leonardo.GetTextureGenerationsByModelIdResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -135,8 +143,8 @@ namespace Leonardo
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.GetTextureGenerationsByModelIdResponse> GetTextureGenerationsByModelIdAsync(
             string modelId,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             int? requestLimit = default,
             string? requestModelId = default,
             int? requestOffset = default,

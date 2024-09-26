@@ -7,15 +7,15 @@ namespace Leonardo
     {
         partial void PrepareGet3DModelsByUserIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int offset,
-            ref int limit,
+            ref int? offset,
+            ref int? limit,
             ref string userId,
             global::Leonardo.Get3DModelsByUserIdRequest request);
         partial void PrepareGet3DModelsByUserIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int offset,
-            int limit,
+            int? offset,
+            int? limit,
             string userId,
             global::Leonardo.Get3DModelsByUserIdRequest request);
         partial void ProcessGet3DModelsByUserIdResponse(
@@ -44,8 +44,8 @@ namespace Leonardo
         public async global::System.Threading.Tasks.Task<global::Leonardo.Get3DModelsByUserIdResponse> Get3DModelsByUserIdAsync(
             string userId,
             global::Leonardo.Get3DModelsByUserIdRequest request,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -59,10 +59,18 @@ namespace Leonardo
                 userId: ref userId,
                 request: request);
 
+            var __pathBuilder = new PathBuilder(
+                path: $"/models-3d/user/{userId}",
+                baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("offset", offset?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + $"/models-3d/user/{userId}?offset={offset}&limit={limit}", global::System.UriKind.RelativeOrAbsolute));
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, global::Leonardo.SourceGenerationContext.Default.Get3DModelsByUserIdRequest);
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -113,7 +121,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, global::Leonardo.SourceGenerationContext.Default.Get3DModelsByUserIdResponse) ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.Get3DModelsByUserIdResponse), JsonSerializerContext) as global::Leonardo.Get3DModelsByUserIdResponse ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -133,8 +141,8 @@ namespace Leonardo
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.Get3DModelsByUserIdResponse> Get3DModelsByUserIdAsync(
             string userId,
-            int offset = 0,
-            int limit = 10,
+            int? offset = 0,
+            int? limit = 10,
             string? requestUserId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -18,7 +18,7 @@ namespace Leonardo
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("featured")]
-        public bool Featured { get; set; }
+        public bool? Featured { get; set; }
 
         /// <summary>
         /// columns and relationships of "generated_images"
@@ -42,7 +42,7 @@ namespace Leonardo
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nsfw")]
-        public bool Nsfw { get; set; }
+        public bool? Nsfw { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -19,7 +19,7 @@ namespace Leonardo
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("isVariation")]
-        public bool IsVariation { get; set; }
+        public bool? IsVariation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
