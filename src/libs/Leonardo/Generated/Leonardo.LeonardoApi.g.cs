@@ -16,6 +16,7 @@ namespace Leonardo
         public const string BaseUrl = "https://cloud.leonardo.ai/api/rest/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::Leonardo.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -26,7 +27,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public DatasetClient Dataset => new DatasetClient(_httpClient)
+        public DatasetClient Dataset => new DatasetClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -34,7 +35,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public ElementsClient Elements => new ElementsClient(_httpClient)
+        public ElementsClient Elements => new ElementsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -42,7 +43,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public ImageClient Image => new ImageClient(_httpClient)
+        public ImageClient Image => new ImageClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -50,7 +51,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public InitImagesClient InitImages => new InitImagesClient(_httpClient)
+        public InitImagesClient InitImages => new InitImagesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -58,7 +59,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public MotionClient Motion => new MotionClient(_httpClient)
+        public MotionClient Motion => new MotionClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -66,7 +67,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient)
+        public ModelsClient Models => new ModelsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -74,7 +75,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public PricingCalculatorClient PricingCalculator => new PricingCalculatorClient(_httpClient)
+        public PricingCalculatorClient PricingCalculator => new PricingCalculatorClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -82,7 +83,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public PromptClient Prompt => new PromptClient(_httpClient)
+        public PromptClient Prompt => new PromptClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -90,7 +91,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeCanvasClient RealtimeCanvas => new RealtimeCanvasClient(_httpClient)
+        public RealtimeCanvasClient RealtimeCanvas => new RealtimeCanvasClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -98,7 +99,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public TextureClient Texture => new TextureClient(_httpClient)
+        public TextureClient Texture => new TextureClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -106,7 +107,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User => new UserClient(_httpClient)
+        public UserClient User => new UserClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -114,7 +115,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public VariationClient Variation => new VariationClient(_httpClient)
+        public VariationClient Variation => new VariationClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -122,7 +123,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(_httpClient)
+        public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -133,13 +134,16 @@ namespace Leonardo
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param> 
+        /// <param name="baseUri"></param>
+        /// <param name="authorization"></param>
         public LeonardoApi(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::Leonardo.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }
