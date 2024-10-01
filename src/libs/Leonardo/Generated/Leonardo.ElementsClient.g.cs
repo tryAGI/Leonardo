@@ -15,7 +15,7 @@ namespace Leonardo
         public const string BaseUrl = "https://cloud.leonardo.ai/api/rest/v1";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::Leonardo.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::Leonardo.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -30,15 +30,15 @@ namespace Leonardo
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public ElementsClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::Leonardo.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::Leonardo.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::Leonardo.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }
