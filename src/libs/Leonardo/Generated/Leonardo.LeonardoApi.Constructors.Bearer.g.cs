@@ -5,11 +5,12 @@ namespace Leonardo
 {
     public sealed partial class LeonardoApi
     {
-        /// <inheritdoc cref="LeonardoApi(global::System.Net.Http.HttpClient?, global::System.Uri?)"/>
+        /// <inheritdoc cref="LeonardoApi(global::System.Net.Http.HttpClient?, global::System.Uri?, global::Leonardo.EndPointAuthorization?)"/>
         public LeonardoApi(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null) : this(httpClient, baseUri)
+            global::System.Uri? baseUri = null,
+            global::Leonardo.EndPointAuthorization? authorization = null) : this(httpClient, baseUri, authorization)
         {
             Authorizing(_httpClient, ref apiKey);
 
