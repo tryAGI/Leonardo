@@ -52,7 +52,7 @@ namespace Leonardo
         public int? GuidanceScale { get; set; }
 
         /// <summary>
-        /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
+        /// The input height of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
         /// Default Value: 768
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
@@ -242,7 +242,7 @@ namespace Leonardo
         public double? UpscaleRatio { get; set; }
 
         /// <summary>
-        /// The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
+        /// The input width of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
         /// Default Value: 1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
