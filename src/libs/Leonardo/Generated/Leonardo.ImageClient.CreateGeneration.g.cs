@@ -138,7 +138,7 @@ namespace Leonardo
         /// How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20.
         /// </param>
         /// <param name="height">
-        /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
+        /// The input height of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
         /// Default Value: 768
         /// </param>
         /// <param name="highContrast">
@@ -227,7 +227,7 @@ namespace Leonardo
         /// How much the image should be upscaled. (Enterprise Only)
         /// </param>
         /// <param name="width">
-        /// The input width of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
+        /// The input width of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
         /// Default Value: 1024
         /// </param>
         /// <param name="canvasRequest">
