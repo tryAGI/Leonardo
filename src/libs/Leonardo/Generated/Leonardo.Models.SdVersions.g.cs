@@ -36,6 +36,10 @@ namespace Leonardo
         /// 
         /// </summary>
         SDXLLIGHTNING,
+        /// <summary>
+        /// 
+        /// </summary>
+        PHOENIX,
     }
 
     /// <summary>
@@ -57,6 +61,7 @@ namespace Leonardo
                 SdVersions.SDXL09 => "SDXL_0_9",
                 SdVersions.SDXL10 => "SDXL_1_0",
                 SdVersions.SDXLLIGHTNING => "SDXL_LIGHTNING",
+                SdVersions.PHOENIX => "PHOENIX",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +79,7 @@ namespace Leonardo
                 "SDXL_0_9" => SdVersions.SDXL09,
                 "SDXL_1_0" => SdVersions.SDXL10,
                 "SDXL_LIGHTNING" => SdVersions.SDXLLIGHTNING,
+                "PHOENIX" => SdVersions.PHOENIX,
                 _ => null,
             };
         }
