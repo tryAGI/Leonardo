@@ -97,7 +97,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.ListPlatformModelsResponse), JsonSerializerContext) as global::Leonardo.ListPlatformModelsResponse ??
+                global::Leonardo.ListPlatformModelsResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

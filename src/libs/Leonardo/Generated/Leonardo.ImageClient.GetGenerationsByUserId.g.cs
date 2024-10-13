@@ -123,7 +123,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.GetGenerationsByUserIdResponse), JsonSerializerContext) as global::Leonardo.GetGenerationsByUserIdResponse ??
+                global::Leonardo.GetGenerationsByUserIdResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
