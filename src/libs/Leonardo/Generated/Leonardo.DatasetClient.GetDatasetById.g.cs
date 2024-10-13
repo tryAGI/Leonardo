@@ -103,7 +103,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.GetDatasetByIdResponse), JsonSerializerContext) as global::Leonardo.GetDatasetByIdResponse ??
+                global::Leonardo.GetDatasetByIdResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

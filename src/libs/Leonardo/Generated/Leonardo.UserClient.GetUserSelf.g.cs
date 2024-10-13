@@ -97,7 +97,7 @@ namespace Leonardo
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Leonardo.GetUserSelfResponse), JsonSerializerContext) as global::Leonardo.GetUserSelfResponse ??
+                global::Leonardo.GetUserSelfResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
