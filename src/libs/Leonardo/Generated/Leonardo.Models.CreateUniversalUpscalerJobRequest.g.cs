@@ -13,7 +13,7 @@ namespace Leonardo
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creativityStrength")]
-        public int? CreativityStrength { get; set; } = 5;
+        public int? CreativityStrength { get; set; }
 
         /// <summary>
         /// The detail contrast of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle.
@@ -57,7 +57,7 @@ namespace Leonardo
         /// Default Value: 1.5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upscaleMultiplier")]
-        public double? UpscaleMultiplier { get; set; } = 1.5;
+        public double? UpscaleMultiplier { get; set; }
 
         /// <summary>
         /// The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle.<br/>
@@ -65,7 +65,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upscalerStyle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.UniversalUpscalerStyleJsonConverter))]
-        public global::Leonardo.UniversalUpscalerStyle? UpscalerStyle { get; set; } = global::Leonardo.UniversalUpscalerStyle.GENERAL;
+        public global::Leonardo.UniversalUpscalerStyle? UpscalerStyle { get; set; }
 
         /// <summary>
         /// The ID of the variation image.

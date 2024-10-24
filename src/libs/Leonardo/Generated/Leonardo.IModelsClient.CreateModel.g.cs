@@ -57,11 +57,11 @@ namespace Leonardo
             string datasetId,
             string instancePrompt,
             string? description = default,
-            global::Leonardo.CustomModelType? modelType = global::Leonardo.CustomModelType.GENERAL,
-            bool? nsfw = false,
-            int? resolution = 512,
+            global::Leonardo.CustomModelType? modelType = default,
+            bool? nsfw = default,
+            int? resolution = default,
             global::Leonardo.SdVersions? sdVersion = default,
-            global::Leonardo.Strength? strength = global::Leonardo.Strength.MEDIUM,
+            global::Leonardo.Strength? strength = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

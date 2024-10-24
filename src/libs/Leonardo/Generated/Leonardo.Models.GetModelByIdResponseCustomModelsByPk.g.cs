@@ -76,7 +76,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CustomModelTypeJsonConverter))]
-        public global::Leonardo.CustomModelType? Type { get; set; } = global::Leonardo.CustomModelType.GENERAL;
+        public global::Leonardo.CustomModelType? Type { get; set; }
 
         /// <summary>
         /// 
