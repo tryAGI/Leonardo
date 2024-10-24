@@ -20,7 +20,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.MODELASSETTEXTURETYPESJsonConverter))]
-        public global::Leonardo.MODELASSETTEXTURETYPES? Type { get; set; } = global::Leonardo.MODELASSETTEXTURETYPES.NORMAL;
+        public global::Leonardo.MODELASSETTEXTURETYPES? Type { get; set; }
 
         /// <summary>
         /// 

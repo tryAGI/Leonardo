@@ -92,7 +92,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presetStyle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdGenerationStyleJsonConverter))]
-        public global::Leonardo.SdGenerationStyle? PresetStyle { get; set; } = global::Leonardo.SdGenerationStyle.DYNAMIC;
+        public global::Leonardo.SdGenerationStyle? PresetStyle { get; set; }
 
         /// <summary>
         /// 

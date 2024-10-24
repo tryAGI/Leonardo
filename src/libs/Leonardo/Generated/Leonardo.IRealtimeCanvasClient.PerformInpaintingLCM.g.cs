@@ -61,8 +61,8 @@ namespace Leonardo
             string? requestTimestamp = default,
             global::Leonardo.LcmGenerationStyle? style = default,
             int? steps = default,
-            int? width = 512,
-            int? height = 512,
+            int? width = default,
+            int? height = default,
             int? seed = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

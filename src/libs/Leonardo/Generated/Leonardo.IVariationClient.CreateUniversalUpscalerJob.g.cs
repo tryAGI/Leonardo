@@ -55,15 +55,15 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateUniversalUpscalerJobResponse> CreateUniversalUpscalerJobAsync(
-            int? creativityStrength = 5,
+            int? creativityStrength = default,
             int? detailContrast = default,
             string? generatedImageId = default,
             string? initImageId = default,
             string? prompt = default,
             int? similarity = default,
             global::Leonardo.UniversalUpscalerUltraStyle? ultraUpscaleStyle = default,
-            double? upscaleMultiplier = 1.5,
-            global::Leonardo.UniversalUpscalerStyle? upscalerStyle = global::Leonardo.UniversalUpscalerStyle.GENERAL,
+            double? upscaleMultiplier = default,
+            global::Leonardo.UniversalUpscalerStyle? upscalerStyle = default,
             string? variationId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

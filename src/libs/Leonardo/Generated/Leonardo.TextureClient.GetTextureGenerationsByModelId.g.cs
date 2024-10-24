@@ -44,8 +44,8 @@ namespace Leonardo
         public async global::System.Threading.Tasks.Task<global::Leonardo.GetTextureGenerationsByModelIdResponse> GetTextureGenerationsByModelIdAsync(
             string modelId,
             global::Leonardo.GetTextureGenerationsByModelIdRequest request,
-            int? offset = 0,
-            int? limit = 10,
+            int? offset = default,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -159,8 +159,8 @@ namespace Leonardo
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.GetTextureGenerationsByModelIdResponse> GetTextureGenerationsByModelIdAsync(
             string modelId,
-            int? offset = 0,
-            int? limit = 10,
+            int? offset = default,
+            int? limit = default,
             int? requestLimit = default,
             string? requestModelId = default,
             int? requestOffset = default,

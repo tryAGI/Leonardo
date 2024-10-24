@@ -25,7 +25,7 @@ namespace Leonardo
         /// Default Value: 1.5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upscaleMultiplier")]
-        public double? UpscaleMultiplier { get; set; } = 1.5;
+        public double? UpscaleMultiplier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -44,8 +44,8 @@ namespace Leonardo
         public async global::System.Threading.Tasks.Task<global::Leonardo.Get3DModelByIdResponse> Get3DModelByIdAsync(
             string id,
             global::Leonardo.Get3DModelByIdRequest request,
-            int? offset = 0,
-            int? limit = 10,
+            int? offset = default,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -157,8 +157,8 @@ namespace Leonardo
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.Get3DModelByIdResponse> Get3DModelByIdAsync(
             string id,
-            int? offset = 0,
-            int? limit = 10,
+            int? offset = default,
+            int? limit = default,
             string? requestId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
