@@ -163,91 +163,112 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="GetGenerationByIdResponseGenerationsByPk" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="createdAt"></param>
+        /// <param name="generatedImages"></param>
+        /// <param name="generationElements"></param>
+        /// <param name="guidanceScale"></param>
+        /// <param name="id"></param>
+        /// <param name="imageHeight"></param>
+        /// <param name="imageWidth"></param>
+        /// <param name="inferenceSteps"></param>
+        /// <param name="initStrength"></param>
+        /// <param name="modelId"></param>
+        /// <param name="negativePrompt"></param>
+        /// <param name="photoReal">
+        /// If photoReal feature was used.
+        /// </param>
+        /// <param name="photoRealStrength">
+        /// Depth of field of photoReal used. 0.55 is low, 0.5 is medium, and 0.45 is high. Default is 0.55.
+        /// </param>
+        /// <param name="presetStyle">
+        /// The style to generate images with. When photoReal is enabled, refer to the Guide section for a full list. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE.<br/>
+        /// Default Value: DYNAMIC
+        /// </param>
+        /// <param name="prompt"></param>
+        /// <param name="promptMagic">
+        /// If prompt magic was used.
+        /// </param>
+        /// <param name="promptMagicStrength">
+        /// Strength of prompt magic used.
+        /// </param>
+        /// <param name="promptMagicVersion">
+        /// Version of prompt magic used.
+        /// </param>
+        /// <param name="public"></param>
+        /// <param name="scheduler">
+        /// The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified.
+        /// </param>
+        /// <param name="sdVersion">
+        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
+        /// </param>
+        /// <param name="seed"></param>
+        /// <param name="status">
+        /// The status of the current task.
+        /// </param>
+        /// <param name="ultra">
+        /// If ultra generation mode was used.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetGenerationByIdResponseGenerationsByPk(
+            string? createdAt,
+            global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage>? generatedImages,
+            global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElement>? generationElements,
+            double? guidanceScale,
+            string? id,
+            int? imageHeight,
+            int? imageWidth,
+            int? inferenceSteps,
+            double? initStrength,
+            string? modelId,
+            string? negativePrompt,
+            bool? photoReal,
+            double? photoRealStrength,
+            global::Leonardo.SdGenerationStyle? presetStyle,
+            string? prompt,
+            bool? promptMagic,
+            double? promptMagicStrength,
+            string? promptMagicVersion,
+            bool? @public,
+            global::Leonardo.SdGenerationSchedulers? scheduler,
+            global::Leonardo.SdVersions? sdVersion,
+            int? seed,
+            global::Leonardo.JobStatus? status,
+            bool? ultra)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.CreatedAt = createdAt;
+            this.GeneratedImages = generatedImages;
+            this.GenerationElements = generationElements;
+            this.GuidanceScale = guidanceScale;
+            this.Id = id;
+            this.ImageHeight = imageHeight;
+            this.ImageWidth = imageWidth;
+            this.InferenceSteps = inferenceSteps;
+            this.InitStrength = initStrength;
+            this.ModelId = modelId;
+            this.NegativePrompt = negativePrompt;
+            this.PhotoReal = photoReal;
+            this.PhotoRealStrength = photoRealStrength;
+            this.PresetStyle = presetStyle;
+            this.Prompt = prompt;
+            this.PromptMagic = promptMagic;
+            this.PromptMagicStrength = promptMagicStrength;
+            this.PromptMagicVersion = promptMagicVersion;
+            this.Public = @public;
+            this.Scheduler = scheduler;
+            this.SdVersion = sdVersion;
+            this.Seed = seed;
+            this.Status = status;
+            this.Ultra = ultra;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="GetGenerationByIdResponseGenerationsByPk" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public GetGenerationByIdResponseGenerationsByPk()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Leonardo.GetGenerationByIdResponseGenerationsByPk? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Leonardo.GetGenerationByIdResponseGenerationsByPk),
-                jsonSerializerContext) as global::Leonardo.GetGenerationByIdResponseGenerationsByPk;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Leonardo.GetGenerationByIdResponseGenerationsByPk? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Leonardo.GetGenerationByIdResponseGenerationsByPk>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Leonardo.GetGenerationByIdResponseGenerationsByPk?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Leonardo.GetGenerationByIdResponseGenerationsByPk),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Leonardo.GetGenerationByIdResponseGenerationsByPk;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Leonardo.GetGenerationByIdResponseGenerationsByPk?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Leonardo.GetGenerationByIdResponseGenerationsByPk?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

@@ -10,7 +10,7 @@ namespace Leonardo
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.PerformAlchemyUpscaleLCMResponse> PerformAlchemyUpscaleLCMAsync(
             global::Leonardo.PerformAlchemyUpscaleLCMRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);

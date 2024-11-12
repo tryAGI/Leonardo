@@ -79,91 +79,72 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="CreateUniversalUpscalerJobRequest" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="creativityStrength">
+        /// The creativity strength of the universal upscaler. Must be between 1 and 10.<br/>
+        /// Default Value: 5
+        /// </param>
+        /// <param name="detailContrast">
+        /// The detail contrast of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle.
+        /// </param>
+        /// <param name="generatedImageId">
+        /// The ID of the generated image.
+        /// </param>
+        /// <param name="initImageId">
+        /// The ID of the init image uploaded.
+        /// </param>
+        /// <param name="prompt">
+        /// The prompt for the universal upscaler.
+        /// </param>
+        /// <param name="similarity">
+        /// The similarity of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle.
+        /// </param>
+        /// <param name="ultraUpscaleStyle">
+        /// The ultra style to upscale images using universal upscaler with. Can not be used with upscalerStyle.
+        /// </param>
+        /// <param name="upscaleMultiplier">
+        /// The upscale multiplier of the universal upscaler. Must be between 1.0 and 2.0.<br/>
+        /// Default Value: 1.5
+        /// </param>
+        /// <param name="upscalerStyle">
+        /// The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle.<br/>
+        /// Default Value: GENERAL
+        /// </param>
+        /// <param name="variationId">
+        /// The ID of the variation image.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateUniversalUpscalerJobRequest(
+            int? creativityStrength,
+            int? detailContrast,
+            string? generatedImageId,
+            string? initImageId,
+            string? prompt,
+            int? similarity,
+            global::Leonardo.UniversalUpscalerUltraStyle? ultraUpscaleStyle,
+            double? upscaleMultiplier,
+            global::Leonardo.UniversalUpscalerStyle? upscalerStyle,
+            string? variationId)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.CreativityStrength = creativityStrength;
+            this.DetailContrast = detailContrast;
+            this.GeneratedImageId = generatedImageId;
+            this.InitImageId = initImageId;
+            this.Prompt = prompt;
+            this.Similarity = similarity;
+            this.UltraUpscaleStyle = ultraUpscaleStyle;
+            this.UpscaleMultiplier = upscaleMultiplier;
+            this.UpscalerStyle = upscalerStyle;
+            this.VariationId = variationId;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="CreateUniversalUpscalerJobRequest" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public CreateUniversalUpscalerJobRequest()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Leonardo.CreateUniversalUpscalerJobRequest? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Leonardo.CreateUniversalUpscalerJobRequest),
-                jsonSerializerContext) as global::Leonardo.CreateUniversalUpscalerJobRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Leonardo.CreateUniversalUpscalerJobRequest? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Leonardo.CreateUniversalUpscalerJobRequest>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Leonardo.CreateUniversalUpscalerJobRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Leonardo.CreateUniversalUpscalerJobRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Leonardo.CreateUniversalUpscalerJobRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Leonardo.CreateUniversalUpscalerJobRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Leonardo.CreateUniversalUpscalerJobRequest?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }
