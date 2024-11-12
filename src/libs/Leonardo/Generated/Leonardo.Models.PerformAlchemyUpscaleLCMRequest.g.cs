@@ -91,91 +91,77 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="PerformAlchemyUpscaleLCMRequest" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="imageDataUrl">
+        /// Image data used to generate image. In base64 format. Prefix: `data:image/jpeg;base64,`
+        /// </param>
+        /// <param name="prompt">
+        /// The prompt used to generate images
+        /// </param>
+        /// <param name="guidance">
+        /// How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
+        /// </param>
+        /// <param name="strength">
+        /// Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
+        /// </param>
+        /// <param name="requestTimestamp"></param>
+        /// <param name="style">
+        /// The style to generate LCM images with.
+        /// </param>
+        /// <param name="steps">
+        /// The number of steps to use for the generation. Must be between 4 and 16.
+        /// </param>
+        /// <param name="width">
+        /// The output width of the image. Must be 512, 640 or 1024.<br/>
+        /// Default Value: 512
+        /// </param>
+        /// <param name="height">
+        /// The output width of the image. Must be 512, 640 or 1024.<br/>
+        /// Default Value: 512
+        /// </param>
+        /// <param name="seed"></param>
+        /// <param name="refineCreative">
+        /// Refine creative
+        /// </param>
+        /// <param name="refineStrength">
+        /// Must be a float between 0.5 and 0.9.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PerformAlchemyUpscaleLCMRequest(
+            string imageDataUrl,
+            string prompt,
+            double? guidance,
+            double? strength,
+            string? requestTimestamp,
+            global::Leonardo.LcmGenerationStyle? style,
+            int? steps,
+            int? width,
+            int? height,
+            int? seed,
+            bool? refineCreative,
+            double? refineStrength)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.ImageDataUrl = imageDataUrl ?? throw new global::System.ArgumentNullException(nameof(imageDataUrl));
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Guidance = guidance;
+            this.Strength = strength;
+            this.RequestTimestamp = requestTimestamp;
+            this.Style = style;
+            this.Steps = steps;
+            this.Width = width;
+            this.Height = height;
+            this.Seed = seed;
+            this.RefineCreative = refineCreative;
+            this.RefineStrength = refineStrength;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="PerformAlchemyUpscaleLCMRequest" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public PerformAlchemyUpscaleLCMRequest()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Leonardo.PerformAlchemyUpscaleLCMRequest? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Leonardo.PerformAlchemyUpscaleLCMRequest),
-                jsonSerializerContext) as global::Leonardo.PerformAlchemyUpscaleLCMRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Leonardo.PerformAlchemyUpscaleLCMRequest? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Leonardo.PerformAlchemyUpscaleLCMRequest>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Leonardo.PerformAlchemyUpscaleLCMRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Leonardo.PerformAlchemyUpscaleLCMRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Leonardo.PerformAlchemyUpscaleLCMRequest;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Leonardo.PerformAlchemyUpscaleLCMRequest?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Leonardo.PerformAlchemyUpscaleLCMRequest?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

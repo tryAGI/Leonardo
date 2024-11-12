@@ -80,91 +80,64 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="GetGenerationByIdResponseGenerationsByPkGeneratedImage" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="generatedImageVariationGenerics"></param>
+        /// <param name="fantasyAvatar">
+        /// If fantasyAvatar feature was used.
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="imageToVideo">
+        /// If it is an image to video generation.
+        /// </param>
+        /// <param name="likeCount"></param>
+        /// <param name="motion">
+        /// If generation is of motion type.
+        /// </param>
+        /// <param name="motionModel">
+        /// The name of the motion model.
+        /// </param>
+        /// <param name="motionMP4URL">
+        /// The URL of the motion MP4.
+        /// </param>
+        /// <param name="motionStrength">
+        /// The motion strength.
+        /// </param>
+        /// <param name="nsfw"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetGenerationByIdResponseGenerationsByPkGeneratedImage(
+            global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric>? generatedImageVariationGenerics,
+            bool? fantasyAvatar,
+            string? id,
+            bool? imageToVideo,
+            int? likeCount,
+            bool? motion,
+            string? motionModel,
+            string? motionMP4URL,
+            int? motionStrength,
+            bool? nsfw,
+            string? url)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.GeneratedImageVariationGenerics = generatedImageVariationGenerics;
+            this.FantasyAvatar = fantasyAvatar;
+            this.Id = id;
+            this.ImageToVideo = imageToVideo;
+            this.LikeCount = likeCount;
+            this.Motion = motion;
+            this.MotionModel = motionModel;
+            this.MotionMP4URL = motionMP4URL;
+            this.MotionStrength = motionStrength;
+            this.Nsfw = nsfw;
+            this.Url = url;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="GetGenerationByIdResponseGenerationsByPkGeneratedImage" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public GetGenerationByIdResponseGenerationsByPkGeneratedImage()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage),
-                jsonSerializerContext) as global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

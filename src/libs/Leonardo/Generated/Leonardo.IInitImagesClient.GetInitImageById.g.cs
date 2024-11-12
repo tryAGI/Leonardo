@@ -10,7 +10,7 @@ namespace Leonardo
         /// </summary>
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.GetInitImageByIdResponse> GetInitImageByIdAsync(
             string id,
             global::System.Threading.CancellationToken cancellationToken = default);

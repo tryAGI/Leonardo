@@ -62,91 +62,59 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParams" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="iMAGEGENERATION">
+        /// Parameters for IMAGE_GENERATION service
+        /// </param>
+        /// <param name="fANTASYAVATARGENERATION">
+        /// Parameters for FANTASY_AVATAR_GENERATION service
+        /// </param>
+        /// <param name="mOTIONGENERATION">
+        /// Parameters for MOTION_GENERATION service
+        /// </param>
+        /// <param name="lCMGENERATION">
+        /// Parameters for LCM_GENERATION service
+        /// </param>
+        /// <param name="mODELTRAINING">
+        /// Parameters for MODEL_TRAINING service
+        /// </param>
+        /// <param name="tEXTUREGENERATION">
+        /// Parameters for TEXTURE_GENERATION service
+        /// </param>
+        /// <param name="uNIVERSALUPSCALER">
+        /// Parameters for UNIVERSAL_UPSCALER service
+        /// </param>
+        /// <param name="uNIVERSALUPSCALERULTRA">
+        /// Parameters for UNIVERSAL_UPSCALER_ULTRA service
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PricingCalculatorRequestServiceParams(
+            global::Leonardo.PricingCalculatorRequestServiceParamsIMAGEGENERATION? iMAGEGENERATION,
+            global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? fANTASYAVATARGENERATION,
+            global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONGENERATION? mOTIONGENERATION,
+            global::Leonardo.PricingCalculatorRequestServiceParamsLCMGENERATION? lCMGENERATION,
+            global::Leonardo.PricingCalculatorRequestServiceParamsMODELTRAINING? mODELTRAINING,
+            global::Leonardo.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? tEXTUREGENERATION,
+            global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? uNIVERSALUPSCALER,
+            global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALERULTRA? uNIVERSALUPSCALERULTRA)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.IMAGEGENERATION = iMAGEGENERATION;
+            this.FANTASYAVATARGENERATION = fANTASYAVATARGENERATION;
+            this.MOTIONGENERATION = mOTIONGENERATION;
+            this.LCMGENERATION = lCMGENERATION;
+            this.MODELTRAINING = mODELTRAINING;
+            this.TEXTUREGENERATION = tEXTUREGENERATION;
+            this.UNIVERSALUPSCALER = uNIVERSALUPSCALER;
+            this.UNIVERSALUPSCALERULTRA = uNIVERSALUPSCALERULTRA;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParams" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public PricingCalculatorRequestServiceParams()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Leonardo.PricingCalculatorRequestServiceParams? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Leonardo.PricingCalculatorRequestServiceParams),
-                jsonSerializerContext) as global::Leonardo.PricingCalculatorRequestServiceParams;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Leonardo.PricingCalculatorRequestServiceParams? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Leonardo.PricingCalculatorRequestServiceParams>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Leonardo.PricingCalculatorRequestServiceParams?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Leonardo.PricingCalculatorRequestServiceParams),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Leonardo.PricingCalculatorRequestServiceParams;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Leonardo.PricingCalculatorRequestServiceParams?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Leonardo.PricingCalculatorRequestServiceParams?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

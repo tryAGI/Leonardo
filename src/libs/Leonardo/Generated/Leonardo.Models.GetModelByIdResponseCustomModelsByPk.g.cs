@@ -90,91 +90,62 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="GetModelByIdResponseCustomModelsByPk" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="createdAt"></param>
+        /// <param name="description"></param>
+        /// <param name="id"></param>
+        /// <param name="instancePrompt"></param>
+        /// <param name="modelHeight"></param>
+        /// <param name="modelWidth"></param>
+        /// <param name="name"></param>
+        /// <param name="public"></param>
+        /// <param name="sdVersion">
+        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
+        /// </param>
+        /// <param name="status">
+        /// The status of the current task.
+        /// </param>
+        /// <param name="type">
+        /// The category the most accurately reflects the model.<br/>
+        /// Default Value: GENERAL
+        /// </param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetModelByIdResponseCustomModelsByPk(
+            string? createdAt,
+            string? description,
+            string? id,
+            string? instancePrompt,
+            int? modelHeight,
+            int? modelWidth,
+            string? name,
+            bool? @public,
+            global::Leonardo.SdVersions? sdVersion,
+            global::Leonardo.JobStatus? status,
+            global::Leonardo.CustomModelType? type,
+            string? updatedAt)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.CreatedAt = createdAt;
+            this.Description = description;
+            this.Id = id;
+            this.InstancePrompt = instancePrompt;
+            this.ModelHeight = modelHeight;
+            this.ModelWidth = modelWidth;
+            this.Name = name;
+            this.Public = @public;
+            this.SdVersion = sdVersion;
+            this.Status = status;
+            this.Type = type;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="GetModelByIdResponseCustomModelsByPk" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public GetModelByIdResponseCustomModelsByPk()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Leonardo.GetModelByIdResponseCustomModelsByPk? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Leonardo.GetModelByIdResponseCustomModelsByPk),
-                jsonSerializerContext) as global::Leonardo.GetModelByIdResponseCustomModelsByPk;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Leonardo.GetModelByIdResponseCustomModelsByPk? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Leonardo.GetModelByIdResponseCustomModelsByPk>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Leonardo.GetModelByIdResponseCustomModelsByPk?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Leonardo.GetModelByIdResponseCustomModelsByPk),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Leonardo.GetModelByIdResponseCustomModelsByPk;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Leonardo.GetModelByIdResponseCustomModelsByPk?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Leonardo.GetModelByIdResponseCustomModelsByPk?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }
