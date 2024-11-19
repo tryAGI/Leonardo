@@ -47,6 +47,7 @@ namespace Leonardo
             typeof(global::Leonardo.JsonConverters.CanvasRequestTypeNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateGenerationRequestTransparencyJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateGenerationRequestTransparencyNullableJsonConverter),
+            typeof(global::Leonardo.JsonConverters.UnixTimestampJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.JsonSerializerContextTypes))]
