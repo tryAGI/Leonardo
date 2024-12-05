@@ -2416,7 +2416,197 @@ paths:
                           title: Boolean
                           type: boolean
                       description: columns and relationships of "custom_models"
+  '/elements/{id}':
+    get:
+      tags:
+        - Elements
+      summary: Get a Single Custom Element by ID
+      description: This endpoint gets the specific custom element.
+      operationId: getElementById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the custom element to return.
+          required: true
+          schema:
+            pattern: '[0-9]{*}'
+            type: integer
+      responses:
+        '200':
+          description: 'Responses for GET /elements/{id}.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_loras_by_pk:
+                    title: user_loras
+                    type: object
+                    properties:
+                      createdAt:
+                        $ref: '#/components/schemas/timestamp'
+                      description:
+                        title: String
+                        type: string
+                      id:
+                        title: Int
+                        type: integer
+                      instancePrompt:
+                        title: String
+                        type: string
+                        nullable: true
+                      resolution:
+                        title: Int
+                        type: integer
+                      learningRate:
+                        title: Float
+                        type: number
+                      trainingEpoch:
+                        title: Int
+                        type: integer
+                      name:
+                        title: String
+                        type: string
+                      trainTextEncoder:
+                        title: Boolean
+                        type: boolean
+                      baseModel:
+                        title: String
+                        type: string
+                      status:
+                        $ref: '#/components/schemas/job_status'
+                      focus:
+                        title: String
+                        type: string
+                      updatedAt:
+                        $ref: '#/components/schemas/timestamp'
+                    description: columns and relationships of "user_loras".
+                    nullable: true
+    delete:
+      tags:
+        - Elements
+      summary: Delete a Single Custom Element by ID
+      description: This endpoint will delete a specific custom model.
+      operationId: deleteElementById
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the element to delete.
+          required: true
+          schema:
+            pattern: '[0-9]{*}'
+            type: integer
+      responses:
+        '200':
+          description: 'Responses for DELETE /models/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  delete_user_loras_by_pk:
+                    title: user_loras
+                    type: object
+                    properties:
+                      id:
+                        title: Int
+                        type: integer
+                    description: columns and relationships of "user_loras".
+                    nullable: true
   /elements:
+    post:
+      tags:
+        - Elements
+      summary: Train a Custom Element
+      description: This endpoint will train a new custom element.
+      operationId: createElement
+      requestBody:
+        description: Query parameters to be provided in the request body as a JSON object.
+        content:
+          application/json:
+            schema:
+              required:
+                - name
+                - datasetId
+                - instance_prompt
+                - training_method
+                - lora_focus
+                - sd_version
+                - learning_rate
+                - num_train_epochs
+                - train_text_encoder
+              type: object
+              properties:
+                name:
+                  title: String
+                  type: string
+                  description: The name of the element.
+                  default: ''
+                description:
+                  title: String
+                  type: string
+                  description: The description of the element.
+                  default: ''
+                  nullable: true
+                datasetId:
+                  title: String
+                  type: string
+                  description: The ID of the dataset to train the element on.
+                  default: ''
+                instance_prompt:
+                  title: String
+                  type: string
+                  description: The instance prompt to use during training.
+                  default: ''
+                lora_focus:
+                  title: String
+                  type: string
+                  description: The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'.
+                  default: General
+                train_text_encoder:
+                  title: Boolean
+                  type: boolean
+                  description: Whether or not encode the train text.
+                  default: true
+                resolution:
+                  title: Int
+                  type: integer
+                  description: The resolution for training. Must be 1024.
+                  default: 1024
+                  nullable: true
+                sd_version:
+                  $ref: '#/components/schemas/sd_versions'
+                num_train_epochs:
+                  title: Int
+                  type: integer
+                  description: The number of times the entire training dataset is passed through the element.
+                  default: 100
+                learning_rate:
+                  title: Float
+                  type: number
+                  description: The speed of element learns.
+                  default: 1E-06
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /elements.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sdTrainingJob:
+                    title: SDTrainingOutput
+                    type: object
+                    properties:
+                      userLoraId:
+                        title: Int
+                        type: integer
+                      apiCreditCost:
+                        type: integer
+                        description: API Credits Cost for Model Training. Available for Production API Users.
+                        nullable: true
+                    nullable: true
     get:
       tags:
         - Elements
@@ -2425,7 +2615,7 @@ paths:
       operationId: listElements
       responses:
         '200':
-          description: Responses for GET /api/rest/v1/elements
+          description: Responses for GET /api/rest/v1/elements.
           content:
             application/json:
               schema:
@@ -2454,7 +2644,7 @@ paths:
                           $ref: '#/components/schemas/lora'
                         weightMin:
                           $ref: '#/components/schemas/lora'
-                      description: columns and relationships of "elements"
+                      description: columns and relationships of "elements".
   /prompt/random:
     post:
       tags:
