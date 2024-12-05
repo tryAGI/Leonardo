@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// columns and relationships of "elements"
+    /// columns and relationships of "elements".
     /// </summary>
     public sealed partial class ListElementsResponseLora
     {
