@@ -9,11 +9,13 @@ namespace Leonardo
     public sealed partial class CreateElementRequest
     {
         /// <summary>
-        /// The name of the element.
+        /// The name of the element.<br/>
+        /// Default Value: placeholder
         /// </summary>
+        /// <default>"placeholder"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required string Name { get; set; } = "placeholder";
 
         /// <summary>
         /// The description of the element.
@@ -29,11 +31,13 @@ namespace Leonardo
         public required string DatasetId { get; set; }
 
         /// <summary>
-        /// The instance prompt to use during training.
+        /// The instance prompt to use during training.Try “a” by a noun. E.g. a castle<br/>
+        /// Default Value: a character
         /// </summary>
+        /// <default>"a character"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("instance_prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string InstancePrompt { get; set; }
+        public required string InstancePrompt { get; set; } = "a character";
 
         /// <summary>
         /// The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'.<br/>
@@ -61,12 +65,14 @@ namespace Leonardo
         public int? Resolution { get; set; }
 
         /// <summary>
-        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
+        /// The base version of stable diffusion to use if not using a custom model.<br/>
+        /// Default Value: SDXL_0_9
         /// </summary>
+        /// <default>global::Leonardo.CreateElementRequestSdVersion.SDXL09</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdVersionsJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateElementRequestSdVersionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Leonardo.SdVersions SdVersion { get; set; }
+        public required global::Leonardo.CreateElementRequestSdVersion SdVersion { get; set; } = global::Leonardo.CreateElementRequestSdVersion.SDXL09;
 
         /// <summary>
         /// The number of times the entire training dataset is passed through the element.<br/>
@@ -96,7 +102,8 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="CreateElementRequest" /> class.
         /// </summary>
         /// <param name="name">
-        /// The name of the element.
+        /// The name of the element.<br/>
+        /// Default Value: placeholder
         /// </param>
         /// <param name="description">
         /// The description of the element.
@@ -105,7 +112,8 @@ namespace Leonardo
         /// The ID of the dataset to train the element on.
         /// </param>
         /// <param name="instancePrompt">
-        /// The instance prompt to use during training.
+        /// The instance prompt to use during training.Try “a” by a noun. E.g. a castle<br/>
+        /// Default Value: a character
         /// </param>
         /// <param name="loraFocus">
         /// The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'.<br/>
@@ -120,7 +128,8 @@ namespace Leonardo
         /// Default Value: 1024
         /// </param>
         /// <param name="sdVersion">
-        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
+        /// The base version of stable diffusion to use if not using a custom model.<br/>
+        /// Default Value: SDXL_0_9
         /// </param>
         /// <param name="numTrainEpochs">
         /// The number of times the entire training dataset is passed through the element.<br/>
@@ -137,7 +146,7 @@ namespace Leonardo
             string instancePrompt,
             string loraFocus,
             bool trainTextEncoder,
-            global::Leonardo.SdVersions sdVersion,
+            global::Leonardo.CreateElementRequestSdVersion sdVersion,
             int numTrainEpochs,
             double learningRate,
             string? description,
