@@ -163,7 +163,8 @@ namespace Leonardo
         /// This endpoint will train a new custom element.
         /// </summary>
         /// <param name="name">
-        /// The name of the element.
+        /// The name of the element.<br/>
+        /// Default Value: placeholder
         /// </param>
         /// <param name="description">
         /// The description of the element.
@@ -172,7 +173,8 @@ namespace Leonardo
         /// The ID of the dataset to train the element on.
         /// </param>
         /// <param name="instancePrompt">
-        /// The instance prompt to use during training.
+        /// The instance prompt to use during training.Try “a” by a noun. E.g. a castle<br/>
+        /// Default Value: a character
         /// </param>
         /// <param name="loraFocus">
         /// The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'.<br/>
@@ -187,7 +189,8 @@ namespace Leonardo
         /// Default Value: 1024
         /// </param>
         /// <param name="sdVersion">
-        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
+        /// The base version of stable diffusion to use if not using a custom model.<br/>
+        /// Default Value: SDXL_0_9
         /// </param>
         /// <param name="numTrainEpochs">
         /// The number of times the entire training dataset is passed through the element.<br/>
@@ -205,7 +208,7 @@ namespace Leonardo
             string instancePrompt,
             string loraFocus,
             bool trainTextEncoder,
-            global::Leonardo.SdVersions sdVersion,
+            global::Leonardo.CreateElementRequestSdVersion sdVersion,
             int numTrainEpochs,
             double learningRate,
             string? description = default,

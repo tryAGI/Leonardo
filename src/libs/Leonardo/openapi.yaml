@@ -2256,7 +2256,12 @@ paths:
                   default: 512
                   nullable: true
                 sd_Version:
-                  $ref: '#/components/schemas/sd_versions'
+                  title: sd_versions
+                  enum:
+                    - v1_5
+                    - v2
+                  description: 'The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5.'
+                  nullable: true
                 strength:
                   $ref: '#/components/schemas/strength'
         required: true
@@ -2541,7 +2546,7 @@ paths:
                   title: String
                   type: string
                   description: The name of the element.
-                  default: ''
+                  default: placeholder
                 description:
                   title: String
                   type: string
@@ -2556,8 +2561,8 @@ paths:
                 instance_prompt:
                   title: String
                   type: string
-                  description: The instance prompt to use during training.
-                  default: ''
+                  description: The instance prompt to use during training.Try “a” by a noun. E.g. a castle
+                  default: a character
                 lora_focus:
                   title: String
                   type: string
@@ -2575,7 +2580,17 @@ paths:
                   default: 1024
                   nullable: true
                 sd_version:
-                  $ref: '#/components/schemas/sd_versions'
+                  title: sd_versions
+                  enum:
+                    - SDXL_0_9
+                    - SDXL_1_0
+                    - LEONARDO_DIFFUSION_XL
+                    - LEONARDO_LIGHTNING_XL
+                    - VISION_XL
+                    - KINO_XL
+                    - ALBEDO_XL
+                  description: The base version of stable diffusion to use if not using a custom model.
+                  default: SDXL_0_9
                 num_train_epochs:
                   title: Int
                   type: integer

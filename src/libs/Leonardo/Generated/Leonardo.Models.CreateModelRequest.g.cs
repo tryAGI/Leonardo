@@ -58,11 +58,11 @@ namespace Leonardo
         public int? Resolution { get; set; }
 
         /// <summary>
-        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
+        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_Version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.SdVersionsJsonConverter))]
-        public global::Leonardo.SdVersions? SdVersion { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateModelRequestSdVersionJsonConverter))]
+        public global::Leonardo.CreateModelRequestSdVersion? SdVersion { get; set; }
 
         /// <summary>
         /// When training using the PIXEL_ART model type, this influences the training strength.<br/>
@@ -106,7 +106,7 @@ namespace Leonardo
         /// Default Value: 512
         /// </param>
         /// <param name="sdVersion">
-        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
+        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5.
         /// </param>
         /// <param name="strength">
         /// When training using the PIXEL_ART model type, this influences the training strength.<br/>
@@ -121,7 +121,7 @@ namespace Leonardo
             global::Leonardo.CustomModelType? modelType,
             bool? nsfw,
             int? resolution,
-            global::Leonardo.SdVersions? sdVersion,
+            global::Leonardo.CreateModelRequestSdVersion? sdVersion,
             global::Leonardo.Strength? strength)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
