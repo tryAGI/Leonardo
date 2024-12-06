@@ -60,7 +60,7 @@ namespace Leonardo
         /// <summary>
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sd_Version")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("sd_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateModelRequestSdVersionJsonConverter))]
         public global::Leonardo.CreateModelRequestSdVersion? SdVersion { get; set; }
 
