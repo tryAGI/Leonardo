@@ -2255,7 +2255,7 @@ paths:
                   description: The resolution for training. Must be 512 or 768.
                   default: 512
                   nullable: true
-                sd_Version:
+                sd_version:
                   title: sd_versions
                   enum:
                     - v1_5
