@@ -298,6 +298,16 @@ paths:
                   type: string
                   description: The ID of a mask image to use in Canvas Editor request.
                   nullable: true
+                enhancePrompt:
+                  title: Boolean
+                  type: boolean
+                  description: 'When enabled, your prompt is expanded to include more detail.'
+                  nullable: true
+                enhancePromptInstruction:
+                  title: String
+                  type: string
+                  description: 'When enhancePrompt is enabled, the prompt is enhanced based on the given instructions.'
+                  nullable: true
         required: true
       responses:
         '200':
@@ -2708,6 +2718,11 @@ paths:
                   title: String
                   type: string
                   description: The prompt to improve.
+                promptInstructions:
+                  title: String
+                  type: string
+                  description: The prompt is improved based on the given instructions.
+                  nullable: true
         required: true
       responses:
         '200':

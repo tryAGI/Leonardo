@@ -142,6 +142,12 @@ namespace Leonardo
         /// <param name="canvasMaskId">
         /// The ID of a mask image to use in Canvas Editor request.
         /// </param>
+        /// <param name="enhancePrompt">
+        /// When enabled, your prompt is expanded to include more detail.
+        /// </param>
+        /// <param name="enhancePromptInstruction">
+        /// When enhancePrompt is enabled, the prompt is enhanced based on the given instructions.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateGenerationResponse> CreateGenerationAsync(
@@ -187,6 +193,8 @@ namespace Leonardo
             global::Leonardo.CanvasRequestType? canvasRequestType = default,
             string? canvasInitId = default,
             string? canvasMaskId = default,
+            bool? enhancePrompt = default,
+            string? enhancePromptInstruction = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
