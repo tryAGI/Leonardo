@@ -297,6 +297,18 @@ namespace Leonardo
         public string? CanvasMaskId { get; set; }
 
         /// <summary>
+        /// When enabled, your prompt is expanded to include more detail.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enhancePrompt")]
+        public bool? EnhancePrompt { get; set; }
+
+        /// <summary>
+        /// When enhancePrompt is enabled, the prompt is enhanced based on the given instructions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enhancePromptInstruction")]
+        public string? EnhancePromptInstruction { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -428,6 +440,12 @@ namespace Leonardo
         /// <param name="canvasMaskId">
         /// The ID of a mask image to use in Canvas Editor request.
         /// </param>
+        /// <param name="enhancePrompt">
+        /// When enabled, your prompt is expanded to include more detail.
+        /// </param>
+        /// <param name="enhancePromptInstruction">
+        /// When enhancePrompt is enabled, the prompt is enhanced based on the given instructions.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CreateGenerationRequest(
             string prompt,
@@ -471,7 +489,9 @@ namespace Leonardo
             bool? canvasRequest,
             global::Leonardo.CanvasRequestType? canvasRequestType,
             string? canvasInitId,
-            string? canvasMaskId)
+            string? canvasMaskId,
+            bool? enhancePrompt,
+            string? enhancePromptInstruction)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Alchemy = alchemy;
@@ -515,6 +535,8 @@ namespace Leonardo
             this.CanvasRequestType = canvasRequestType;
             this.CanvasInitId = canvasInitId;
             this.CanvasMaskId = canvasMaskId;
+            this.EnhancePrompt = enhancePrompt;
+            this.EnhancePromptInstruction = enhancePromptInstruction;
         }
 
         /// <summary>

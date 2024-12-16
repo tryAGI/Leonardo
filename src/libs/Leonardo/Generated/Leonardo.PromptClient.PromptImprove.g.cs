@@ -165,15 +165,20 @@ namespace Leonardo
         /// <param name="prompt">
         /// The prompt to improve.
         /// </param>
+        /// <param name="promptInstructions">
+        /// The prompt is improved based on the given instructions.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.PromptImproveResponse> PromptImproveAsync(
             string prompt,
+            string? promptInstructions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Leonardo.PromptImproveRequest
             {
                 Prompt = prompt,
+                PromptInstructions = promptInstructions,
             };
 
             return await PromptImproveAsync(

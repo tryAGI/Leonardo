@@ -16,6 +16,12 @@ namespace Leonardo
         public required string Prompt { get; set; }
 
         /// <summary>
+        /// The prompt is improved based on the given instructions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("promptInstructions")]
+        public string? PromptInstructions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -27,11 +33,16 @@ namespace Leonardo
         /// <param name="prompt">
         /// The prompt to improve.
         /// </param>
+        /// <param name="promptInstructions">
+        /// The prompt is improved based on the given instructions.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public PromptImproveRequest(
-            string prompt)
+            string prompt,
+            string? promptInstructions)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.PromptInstructions = promptInstructions;
         }
 
         /// <summary>
