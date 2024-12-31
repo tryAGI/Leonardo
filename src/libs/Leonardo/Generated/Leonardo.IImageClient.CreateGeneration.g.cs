@@ -28,6 +28,7 @@ namespace Leonardo
         /// </param>
         /// <param name="controlnets"></param>
         /// <param name="elements"></param>
+        /// <param name="userElements"></param>
         /// <param name="expandedDomain">
         /// Enable to use the Expanded Domain feature of Alchemy.
         /// </param>
@@ -156,6 +157,7 @@ namespace Leonardo
             double? contrastRatio = default,
             global::System.Collections.Generic.IList<global::Leonardo.ControlnetInput>? controlnets = default,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements = default,
+            global::System.Collections.Generic.IList<global::Leonardo.UserElementsInput>? userElements = default,
             bool? expandedDomain = default,
             bool? fantasyAvatar = default,
             int? guidanceScale = default,
