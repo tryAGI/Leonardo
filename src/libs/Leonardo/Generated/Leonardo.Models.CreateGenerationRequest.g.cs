@@ -34,6 +34,12 @@ namespace Leonardo
         public global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? Elements { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("userElements")]
+        public global::System.Collections.Generic.IList<global::Leonardo.UserElementsInput>? UserElements { get; set; }
+
+        /// <summary>
         /// Enable to use the Expanded Domain feature of Alchemy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expandedDomain")]
@@ -326,6 +332,7 @@ namespace Leonardo
         /// </param>
         /// <param name="controlnets"></param>
         /// <param name="elements"></param>
+        /// <param name="userElements"></param>
         /// <param name="expandedDomain">
         /// Enable to use the Expanded Domain feature of Alchemy.
         /// </param>
@@ -453,6 +460,7 @@ namespace Leonardo
             double? contrastRatio,
             global::System.Collections.Generic.IList<global::Leonardo.ControlnetInput>? controlnets,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements,
+            global::System.Collections.Generic.IList<global::Leonardo.UserElementsInput>? userElements,
             bool? expandedDomain,
             bool? fantasyAvatar,
             int? guidanceScale,
@@ -498,6 +506,7 @@ namespace Leonardo
             this.ContrastRatio = contrastRatio;
             this.Controlnets = controlnets;
             this.Elements = elements;
+            this.UserElements = userElements;
             this.ExpandedDomain = expandedDomain;
             this.FantasyAvatar = fantasyAvatar;
             this.GuidanceScale = guidanceScale;

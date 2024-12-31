@@ -119,6 +119,11 @@ paths:
                   items:
                     $ref: '#/components/schemas/element_input'
                   nullable: true
+                userElements:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/user_elements_input'
+                  nullable: true
                 expandedDomain:
                   title: Boolean
                   type: boolean
@@ -2385,6 +2390,68 @@ paths:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "custom_models"
                     nullable: true
+  '/models/user/{userId}':
+    get:
+      tags:
+        - Models
+      summary: Get a list of Custom Models by User ID
+      description: This endpoint gets the list of custom models belongs to the user.
+      operationId: getCustomModelsByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: The ID of the user to return.
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /models/user/{userId}'
+          content:
+            application/json:
+              schema:
+                properties:
+                  custom_models:
+                    type: array
+                    items:
+                      title: custom_models
+                      type: object
+                      properties:
+                        createdAt:
+                          $ref: '#/components/schemas/timestamp'
+                        description:
+                          title: String
+                          type: string
+                        id:
+                          $ref: '#/components/schemas/uuid'
+                        instancePrompt:
+                          title: String
+                          type: string
+                          nullable: true
+                        modelHeight:
+                          title: Int
+                          type: integer
+                        modelWidth:
+                          title: Int
+                          type: integer
+                        name:
+                          title: String
+                          type: string
+                        public:
+                          title: Boolean
+                          type: boolean
+                        sdVersion:
+                          $ref: '#/components/schemas/sd_versions'
+                        status:
+                          $ref: '#/components/schemas/job_status'
+                        type:
+                          $ref: '#/components/schemas/custom_model_type'
+                        updatedAt:
+                          $ref: '#/components/schemas/timestamp'
+                      description: columns and relationships of "custom_models"
+                      nullable: true
+                    nullable: true
   /platformModels:
     get:
       tags:
@@ -2527,6 +2594,74 @@ paths:
                         title: Int
                         type: integer
                     description: columns and relationships of "user_loras".
+                    nullable: true
+  '/elements/user/{userId}':
+    get:
+      tags:
+        - Elements
+      summary: Get a list of Custom Elements by User ID
+      description: This endpoint gets the list of custom elements belongs to the user.
+      operationId: getCustomElementsByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: The ID of the user to return.
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /elements/user/{userId}.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  user_loras:
+                    type: array
+                    items:
+                      title: user_loras
+                      type: object
+                      properties:
+                        createdAt:
+                          $ref: '#/components/schemas/timestamp'
+                        description:
+                          title: String
+                          type: string
+                        id:
+                          title: Int
+                          type: integer
+                        instancePrompt:
+                          title: String
+                          type: string
+                          nullable: true
+                        resolution:
+                          title: Int
+                          type: integer
+                        learningRate:
+                          title: Float
+                          type: number
+                        trainingEpoch:
+                          title: Int
+                          type: integer
+                        name:
+                          title: String
+                          type: string
+                        trainTextEncoder:
+                          title: Boolean
+                          type: boolean
+                        baseModel:
+                          title: String
+                          type: string
+                        status:
+                          $ref: '#/components/schemas/job_status'
+                        focus:
+                          title: String
+                          type: string
+                        updatedAt:
+                          $ref: '#/components/schemas/timestamp'
+                      description: columns and relationships of "user_loras".
+                      nullable: true
                     nullable: true
   /elements:
     post:
@@ -3160,6 +3295,20 @@ components:
           title: String
           type: string
           description: Unique identifier for element. Elements can be found from the List Elements endpoint.
+          nullable: true
+        weight:
+          title: Float
+          type: number
+          description: Weight for the element
+          nullable: true
+    user_elements_input:
+      title: user_elements_input
+      type: object
+      properties:
+        userLoraId:
+          title: Int
+          type: number
+          description: Unique identifier for user custom element.
           nullable: true
         weight:
           title: Float
