@@ -121,6 +121,15 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
+        public StylesClient Styles => new StylesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TextureClient Texture => new TextureClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
