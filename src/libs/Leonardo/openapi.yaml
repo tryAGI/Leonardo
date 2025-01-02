@@ -2498,6 +2498,36 @@ paths:
                           title: Boolean
                           type: boolean
                       description: columns and relationships of "custom_models"
+  /platform-styles:
+    get:
+      tags:
+        - Styles
+      summary: List Platform Styles
+      description: Get a list of public Platform Styles available for use with generations.
+      operationId: listPlatformStyles
+      responses:
+        '200':
+          description: Responses for GET /api/rest/v1/platform-styles
+          content:
+            application/json:
+              schema:
+                properties:
+                  style:
+                    type: array
+                    items:
+                      title: style
+                      type: object
+                      properties:
+                        akUUID:
+                          $ref: '#/components/schemas/uuid'
+                        name:
+                          title: String
+                          type: string
+                        description:
+                          title: String
+                          type: string
+                          nullable: true
+                      description: columns and relationships of "style"
   '/elements/{id}':
     get:
       tags:
@@ -3531,6 +3561,7 @@ tags:
   - name: Pricing Calculator
   - name: Prompt
   - name: Realtime Canvas
+  - name: Styles
   - name: Texture
   - name: User
   - name: Variation
