@@ -85,11 +85,6 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public StylesClient Styles { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public TextureClient Texture { get; }
 
         /// <summary>
