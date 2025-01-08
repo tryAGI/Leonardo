@@ -57,6 +57,24 @@ namespace Leonardo
         public bool? AlchemyMode { get; set; }
 
         /// <summary>
+        /// Enable to use PhotoReal. Requires enabling alchemy.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("photoRealMode")]
+        public bool? PhotoRealMode { get; set; }
+
+        /// <summary>
+        /// Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high. Defaults to 0.55 if not specified.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("photoRealStrength")]
+        public double? PhotoRealStrength { get; set; }
+
+        /// <summary>
+        /// The version of photoReal to use. Must be v1 or v2.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("photoRealVersion")]
+        public string? PhotoRealVersion { get; set; }
+
+        /// <summary>
         /// Enable to use high resolution.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("highResolution")]
@@ -137,6 +155,15 @@ namespace Leonardo
         /// <param name="alchemyMode">
         /// Enable to use Alchemy.
         /// </param>
+        /// <param name="photoRealMode">
+        /// Enable to use PhotoReal. Requires enabling alchemy.
+        /// </param>
+        /// <param name="photoRealStrength">
+        /// Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high. Defaults to 0.55 if not specified.
+        /// </param>
+        /// <param name="photoRealVersion">
+        /// The version of photoReal to use. Must be v1 or v2.
+        /// </param>
         /// <param name="highResolution">
         /// Enable to use high resolution.
         /// </param>
@@ -171,6 +198,9 @@ namespace Leonardo
             double? promptMagicStrength,
             string? promptMagicVersion,
             bool? alchemyMode,
+            bool? photoRealMode,
+            double? photoRealStrength,
+            string? photoRealVersion,
             bool? highResolution,
             int? loraCount,
             bool? isModelCustom,
@@ -188,6 +218,9 @@ namespace Leonardo
             this.PromptMagicStrength = promptMagicStrength;
             this.PromptMagicVersion = promptMagicVersion;
             this.AlchemyMode = alchemyMode;
+            this.PhotoRealMode = photoRealMode;
+            this.PhotoRealStrength = photoRealStrength;
+            this.PhotoRealVersion = photoRealVersion;
             this.HighResolution = highResolution;
             this.LoraCount = loraCount;
             this.IsModelCustom = isModelCustom;
