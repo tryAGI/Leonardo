@@ -2923,6 +2923,15 @@ paths:
                           title: Boolean
                           type: boolean
                           description: Enable to use Alchemy.
+                        photoRealMode:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use PhotoReal. Requires enabling alchemy.
+                          nullable: true
+                        photoRealStrength:
+                          $ref: '#/components/schemas/photoRealStrengthArg'
+                        photoRealVersion:
+                          $ref: '#/components/schemas/photoRealVersion'
                         highResolution:
                           title: Boolean
                           type: boolean
