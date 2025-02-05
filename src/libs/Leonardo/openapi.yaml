@@ -232,7 +232,7 @@ paths:
                 sd_version:
                   $ref: '#/components/schemas/sd_versions'
                 seed:
-                  $ref: '#/components/schemas/bigint'
+                  $ref: '#/components/schemas/seed'
                 tiling:
                   title: Boolean
                   type: boolean
@@ -491,7 +491,7 @@ paths:
                       sdVersion:
                         $ref: '#/components/schemas/sd_versions'
                       seed:
-                        $ref: '#/components/schemas/bigint'
+                        $ref: '#/components/schemas/seed'
                       status:
                         $ref: '#/components/schemas/job_status'
                       ultra:
@@ -691,7 +691,7 @@ paths:
                         sdVersion:
                           $ref: '#/components/schemas/sd_versions'
                         seed:
-                          $ref: '#/components/schemas/bigint'
+                          $ref: '#/components/schemas/seed'
                         status:
                           $ref: '#/components/schemas/job_status'
                         ultra:
@@ -738,7 +738,7 @@ paths:
                   type: string
                   nullable: true
                 seed:
-                  $ref: '#/components/schemas/bigint'
+                  $ref: '#/components/schemas/seed'
       responses:
         '200':
           description: Responses for POST /api/rest/v1/generations-texture
@@ -861,7 +861,7 @@ paths:
                   default: 512
                   nullable: true
                 seed:
-                  $ref: '#/components/schemas/bigint'
+                  $ref: '#/components/schemas/seed'
       responses:
         '200':
           description: Responses for POST /generations-lcm
@@ -941,7 +941,7 @@ paths:
                   default: 512
                   nullable: true
                 seed:
-                  $ref: '#/components/schemas/bigint'
+                  $ref: '#/components/schemas/seed'
       responses:
         '200':
           description: Responses for POST /lcm-instant-refine
@@ -1026,7 +1026,7 @@ paths:
                   default: 512
                   nullable: true
                 seed:
-                  $ref: '#/components/schemas/bigint'
+                  $ref: '#/components/schemas/seed'
       responses:
         '200':
           description: Responses for POST /lcm-inpainting
@@ -1106,7 +1106,7 @@ paths:
                   default: 512
                   nullable: true
                 seed:
-                  $ref: '#/components/schemas/bigint'
+                  $ref: '#/components/schemas/seed'
                 refineCreative:
                   title: Boolean
                   type: boolean
@@ -1233,7 +1233,7 @@ paths:
                           title: String
                           type: string
                         seed:
-                          $ref: '#/components/schemas/bigint'
+                          $ref: '#/components/schemas/seed'
                         status:
                           $ref: '#/components/schemas/job_status'
                       description: columns and relationships of "model_asset_texture_generations"
@@ -1308,7 +1308,7 @@ paths:
                         title: String
                         type: string
                       seed:
-                        $ref: '#/components/schemas/bigint'
+                        $ref: '#/components/schemas/seed'
                       status:
                         $ref: '#/components/schemas/job_status'
                     description: columns and relationships of "model_asset_texture_generations"
@@ -3337,6 +3337,11 @@ components:
     bigint:
       title: bigint
       type: integer
+      nullable: true
+    seed:
+      title: seed
+      type: integer
+      description: Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
       nullable: true
     sd_generation_style:
       title: sd_generation_style

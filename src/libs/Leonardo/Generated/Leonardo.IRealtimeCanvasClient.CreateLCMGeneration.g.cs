@@ -46,7 +46,9 @@ namespace Leonardo
         /// The output width of the image. Must be 512, 640 or 1024.<br/>
         /// Default Value: 512
         /// </param>
-        /// <param name="seed"></param>
+        /// <param name="seed">
+        /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateLCMGenerationResponse> CreateLCMGenerationAsync(
