@@ -11,8 +11,8 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sdGenerationJob")]
-        public global::Leonardo.CreateSVDMotionGenerationResponseSdGenerationJob? SdGenerationJob { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("motionSvdGenerationJob")]
+        public global::Leonardo.CreateSVDMotionGenerationResponseMotionSvdGenerationJob? MotionSvdGenerationJob { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -23,12 +23,12 @@ namespace Leonardo
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponse" /> class.
         /// </summary>
-        /// <param name="sdGenerationJob"></param>
+        /// <param name="motionSvdGenerationJob"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CreateSVDMotionGenerationResponse(
-            global::Leonardo.CreateSVDMotionGenerationResponseSdGenerationJob? sdGenerationJob)
+            global::Leonardo.CreateSVDMotionGenerationResponseMotionSvdGenerationJob? motionSvdGenerationJob)
         {
-            this.SdGenerationJob = sdGenerationJob;
+            this.MotionSvdGenerationJob = motionSvdGenerationJob;
         }
 
         /// <summary>

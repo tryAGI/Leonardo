@@ -6,7 +6,7 @@ namespace Leonardo
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class CreateSVDMotionGenerationResponseSdGenerationJob
+    public sealed partial class CreateSVDMotionGenerationResponseMotionSvdGenerationJob
     {
         /// <summary>
         /// 
@@ -27,14 +27,14 @@ namespace Leonardo
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponseSdGenerationJob" /> class.
+        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponseMotionSvdGenerationJob" /> class.
         /// </summary>
         /// <param name="generationId"></param>
         /// <param name="apiCreditCost">
         /// API credits cost, available for Production API users.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public CreateSVDMotionGenerationResponseSdGenerationJob(
+        public CreateSVDMotionGenerationResponseMotionSvdGenerationJob(
             string? generationId,
             int? apiCreditCost)
         {
@@ -43,9 +43,9 @@ namespace Leonardo
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponseSdGenerationJob" /> class.
+        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponseMotionSvdGenerationJob" /> class.
         /// </summary>
-        public CreateSVDMotionGenerationResponseSdGenerationJob()
+        public CreateSVDMotionGenerationResponseMotionSvdGenerationJob()
         {
         }
     }
