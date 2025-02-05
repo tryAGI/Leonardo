@@ -794,7 +794,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  sdGenerationJob:
+                  motionSvdGenerationJob:
                     title: MotionSvdGenerationOutput
                     type: object
                     properties:

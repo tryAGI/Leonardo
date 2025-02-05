@@ -414,7 +414,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateSVDMotionGenerationResponseSdGenerationJob? Type97 { get; set; }
+        public global::Leonardo.CreateSVDMotionGenerationResponseMotionSvdGenerationJob? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
