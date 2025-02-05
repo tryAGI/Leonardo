@@ -39,7 +39,7 @@ namespace Leonardo
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// 
+        /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         public int? Seed { get; set; }
@@ -65,7 +65,9 @@ namespace Leonardo
         /// <param name="modelAssetTextureImages"></param>
         /// <param name="negativePrompt"></param>
         /// <param name="prompt"></param>
-        /// <param name="seed"></param>
+        /// <param name="seed">
+        /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
+        /// </param>
         /// <param name="status">
         /// The status of the current task.
         /// </param>

@@ -68,7 +68,7 @@ namespace Leonardo
         public int? Height { get; set; }
 
         /// <summary>
-        /// 
+        /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         public int? Seed { get; set; }
@@ -109,7 +109,9 @@ namespace Leonardo
         /// The output width of the image. Must be 512, 640 or 1024.<br/>
         /// Default Value: 512
         /// </param>
-        /// <param name="seed"></param>
+        /// <param name="seed">
+        /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CreateLCMGenerationRequest(
             string imageDataUrl,
