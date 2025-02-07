@@ -97,7 +97,9 @@ namespace Leonardo
         /// </param>
         /// <param name="nsfw"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGenerationsByUserIdResponseGenerationGeneratedImage(
             global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric>? generatedImageVariationGenerics,
             string? id,

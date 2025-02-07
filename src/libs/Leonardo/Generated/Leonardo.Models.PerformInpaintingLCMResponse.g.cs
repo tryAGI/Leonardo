@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="PerformInpaintingLCMResponse" /> class.
         /// </summary>
         /// <param name="lcmGenerationJob"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PerformInpaintingLCMResponse(
             global::Leonardo.PerformInpaintingLCMResponseLcmGenerationJob? lcmGenerationJob)
         {

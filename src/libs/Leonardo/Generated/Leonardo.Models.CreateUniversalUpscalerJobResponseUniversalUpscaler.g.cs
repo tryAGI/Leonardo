@@ -33,7 +33,9 @@ namespace Leonardo
         /// <param name="apiCreditCost">
         /// API Credits Cost for Universal Upscaler Variation. Available for Production API Users.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateUniversalUpscalerJobResponseUniversalUpscaler(
             string? id,
             int? apiCreditCost)

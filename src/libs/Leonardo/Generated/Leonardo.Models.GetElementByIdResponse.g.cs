@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="userLorasByPk">
         /// columns and relationships of "user_loras".
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetElementByIdResponse(
             global::Leonardo.GetElementByIdResponseUserLorasByPk? userLorasByPk)
         {

@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="CreateElementResponse" /> class.
         /// </summary>
         /// <param name="sdTrainingJob"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateElementResponse(
             global::Leonardo.CreateElementResponseSdTrainingJob? sdTrainingJob)
         {

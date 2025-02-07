@@ -455,7 +455,9 @@ namespace Leonardo
         /// <param name="enhancePromptInstruction">
         /// When enhancePrompt is enabled, the prompt is enhanced based on the given instructions.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateGenerationRequest(
             string prompt,
             bool? alchemy,

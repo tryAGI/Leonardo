@@ -63,7 +63,9 @@ namespace Leonardo
         /// <param name="motionStrength">
         /// The motion strength.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateSVDMotionGenerationRequest(
             string imageId,
             bool? isPublic,

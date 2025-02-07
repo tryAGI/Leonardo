@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="GetGenerationsByUserIdResponse" /> class.
         /// </summary>
         /// <param name="generations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGenerationsByUserIdResponse(
             global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGeneration>? generations)
         {

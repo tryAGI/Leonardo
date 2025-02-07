@@ -64,7 +64,9 @@ namespace Leonardo
         /// <param name="strengthType">
         /// Strength type for the controlnet. Can only be used for Style, Character and Content Reference controlnets.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ControlnetInput(
             string? initImageId,
             global::Leonardo.ControlnetInputInitImageType? initImageType,

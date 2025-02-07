@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="Get3DModelsByUserIdResponse" /> class.
         /// </summary>
         /// <param name="modelAssets"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Get3DModelsByUserIdResponse(
             global::System.Collections.Generic.IList<global::Leonardo.Get3DModelsByUserIdResponseModelAsset>? modelAssets)
         {

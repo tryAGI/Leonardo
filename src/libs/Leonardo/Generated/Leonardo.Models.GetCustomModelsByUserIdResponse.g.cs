@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="GetCustomModelsByUserIdResponse" /> class.
         /// </summary>
         /// <param name="customModels"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetCustomModelsByUserIdResponse(
             global::System.Collections.Generic.IList<global::Leonardo.GetCustomModelsByUserIdResponseCustomModel>? customModels)
         {

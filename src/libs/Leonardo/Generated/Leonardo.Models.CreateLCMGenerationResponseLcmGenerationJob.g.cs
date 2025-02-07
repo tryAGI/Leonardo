@@ -40,7 +40,9 @@ namespace Leonardo
         /// <param name="apiCreditCost">
         /// API credits cost, available for Production API users.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateLCMGenerationResponseLcmGenerationJob(
             global::System.Collections.Generic.IList<string>? imageDataUrl,
             string? requestTimestamp,

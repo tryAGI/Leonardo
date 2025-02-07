@@ -112,7 +112,9 @@ namespace Leonardo
         /// <param name="seed">
         /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PerformInstantRefineRequest(
             string imageDataUrl,
             string prompt,

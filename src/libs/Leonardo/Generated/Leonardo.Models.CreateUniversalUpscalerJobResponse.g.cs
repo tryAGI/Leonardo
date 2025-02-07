@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="CreateUniversalUpscalerJobResponse" /> class.
         /// </summary>
         /// <param name="universalUpscaler"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateUniversalUpscalerJobResponse(
             global::Leonardo.CreateUniversalUpscalerJobResponseUniversalUpscaler? universalUpscaler)
         {

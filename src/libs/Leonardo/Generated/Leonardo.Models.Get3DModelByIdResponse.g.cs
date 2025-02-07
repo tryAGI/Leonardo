@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="modelAssetsByPk">
         /// columns and relationships of "model_assets"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Get3DModelByIdResponse(
             global::Leonardo.Get3DModelByIdResponseModelAssetsByPk? modelAssetsByPk)
         {

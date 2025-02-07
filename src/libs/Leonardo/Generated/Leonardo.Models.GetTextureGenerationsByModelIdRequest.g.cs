@@ -38,7 +38,9 @@ namespace Leonardo
         /// <param name="limit"></param>
         /// <param name="modelId"></param>
         /// <param name="offset"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetTextureGenerationsByModelIdRequest(
             int? limit,
             string? modelId,

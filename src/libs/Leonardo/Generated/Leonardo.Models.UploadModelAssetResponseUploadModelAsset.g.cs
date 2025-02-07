@@ -45,7 +45,9 @@ namespace Leonardo
         /// <param name="modelId"></param>
         /// <param name="modelKey"></param>
         /// <param name="modelUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UploadModelAssetResponseUploadModelAsset(
             string? modelFields,
             string? modelId,

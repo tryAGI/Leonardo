@@ -213,7 +213,9 @@ namespace Leonardo
         /// <param name="ultra">
         /// If ultra generation mode was used.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGenerationsByUserIdResponseGeneration(
             string? createdAt,
             global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImage>? generatedImages,
