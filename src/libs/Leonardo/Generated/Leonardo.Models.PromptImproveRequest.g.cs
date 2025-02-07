@@ -36,7 +36,9 @@ namespace Leonardo
         /// <param name="promptInstructions">
         /// The prompt is improved based on the given instructions.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptImproveRequest(
             string prompt,
             string? promptInstructions)

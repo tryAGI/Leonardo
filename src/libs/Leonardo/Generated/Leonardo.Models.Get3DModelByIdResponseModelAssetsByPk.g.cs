@@ -59,7 +59,9 @@ namespace Leonardo
         /// <param name="name"></param>
         /// <param name="updatedAt"></param>
         /// <param name="userId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Get3DModelByIdResponseModelAssetsByPk(
             string? createdAt,
             string? id,

@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponse" /> class.
         /// </summary>
         /// <param name="motionSvdGenerationJob"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateSVDMotionGenerationResponse(
             global::Leonardo.CreateSVDMotionGenerationResponseMotionSvdGenerationJob? motionSvdGenerationJob)
         {

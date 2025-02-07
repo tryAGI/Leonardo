@@ -188,7 +188,9 @@ namespace Leonardo
         /// <param name="ultra">
         /// Enable to use Ultra mode.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParamsIMAGEGENERATION(
             int? imageHeight,
             int? imageWidth,

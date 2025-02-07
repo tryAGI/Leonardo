@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="deleteModelAssetsByPk">
         /// columns and relationships of "model_assets"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Delete3DModelByIdResponse(
             global::Leonardo.Delete3DModelByIdResponseDeleteModelAssetsByPk? deleteModelAssetsByPk)
         {

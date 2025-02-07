@@ -112,7 +112,9 @@ namespace Leonardo
         /// When training using the PIXEL_ART model type, this influences the training strength.<br/>
         /// Default Value: MEDIUM
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModelRequest(
             string name,
             string datasetId,

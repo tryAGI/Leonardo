@@ -112,7 +112,9 @@ namespace Leonardo
         /// Default Value: GENERAL
         /// </param>
         /// <param name="updatedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetCustomModelsByUserIdResponseCustomModel(
             string? createdAt,
             string? description,

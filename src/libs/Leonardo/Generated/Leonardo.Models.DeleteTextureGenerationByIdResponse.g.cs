@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="deleteModelAssetTextureGenerationsByPk">
         /// columns and relationships of "model_asset_texture_generations"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteTextureGenerationByIdResponse(
             global::Leonardo.DeleteTextureGenerationByIdResponseDeleteModelAssetTextureGenerationsByPk? deleteModelAssetTextureGenerationsByPk)
         {

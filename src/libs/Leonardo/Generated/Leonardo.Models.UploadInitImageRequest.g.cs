@@ -27,7 +27,9 @@ namespace Leonardo
         /// <param name="extension">
         /// Has to be png, jpg, jpeg, or webp.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UploadInitImageRequest(
             string extension)
         {

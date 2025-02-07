@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="CreateVariationNoBGResponse" /> class.
         /// </summary>
         /// <param name="sdNobgJob"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateVariationNoBGResponse(
             global::Leonardo.CreateVariationNoBGResponseSdNobgJob? sdNobgJob)
         {

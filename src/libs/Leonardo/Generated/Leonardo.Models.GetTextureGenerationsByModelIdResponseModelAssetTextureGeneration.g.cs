@@ -71,7 +71,9 @@ namespace Leonardo
         /// <param name="status">
         /// The status of the current task.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetTextureGenerationsByModelIdResponseModelAssetTextureGeneration(
             string? createdAt,
             string? id,

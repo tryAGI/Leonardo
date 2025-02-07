@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="UploadDatasetImageResponse" /> class.
         /// </summary>
         /// <param name="uploadDatasetImage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UploadDatasetImageResponse(
             global::Leonardo.UploadDatasetImageResponseUploadDatasetImage? uploadDatasetImage)
         {

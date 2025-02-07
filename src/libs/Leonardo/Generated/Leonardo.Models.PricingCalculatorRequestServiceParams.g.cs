@@ -89,7 +89,9 @@ namespace Leonardo
         /// <param name="uNIVERSALUPSCALERULTRA">
         /// Parameters for UNIVERSAL_UPSCALER_ULTRA service
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParams(
             global::Leonardo.PricingCalculatorRequestServiceParamsIMAGEGENERATION? iMAGEGENERATION,
             global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? fANTASYAVATARGENERATION,

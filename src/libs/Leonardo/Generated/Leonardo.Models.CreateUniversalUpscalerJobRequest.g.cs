@@ -115,7 +115,9 @@ namespace Leonardo
         /// <param name="variationId">
         /// The ID of the variation image.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateUniversalUpscalerJobRequest(
             int? creativityStrength,
             int? detailContrast,

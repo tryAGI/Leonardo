@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="initImagesByPk">
         /// columns and relationships of "init_images"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetInitImageByIdResponse(
             global::Leonardo.GetInitImageByIdResponseInitImagesByPk? initImagesByPk)
         {

@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="PromptRandomResponse" /> class.
         /// </summary>
         /// <param name="promptGeneration"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptRandomResponse(
             global::Leonardo.PromptRandomResponsePromptGeneration? promptGeneration)
         {

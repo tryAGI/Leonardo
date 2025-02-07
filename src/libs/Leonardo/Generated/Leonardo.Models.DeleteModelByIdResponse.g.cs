@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="deleteCustomModelsByPk">
         /// columns and relationships of "custom_models"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteModelByIdResponse(
             global::Leonardo.DeleteModelByIdResponseDeleteCustomModelsByPk? deleteCustomModelsByPk)
         {

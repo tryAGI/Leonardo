@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="generationsByPk">
         /// columns and relationships of "generations"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGenerationByIdResponse(
             global::Leonardo.GetGenerationByIdResponseGenerationsByPk? generationsByPk)
         {

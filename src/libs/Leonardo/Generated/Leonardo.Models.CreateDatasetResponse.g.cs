@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="insertDatasetsOne">
         /// columns and relationships of "datasets"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateDatasetResponse(
             global::Leonardo.CreateDatasetResponseInsertDatasetsOne? insertDatasetsOne)
         {

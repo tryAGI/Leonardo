@@ -53,7 +53,9 @@ namespace Leonardo
         /// <param name="refine">
         /// Enable for normal alchemy upscale
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParamsLCMGENERATION(
             int? height,
             int? width,

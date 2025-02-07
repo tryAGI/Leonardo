@@ -26,7 +26,9 @@ namespace Leonardo
         /// <param name="cost">
         /// API service cost to generate the image.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorResponseCalculateProductionApiServiceCost(
             int? cost)
         {

@@ -36,7 +36,9 @@ namespace Leonardo
         /// <param name="description">
         /// A description for the dataset.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateDatasetRequest(
             string name,
             string? description)

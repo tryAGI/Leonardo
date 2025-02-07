@@ -46,7 +46,9 @@ namespace Leonardo
         /// The upscale multiplier of the universal upscaler. Must be between 1.00 and 2.00.<br/>
         /// Default Value: 1.5
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParamsUNIVERSALUPSCALERULTRA(
             int? inputWidth,
             int? inputHeight,

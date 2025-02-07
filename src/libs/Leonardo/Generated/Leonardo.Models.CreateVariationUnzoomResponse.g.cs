@@ -24,7 +24,9 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="CreateVariationUnzoomResponse" /> class.
         /// </summary>
         /// <param name="sdUnzoomJob"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateVariationUnzoomResponse(
             global::Leonardo.CreateVariationUnzoomResponseSdUnzoomJob? sdUnzoomJob)
         {
