@@ -22,6 +22,14 @@ namespace Leonardo
         public double? ContrastRatio { get; set; }
 
         /// <summary>
+        /// Adjusts the contrast level of the generated image. Used in Phoenix and Flux models. Accepts values [1.0, 1.3, 1.8, 2.5, 3, 3.5, 4, 4.5]. For Phoenix, if alchemy is true, contrast needs to be 2.5 or higher.<br/>
+        /// Example: 3.5
+        /// </summary>
+        /// <example>3.5</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("contrast")]
+        public double? Contrast { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controlnets")]
@@ -330,6 +338,10 @@ namespace Leonardo
         /// <param name="contrastRatio">
         /// Contrast Ratio to use with Alchemy. Must be a float between 0 and 1 inclusive.
         /// </param>
+        /// <param name="contrast">
+        /// Adjusts the contrast level of the generated image. Used in Phoenix and Flux models. Accepts values [1.0, 1.3, 1.8, 2.5, 3, 3.5, 4, 4.5]. For Phoenix, if alchemy is true, contrast needs to be 2.5 or higher.<br/>
+        /// Example: 3.5
+        /// </param>
         /// <param name="controlnets"></param>
         /// <param name="elements"></param>
         /// <param name="userElements"></param>
@@ -462,6 +474,7 @@ namespace Leonardo
             string prompt,
             bool? alchemy,
             double? contrastRatio,
+            double? contrast,
             global::System.Collections.Generic.IList<global::Leonardo.ControlnetInput>? controlnets,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements,
             global::System.Collections.Generic.IList<global::Leonardo.UserElementsInput>? userElements,
@@ -508,6 +521,7 @@ namespace Leonardo
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Alchemy = alchemy;
             this.ContrastRatio = contrastRatio;
+            this.Contrast = contrast;
             this.Controlnets = controlnets;
             this.Elements = elements;
             this.UserElements = userElements;
