@@ -1928,7 +1928,6 @@ paths:
                   title: Float
                   type: number
                   description: The upscale multiplier of the universal upscaler. Must be between 1.0 and 2.0.
-                  default: 1.5
                   nullable: true
                 upscalerStyle:
                   $ref: '#/components/schemas/universal_upscaler_style'
