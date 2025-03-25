@@ -193,7 +193,8 @@ namespace Leonardo
         /// The ultra style to upscale images using universal upscaler with. Can not be used with upscalerStyle.
         /// </param>
         /// <param name="upscaleMultiplier">
-        /// The upscale multiplier of the universal upscaler. Must be between 1.0 and 2.0.
+        /// The upscale multiplier of the universal upscaler. Must be between 1.0 and 2.0.<br/>
+        /// Default Value: 1.5
         /// </param>
         /// <param name="upscalerStyle">
         /// The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle.<br/>
