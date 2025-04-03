@@ -4,8 +4,8 @@
 namespace Leonardo
 {
     /// <summary>
-    /// The base version of stable diffusion to use if not using a custom model.<br/>
-    /// Default Value: SDXL_0_9
+    /// The base version to use if not using a custom model.<br/>
+    /// Default Value: FLUX_DEV
     /// </summary>
     public enum CreateElementRequestSdVersion
     {
@@ -37,6 +37,10 @@ namespace Leonardo
         /// 
         /// </summary>
         ALBEDOXL,
+        /// <summary>
+        /// 
+        /// </summary>
+        FLUXDEV,
     }
 
     /// <summary>
@@ -58,6 +62,7 @@ namespace Leonardo
                 CreateElementRequestSdVersion.VISIONXL => "VISION_XL",
                 CreateElementRequestSdVersion.KINOXL => "KINO_XL",
                 CreateElementRequestSdVersion.ALBEDOXL => "ALBEDO_XL",
+                CreateElementRequestSdVersion.FLUXDEV => "FLUX_DEV",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -75,6 +80,7 @@ namespace Leonardo
                 "VISION_XL" => CreateElementRequestSdVersion.VISIONXL,
                 "KINO_XL" => CreateElementRequestSdVersion.KINOXL,
                 "ALBEDO_XL" => CreateElementRequestSdVersion.ALBEDOXL,
+                "FLUX_DEV" => CreateElementRequestSdVersion.FLUXDEV,
                 _ => null,
             };
         }

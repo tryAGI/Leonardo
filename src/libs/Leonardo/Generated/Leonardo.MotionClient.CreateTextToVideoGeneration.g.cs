@@ -3,45 +3,45 @@
 
 namespace Leonardo
 {
-    public partial class ElementsClient
+    public partial class MotionClient
     {
-        partial void PrepareCreateElementArguments(
+        partial void PrepareCreateTextToVideoGenerationArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Leonardo.CreateElementRequest request);
-        partial void PrepareCreateElementRequest(
+            global::Leonardo.CreateTextToVideoGenerationRequest request);
+        partial void PrepareCreateTextToVideoGenerationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Leonardo.CreateElementRequest request);
-        partial void ProcessCreateElementResponse(
+            global::Leonardo.CreateTextToVideoGenerationRequest request);
+        partial void ProcessCreateTextToVideoGenerationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateElementResponseContent(
+        partial void ProcessCreateTextToVideoGenerationResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Train a Custom Element<br/>
-        /// This endpoint will train a new custom element.
+        /// Create a video generation from a text prompt<br/>
+        /// This endpoint will generate a video using a text prompt
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateElementResponse> CreateElementAsync(
-            global::Leonardo.CreateElementRequest request,
+        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateTextToVideoGenerationResponse> CreateTextToVideoGenerationAsync(
+            global::Leonardo.CreateTextToVideoGenerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateElementArguments(
+            PrepareCreateTextToVideoGenerationArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/elements",
+                path: "/generations-text-to-video",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -77,7 +77,7 @@ namespace Leonardo
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateElementRequest(
+            PrepareCreateTextToVideoGenerationRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -90,7 +90,7 @@ namespace Leonardo
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateElementResponse(
+            ProcessCreateTextToVideoGenerationResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -106,7 +106,7 @@ namespace Leonardo
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateElementResponseContent(
+                ProcessCreateTextToVideoGenerationResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -131,7 +131,7 @@ namespace Leonardo
                 }
 
                 return
-                    global::Leonardo.CreateElementResponse.FromJson(__content, JsonSerializerContext) ??
+                    global::Leonardo.CreateTextToVideoGenerationResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -161,79 +161,67 @@ namespace Leonardo
                 ).ConfigureAwait(false);
 
                 return
-                    await global::Leonardo.CreateElementResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::Leonardo.CreateTextToVideoGenerationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
         /// <summary>
-        /// Train a Custom Element<br/>
-        /// This endpoint will train a new custom element.
+        /// Create a video generation from a text prompt<br/>
+        /// This endpoint will generate a video using a text prompt
         /// </summary>
-        /// <param name="name">
-        /// The name of the element.<br/>
-        /// Default Value: placeholder
+        /// <param name="prompt">
+        /// The prompt used to generate video
         /// </param>
-        /// <param name="description">
-        /// The description of the element.
+        /// <param name="frameInterpolation">
+        /// Smoothly blend frames for fluid video transitions using Interpolation.
         /// </param>
-        /// <param name="datasetId">
-        /// The ID of the dataset to train the element on.
+        /// <param name="isPublic">
+        /// Whether the generation is public or not
         /// </param>
-        /// <param name="instancePrompt">
-        /// Use a word that is closely related to what you're training that isn't too common. For example, instead of 'dog,' try something unique like 'jackthedog' or 'magicdonut'. Required for all non-FLUX_DEV models and FLUX_DEV Character model training.
+        /// <param name="negativePrompt">
+        /// The negative prompt used for the video generation.
         /// </param>
-        /// <param name="loraFocus">
-        /// The category determines how the element will be trained. Options are 'General' | 'Character' | 'Style' | 'Object'. FLUX_DEV doesn't support General category.
+        /// <param name="promptEnhance">
+        /// Whether to enhance the prompt.
         /// </param>
-        /// <param name="trainTextEncoder">
-        /// Whether or not encode the train text.<br/>
-        /// Default Value: true
+        /// <param name="styleIds">
+        /// Optional predefined styles to enhance the prompt
         /// </param>
-        /// <param name="resolution">
-        /// The resolution for training. Must be 1024.<br/>
-        /// Default Value: 1024
+        /// <param name="height">
+        /// Height of the output<br/>
+        /// Default Value: 480
         /// </param>
-        /// <param name="sdVersion">
-        /// The base version to use if not using a custom model.<br/>
-        /// Default Value: FLUX_DEV
-        /// </param>
-        /// <param name="numTrainEpochs">
-        /// The number of times the entire training dataset is passed through the element.&lt;table&gt;&lt;tr&gt;&lt;th&gt;Model Type&lt;/th&gt;&lt;th&gt;Lora Focus&lt;/th&gt;&lt;th&gt;Min&lt;/th&gt;&lt;th&gt;Max&lt;/th&gt;&lt;th&gt;Default&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Default&lt;/td&gt;&lt;td&gt;General | Style | Character | Object&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;250&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan='3'&gt;FLUX_DEV&lt;/td&gt;&lt;td&gt;Style&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Object&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;td&gt;220&lt;/td&gt;&lt;td&gt;140&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Character&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;td&gt;135&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;General&lt;/td&gt;&lt;td colspan='3'&gt;NA&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-        /// </param>
-        /// <param name="learningRate">
-        /// The speed at which the model learns during training.&lt;table&gt;&lt;tr&gt;&lt;th&gt;Model Type&lt;/th&gt;&lt;th&gt;Lora Focus&lt;/th&gt;&lt;th&gt;Min&lt;/th&gt;&lt;th&gt;Max&lt;/th&gt;&lt;th&gt;Default&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Default&lt;/td&gt;&lt;td&gt;General | Style | Character | Object&lt;/td&gt;&lt;td&gt;0.00000001&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.000001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan='3'&gt;FLUX_DEV&lt;/td&gt;&lt;td&gt;Style&lt;/td&gt;&lt;td&gt;0.000001&lt;/td&gt;&lt;td&gt;0.00003&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Object&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;0.0004&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Character&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;0.0005&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;General&lt;/td&gt;&lt;td colspan='3'&gt;NA&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+        /// <param name="width">
+        /// Width of the output<br/>
+        /// Default Value: 832
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateElementResponse> CreateElementAsync(
-            string name,
-            string datasetId,
-            string loraFocus,
-            bool trainTextEncoder,
-            global::Leonardo.CreateElementRequestSdVersion sdVersion,
-            int numTrainEpochs,
-            double learningRate,
-            string? description = default,
-            string? instancePrompt = default,
-            int? resolution = default,
+        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateTextToVideoGenerationResponse> CreateTextToVideoGenerationAsync(
+            string prompt,
+            bool? frameInterpolation = default,
+            bool? isPublic = default,
+            string? negativePrompt = default,
+            bool? promptEnhance = default,
+            global::System.Collections.Generic.IList<string>? styleIds = default,
+            int? height = default,
+            int? width = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Leonardo.CreateElementRequest
+            var __request = new global::Leonardo.CreateTextToVideoGenerationRequest
             {
-                Name = name,
-                Description = description,
-                DatasetId = datasetId,
-                InstancePrompt = instancePrompt,
-                LoraFocus = loraFocus,
-                TrainTextEncoder = trainTextEncoder,
-                Resolution = resolution,
-                SdVersion = sdVersion,
-                NumTrainEpochs = numTrainEpochs,
-                LearningRate = learningRate,
+                Prompt = prompt,
+                FrameInterpolation = frameInterpolation,
+                IsPublic = isPublic,
+                NegativePrompt = negativePrompt,
+                PromptEnhance = promptEnhance,
+                StyleIds = styleIds,
+                Height = height,
+                Width = width,
             };
 
-            return await CreateElementAsync(
+            return await CreateTextToVideoGenerationAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
