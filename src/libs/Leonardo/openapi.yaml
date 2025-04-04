@@ -812,6 +812,73 @@ paths:
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
                     nullable: true
+  /generations-image-to-video:
+    post:
+      tags:
+        - Motion
+      summary: Create a video generation from an image
+      description: This endpoint will generate a video using an uploaded or generated image.
+      operationId: createImageToVideoGeneration
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - prompt
+                - imageId
+                - imageType
+              type: object
+              properties:
+                prompt:
+                  title: String
+                  type: string
+                  description: The prompt used to generate video
+                imageId:
+                  title: String
+                  type: string
+                  description: 'The ID of the image, supports generated images and init images. Use only image or imageId with imageType.'
+                imageType:
+                  enum:
+                    - GENERATED
+                    - UPLOADED
+                  type: string
+                  description: Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
+                frameInterpolation:
+                  title: Boolean
+                  type: boolean
+                  description: Smoothly blend frames for fluid video transitions using Interpolation.
+                  nullable: true
+                isPublic:
+                  $ref: '#/components/schemas/public'
+                negativePrompt:
+                  title: String
+                  type: string
+                  description: The negative prompt used for the video generation.
+                  nullable: true
+                promptEnhance:
+                  title: Boolean
+                  type: boolean
+                  description: Whether to enhance the prompt.
+                  nullable: true
+      responses:
+        '200':
+          description: Responses for POST /generations-image-to-video
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  motionVideoGenerationJob:
+                    title: MotionVideoGenerationOutput
+                    type: object
+                    properties:
+                      generationId:
+                        title: String
+                        type: string
+                      apiCreditCost:
+                        $ref: '#/components/schemas/apiCreditCost'
+                    nullable: true
   /generations-text-to-video:
     post:
       tags:
