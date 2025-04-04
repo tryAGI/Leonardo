@@ -47,6 +47,8 @@ namespace Leonardo
             typeof(global::Leonardo.JsonConverters.CanvasRequestTypeNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateGenerationRequestTransparencyJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateGenerationRequestTransparencyNullableJsonConverter),
+            typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestImageTypeJsonConverter),
+            typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestImageTypeNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateModelRequestSdVersionJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateModelRequestSdVersionNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateElementRequestSdVersionJsonConverter),
