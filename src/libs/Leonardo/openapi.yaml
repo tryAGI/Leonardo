@@ -861,6 +861,13 @@ paths:
                   type: boolean
                   description: Whether to enhance the prompt.
                   nullable: true
+                elements:
+                  title: Array of Elements
+                  type: array
+                  items:
+                    type: object
+                  description: An array of elements/loras objects that will be applied sequentially to the output.
+                  nullable: true
       responses:
         '200':
           description: Responses for POST /generations-image-to-video
@@ -934,6 +941,13 @@ paths:
                   type: integer
                   description: Width of the output
                   default: 832
+                  nullable: true
+                elements:
+                  title: Array of Elements
+                  type: array
+                  items:
+                    type: object
+                  description: An array of elements/loras objects that will be applied sequentially to the output.
                   nullable: true
       responses:
         '200':
@@ -3174,7 +3188,18 @@ paths:
                         resolution:
                           title: Int
                           type: integer
-                          description: The resolution for training. Must be 512 or 768.
+                          description: 'The resolution for training. Must be 512, 768, or 1024.'
+                        sd_version:
+                          title: sd_version
+                          enum:
+                            - FLUX_DEV
+                          description: The model for the training. Can be set to 'FLUX_DEV' for FLUX_DEV specific pricing or can be omitted.
+                          nullable: true
+                        datasetImageCount:
+                          title: Int
+                          type: integer
+                          description: The number of images in the training dataset when sd_version is set to 'FLUX_DEV'. Must be between 1 and 50.
+                          nullable: true
                       description: Parameters for MODEL_TRAINING service
                       nullable: true
                     TEXTURE_GENERATION:

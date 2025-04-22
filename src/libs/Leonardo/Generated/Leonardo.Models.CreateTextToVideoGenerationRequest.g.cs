@@ -60,6 +60,12 @@ namespace Leonardo
         public int? Width { get; set; }
 
         /// <summary>
+        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("elements")]
+        public global::System.Collections.Generic.IList<object>? Elements { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -94,6 +100,9 @@ namespace Leonardo
         /// Width of the output<br/>
         /// Default Value: 832
         /// </param>
+        /// <param name="elements">
+        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -105,7 +114,8 @@ namespace Leonardo
             bool? promptEnhance,
             global::System.Collections.Generic.IList<string>? styleIds,
             int? height,
-            int? width)
+            int? width,
+            global::System.Collections.Generic.IList<object>? elements)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.FrameInterpolation = frameInterpolation;
@@ -115,6 +125,7 @@ namespace Leonardo
             this.StyleIds = styleIds;
             this.Height = height;
             this.Width = width;
+            this.Elements = elements;
         }
 
         /// <summary>
