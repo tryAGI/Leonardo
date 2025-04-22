@@ -53,6 +53,8 @@ namespace Leonardo
             typeof(global::Leonardo.JsonConverters.CreateModelRequestSdVersionNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateElementRequestSdVersionJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateElementRequestSdVersionNullableJsonConverter),
+            typeof(global::Leonardo.JsonConverters.PricingCalculatorRequestServiceParamsMODELTRAININGSdVersionJsonConverter),
+            typeof(global::Leonardo.JsonConverters.PricingCalculatorRequestServiceParamsMODELTRAININGSdVersionNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.UnixTimestampJsonConverter),
         })]
 

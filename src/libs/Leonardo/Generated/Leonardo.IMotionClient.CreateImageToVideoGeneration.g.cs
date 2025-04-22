@@ -40,6 +40,9 @@ namespace Leonardo
         /// <param name="promptEnhance">
         /// Whether to enhance the prompt.
         /// </param>
+        /// <param name="elements">
+        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateImageToVideoGenerationResponse> CreateImageToVideoGenerationAsync(
@@ -50,6 +53,7 @@ namespace Leonardo
             bool? isPublic = default,
             string? negativePrompt = default,
             bool? promptEnhance = default,
+            global::System.Collections.Generic.IList<object>? elements = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
