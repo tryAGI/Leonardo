@@ -28,6 +28,10 @@ namespace Leonardo.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Leonardo.ControlnetType)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Leonardo.ControlnetType);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
