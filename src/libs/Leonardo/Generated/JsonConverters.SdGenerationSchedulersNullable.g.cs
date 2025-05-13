@@ -28,6 +28,10 @@ namespace Leonardo.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Leonardo.SdGenerationSchedulers)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Leonardo.SdGenerationSchedulers?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
