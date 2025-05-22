@@ -48,6 +48,10 @@ namespace Leonardo
         /// 
         /// </summary>
         FLUXDEV,
+        /// <summary>
+        /// 
+        /// </summary>
+        KINO20,
     }
 
     /// <summary>
@@ -72,6 +76,7 @@ namespace Leonardo
                 SdVersions.PHOENIX => "PHOENIX",
                 SdVersions.FLUX => "FLUX",
                 SdVersions.FLUXDEV => "FLUX_DEV",
+                SdVersions.KINO20 => "KINO_2_0",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -92,6 +97,7 @@ namespace Leonardo
                 "PHOENIX" => SdVersions.PHOENIX,
                 "FLUX" => SdVersions.FLUX,
                 "FLUX_DEV" => SdVersions.FLUXDEV,
+                "KINO_2_0" => SdVersions.KINO20,
                 _ => null,
             };
         }
