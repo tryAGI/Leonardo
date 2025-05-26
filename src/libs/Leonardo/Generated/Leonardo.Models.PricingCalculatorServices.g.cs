@@ -23,6 +23,14 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
+        MOTIONSVDGENERATION,
+        /// <summary>
+        /// 
+        /// </summary>
+        MOTIONVIDEOGENERATION,
+        /// <summary>
+        /// 
+        /// </summary>
         LCMGENERATION,
         /// <summary>
         /// 
@@ -57,6 +65,8 @@ namespace Leonardo
                 PricingCalculatorServices.IMAGEGENERATION => "IMAGE_GENERATION",
                 PricingCalculatorServices.FANTASYAVATARGENERATION => "FANTASY_AVATAR_GENERATION",
                 PricingCalculatorServices.MOTIONGENERATION => "MOTION_GENERATION",
+                PricingCalculatorServices.MOTIONSVDGENERATION => "MOTION_SVD_GENERATION",
+                PricingCalculatorServices.MOTIONVIDEOGENERATION => "MOTION_VIDEO_GENERATION",
                 PricingCalculatorServices.LCMGENERATION => "LCM_GENERATION",
                 PricingCalculatorServices.MODELTRAINING => "MODEL_TRAINING",
                 PricingCalculatorServices.TEXTUREGENERATION => "TEXTURE_GENERATION",
@@ -75,6 +85,8 @@ namespace Leonardo
                 "IMAGE_GENERATION" => PricingCalculatorServices.IMAGEGENERATION,
                 "FANTASY_AVATAR_GENERATION" => PricingCalculatorServices.FANTASYAVATARGENERATION,
                 "MOTION_GENERATION" => PricingCalculatorServices.MOTIONGENERATION,
+                "MOTION_SVD_GENERATION" => PricingCalculatorServices.MOTIONSVDGENERATION,
+                "MOTION_VIDEO_GENERATION" => PricingCalculatorServices.MOTIONVIDEOGENERATION,
                 "LCM_GENERATION" => PricingCalculatorServices.LCMGENERATION,
                 "MODEL_TRAINING" => PricingCalculatorServices.MODELTRAINING,
                 "TEXTURE_GENERATION" => PricingCalculatorServices.TEXTUREGENERATION,
