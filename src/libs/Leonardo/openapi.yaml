@@ -3155,6 +3155,21 @@ paths:
                           description: The total duration of the motion generation in seconds.
                       description: Parameters for MOTION_GENERATION service
                       nullable: true
+                    MOTION_SVD_GENERATION:
+                      title: Object
+                      type: object
+                      description: Parameters for MOTION_SVD_GENERATION service
+                      nullable: true
+                    MOTION_VIDEO_GENERATION:
+                      title: Object
+                      type: object
+                      properties:
+                        resolution:
+                          title: String
+                          type: string
+                          description: The resolution of the video. Must be enum value of FAST and QUALITY.
+                      description: Parameters for MOTION_VIDEO_GENERATION service
+                      nullable: true
                     LCM_GENERATION:
                       title: Object
                       type: object
@@ -3666,6 +3681,8 @@ components:
         - IMAGE_GENERATION
         - FANTASY_AVATAR_GENERATION
         - MOTION_GENERATION
+        - MOTION_SVD_GENERATION
+        - MOTION_VIDEO_GENERATION
         - LCM_GENERATION
         - MODEL_TRAINING
         - TEXTURE_GENERATION
