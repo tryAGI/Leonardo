@@ -33,7 +33,7 @@ namespace Leonardo
             PrepareListElementsArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: "/elements",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

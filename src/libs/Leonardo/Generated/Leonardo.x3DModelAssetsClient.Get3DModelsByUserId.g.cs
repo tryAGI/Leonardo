@@ -59,7 +59,7 @@ namespace Leonardo
                 userId: ref userId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/models-3d/user/{userId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

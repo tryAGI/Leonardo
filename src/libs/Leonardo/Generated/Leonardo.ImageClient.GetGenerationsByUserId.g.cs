@@ -52,7 +52,7 @@ namespace Leonardo
                 limit: ref limit,
                 userId: ref userId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/generations/user/{userId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
