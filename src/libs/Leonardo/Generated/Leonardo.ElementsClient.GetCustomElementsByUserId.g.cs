@@ -38,7 +38,7 @@ namespace Leonardo
                 httpClient: HttpClient,
                 userId: ref userId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/elements/user/{userId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

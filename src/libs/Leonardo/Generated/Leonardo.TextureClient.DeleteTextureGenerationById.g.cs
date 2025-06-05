@@ -45,7 +45,7 @@ namespace Leonardo
                 id: ref id,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/generations-texture/{id}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

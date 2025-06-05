@@ -33,7 +33,7 @@ namespace Leonardo
             PrepareGetUserSelfArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: "/me",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

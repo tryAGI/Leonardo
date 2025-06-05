@@ -45,7 +45,7 @@ namespace Leonardo
                 datasetId: ref datasetId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/datasets/{datasetId}/upload",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -59,7 +59,7 @@ namespace Leonardo
                 modelId: ref modelId,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/generations-texture/model/{modelId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
