@@ -3,49 +3,47 @@
 
 namespace Leonardo
 {
-    public partial class MotionClient
+    public partial class VariationClient
     {
-        partial void PrepareCreateImageToVideoGenerationArguments(
+        partial void PrepareGetMotionVariationByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Leonardo.CreateImageToVideoGenerationRequest request);
-        partial void PrepareCreateImageToVideoGenerationRequest(
+            ref string id);
+        partial void PrepareGetMotionVariationByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Leonardo.CreateImageToVideoGenerationRequest request);
-        partial void ProcessCreateImageToVideoGenerationResponse(
+            string id);
+        partial void ProcessGetMotionVariationByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateImageToVideoGenerationResponseContent(
+        partial void ProcessGetMotionVariationByIdResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create a video generation from an image<br/>
-        /// This endpoint will generate a video using an uploaded or generated image.
+        /// Get motion variation by ID<br/>
+        /// This endpoint will get the motion variation by ID
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateImageToVideoGenerationResponse> CreateImageToVideoGenerationAsync(
-            global::Leonardo.CreateImageToVideoGenerationRequest request,
+        public async global::System.Threading.Tasks.Task<global::Leonardo.GetMotionVariationByIdResponse> GetMotionVariationByIdAsync(
+            string id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateImageToVideoGenerationArguments(
+            PrepareGetMotionVariationByIdArguments(
                 httpClient: HttpClient,
-                request: request);
+                id: ref id);
 
             var __pathBuilder = new global::Leonardo.PathBuilder(
-                path: "/generations-image-to-video",
+                path: $"/motion-variations/{id}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -67,20 +65,14 @@ namespace Leonardo
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateImageToVideoGenerationRequest(
+            PrepareGetMotionVariationByIdRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                request: request);
+                id: id);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -90,7 +82,7 @@ namespace Leonardo
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateImageToVideoGenerationResponse(
+            ProcessGetMotionVariationByIdResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -106,7 +98,7 @@ namespace Leonardo
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateImageToVideoGenerationResponseContent(
+                ProcessGetMotionVariationByIdResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -116,7 +108,7 @@ namespace Leonardo
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Leonardo.CreateImageToVideoGenerationResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::Leonardo.GetMotionVariationByIdResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -147,7 +139,7 @@ namespace Leonardo
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Leonardo.CreateImageToVideoGenerationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Leonardo.GetMotionVariationByIdResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -164,70 +156,6 @@ namespace Leonardo
                     };
                 }
             }
-        }
-
-        /// <summary>
-        /// Create a video generation from an image<br/>
-        /// This endpoint will generate a video using an uploaded or generated image.
-        /// </summary>
-        /// <param name="prompt">
-        /// The prompt used to generate video
-        /// </param>
-        /// <param name="imageId">
-        /// The ID of the image, supports generated images and init images. Use only image or imageId with imageType.
-        /// </param>
-        /// <param name="imageType">
-        /// Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
-        /// </param>
-        /// <param name="resolution">
-        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
-        /// Default Value: RESOLUTION_480
-        /// </param>
-        /// <param name="frameInterpolation">
-        /// Smoothly blend frames for fluid video transitions using Interpolation.
-        /// </param>
-        /// <param name="isPublic">
-        /// Whether the generation is public or not
-        /// </param>
-        /// <param name="negativePrompt">
-        /// The negative prompt used for the video generation.
-        /// </param>
-        /// <param name="promptEnhance">
-        /// Whether to enhance the prompt.
-        /// </param>
-        /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output.
-        /// </param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateImageToVideoGenerationResponse> CreateImageToVideoGenerationAsync(
-            string prompt,
-            string imageId,
-            global::Leonardo.CreateImageToVideoGenerationRequestImageType imageType,
-            global::Leonardo.CreateImageToVideoGenerationRequestResolution? resolution = default,
-            bool? frameInterpolation = default,
-            bool? isPublic = default,
-            string? negativePrompt = default,
-            bool? promptEnhance = default,
-            global::System.Collections.Generic.IList<object>? elements = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::Leonardo.CreateImageToVideoGenerationRequest
-            {
-                Prompt = prompt,
-                ImageId = imageId,
-                ImageType = imageType,
-                Resolution = resolution,
-                FrameInterpolation = frameInterpolation,
-                IsPublic = isPublic,
-                NegativePrompt = negativePrompt,
-                PromptEnhance = promptEnhance,
-                Elements = elements,
-            };
-
-            return await CreateImageToVideoGenerationAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

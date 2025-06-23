@@ -31,6 +31,14 @@ namespace Leonardo
         public required global::Leonardo.CreateImageToVideoGenerationRequestImageType ImageType { get; set; }
 
         /// <summary>
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+        /// Default Value: RESOLUTION_480
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestResolutionJsonConverter))]
+        public global::Leonardo.CreateImageToVideoGenerationRequestResolution? Resolution { get; set; }
+
+        /// <summary>
         /// Smoothly blend frames for fluid video transitions using Interpolation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frameInterpolation")]
@@ -78,6 +86,10 @@ namespace Leonardo
         /// <param name="imageType">
         /// Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
         /// </param>
+        /// <param name="resolution">
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+        /// Default Value: RESOLUTION_480
+        /// </param>
         /// <param name="frameInterpolation">
         /// Smoothly blend frames for fluid video transitions using Interpolation.
         /// </param>
@@ -100,6 +112,7 @@ namespace Leonardo
             string prompt,
             string imageId,
             global::Leonardo.CreateImageToVideoGenerationRequestImageType imageType,
+            global::Leonardo.CreateImageToVideoGenerationRequestResolution? resolution,
             bool? frameInterpolation,
             bool? isPublic,
             string? negativePrompt,
@@ -109,6 +122,7 @@ namespace Leonardo
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.ImageId = imageId ?? throw new global::System.ArgumentNullException(nameof(imageId));
             this.ImageType = imageType;
+            this.Resolution = resolution;
             this.FrameInterpolation = frameInterpolation;
             this.IsPublic = isPublic;
             this.NegativePrompt = negativePrompt;

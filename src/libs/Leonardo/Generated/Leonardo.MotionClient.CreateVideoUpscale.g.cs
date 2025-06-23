@@ -5,43 +5,43 @@ namespace Leonardo
 {
     public partial class MotionClient
     {
-        partial void PrepareCreateImageToVideoGenerationArguments(
+        partial void PrepareCreateVideoUpscaleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Leonardo.CreateImageToVideoGenerationRequest request);
-        partial void PrepareCreateImageToVideoGenerationRequest(
+            global::Leonardo.CreateVideoUpscaleRequest request);
+        partial void PrepareCreateVideoUpscaleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Leonardo.CreateImageToVideoGenerationRequest request);
-        partial void ProcessCreateImageToVideoGenerationResponse(
+            global::Leonardo.CreateVideoUpscaleRequest request);
+        partial void ProcessCreateVideoUpscaleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateImageToVideoGenerationResponseContent(
+        partial void ProcessCreateVideoUpscaleResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create a video generation from an image<br/>
-        /// This endpoint will generate a video using an uploaded or generated image.
+        /// Upscale a generated video<br/>
+        /// This endpoint will upscale a generated video to a higher resolution.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateImageToVideoGenerationResponse> CreateImageToVideoGenerationAsync(
-            global::Leonardo.CreateImageToVideoGenerationRequest request,
+        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateVideoUpscaleResponse> CreateVideoUpscaleAsync(
+            global::Leonardo.CreateVideoUpscaleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateImageToVideoGenerationArguments(
+            PrepareCreateVideoUpscaleArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new global::Leonardo.PathBuilder(
-                path: "/generations-image-to-video",
+                path: "/generations-video-upscale",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -77,7 +77,7 @@ namespace Leonardo
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateImageToVideoGenerationRequest(
+            PrepareCreateVideoUpscaleRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -90,7 +90,7 @@ namespace Leonardo
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateImageToVideoGenerationResponse(
+            ProcessCreateVideoUpscaleResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -106,7 +106,7 @@ namespace Leonardo
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateImageToVideoGenerationResponseContent(
+                ProcessCreateVideoUpscaleResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -116,7 +116,7 @@ namespace Leonardo
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Leonardo.CreateImageToVideoGenerationResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::Leonardo.CreateVideoUpscaleResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -147,7 +147,7 @@ namespace Leonardo
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Leonardo.CreateImageToVideoGenerationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Leonardo.CreateVideoUpscaleResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
@@ -167,65 +167,29 @@ namespace Leonardo
         }
 
         /// <summary>
-        /// Create a video generation from an image<br/>
-        /// This endpoint will generate a video using an uploaded or generated image.
+        /// Upscale a generated video<br/>
+        /// This endpoint will upscale a generated video to a higher resolution.
         /// </summary>
-        /// <param name="prompt">
-        /// The prompt used to generate video
-        /// </param>
-        /// <param name="imageId">
-        /// The ID of the image, supports generated images and init images. Use only image or imageId with imageType.
-        /// </param>
-        /// <param name="imageType">
-        /// Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
-        /// </param>
         /// <param name="resolution">
-        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
-        /// Default Value: RESOLUTION_480
+        /// The resolution of the upscaled video. RESOLUTION_720 is the only option for now.
         /// </param>
-        /// <param name="frameInterpolation">
-        /// Smoothly blend frames for fluid video transitions using Interpolation.
-        /// </param>
-        /// <param name="isPublic">
-        /// Whether the generation is public or not
-        /// </param>
-        /// <param name="negativePrompt">
-        /// The negative prompt used for the video generation.
-        /// </param>
-        /// <param name="promptEnhance">
-        /// Whether to enhance the prompt.
-        /// </param>
-        /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// <param name="sourceGenerationId">
+        /// The ID of the source video generation to upscale.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateImageToVideoGenerationResponse> CreateImageToVideoGenerationAsync(
-            string prompt,
-            string imageId,
-            global::Leonardo.CreateImageToVideoGenerationRequestImageType imageType,
-            global::Leonardo.CreateImageToVideoGenerationRequestResolution? resolution = default,
-            bool? frameInterpolation = default,
-            bool? isPublic = default,
-            string? negativePrompt = default,
-            bool? promptEnhance = default,
-            global::System.Collections.Generic.IList<object>? elements = default,
+        public async global::System.Threading.Tasks.Task<global::Leonardo.CreateVideoUpscaleResponse> CreateVideoUpscaleAsync(
+            string sourceGenerationId,
+            global::Leonardo.CreateVideoUpscaleRequestResolution resolution = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Leonardo.CreateImageToVideoGenerationRequest
+            var __request = new global::Leonardo.CreateVideoUpscaleRequest
             {
-                Prompt = prompt,
-                ImageId = imageId,
-                ImageType = imageType,
                 Resolution = resolution,
-                FrameInterpolation = frameInterpolation,
-                IsPublic = isPublic,
-                NegativePrompt = negativePrompt,
-                PromptEnhance = promptEnhance,
-                Elements = elements,
+                SourceGenerationId = sourceGenerationId,
             };
 
-            return await CreateImageToVideoGenerationAsync(
+            return await CreateVideoUpscaleAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

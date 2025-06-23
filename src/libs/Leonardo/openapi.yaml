@@ -844,6 +844,14 @@ paths:
                     - UPLOADED
                   type: string
                   description: Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
+                resolution:
+                  title: String
+                  enum:
+                    - RESOLUTION_480
+                    - RESOLUTION_720
+                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified.
+                  default: RESOLUTION_480
+                  nullable: true
                 frameInterpolation:
                   title: Boolean
                   type: boolean
@@ -906,6 +914,14 @@ paths:
                   title: String
                   type: string
                   description: The prompt used to generate video
+                resolution:
+                  title: String
+                  enum:
+                    - RESOLUTION_480
+                    - RESOLUTION_720
+                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified.
+                  default: RESOLUTION_480
+                  nullable: true
                 frameInterpolation:
                   title: Boolean
                   type: boolean
@@ -964,6 +980,54 @@ paths:
                       generationId:
                         title: String
                         type: string
+                      apiCreditCost:
+                        $ref: '#/components/schemas/apiCreditCost'
+                    nullable: true
+  /generations-video-upscale:
+    post:
+      tags:
+        - Motion
+      summary: Upscale a generated video
+      description: This endpoint will upscale a generated video to a higher resolution.
+      operationId: createVideoUpscale
+      requestBody:
+        description: Query parameters can also be provided in the request body as a JSON object
+        content:
+          application/json:
+            schema:
+              required:
+                - resolution
+                - sourceGenerationId
+              type: object
+              properties:
+                resolution:
+                  title: String
+                  enum:
+                    - RESOLUTION_720
+                  description: The resolution of the upscaled video. RESOLUTION_720 is the only option for now.
+                sourceGenerationId:
+                  title: String
+                  type: string
+                  description: The ID of the source video generation to upscale.
+      responses:
+        '200':
+          description: Responses for POST /generations-text-to-video
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  motionVideoGenerationJob:
+                    title: MotionVideoGenerationOutput
+                    type: object
+                    properties:
+                      generationId:
+                        title: String
+                        type: string
+                      variationId:
+                        title: String
+                        type: string
+                        description: The ID of the upscale variation.
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
                     nullable: true
@@ -2153,6 +2217,50 @@ paths:
                           type: string
                           nullable: true
                       description: columns and relationships of "generated_image_variation_generic"
+  '/motion-variations/{id}':
+    get:
+      tags:
+        - Variation
+      summary: Get motion variation by ID
+      description: This endpoint will get the motion variation by ID
+      operationId: getMotionVariationById
+      parameters:
+        - name: id
+          in: path
+          description: '"id" is required'
+          required: true
+          schema:
+            pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
+            type: string
+      responses:
+        '200':
+          description: 'Responses for GET /motion-variations/{id}'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  generated_image_variation_motion:
+                    type: array
+                    items:
+                      title: generated_image_variation_motion
+                      type: object
+                      properties:
+                        createdAt:
+                          $ref: '#/components/schemas/timestamp'
+                        id:
+                          $ref: '#/components/schemas/uuid'
+                        status:
+                          $ref: '#/components/schemas/job_status'
+                        motionTransformType:
+                          $ref: '#/components/schemas/MOTION_VARIATION_TYPE'
+                        resolution:
+                          $ref: '#/components/schemas/MOTION_RESOLUTION'
+                        url:
+                          title: String
+                          type: string
+                          nullable: true
+                      description: columns and relationships of "generated_image_variation_motion"
   /datasets:
     post:
       tags:
@@ -3448,6 +3556,18 @@ components:
         - NOBG
       type: string
       description: The type of variation.
+    MOTION_VARIATION_TYPE:
+      title: MOTION_VARIATION_TYPE
+      enum:
+        - UPSCALE
+      type: string
+      description: The type of motion variation.
+    MOTION_RESOLUTION:
+      title: MOTION_RESOLUTION
+      enum:
+        - RESOLUTION_720
+      type: string
+      description: The resolution of the upscaled video. RESOLUTION_720 is the only option for now.
     timestamp:
       title: timestamp
       type: string

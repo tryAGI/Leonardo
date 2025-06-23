@@ -16,6 +16,14 @@ namespace Leonardo
         public required string Prompt { get; set; }
 
         /// <summary>
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+        /// Default Value: RESOLUTION_480
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateTextToVideoGenerationRequestResolutionJsonConverter))]
+        public global::Leonardo.CreateTextToVideoGenerationRequestResolution? Resolution { get; set; }
+
+        /// <summary>
         /// Smoothly blend frames for fluid video transitions using Interpolation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frameInterpolation")]
@@ -77,6 +85,10 @@ namespace Leonardo
         /// <param name="prompt">
         /// The prompt used to generate video
         /// </param>
+        /// <param name="resolution">
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+        /// Default Value: RESOLUTION_480
+        /// </param>
         /// <param name="frameInterpolation">
         /// Smoothly blend frames for fluid video transitions using Interpolation.
         /// </param>
@@ -108,6 +120,7 @@ namespace Leonardo
 #endif
         public CreateTextToVideoGenerationRequest(
             string prompt,
+            global::Leonardo.CreateTextToVideoGenerationRequestResolution? resolution,
             bool? frameInterpolation,
             bool? isPublic,
             string? negativePrompt,
@@ -118,6 +131,7 @@ namespace Leonardo
             global::System.Collections.Generic.IList<object>? elements)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Resolution = resolution;
             this.FrameInterpolation = frameInterpolation;
             this.IsPublic = isPublic;
             this.NegativePrompt = negativePrompt;
