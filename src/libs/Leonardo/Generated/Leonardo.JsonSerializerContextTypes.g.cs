@@ -174,147 +174,147 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type37 { get; set; }
+        public global::Leonardo.CreateTextToVideoGenerationRequest? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type38 { get; set; }
+        public global::Leonardo.CreateTextToVideoGenerationRequestResolution? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateTextToVideoGenerationRequest? Type39 { get; set; }
+        public global::Leonardo.CreateTextToVideoGenerationRequestModel? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateTextToVideoGenerationRequestResolution? Type40 { get; set; }
+        public global::Leonardo.CreateVideoUpscaleRequest? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateVideoUpscaleRequest? Type41 { get; set; }
+        public global::Leonardo.CreateVideoUpscaleRequestResolution? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateVideoUpscaleRequestResolution? Type42 { get; set; }
+        public global::Leonardo.CreateLCMGenerationRequest? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateLCMGenerationRequest? Type43 { get; set; }
+        public global::Leonardo.PerformInstantRefineRequest? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PerformInstantRefineRequest? Type44 { get; set; }
+        public global::Leonardo.PerformInpaintingLCMRequest? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PerformInpaintingLCMRequest? Type45 { get; set; }
+        public global::Leonardo.PerformAlchemyUpscaleLCMRequest? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PerformAlchemyUpscaleLCMRequest? Type46 { get; set; }
+        public global::Leonardo.GetTextureGenerationsByModelIdRequest? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.GetTextureGenerationsByModelIdRequest? Type47 { get; set; }
+        public global::Leonardo.GetTextureGenerationByIdRequest? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.GetTextureGenerationByIdRequest? Type48 { get; set; }
+        public global::Leonardo.DeleteTextureGenerationByIdRequest? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.DeleteTextureGenerationByIdRequest? Type49 { get; set; }
+        public global::Leonardo.UploadModelAssetRequest? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.UploadModelAssetRequest? Type50 { get; set; }
+        public global::Leonardo.Get3DModelsByUserIdRequest? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.Get3DModelsByUserIdRequest? Type51 { get; set; }
+        public global::Leonardo.Get3DModelByIdRequest? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.Get3DModelByIdRequest? Type52 { get; set; }
+        public global::Leonardo.Delete3DModelByIdRequest? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.Delete3DModelByIdRequest? Type53 { get; set; }
+        public global::Leonardo.UploadInitImageRequest? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.UploadInitImageRequest? Type54 { get; set; }
+        public global::Leonardo.UploadCanvasInitImageRequest? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.UploadCanvasInitImageRequest? Type55 { get; set; }
+        public global::Leonardo.CreateVariationUnzoomRequest? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateVariationUnzoomRequest? Type56 { get; set; }
+        public global::Leonardo.CreateVariationUpscaleRequest? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateVariationUpscaleRequest? Type57 { get; set; }
+        public global::Leonardo.CreateVariationNoBGRequest? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateVariationNoBGRequest? Type58 { get; set; }
+        public global::Leonardo.CreateUniversalUpscalerJobRequest? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateUniversalUpscalerJobRequest? Type59 { get; set; }
+        public global::Leonardo.CreateDatasetRequest? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateDatasetRequest? Type60 { get; set; }
+        public global::Leonardo.UploadDatasetImageRequest? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.UploadDatasetImageRequest? Type61 { get; set; }
+        public global::Leonardo.UploadDatasetImageFromGenRequest? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.UploadDatasetImageFromGenRequest? Type62 { get; set; }
+        public global::Leonardo.CreateModelRequest? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateModelRequest? Type63 { get; set; }
+        public global::Leonardo.CreateModelRequestSdVersion? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateModelRequestSdVersion? Type64 { get; set; }
+        public global::Leonardo.CreateElementRequest? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateElementRequest? Type65 { get; set; }
+        public global::Leonardo.CreateElementRequestSdVersion? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.CreateElementRequestSdVersion? Type66 { get; set; }
+        public global::Leonardo.PromptImproveRequest? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PromptImproveRequest? Type67 { get; set; }
+        public global::Leonardo.PricingCalculatorRequest? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequest? Type68 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParams? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParams? Type69 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsIMAGEGENERATION? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsIMAGEGENERATION? Type70 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? Type71 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONGENERATION? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONGENERATION? Type72 { get; set; }
+        public object? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>

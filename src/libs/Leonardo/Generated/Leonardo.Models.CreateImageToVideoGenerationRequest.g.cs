@@ -63,10 +63,10 @@ namespace Leonardo
         public bool? PromptEnhance { get; set; }
 
         /// <summary>
-        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elements")]
-        public global::System.Collections.Generic.IList<object>? Elements { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? Elements { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -103,7 +103,7 @@ namespace Leonardo
         /// Whether to enhance the prompt.
         /// </param>
         /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -117,7 +117,7 @@ namespace Leonardo
             bool? isPublic,
             string? negativePrompt,
             bool? promptEnhance,
-            global::System.Collections.Generic.IList<object>? elements)
+            global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.ImageId = imageId ?? throw new global::System.ArgumentNullException(nameof(imageId));
