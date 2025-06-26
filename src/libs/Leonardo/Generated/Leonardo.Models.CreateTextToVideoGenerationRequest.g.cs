@@ -16,12 +16,20 @@ namespace Leonardo
         public required string Prompt { get; set; }
 
         /// <summary>
-        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720.<br/>
         /// Default Value: RESOLUTION_480
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateTextToVideoGenerationRequestResolutionJsonConverter))]
         public global::Leonardo.CreateTextToVideoGenerationRequestResolution? Resolution { get; set; }
+
+        /// <summary>
+        /// The model to use for the video generation. Defaults to MOTION2 if not specified.<br/>
+        /// Default Value: MOTION2
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateTextToVideoGenerationRequestModelJsonConverter))]
+        public global::Leonardo.CreateTextToVideoGenerationRequestModel? Model { get; set; }
 
         /// <summary>
         /// Smoothly blend frames for fluid video transitions using Interpolation.
@@ -68,10 +76,10 @@ namespace Leonardo
         public int? Width { get; set; }
 
         /// <summary>
-        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elements")]
-        public global::System.Collections.Generic.IList<object>? Elements { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? Elements { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -86,8 +94,12 @@ namespace Leonardo
         /// The prompt used to generate video
         /// </param>
         /// <param name="resolution">
-        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720.<br/>
         /// Default Value: RESOLUTION_480
+        /// </param>
+        /// <param name="model">
+        /// The model to use for the video generation. Defaults to MOTION2 if not specified.<br/>
+        /// Default Value: MOTION2
         /// </param>
         /// <param name="frameInterpolation">
         /// Smoothly blend frames for fluid video transitions using Interpolation.
@@ -113,7 +125,7 @@ namespace Leonardo
         /// Default Value: 832
         /// </param>
         /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -121,6 +133,7 @@ namespace Leonardo
         public CreateTextToVideoGenerationRequest(
             string prompt,
             global::Leonardo.CreateTextToVideoGenerationRequestResolution? resolution,
+            global::Leonardo.CreateTextToVideoGenerationRequestModel? model,
             bool? frameInterpolation,
             bool? isPublic,
             string? negativePrompt,
@@ -128,10 +141,11 @@ namespace Leonardo
             global::System.Collections.Generic.IList<string>? styleIds,
             int? height,
             int? width,
-            global::System.Collections.Generic.IList<object>? elements)
+            global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Resolution = resolution;
+            this.Model = model;
             this.FrameInterpolation = frameInterpolation;
             this.IsPublic = isPublic;
             this.NegativePrompt = negativePrompt;

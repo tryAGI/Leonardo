@@ -12,10 +12,12 @@ namespace Leonardo
         /// Unique identifier for element. Elements can be found from the List Elements endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("akUUID")]
-        public string? AkUUID { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string AkUUID { get; set; }
 
         /// <summary>
-        /// Weight for the element
+        /// Weight for the element<br/>
+        /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
         public double? Weight { get; set; }
@@ -33,16 +35,17 @@ namespace Leonardo
         /// Unique identifier for element. Elements can be found from the List Elements endpoint.
         /// </param>
         /// <param name="weight">
-        /// Weight for the element
+        /// Weight for the element<br/>
+        /// Default Value: 1
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ElementInput(
-            string? akUUID,
+            string akUUID,
             double? weight)
         {
-            this.AkUUID = akUUID;
+            this.AkUUID = akUUID ?? throw new global::System.ArgumentNullException(nameof(akUUID));
             this.Weight = weight;
         }
 

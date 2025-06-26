@@ -196,7 +196,7 @@ namespace Leonardo
         /// Whether to enhance the prompt.
         /// </param>
         /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output.
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -209,7 +209,7 @@ namespace Leonardo
             bool? isPublic = default,
             string? negativePrompt = default,
             bool? promptEnhance = default,
-            global::System.Collections.Generic.IList<object>? elements = default,
+            global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Leonardo.CreateImageToVideoGenerationRequest

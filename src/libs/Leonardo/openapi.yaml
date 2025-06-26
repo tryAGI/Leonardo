@@ -870,11 +870,11 @@ paths:
                   description: Whether to enhance the prompt.
                   nullable: true
                 elements:
-                  title: Array of Elements
+                  title: Array of Element Inputs
                   type: array
                   items:
-                    type: object
-                  description: An array of elements/loras objects that will be applied sequentially to the output.
+                    $ref: '#/components/schemas/element_input'
+                  description: 'An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. '
                   nullable: true
       responses:
         '200':
@@ -919,8 +919,16 @@ paths:
                   enum:
                     - RESOLUTION_480
                     - RESOLUTION_720
-                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified.
+                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720.
                   default: RESOLUTION_480
+                  nullable: true
+                model:
+                  title: String
+                  enum:
+                    - MOTION2
+                    - VEO3
+                  description: The model to use for the video generation. Defaults to MOTION2 if not specified.
+                  default: MOTION2
                   nullable: true
                 frameInterpolation:
                   title: Boolean
@@ -959,11 +967,11 @@ paths:
                   default: 832
                   nullable: true
                 elements:
-                  title: Array of Elements
+                  title: Array of Element Inputs
                   type: array
                   items:
-                    type: object
-                  description: An array of elements/loras objects that will be applied sequentially to the output.
+                    $ref: '#/components/schemas/element_input'
+                  description: 'An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. '
                   nullable: true
       responses:
         '200':
@@ -3606,17 +3614,19 @@ components:
           nullable: true
     element_input:
       title: element_input
+      required:
+        - akUUID
       type: object
       properties:
         akUUID:
           title: String
           type: string
           description: Unique identifier for element. Elements can be found from the List Elements endpoint.
-          nullable: true
         weight:
           title: Float
           type: number
           description: Weight for the element
+          default: 1
           nullable: true
     user_elements_input:
       title: user_elements_input

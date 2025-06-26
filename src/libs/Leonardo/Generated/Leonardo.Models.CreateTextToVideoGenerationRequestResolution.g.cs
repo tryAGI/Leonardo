@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+    /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720.<br/>
     /// Default Value: RESOLUTION_480
     /// </summary>
     public enum CreateTextToVideoGenerationRequestResolution
