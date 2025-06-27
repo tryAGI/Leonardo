@@ -3273,8 +3273,20 @@ paths:
                         resolution:
                           title: String
                           type: string
-                          description: The resolution of the video. Must be enum value of FAST and QUALITY.
+                          description: The resolution of the video. Must be RESOLUTION_480 or RESOLUTION_720.
                       description: Parameters for MOTION_VIDEO_GENERATION service
+                      nullable: true
+                    VEO3_MOTION_VIDEO_GENERATION:
+                      title: Object
+                      type: object
+                      properties:
+                        resolution:
+                          title: String
+                          enum:
+                            - RESOLUTION_720
+                          type: string
+                          description: The resolution of the video. Supported resolution for VEO3 is RESOLUTION_720.
+                      description: Parameters for VEO3_MOTION_VIDEO_GENERATION service
                       nullable: true
                     LCM_GENERATION:
                       title: Object
@@ -3802,6 +3814,7 @@ components:
         - FANTASY_AVATAR_GENERATION
         - MOTION_SVD_GENERATION
         - MOTION_VIDEO_GENERATION
+        - VEO3_MOTION_VIDEO_GENERATION
         - LCM_GENERATION
         - MODEL_TRAINING
         - TEXTURE_GENERATION

@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class PricingCalculatorRequestServiceParamsMOTIONVIDEOGENERATION
     {
         /// <summary>
-        /// The resolution of the video. Must be enum value of FAST and QUALITY.
+        /// The resolution of the video. Must be RESOLUTION_480 or RESOLUTION_720.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
         public string? Resolution { get; set; }
@@ -24,7 +24,7 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMOTIONVIDEOGENERATION" /> class.
         /// </summary>
         /// <param name="resolution">
-        /// The resolution of the video. Must be enum value of FAST and QUALITY.
+        /// The resolution of the video. Must be RESOLUTION_480 or RESOLUTION_720.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
