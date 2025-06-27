@@ -33,6 +33,12 @@ namespace Leonardo
         public global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONVIDEOGENERATION? MOTIONVIDEOGENERATION { get; set; }
 
         /// <summary>
+        /// Parameters for VEO3_MOTION_VIDEO_GENERATION service
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("VEO3_MOTION_VIDEO_GENERATION")]
+        public global::Leonardo.PricingCalculatorRequestServiceParamsVEO3MOTIONVIDEOGENERATION? VEO3MOTIONVIDEOGENERATION { get; set; }
+
+        /// <summary>
         /// Parameters for LCM_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("LCM_GENERATION")]
@@ -83,6 +89,9 @@ namespace Leonardo
         /// <param name="mOTIONVIDEOGENERATION">
         /// Parameters for MOTION_VIDEO_GENERATION service
         /// </param>
+        /// <param name="vEO3MOTIONVIDEOGENERATION">
+        /// Parameters for VEO3_MOTION_VIDEO_GENERATION service
+        /// </param>
         /// <param name="lCMGENERATION">
         /// Parameters for LCM_GENERATION service
         /// </param>
@@ -106,6 +115,7 @@ namespace Leonardo
             global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? fANTASYAVATARGENERATION,
             object? mOTIONSVDGENERATION,
             global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONVIDEOGENERATION? mOTIONVIDEOGENERATION,
+            global::Leonardo.PricingCalculatorRequestServiceParamsVEO3MOTIONVIDEOGENERATION? vEO3MOTIONVIDEOGENERATION,
             global::Leonardo.PricingCalculatorRequestServiceParamsLCMGENERATION? lCMGENERATION,
             global::Leonardo.PricingCalculatorRequestServiceParamsMODELTRAINING? mODELTRAINING,
             global::Leonardo.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? tEXTUREGENERATION,
@@ -116,6 +126,7 @@ namespace Leonardo
             this.FANTASYAVATARGENERATION = fANTASYAVATARGENERATION;
             this.MOTIONSVDGENERATION = mOTIONSVDGENERATION;
             this.MOTIONVIDEOGENERATION = mOTIONVIDEOGENERATION;
+            this.VEO3MOTIONVIDEOGENERATION = vEO3MOTIONVIDEOGENERATION;
             this.LCMGENERATION = lCMGENERATION;
             this.MODELTRAINING = mODELTRAINING;
             this.TEXTUREGENERATION = tEXTUREGENERATION;
