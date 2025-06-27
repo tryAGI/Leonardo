@@ -21,12 +21,6 @@ namespace Leonardo
         public global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? FANTASYAVATARGENERATION { get; set; }
 
         /// <summary>
-        /// Parameters for MOTION_GENERATION service
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("MOTION_GENERATION")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONGENERATION? MOTIONGENERATION { get; set; }
-
-        /// <summary>
         /// Parameters for MOTION_SVD_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MOTION_SVD_GENERATION")]
@@ -83,9 +77,6 @@ namespace Leonardo
         /// <param name="fANTASYAVATARGENERATION">
         /// Parameters for FANTASY_AVATAR_GENERATION service
         /// </param>
-        /// <param name="mOTIONGENERATION">
-        /// Parameters for MOTION_GENERATION service
-        /// </param>
         /// <param name="mOTIONSVDGENERATION">
         /// Parameters for MOTION_SVD_GENERATION service
         /// </param>
@@ -113,7 +104,6 @@ namespace Leonardo
         public PricingCalculatorRequestServiceParams(
             global::Leonardo.PricingCalculatorRequestServiceParamsIMAGEGENERATION? iMAGEGENERATION,
             global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? fANTASYAVATARGENERATION,
-            global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONGENERATION? mOTIONGENERATION,
             object? mOTIONSVDGENERATION,
             global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONVIDEOGENERATION? mOTIONVIDEOGENERATION,
             global::Leonardo.PricingCalculatorRequestServiceParamsLCMGENERATION? lCMGENERATION,
@@ -124,7 +114,6 @@ namespace Leonardo
         {
             this.IMAGEGENERATION = iMAGEGENERATION;
             this.FANTASYAVATARGENERATION = fANTASYAVATARGENERATION;
-            this.MOTIONGENERATION = mOTIONGENERATION;
             this.MOTIONSVDGENERATION = mOTIONSVDGENERATION;
             this.MOTIONVIDEOGENERATION = mOTIONVIDEOGENERATION;
             this.LCMGENERATION = lCMGENERATION;

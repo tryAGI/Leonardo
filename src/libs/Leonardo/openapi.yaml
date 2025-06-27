@@ -3261,16 +3261,6 @@ paths:
                           $ref: '#/components/schemas/numImages'
                       description: Parameters for FANTASY_AVATAR_GENERATION service
                       nullable: true
-                    MOTION_GENERATION:
-                      title: Object
-                      type: object
-                      properties:
-                        durationSeconds:
-                          title: Int
-                          type: integer
-                          description: The total duration of the motion generation in seconds.
-                      description: Parameters for MOTION_GENERATION service
-                      nullable: true
                     MOTION_SVD_GENERATION:
                       title: Object
                       type: object
@@ -3810,7 +3800,6 @@ components:
       enum:
         - IMAGE_GENERATION
         - FANTASY_AVATAR_GENERATION
-        - MOTION_GENERATION
         - MOTION_SVD_GENERATION
         - MOTION_VIDEO_GENERATION
         - LCM_GENERATION
