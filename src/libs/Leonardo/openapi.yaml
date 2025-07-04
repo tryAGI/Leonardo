@@ -852,6 +852,14 @@ paths:
                   description: The resolution of the video. Defaults to RESOLUTION_480 if not specified.
                   default: RESOLUTION_480
                   nullable: true
+                model:
+                  title: String
+                  enum:
+                    - MOTION2
+                    - VEO3
+                  description: The model to use for the video generation. Defaults to MOTION2 if not specified.
+                  default: MOTION2
+                  nullable: true
                 frameInterpolation:
                   title: Boolean
                   type: boolean

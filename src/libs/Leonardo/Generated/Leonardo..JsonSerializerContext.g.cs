@@ -55,6 +55,8 @@ namespace Leonardo
             typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestImageTypeNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestResolutionJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestResolutionNullableJsonConverter),
+            typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestModelJsonConverter),
+            typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestModelNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateTextToVideoGenerationRequestResolutionJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateTextToVideoGenerationRequestResolutionNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.CreateTextToVideoGenerationRequestModelJsonConverter),
