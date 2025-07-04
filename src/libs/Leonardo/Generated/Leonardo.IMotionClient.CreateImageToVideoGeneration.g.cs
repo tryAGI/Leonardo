@@ -32,6 +32,10 @@ namespace Leonardo
         /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
         /// Default Value: RESOLUTION_480
         /// </param>
+        /// <param name="model">
+        /// The model to use for the video generation. Defaults to MOTION2 if not specified.<br/>
+        /// Default Value: MOTION2
+        /// </param>
         /// <param name="frameInterpolation">
         /// Smoothly blend frames for fluid video transitions using Interpolation.
         /// </param>
@@ -54,6 +58,7 @@ namespace Leonardo
             string imageId,
             global::Leonardo.CreateImageToVideoGenerationRequestImageType imageType,
             global::Leonardo.CreateImageToVideoGenerationRequestResolution? resolution = default,
+            global::Leonardo.CreateImageToVideoGenerationRequestModel? model = default,
             bool? frameInterpolation = default,
             bool? isPublic = default,
             string? negativePrompt = default,
