@@ -877,6 +877,13 @@ paths:
                   type: boolean
                   description: Whether to enhance the prompt.
                   nullable: true
+                styleIds:
+                  title: Array of Strings
+                  type: array
+                  items:
+                    type: string
+                  description: Predefined styles to enhance the prompt. This accepts a list of style uuids.
+                  nullable: true
                 elements:
                   title: Array of Element Inputs
                   type: array
@@ -960,18 +967,18 @@ paths:
                   type: array
                   items:
                     type: string
-                  description: Optional predefined styles to enhance the prompt
+                  description: Predefined styles to enhance the prompt. This accepts a list of style uuids.
                   nullable: true
                 height:
                   title: Integer
                   type: integer
-                  description: Height of the output
+                  description: Height of the output video.
                   default: 480
                   nullable: true
                 width:
                   title: Integer
                   type: integer
-                  description: Width of the output
+                  description: Width of the output video
                   default: 832
                   nullable: true
                 elements:

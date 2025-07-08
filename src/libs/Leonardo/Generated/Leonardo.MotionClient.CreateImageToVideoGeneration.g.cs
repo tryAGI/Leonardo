@@ -199,6 +199,9 @@ namespace Leonardo
         /// <param name="promptEnhance">
         /// Whether to enhance the prompt.
         /// </param>
+        /// <param name="styleIds">
+        /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
+        /// </param>
         /// <param name="elements">
         /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </param>
@@ -214,6 +217,7 @@ namespace Leonardo
             bool? isPublic = default,
             string? negativePrompt = default,
             bool? promptEnhance = default,
+            global::System.Collections.Generic.IList<string>? styleIds = default,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -228,6 +232,7 @@ namespace Leonardo
                 IsPublic = isPublic,
                 NegativePrompt = negativePrompt,
                 PromptEnhance = promptEnhance,
+                StyleIds = styleIds,
                 Elements = elements,
             };
 

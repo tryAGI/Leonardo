@@ -71,6 +71,12 @@ namespace Leonardo
         public bool? PromptEnhance { get; set; }
 
         /// <summary>
+        /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("styleIds")]
+        public global::System.Collections.Generic.IList<string>? StyleIds { get; set; }
+
+        /// <summary>
         /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elements")]
@@ -114,6 +120,9 @@ namespace Leonardo
         /// <param name="promptEnhance">
         /// Whether to enhance the prompt.
         /// </param>
+        /// <param name="styleIds">
+        /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
+        /// </param>
         /// <param name="elements">
         /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </param>
@@ -130,6 +139,7 @@ namespace Leonardo
             bool? isPublic,
             string? negativePrompt,
             bool? promptEnhance,
+            global::System.Collections.Generic.IList<string>? styleIds,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
@@ -141,6 +151,7 @@ namespace Leonardo
             this.IsPublic = isPublic;
             this.NegativePrompt = negativePrompt;
             this.PromptEnhance = promptEnhance;
+            this.StyleIds = styleIds;
             this.Elements = elements;
         }
 

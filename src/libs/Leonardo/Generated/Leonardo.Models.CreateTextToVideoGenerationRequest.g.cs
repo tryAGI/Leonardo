@@ -56,20 +56,20 @@ namespace Leonardo
         public bool? PromptEnhance { get; set; }
 
         /// <summary>
-        /// Optional predefined styles to enhance the prompt
+        /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("styleIds")]
         public global::System.Collections.Generic.IList<string>? StyleIds { get; set; }
 
         /// <summary>
-        /// Height of the output<br/>
+        /// Height of the output video.<br/>
         /// Default Value: 480
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
         public int? Height { get; set; }
 
         /// <summary>
-        /// Width of the output<br/>
+        /// Width of the output video<br/>
         /// Default Value: 832
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
@@ -114,14 +114,14 @@ namespace Leonardo
         /// Whether to enhance the prompt.
         /// </param>
         /// <param name="styleIds">
-        /// Optional predefined styles to enhance the prompt
+        /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </param>
         /// <param name="height">
-        /// Height of the output<br/>
+        /// Height of the output video.<br/>
         /// Default Value: 480
         /// </param>
         /// <param name="width">
-        /// Width of the output<br/>
+        /// Width of the output video<br/>
         /// Default Value: 832
         /// </param>
         /// <param name="elements">
