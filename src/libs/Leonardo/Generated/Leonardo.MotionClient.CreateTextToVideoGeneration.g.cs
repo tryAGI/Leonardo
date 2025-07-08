@@ -194,14 +194,14 @@ namespace Leonardo
         /// Whether to enhance the prompt.
         /// </param>
         /// <param name="styleIds">
-        /// Optional predefined styles to enhance the prompt
+        /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </param>
         /// <param name="height">
-        /// Height of the output<br/>
+        /// Height of the output video.<br/>
         /// Default Value: 480
         /// </param>
         /// <param name="width">
-        /// Width of the output<br/>
+        /// Width of the output video<br/>
         /// Default Value: 832
         /// </param>
         /// <param name="elements">
