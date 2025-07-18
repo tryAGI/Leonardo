@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+    /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.<br/>
     /// Default Value: RESOLUTION_480
     /// </summary>
     public enum CreateImageToVideoGenerationRequestResolution
@@ -17,6 +17,10 @@ namespace Leonardo
         /// 
         /// </summary>
         RESOLUTION720,
+        /// <summary>
+        /// 
+        /// </summary>
+        RESOLUTION1080,
     }
 
     /// <summary>
@@ -33,6 +37,7 @@ namespace Leonardo
             {
                 CreateImageToVideoGenerationRequestResolution.RESOLUTION480 => "RESOLUTION_480",
                 CreateImageToVideoGenerationRequestResolution.RESOLUTION720 => "RESOLUTION_720",
+                CreateImageToVideoGenerationRequestResolution.RESOLUTION1080 => "RESOLUTION_1080",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +50,7 @@ namespace Leonardo
             {
                 "RESOLUTION_480" => CreateImageToVideoGenerationRequestResolution.RESOLUTION480,
                 "RESOLUTION_720" => CreateImageToVideoGenerationRequestResolution.RESOLUTION720,
+                "RESOLUTION_1080" => CreateImageToVideoGenerationRequestResolution.RESOLUTION1080,
                 _ => null,
             };
         }

@@ -29,7 +29,7 @@ namespace Leonardo
         /// Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
         /// </param>
         /// <param name="resolution">
-        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified.<br/>
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.<br/>
         /// Default Value: RESOLUTION_480
         /// </param>
         /// <param name="model">
