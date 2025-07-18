@@ -849,7 +849,8 @@ paths:
                   enum:
                     - RESOLUTION_480
                     - RESOLUTION_720
-                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified.
+                    - RESOLUTION_1080
+                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.
                   default: RESOLUTION_480
                   nullable: true
                 model:
@@ -934,7 +935,8 @@ paths:
                   enum:
                     - RESOLUTION_480
                     - RESOLUTION_720
-                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720.
+                    - RESOLUTION_1080
+                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.
                   default: RESOLUTION_480
                   nullable: true
                 model:

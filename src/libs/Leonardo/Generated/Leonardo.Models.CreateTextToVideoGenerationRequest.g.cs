@@ -16,7 +16,7 @@ namespace Leonardo
         public required string Prompt { get; set; }
 
         /// <summary>
-        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720.<br/>
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.<br/>
         /// Default Value: RESOLUTION_480
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
@@ -94,7 +94,7 @@ namespace Leonardo
         /// The prompt used to generate video
         /// </param>
         /// <param name="resolution">
-        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720.<br/>
+        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.<br/>
         /// Default Value: RESOLUTION_480
         /// </param>
         /// <param name="model">
