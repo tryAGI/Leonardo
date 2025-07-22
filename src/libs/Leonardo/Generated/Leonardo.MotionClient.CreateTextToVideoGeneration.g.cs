@@ -187,6 +187,9 @@ namespace Leonardo
         /// <param name="isPublic">
         /// Whether the generation is public or not
         /// </param>
+        /// <param name="seed">
+        /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Motion 2.0 and 4294967293 for Veo3.
+        /// </param>
         /// <param name="negativePrompt">
         /// The negative prompt used for the video generation.
         /// </param>
@@ -215,6 +218,7 @@ namespace Leonardo
             global::Leonardo.CreateTextToVideoGenerationRequestModel? model = default,
             bool? frameInterpolation = default,
             bool? isPublic = default,
+            int? seed = default,
             string? negativePrompt = default,
             bool? promptEnhance = default,
             global::System.Collections.Generic.IList<string>? styleIds = default,
@@ -230,6 +234,7 @@ namespace Leonardo
                 Model = model,
                 FrameInterpolation = frameInterpolation,
                 IsPublic = isPublic,
+                Seed = seed,
                 NegativePrompt = negativePrompt,
                 PromptEnhance = promptEnhance,
                 StyleIds = styleIds,

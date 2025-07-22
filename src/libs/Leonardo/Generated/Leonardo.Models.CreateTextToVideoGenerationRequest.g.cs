@@ -44,6 +44,12 @@ namespace Leonardo
         public bool? IsPublic { get; set; }
 
         /// <summary>
+        /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Motion 2.0 and 4294967293 for Veo3.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
         /// The negative prompt used for the video generation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("negativePrompt")]
@@ -107,6 +113,9 @@ namespace Leonardo
         /// <param name="isPublic">
         /// Whether the generation is public or not
         /// </param>
+        /// <param name="seed">
+        /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Motion 2.0 and 4294967293 for Veo3.
+        /// </param>
         /// <param name="negativePrompt">
         /// The negative prompt used for the video generation.
         /// </param>
@@ -136,6 +145,7 @@ namespace Leonardo
             global::Leonardo.CreateTextToVideoGenerationRequestModel? model,
             bool? frameInterpolation,
             bool? isPublic,
+            int? seed,
             string? negativePrompt,
             bool? promptEnhance,
             global::System.Collections.Generic.IList<string>? styleIds,
@@ -148,6 +158,7 @@ namespace Leonardo
             this.Model = model;
             this.FrameInterpolation = frameInterpolation;
             this.IsPublic = isPublic;
+            this.Seed = seed;
             this.NegativePrompt = negativePrompt;
             this.PromptEnhance = promptEnhance;
             this.StyleIds = styleIds;
