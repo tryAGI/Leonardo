@@ -868,6 +868,11 @@ paths:
                   nullable: true
                 isPublic:
                   $ref: '#/components/schemas/public'
+                seed:
+                  title: seed
+                  type: integer
+                  description: Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Motion 2.0.
+                  nullable: true
                 negativePrompt:
                   title: String
                   type: string
@@ -954,6 +959,11 @@ paths:
                   nullable: true
                 isPublic:
                   $ref: '#/components/schemas/public'
+                seed:
+                  title: seed
+                  type: integer
+                  description: Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Motion 2.0 and 4294967293 for Veo3.
+                  nullable: true
                 negativePrompt:
                   title: String
                   type: string
