@@ -51,6 +51,9 @@ namespace Leonardo
         /// <param name="promptEnhance">
         /// Whether to enhance the prompt.
         /// </param>
+        /// <param name="promptEnhanceInstruction">
+        /// A natural language instruction used to modify the main prompt. For example, 'make it cinematic', 'add a rainbow', or 'change the subject to a cat'.
+        /// </param>
         /// <param name="styleIds">
         /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </param>
@@ -70,6 +73,7 @@ namespace Leonardo
             int? seed = default,
             string? negativePrompt = default,
             bool? promptEnhance = default,
+            string? promptEnhanceInstruction = default,
             global::System.Collections.Generic.IList<string>? styleIds = default,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements = default,
             global::System.Threading.CancellationToken cancellationToken = default);
