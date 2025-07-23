@@ -883,6 +883,11 @@ paths:
                   type: boolean
                   description: Whether to enhance the prompt.
                   nullable: true
+                promptEnhanceInstruction:
+                  title: String
+                  type: string
+                  description: 'A natural language instruction used to modify the main prompt. For example, ''make it cinematic'', ''add a rainbow'', or ''change the subject to a cat''.'
+                  nullable: true
                 styleIds:
                   title: Array of Strings
                   type: array
@@ -973,6 +978,11 @@ paths:
                   title: Boolean
                   type: boolean
                   description: Whether to enhance the prompt.
+                  nullable: true
+                promptEnhanceInstruction:
+                  title: String
+                  type: string
+                  description: 'A natural language instruction used to modify the main prompt. For example, ''make it cinematic'', ''add a rainbow'', or ''change the subject to a cat''.'
                   nullable: true
                 styleIds:
                   title: Array of Strings

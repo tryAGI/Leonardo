@@ -77,6 +77,12 @@ namespace Leonardo
         public bool? PromptEnhance { get; set; }
 
         /// <summary>
+        /// A natural language instruction used to modify the main prompt. For example, 'make it cinematic', 'add a rainbow', or 'change the subject to a cat'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("promptEnhanceInstruction")]
+        public string? PromptEnhanceInstruction { get; set; }
+
+        /// <summary>
         /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("styleIds")]
@@ -129,6 +135,9 @@ namespace Leonardo
         /// <param name="promptEnhance">
         /// Whether to enhance the prompt.
         /// </param>
+        /// <param name="promptEnhanceInstruction">
+        /// A natural language instruction used to modify the main prompt. For example, 'make it cinematic', 'add a rainbow', or 'change the subject to a cat'.
+        /// </param>
         /// <param name="styleIds">
         /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </param>
@@ -149,6 +158,7 @@ namespace Leonardo
             int? seed,
             string? negativePrompt,
             bool? promptEnhance,
+            string? promptEnhanceInstruction,
             global::System.Collections.Generic.IList<string>? styleIds,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements)
         {
@@ -162,6 +172,7 @@ namespace Leonardo
             this.Seed = seed;
             this.NegativePrompt = negativePrompt;
             this.PromptEnhance = promptEnhance;
+            this.PromptEnhanceInstruction = promptEnhanceInstruction;
             this.StyleIds = styleIds;
             this.Elements = elements;
         }
