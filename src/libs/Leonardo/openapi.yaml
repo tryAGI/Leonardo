@@ -3171,6 +3171,11 @@ paths:
                   type: string
                   description: The prompt is improved based on the given instructions.
                   nullable: true
+                isVideo:
+                  type: boolean
+                  description: Specifies whether the prompt is for a video generation. Defaults to false (image prompt).
+                  nullable: true
+                  example: true
         required: true
       responses:
         '200':
