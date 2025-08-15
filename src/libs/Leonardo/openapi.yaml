@@ -850,14 +850,15 @@ paths:
                     - RESOLUTION_480
                     - RESOLUTION_720
                     - RESOLUTION_1080
-                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.
-                  default: RESOLUTION_480
+                  description: The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified.
                   nullable: true
                 model:
                   title: String
                   enum:
                     - MOTION2
                     - VEO3
+                    - MOTION2FAST
+                    - VEO3FAST
                   description: The model to use for the video generation. Defaults to MOTION2 if not specified.
                   default: MOTION2
                   nullable: true
@@ -946,14 +947,15 @@ paths:
                     - RESOLUTION_480
                     - RESOLUTION_720
                     - RESOLUTION_1080
-                  description: The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.
-                  default: RESOLUTION_480
+                  description: The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified.
                   nullable: true
                 model:
                   title: String
                   enum:
                     - MOTION2
                     - VEO3
+                    - MOTION2FAST
+                    - VEO3FAST
                   description: The model to use for the video generation. Defaults to MOTION2 if not specified.
                   default: MOTION2
                   nullable: true

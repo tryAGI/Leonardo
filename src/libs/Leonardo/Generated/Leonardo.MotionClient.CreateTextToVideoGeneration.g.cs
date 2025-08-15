@@ -174,8 +174,7 @@ namespace Leonardo
         /// The prompt used to generate video
         /// </param>
         /// <param name="resolution">
-        /// The resolution of the video. Defaults to RESOLUTION_480 if not specified. VEO3 only supports RESOLUTION_720 and RESOLUTION_1080.<br/>
-        /// Default Value: RESOLUTION_480
+        /// The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified.
         /// </param>
         /// <param name="model">
         /// The model to use for the video generation. Defaults to MOTION2 if not specified.<br/>
