@@ -3286,10 +3286,25 @@ paths:
                           type: boolean
                           description: Enable to use SDXL Lightning model.
                           nullable: true
-                        ultra:
+                        isUltra:
                           title: Boolean
                           type: boolean
                           description: Enable to use Ultra mode.
+                          nullable: true
+                        isFluxSchnell:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use Flux Schnell model.
+                          nullable: true
+                        isFluxDev:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use Flux Dev model.
+                          nullable: true
+                        isFluxKontext:
+                          title: Boolean
+                          type: boolean
+                          description: Enable to use Flux Kontext model.
                           nullable: true
                       description: Parameters for IMAGE_GENERATION service
                       nullable: true
