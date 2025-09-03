@@ -119,8 +119,26 @@ namespace Leonardo
         /// <summary>
         /// Enable to use Ultra mode.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ultra")]
-        public bool? Ultra { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("isUltra")]
+        public bool? IsUltra { get; set; }
+
+        /// <summary>
+        /// Enable to use Flux Schnell model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("isFluxSchnell")]
+        public bool? IsFluxSchnell { get; set; }
+
+        /// <summary>
+        /// Enable to use Flux Dev model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("isFluxDev")]
+        public bool? IsFluxDev { get; set; }
+
+        /// <summary>
+        /// Enable to use Flux Kontext model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("isFluxKontext")]
+        public bool? IsFluxKontext { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -185,8 +203,17 @@ namespace Leonardo
         /// <param name="isSDXLLightning">
         /// Enable to use SDXL Lightning model.
         /// </param>
-        /// <param name="ultra">
+        /// <param name="isUltra">
         /// Enable to use Ultra mode.
+        /// </param>
+        /// <param name="isFluxSchnell">
+        /// Enable to use Flux Schnell model.
+        /// </param>
+        /// <param name="isFluxDev">
+        /// Enable to use Flux Dev model.
+        /// </param>
+        /// <param name="isFluxKontext">
+        /// Enable to use Flux Kontext model.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -210,7 +237,10 @@ namespace Leonardo
             bool? isPhoenix,
             bool? isSDXL,
             bool? isSDXLLightning,
-            bool? ultra)
+            bool? isUltra,
+            bool? isFluxSchnell,
+            bool? isFluxDev,
+            bool? isFluxKontext)
         {
             this.ImageHeight = imageHeight;
             this.ImageWidth = imageWidth;
@@ -230,7 +260,10 @@ namespace Leonardo
             this.IsPhoenix = isPhoenix;
             this.IsSDXL = isSDXL;
             this.IsSDXLLightning = isSDXLLightning;
-            this.Ultra = ultra;
+            this.IsUltra = isUltra;
+            this.IsFluxSchnell = isFluxSchnell;
+            this.IsFluxDev = isFluxDev;
+            this.IsFluxKontext = isFluxKontext;
         }
 
         /// <summary>
