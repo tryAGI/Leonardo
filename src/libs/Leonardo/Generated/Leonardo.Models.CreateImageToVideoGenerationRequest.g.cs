@@ -76,6 +76,13 @@ namespace Leonardo
         public bool? PromptEnhance { get; set; }
 
         /// <summary>
+        /// Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.<br/>
+        /// Default Value: 8
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
+        public int? Duration { get; set; }
+
+        /// <summary>
         /// A natural language instruction used to modify the main prompt. For example, 'make it cinematic', 'add a rainbow', or 'change the subject to a cat'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("promptEnhanceInstruction")]
@@ -133,6 +140,10 @@ namespace Leonardo
         /// <param name="promptEnhance">
         /// Whether to enhance the prompt.
         /// </param>
+        /// <param name="duration">
+        /// Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.<br/>
+        /// Default Value: 8
+        /// </param>
         /// <param name="promptEnhanceInstruction">
         /// A natural language instruction used to modify the main prompt. For example, 'make it cinematic', 'add a rainbow', or 'change the subject to a cat'.
         /// </param>
@@ -156,6 +167,7 @@ namespace Leonardo
             int? seed,
             string? negativePrompt,
             bool? promptEnhance,
+            int? duration,
             string? promptEnhanceInstruction,
             global::System.Collections.Generic.IList<string>? styleIds,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements)
@@ -170,6 +182,7 @@ namespace Leonardo
             this.Seed = seed;
             this.NegativePrompt = negativePrompt;
             this.PromptEnhance = promptEnhance;
+            this.Duration = duration;
             this.PromptEnhanceInstruction = promptEnhanceInstruction;
             this.StyleIds = styleIds;
             this.Elements = elements;

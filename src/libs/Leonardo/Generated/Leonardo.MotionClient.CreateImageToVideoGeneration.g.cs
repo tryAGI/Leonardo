@@ -201,6 +201,10 @@ namespace Leonardo
         /// <param name="promptEnhance">
         /// Whether to enhance the prompt.
         /// </param>
+        /// <param name="duration">
+        /// Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.<br/>
+        /// Default Value: 8
+        /// </param>
         /// <param name="promptEnhanceInstruction">
         /// A natural language instruction used to modify the main prompt. For example, 'make it cinematic', 'add a rainbow', or 'change the subject to a cat'.
         /// </param>
@@ -223,6 +227,7 @@ namespace Leonardo
             int? seed = default,
             string? negativePrompt = default,
             bool? promptEnhance = default,
+            int? duration = default,
             string? promptEnhanceInstruction = default,
             global::System.Collections.Generic.IList<string>? styleIds = default,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements = default,
@@ -240,6 +245,7 @@ namespace Leonardo
                 Seed = seed,
                 NegativePrompt = negativePrompt,
                 PromptEnhance = promptEnhance,
+                Duration = duration,
                 PromptEnhanceInstruction = promptEnhanceInstruction,
                 StyleIds = styleIds,
                 Elements = elements,

@@ -87,6 +87,13 @@ namespace Leonardo
         public int? Width { get; set; }
 
         /// <summary>
+        /// Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.<br/>
+        /// Default Value: 8
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
+        public int? Duration { get; set; }
+
+        /// <summary>
         /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elements")]
@@ -140,6 +147,10 @@ namespace Leonardo
         /// Width of the output video<br/>
         /// Default Value: 832
         /// </param>
+        /// <param name="duration">
+        /// Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.<br/>
+        /// Default Value: 8
+        /// </param>
         /// <param name="elements">
         /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </param>
@@ -159,6 +170,7 @@ namespace Leonardo
             global::System.Collections.Generic.IList<string>? styleIds,
             int? height,
             int? width,
+            int? duration,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
@@ -173,6 +185,7 @@ namespace Leonardo
             this.StyleIds = styleIds;
             this.Height = height;
             this.Width = width;
+            this.Duration = duration;
             this.Elements = elements;
         }
 

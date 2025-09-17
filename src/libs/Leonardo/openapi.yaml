@@ -884,6 +884,12 @@ paths:
                   type: boolean
                   description: Whether to enhance the prompt.
                   nullable: true
+                duration:
+                  title: Integer
+                  type: integer
+                  description: 'Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.'
+                  default: 8
+                  nullable: true
                 promptEnhanceInstruction:
                   title: String
                   type: string
@@ -1004,6 +1010,12 @@ paths:
                   type: integer
                   description: Width of the output video
                   default: 832
+                  nullable: true
+                duration:
+                  title: Integer
+                  type: integer
+                  description: 'Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.'
+                  default: 8
                   nullable: true
                 elements:
                   title: Array of Element Inputs
