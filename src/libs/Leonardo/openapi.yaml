@@ -850,7 +850,7 @@ paths:
                     - RESOLUTION_480
                     - RESOLUTION_720
                     - RESOLUTION_1080
-                  description: The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified.
+                  description: The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified. KLING2_5 supports RESOLUTION_1080.
                   nullable: true
                 model:
                   title: String
@@ -859,6 +859,7 @@ paths:
                     - VEO3
                     - MOTION2FAST
                     - VEO3FAST
+                    - KLING2_5
                   description: The model to use for the video generation. Defaults to MOTION2 if not specified.
                   default: MOTION2
                   nullable: true
@@ -887,8 +888,7 @@ paths:
                 duration:
                   title: Integer
                   type: integer
-                  description: 'Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.'
-                  default: 8
+                  description: 'Duration of the output video in seconds. Allowed values: 4, 6, or 8 on models VEO3 and VEO3FAST (default: 8) and 5 or 10 on model KLING2_5 (default: 5).'
                   nullable: true
                 promptEnhanceInstruction:
                   title: String
@@ -953,7 +953,7 @@ paths:
                     - RESOLUTION_480
                     - RESOLUTION_720
                     - RESOLUTION_1080
-                  description: The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified.
+                  description: The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified. KLING2_5 supports RESOLUTION_1080.
                   nullable: true
                 model:
                   title: String
@@ -962,6 +962,7 @@ paths:
                     - VEO3
                     - MOTION2FAST
                     - VEO3FAST
+                    - KLING2_5
                   description: The model to use for the video generation. Defaults to MOTION2 if not specified.
                   default: MOTION2
                   nullable: true

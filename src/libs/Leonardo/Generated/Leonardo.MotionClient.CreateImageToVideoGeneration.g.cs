@@ -180,7 +180,7 @@ namespace Leonardo
         /// Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
         /// </param>
         /// <param name="resolution">
-        /// The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified.
+        /// The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified. KLING2_5 supports RESOLUTION_1080.
         /// </param>
         /// <param name="model">
         /// The model to use for the video generation. Defaults to MOTION2 if not specified.<br/>
@@ -202,8 +202,7 @@ namespace Leonardo
         /// Whether to enhance the prompt.
         /// </param>
         /// <param name="duration">
-        /// Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.<br/>
-        /// Default Value: 8
+        /// Duration of the output video in seconds. Allowed values: 4, 6, or 8 on models VEO3 and VEO3FAST (default: 8) and 5 or 10 on model KLING2_5 (default: 5).
         /// </param>
         /// <param name="promptEnhanceInstruction">
         /// A natural language instruction used to modify the main prompt. For example, 'make it cinematic', 'add a rainbow', or 'change the subject to a cat'.
