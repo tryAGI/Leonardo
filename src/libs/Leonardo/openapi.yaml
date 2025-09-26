@@ -909,6 +909,16 @@ paths:
                     $ref: '#/components/schemas/element_input'
                   description: 'An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. '
                   nullable: true
+                height:
+                  title: Integer
+                  type: integer
+                  description: Height of the output video. Acceptable values vary based on model
+                  nullable: true
+                width:
+                  title: Integer
+                  type: integer
+                  description: Width of the output video. Acceptable values vary based on model
+                  nullable: true
       responses:
         '200':
           description: Responses for POST /generations-image-to-video
@@ -1003,14 +1013,12 @@ paths:
                 height:
                   title: Integer
                   type: integer
-                  description: Height of the output video.
-                  default: 480
+                  description: Height of the output video. Acceptable values vary based on model
                   nullable: true
                 width:
                   title: Integer
                   type: integer
-                  description: Width of the output video
-                  default: 832
+                  description: Width of the output video. Acceptable values vary based on model
                   nullable: true
                 duration:
                   title: Integer

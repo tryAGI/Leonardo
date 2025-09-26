@@ -100,6 +100,18 @@ namespace Leonardo
         public global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? Elements { get; set; }
 
         /// <summary>
+        /// Height of the output video. Acceptable values vary based on model
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("height")]
+        public int? Height { get; set; }
+
+        /// <summary>
+        /// Width of the output video. Acceptable values vary based on model
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("width")]
+        public int? Width { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -151,6 +163,12 @@ namespace Leonardo
         /// <param name="elements">
         /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </param>
+        /// <param name="height">
+        /// Height of the output video. Acceptable values vary based on model
+        /// </param>
+        /// <param name="width">
+        /// Width of the output video. Acceptable values vary based on model
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -168,7 +186,9 @@ namespace Leonardo
             int? duration,
             string? promptEnhanceInstruction,
             global::System.Collections.Generic.IList<string>? styleIds,
-            global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements)
+            global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements,
+            int? height,
+            int? width)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.ImageId = imageId ?? throw new global::System.ArgumentNullException(nameof(imageId));
@@ -184,6 +204,8 @@ namespace Leonardo
             this.PromptEnhanceInstruction = promptEnhanceInstruction;
             this.StyleIds = styleIds;
             this.Elements = elements;
+            this.Height = height;
+            this.Width = width;
         }
 
         /// <summary>
