@@ -73,15 +73,13 @@ namespace Leonardo
         public global::System.Collections.Generic.IList<string>? StyleIds { get; set; }
 
         /// <summary>
-        /// Height of the output video.<br/>
-        /// Default Value: 480
+        /// Height of the output video. Acceptable values vary based on model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
         public int? Height { get; set; }
 
         /// <summary>
-        /// Width of the output video<br/>
-        /// Default Value: 832
+        /// Width of the output video. Acceptable values vary based on model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
         public int? Width { get; set; }
@@ -140,12 +138,10 @@ namespace Leonardo
         /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </param>
         /// <param name="height">
-        /// Height of the output video.<br/>
-        /// Default Value: 480
+        /// Height of the output video. Acceptable values vary based on model
         /// </param>
         /// <param name="width">
-        /// Width of the output video<br/>
-        /// Default Value: 832
+        /// Width of the output video. Acceptable values vary based on model
         /// </param>
         /// <param name="duration">
         /// Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.<br/>

@@ -213,6 +213,12 @@ namespace Leonardo
         /// <param name="elements">
         /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
         /// </param>
+        /// <param name="height">
+        /// Height of the output video. Acceptable values vary based on model
+        /// </param>
+        /// <param name="width">
+        /// Width of the output video. Acceptable values vary based on model
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.CreateImageToVideoGenerationResponse> CreateImageToVideoGenerationAsync(
@@ -230,6 +236,8 @@ namespace Leonardo
             string? promptEnhanceInstruction = default,
             global::System.Collections.Generic.IList<string>? styleIds = default,
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements = default,
+            int? height = default,
+            int? width = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Leonardo.CreateImageToVideoGenerationRequest
@@ -248,6 +256,8 @@ namespace Leonardo
                 PromptEnhanceInstruction = promptEnhanceInstruction,
                 StyleIds = styleIds,
                 Elements = elements,
+                Height = height,
+                Width = width,
             };
 
             return await CreateImageToVideoGenerationAsync(
