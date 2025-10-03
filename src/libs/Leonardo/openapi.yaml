@@ -844,6 +844,23 @@ paths:
                     - UPLOADED
                   type: string
                   description: Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
+                endFrameImage:
+                  title: Object
+                  type: object
+                  properties:
+                    id:
+                      title: String
+                      type: string
+                      description: The ID of the end frame image.
+                    type:
+                      title: String
+                      enum:
+                        - GENERATED
+                        - UPLOADED
+                      type: string
+                      description: Type indicating whether the end frame image is uploaded or generated.
+                  description: The end frame image. Supported only on Kling2.1 model when used in conjunction with an init image.
+                  nullable: true
                 resolution:
                   title: String
                   enum:

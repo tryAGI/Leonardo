@@ -31,6 +31,12 @@ namespace Leonardo
         public required global::Leonardo.CreateImageToVideoGenerationRequestImageType ImageType { get; set; }
 
         /// <summary>
+        /// The end frame image. Supported only on Kling2.1 model when used in conjunction with an init image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("endFrameImage")]
+        public global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImage? EndFrameImage { get; set; }
+
+        /// <summary>
         /// The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified. KLING2_5 supports RESOLUTION_1080.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
@@ -129,6 +135,9 @@ namespace Leonardo
         /// <param name="imageType">
         /// Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
         /// </param>
+        /// <param name="endFrameImage">
+        /// The end frame image. Supported only on Kling2.1 model when used in conjunction with an init image.
+        /// </param>
         /// <param name="resolution">
         /// The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified. KLING2_5 supports RESOLUTION_1080.
         /// </param>
@@ -176,6 +185,7 @@ namespace Leonardo
             string prompt,
             string imageId,
             global::Leonardo.CreateImageToVideoGenerationRequestImageType imageType,
+            global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImage? endFrameImage,
             global::Leonardo.CreateImageToVideoGenerationRequestResolution? resolution,
             global::Leonardo.CreateImageToVideoGenerationRequestModel? model,
             bool? frameInterpolation,
@@ -193,6 +203,7 @@ namespace Leonardo
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.ImageId = imageId ?? throw new global::System.ArgumentNullException(nameof(imageId));
             this.ImageType = imageType;
+            this.EndFrameImage = endFrameImage;
             this.Resolution = resolution;
             this.Model = model;
             this.FrameInterpolation = frameInterpolation;

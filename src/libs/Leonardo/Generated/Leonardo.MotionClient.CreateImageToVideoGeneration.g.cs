@@ -179,6 +179,9 @@ namespace Leonardo
         /// <param name="imageType">
         /// Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
         /// </param>
+        /// <param name="endFrameImage">
+        /// The end frame image. Supported only on Kling2.1 model when used in conjunction with an init image.
+        /// </param>
         /// <param name="resolution">
         /// The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified. KLING2_5 supports RESOLUTION_1080.
         /// </param>
@@ -225,6 +228,7 @@ namespace Leonardo
             string prompt,
             string imageId,
             global::Leonardo.CreateImageToVideoGenerationRequestImageType imageType,
+            global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImage? endFrameImage = default,
             global::Leonardo.CreateImageToVideoGenerationRequestResolution? resolution = default,
             global::Leonardo.CreateImageToVideoGenerationRequestModel? model = default,
             bool? frameInterpolation = default,
@@ -245,6 +249,7 @@ namespace Leonardo
                 Prompt = prompt,
                 ImageId = imageId,
                 ImageType = imageType,
+                EndFrameImage = endFrameImage,
                 Resolution = resolution,
                 Model = model,
                 FrameInterpolation = frameInterpolation,
