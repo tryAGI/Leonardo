@@ -28,6 +28,10 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
+        KLING21,
+        /// <summary>
+        /// 
+        /// </summary>
         KLING25,
     }
 
@@ -47,6 +51,7 @@ namespace Leonardo
                 CreateTextToVideoGenerationRequestModel.VEO3 => "VEO3",
                 CreateTextToVideoGenerationRequestModel.MOTION2FAST => "MOTION2FAST",
                 CreateTextToVideoGenerationRequestModel.VEO3FAST => "VEO3FAST",
+                CreateTextToVideoGenerationRequestModel.KLING21 => "KLING2_1",
                 CreateTextToVideoGenerationRequestModel.KLING25 => "KLING2_5",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -62,6 +67,7 @@ namespace Leonardo
                 "VEO3" => CreateTextToVideoGenerationRequestModel.VEO3,
                 "MOTION2FAST" => CreateTextToVideoGenerationRequestModel.MOTION2FAST,
                 "VEO3FAST" => CreateTextToVideoGenerationRequestModel.VEO3FAST,
+                "KLING2_1" => CreateTextToVideoGenerationRequestModel.KLING21,
                 "KLING2_5" => CreateTextToVideoGenerationRequestModel.KLING25,
                 _ => null,
             };
