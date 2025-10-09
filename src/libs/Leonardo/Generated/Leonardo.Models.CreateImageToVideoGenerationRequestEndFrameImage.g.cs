@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// The end frame image. Supported only on Kling2.1 model when used in conjunction with an init image.
+    /// The end frame image. Supported only on kling2_1 model when used in conjunction with an init image.
     /// </summary>
     public sealed partial class CreateImageToVideoGenerationRequestEndFrameImage
     {
@@ -12,14 +12,16 @@ namespace Leonardo
         /// The ID of the end frame image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// Type indicating whether the end frame image is uploaded or generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestEndFrameImageTypeJsonConverter))]
-        public global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImageType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImageType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,10 +42,10 @@ namespace Leonardo
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateImageToVideoGenerationRequestEndFrameImage(
-            string? id,
-            global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImageType? type)
+            string id,
+            global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImageType type)
         {
-            this.Id = id;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
         }
 

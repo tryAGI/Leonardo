@@ -16,7 +16,7 @@ namespace Leonardo
         public required string Prompt { get; set; }
 
         /// <summary>
-        /// The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified. KLING2_5 supports RESOLUTION_1080.
+        /// The resolution of the output video. Acceptable values vary based on model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateTextToVideoGenerationRequestResolutionJsonConverter))]
@@ -110,7 +110,7 @@ namespace Leonardo
         /// The prompt used to generate video
         /// </param>
         /// <param name="resolution">
-        /// The resolution of the video. MOTION2 and MOTION2FAST supports RESOLUTION_480 and RESOLUTION_720 and defaults to RESOLUTION_480 if not specified. VEO3 and VEO3FAST supports RESOLUTION_720 and RESOLUTION_1080 and defaults to RESOLUTION_720 if not specified. KLING2_5 supports RESOLUTION_1080.
+        /// The resolution of the output video. Acceptable values vary based on model
         /// </param>
         /// <param name="model">
         /// The model to use for the video generation. Defaults to MOTION2 if not specified.<br/>
