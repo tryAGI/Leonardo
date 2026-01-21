@@ -40,16 +40,14 @@ namespace Leonardo
         /// The resolution of the output video. Acceptable values vary based on model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestResolutionJsonConverter))]
-        public global::Leonardo.CreateImageToVideoGenerationRequestResolution? Resolution { get; set; }
+        public object? Resolution { get; set; }
 
         /// <summary>
         /// The model to use for the video generation. Defaults to MOTION2 if not specified.<br/>
         /// Default Value: MOTION2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestModelJsonConverter))]
-        public global::Leonardo.CreateImageToVideoGenerationRequestModel? Model { get; set; }
+        public object? Model { get; set; }
 
         /// <summary>
         /// Smoothly blend frames for fluid video transitions using Interpolation.
@@ -186,8 +184,8 @@ namespace Leonardo
             string imageId,
             global::Leonardo.CreateImageToVideoGenerationRequestImageType imageType,
             global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImage? endFrameImage,
-            global::Leonardo.CreateImageToVideoGenerationRequestResolution? resolution,
-            global::Leonardo.CreateImageToVideoGenerationRequestModel? model,
+            object? resolution,
+            object? model,
             bool? frameInterpolation,
             bool? isPublic,
             int? seed,

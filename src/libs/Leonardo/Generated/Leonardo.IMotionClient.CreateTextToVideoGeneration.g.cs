@@ -67,8 +67,8 @@ namespace Leonardo
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateTextToVideoGenerationResponse> CreateTextToVideoGenerationAsync(
             string prompt,
-            global::Leonardo.CreateTextToVideoGenerationRequestResolution? resolution = default,
-            global::Leonardo.CreateTextToVideoGenerationRequestModel? model = default,
+            object? resolution = default,
+            object? model = default,
             bool? frameInterpolation = default,
             bool? isPublic = default,
             int? seed = default,
