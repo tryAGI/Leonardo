@@ -47,10 +47,9 @@ namespace Leonardo
         /// Whether or not encode the train text.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("train_text_encoder")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool TrainTextEncoder { get; set; } = true;
+        public required bool TrainTextEncoder { get; set; }
 
         /// <summary>
         /// The resolution for training. Must be 1024.<br/>
