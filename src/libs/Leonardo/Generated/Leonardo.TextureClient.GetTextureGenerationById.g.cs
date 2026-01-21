@@ -62,8 +62,8 @@ namespace Leonardo
             var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/generations-texture/{id}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("offset", offset?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

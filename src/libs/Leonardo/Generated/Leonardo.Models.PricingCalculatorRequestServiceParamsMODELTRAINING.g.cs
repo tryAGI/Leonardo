@@ -18,8 +18,7 @@ namespace Leonardo
         /// The model for the training. Can be set to 'FLUX_DEV' for FLUX_DEV specific pricing or can be omitted.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.PricingCalculatorRequestServiceParamsMODELTRAININGSdVersionJsonConverter))]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsMODELTRAININGSdVersion? SdVersion { get; set; }
+        public object? SdVersion { get; set; }
 
         /// <summary>
         /// The number of images in the training dataset when sd_version is set to 'FLUX_DEV'. Must be between 1 and 50.
@@ -50,7 +49,7 @@ namespace Leonardo
 #endif
         public PricingCalculatorRequestServiceParamsMODELTRAINING(
             int? resolution,
-            global::Leonardo.PricingCalculatorRequestServiceParamsMODELTRAININGSdVersion? sdVersion,
+            object? sdVersion,
             int? datasetImageCount)
         {
             this.Resolution = resolution;
