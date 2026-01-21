@@ -60,7 +60,7 @@ namespace Leonardo
             global::Leonardo.CustomModelType? modelType = default,
             bool? nsfw = default,
             int? resolution = default,
-            global::Leonardo.CreateModelRequestSdVersion? sdVersion = default,
+            object? sdVersion = default,
             global::Leonardo.Strength? strength = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

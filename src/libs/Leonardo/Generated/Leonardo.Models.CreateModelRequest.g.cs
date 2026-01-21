@@ -61,8 +61,7 @@ namespace Leonardo
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateModelRequestSdVersionJsonConverter))]
-        public global::Leonardo.CreateModelRequestSdVersion? SdVersion { get; set; }
+        public object? SdVersion { get; set; }
 
         /// <summary>
         /// When training using the PIXEL_ART model type, this influences the training strength.<br/>
@@ -123,7 +122,7 @@ namespace Leonardo
             global::Leonardo.CustomModelType? modelType,
             bool? nsfw,
             int? resolution,
-            global::Leonardo.CreateModelRequestSdVersion? sdVersion,
+            object? sdVersion,
             global::Leonardo.Strength? strength)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
