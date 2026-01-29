@@ -143,8 +143,8 @@ paths:
                   description: Enable to use the Fantasy Avatar feature.
                   nullable: true
                 guidance_scale:
-                  title: Int
-                  type: integer
+                  title: Float
+                  type: number
                   description: How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20.
                   nullable: true
                 height:
@@ -3492,8 +3492,831 @@ paths:
                         type: integer
                         description: API service cost to generate the image.
                     nullable: true
+  /blueprints:
+    get:
+      tags:
+        - Blueprints
+      summary: List Blueprints
+      description: 'Returns a list of Blueprints. Use either forward pagination (first/after) or backward pagination (last/before), but not both. Note: This endpoint uses a request body to support complex filtering parameters'
+      operationId: listBlueprints
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first:
+                  maximum: 100
+                  minimum: 1
+                  type: integer
+                  description: Number of items to return after the cursor (forward pagination)
+                  default: 10
+                after:
+                  allOf:
+                    - $ref: '#/components/schemas/Cursor'
+                  description: Cursor to paginate forward from
+                last:
+                  maximum: 100
+                  minimum: 1
+                  type: integer
+                  description: Number of items to return before the cursor (backward pagination)
+                before:
+                  allOf:
+                    - $ref: '#/components/schemas/Cursor'
+                  description: Cursor to paginate backward from
+                platforms:
+                  type: array
+                  items:
+                    enum:
+                      - Android
+                      - iOS
+                      - Web
+                      - API
+                    type: string
+                  description: Filter Blueprints by platforms that they can be executed on
+                  default:
+                    - API
+                  example:
+                    - API
+                    - Web
+                categories:
+                  type: array
+                  items:
+                    type: string
+                  description: Filter Blueprints by category
+                  example:
+                    - social-media
+            example:
+              first: 10
+              after: eyJjcmVhdGVkQXQiOiIyMDI1LTEwLTI5VDIxOjMxOjQ3Ljk5OVoiLCJha1VVSUQiOiJjODQ2NDEzZS05MmJhLTQzMDItODRmOC00N2M2NjdkNDc2MWYifQ==
+              platforms:
+                - iOS
+                - Android
+              categories:
+                - social-media
+      responses:
+        '200':
+          description: Responses for GET /api/rest/v1/blueprints
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - required:
+                      - blueprints
+                    type: object
+                    properties:
+                      blueprints:
+                        type: object
+                        properties:
+                          edges:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                cursor:
+                                  $ref: '#/components/schemas/Cursor'
+                                node:
+                                  $ref: '#/components/schemas/Blueprint'
+                          totalCount:
+                            $ref: '#/components/schemas/totalCount'
+                          pageInfo:
+                            $ref: '#/components/schemas/pageInfo'
+                    description: Successful response with Blueprint data
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/ApiError'
+                    description: Error response array
+              examples:
+                success:
+                  summary: Successful response
+                  value:
+                    blueprints:
+                      edges:
+                        - cursor: eyJjcmVhdGVkQXQiOiIyMDI2LTAxLTA3VDAzOjA4OjMwLjk3MVoiLCJha1VVSUQiOiJiM2VjN2VjZi1mYzYzLTRlZmMtODc0NS1mZGNmZDA1OWYwM2EifQ==
+                          node:
+                            akUUID: b3ec7ecf-fc63-4efc-8745-fdcfd059f03a
+                            createdAt: '2026-01-07T03:08:30.9710000+00:00'
+                            updatedAt: '2026-01-13T01:01:43.9890000+00:00'
+                            name: Detailed Recipe with Tags
+                            description: Create an editorial photo of the dish with its ingredients around it and their names printed as physical labels.
+                            thumbnails:
+                              - name: thumbnailUrl
+                                url: https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-7357ab.webp
+                              - name: thumbnailUrlBanner
+                                url: https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-1e754b.webp
+                              - name: thumbnailUrlLandscape
+                                url: https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-d53597.webp
+                              - name: thumbnailUrlExtremePortrait
+                                url: https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-1d8a28.webp
+                            teamId: 
+                            official: true
+                      totalCount: 1
+                      pageInfo:
+                        hasNextPage: false
+                        hasPreviousPage: false
+                        startCursor: eyJjcmVhdGVkQXQiOiIyMDI2LTAxLTA3VDAzOjA4OjMwLjk3MVoiLCJha1VVSUQiOiJiM2VjN2VjZi1mYzYzLTRlZmMtODc0NS1mZGNmZDA1OWYwM2EifQ==
+                        endCursor: eyJjcmVhdGVkQXQiOiIyMDI2LTAxLTA3VDAzOjA4OjMwLjk3MVoiLCJha1VVSUQiOiJiM2VjN2VjZi1mYzYzLTRlZmMtODc0NS1mZGNmZDA1OWYwM2EifQ==
+                error:
+                  summary: Error response
+                  value:
+                    - extensions:
+                        code: BadRequestException
+                        details:
+                          message: Bad request. Please check your input.
+                          statusCode: 400
+                      locations:
+                        - column: 97
+                          line: 1
+                      message: An error occurred.
+                      path:
+                        - blueprints
+  '/blueprints/{id}':
+    get:
+      tags:
+        - Blueprints
+      summary: Get Blueprint by ID
+      description: Returns a single Blueprint by its akUUID
+      operationId: getBlueprintById
+      parameters:
+        - name: id
+          in: path
+          description: The akUUID of the Blueprint to return
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successfully retrieved Blueprint
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - title: Success Response
+                    type: object
+                    properties:
+                      blueprint:
+                        $ref: '#/components/schemas/Blueprint'
+                  - title: Error Response
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ApiError'
+                    description: 'Error response (validation, not found, etc.)'
+              examples:
+                success:
+                  summary: Successful response
+                  value:
+                    blueprint:
+                      akUUID: c846413e-92ba-4302-84f8-47c667d4761f
+                      name: Golden Hour Relight
+                      description: 'Relight an image with warm, golden tones of late afternoon sunlight for a soft and radiant glow.'
+                      thumbnails:
+                        - name: thumbnailUrl
+                          url: https://cdn.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/goldenhour.jpg
+                      teamId: 
+                      official: true
+                      createdAt: '2025-10-29T21:31:47.9990000+00:00'
+                      updatedAt: '2025-12-19T02:34:44.7400000+00:00'
+                badRequest:
+                  summary: Bad request error
+                  value:
+                    - message: An error occurred.
+                      path:
+                        - blueprint
+                      locations:
+                        - column: 20
+                          line: 1
+                      extensions:
+                        code: BadRequestException
+                        details:
+                          message: Bad request. Please check your input.
+                          statusCode: 400
+                notFound:
+                  summary: Not found error
+                  value:
+                    - message: Blueprint not found
+                      path:
+                        - blueprint
+                      locations:
+                        - column: 20
+                          line: 1
+                      extensions:
+                        code: NOT_FOUND
+                        errorCode: 0
+                        statusCode: 404
+  '/blueprints/{id}/versions':
+    get:
+      tags:
+        - Blueprints
+      summary: Get Blueprint Versions by Blueprint ID
+      description: Returns all versions of a Blueprint by its akUUID
+      operationId: getBlueprintVersionsByBlueprintId
+      parameters:
+        - name: id
+          in: path
+          description: The akUUID of the Blueprint
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successfully retrieved Blueprint Versions
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - title: Success Response
+                    type: object
+                    properties:
+                      blueprintVersions:
+                        $ref: '#/components/schemas/BlueprintVersion'
+                  - title: Error Response
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ApiError'
+                    description: 'Error response (validation, not found, etc.)'
+              examples:
+                success:
+                  summary: Successful response
+                  value:
+                    blueprintVersions:
+                      edges:
+                        - cursor: eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ==
+                          node:
+                            akUUID: 956e9564-19f7-4968-b56d-05c2c567726f
+                            createdAt: '2025-11-27T05:13:21.8960000+00:00'
+                            updatedAt: '2025-11-27T05:13:21.8960000+00:00'
+                            cost: 160
+                            uiMetadata:
+                              inputs:
+                                - type: image
+                                  label: Upload a Photo of Yourself
+                                  nodeId: 4a5d62d9-5d73-4a2f-92ee-3a67d37b2b58
+                                  required: true
+                                  placeholder: 'Upload a selfie or photo of a person, preferrably from the chest up. Works better with clear front facing photos'
+                                  settingName: imageUrl
+                              outputs:
+                                - type: image
+                                - type: image
+                                - type: image
+                                - type: image
+                            uiMetadataSchemaVersion: '21'
+                            models:
+                              - gemini-2.5-flash-image
+                            executability:
+                              isExecutable: true
+                              reasons:
+                                - models: gemini-2.5-flash-image
+                      totalCount: 1
+                      pageInfo:
+                        hasNextPage: false
+                        hasPreviousPage: false
+                        startCursor: eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ==
+                        endCursor: eyJjcmVhdGVkQXQiOiIyMDI1LTEwLTMwVDA0OjU5OjAyLjEwOVoiLCJha1VVSUQiOiI4NzNlN2FlZS0wZTIzLTQ2NTEtYTllMi0zZTkwZGY3ZGYyNTkifQ==
+                badRequest:
+                  summary: Bad request error
+                  value:
+                    - message: An error occurred.
+                      path:
+                        - blueprintVersions
+                      locations:
+                        - column: 20
+                          line: 1
+                      extensions:
+                        code: BadRequestException
+                        details:
+                          message: Bad request. Please check your input.
+                          statusCode: 400
+                notFound:
+                  summary: Not found error
+                  value:
+                    - message: Blueprint not found
+                      path:
+                        - blueprintVersions
+                      locations:
+                        - column: 20
+                          line: 1
+                      extensions:
+                        code: NOT_FOUND
+                        errorCode: 0
+                        statusCode: 404
+  /blueprint-executions:
+    post:
+      tags:
+        - Blueprints
+      summary: Execute a Blueprint
+      description: Execute a Blueprint Version with custom node inputs. This endpoint triggers the execution of the specified Blueprint Version and returns a Blueprint Execution ID to track the job.
+      operationId: executeBlueprint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - blueprintVersionId
+                - input
+              type: object
+              properties:
+                blueprintVersionId:
+                  type: string
+                  description: The unique identifier of the Blueprint Version to execute
+                  format: uuid
+                  example: 550e8400-e29b-41d4-a716-446655440000
+                input:
+                  required:
+                    - nodeInputs
+                    - public
+                  type: object
+                  properties:
+                    nodeInputs:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/NodeInput'
+                      description: Array of node input objects to customize the Blueprint
+                    public:
+                      type: boolean
+                      description: Whether the resulting generations should be public
+                      example: false
+                    collectionIds:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/bigint'
+                      description: Optional list of collection IDs to add the generations to
+            example:
+              blueprintVersionId: 550e8400-e29b-41d4-a716-446655440000
+              input:
+                nodeInputs:
+                  - nodeId: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+                    settingName: text
+                    value: A futuristic cityscape at sunset
+                  - nodeId: b2c3d4e5-f6a7-8901-bcde-f12345678901
+                    settingName: textVariables
+                    value:
+                      - name: characterName
+                        value: Luna
+                      - name: outfit
+                        value: cyberpunk armor
+                  - nodeId: c3d4e5f6-a7b8-9012-cdef-123456789012
+                    settingName: imageUrl
+                    value: https://cdn.leonardo.ai/users/example/image.png
+                public: false
+                collectionIds: [ ]
+        required: true
+      responses:
+        '200':
+          description: Responses for POST /blueprint-executions
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - title: Success Response
+                    required:
+                      - executeBlueprint
+                    type: object
+                    properties:
+                      executeBlueprint:
+                        required:
+                          - akUUID
+                        type: object
+                        properties:
+                          akUUID:
+                            type: string
+                            description: The unique identifier of the Blueprint Execution
+                            format: uuid
+                            example: 550e8400-e29b-41d4-a716-446655440000
+                  - title: Error Response
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ApiError'
+                    description: Error response when validation fails
+              examples:
+                success:
+                  summary: Successful response
+                  value:
+                    executeBlueprint:
+                      akUUID: 550e8400-e29b-41d4-a716-446655440000
+                error:
+                  summary: Error response
+                  value:
+                    - message: An error occurred.
+                      path:
+                        - executeBlueprint
+                      locations:
+                        - column: 70
+                          line: 1
+                      extensions:
+                        code: BadRequestException
+                        details:
+                          message: Bad request. Please check your input.
+                          statusCode: 400
+        '400':
+          description: Bad Request - Invalid input type or missing required GraphQL field
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message describing the invalid input type or missing field
+                    example: 'Invalid input type: expected ''string'' for field ''blueprintVersionId'''
+  '/blueprint-executions/{id}':
+    get:
+      tags:
+        - Blueprints
+      summary: Get Blueprint Execution by ID
+      description: Retrieves details of a specific Blueprint Execution by its akUUID
+      operationId: getBlueprintExecution
+      parameters:
+        - name: id
+          in: path
+          description: The akUUID of the Blueprint Execution to retrieve
+          required: true
+          schema:
+            $ref: '#/components/schemas/uuid'
+      responses:
+        '200':
+          description: Successfully retrieved Blueprint Execution
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - title: Success Response
+                    type: object
+                    properties:
+                      blueprintExecution:
+                        $ref: '#/components/schemas/BlueprintExecution'
+                  - title: Error Response
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ApiError'
+                    description: 'Error response (Validation, Not Found)'
+              examples:
+                success:
+                  summary: Successful response
+                  value:
+                    blueprintExecution:
+                      akUUID: cdcc440a-e480-4411-83cb-437d20267a53
+                      status: COMPLETED
+                      inputs:
+                        - value: https://cdn.leonardo.ai/users/example/image.png
+                          nodeId: 9ac3b1e2-4d7f-4f10-8b2f-9e5a1c2d3e4f
+                          settingName: imageUrl
+                        - value:
+                            - name: setting1
+                              value: on a bus
+                          nodeId: 0b5c7344-ccc2-4ee8-9003-8ad3f1a76127
+                          settingName: textVariables
+                      public: false
+                      createdAt: '2025-11-05T04:51:04.1370000+00:00'
+                badRequest:
+                  summary: Bad request error
+                  value:
+                    - message: An error occurred.
+                      path:
+                        - blueprintExecution
+                      locations:
+                        - column: 20
+                          line: 1
+                      extensions:
+                        code: BadRequestException
+                        details:
+                          message: Bad request. Please check your input.
+                          statusCode: 400
+                notFound:
+                  summary: Not found error
+                  value:
+                    - message: Blueprint execution not found
+                      path:
+                        - blueprintExecution
+                      locations:
+                        - column: 20
+                          line: 1
+                      extensions:
+                        code: NOT_FOUND
+                        errorCode: 0
+                        statusCode: 404
+  '/blueprint-executions/{id}/generations':
+    get:
+      tags:
+        - Blueprints
+      summary: Get Blueprint Execution Generations by Execution ID
+      description: 'Retrieves paginated generations for a specific Blueprint Execution, including their statuses and any prompt moderation failure details.'
+      operationId: getBlueprintExecutionGenerations
+      parameters:
+        - name: id
+          in: path
+          description: The akUUID of the Blueprint Execution to retrieve generations for
+          required: true
+          schema:
+            $ref: '#/components/schemas/uuid'
+        - name: first
+          in: query
+          description: Number of generations to return from the beginning of the list (forward pagination)
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+        - name: after
+          in: query
+          description: Cursor for forward pagination - returns generations after this cursor
+          schema:
+            $ref: '#/components/schemas/Cursor'
+        - name: last
+          in: query
+          description: Number of generations to return from the end of the list (backward pagination)
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+        - name: before
+          in: query
+          description: Cursor for backward pagination - returns generations before this cursor
+          schema:
+            $ref: '#/components/schemas/Cursor'
+      responses:
+        '200':
+          description: Successfully retrieved Blueprint Execution Generations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  blueprintExecutionGenerations:
+                    $ref: '#/components/schemas/BlueprintExecutionGenerationsConnection'
+              examples:
+                success:
+                  summary: Successful response with generations
+                  value:
+                    blueprintExecutionGenerations:
+                      pageInfo:
+                        hasNextPage: true
+                        hasPreviousPage: false
+                        startCursor: YXJyYXljb25uZWN0aW9uOjA=
+                        endCursor: YXJyYXljb25uZWN0aW9uOjE5
+                      edges:
+                        - cursor: YXJyYXljb25uZWN0aW9uOjA=
+                          node:
+                            akUUID: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+                            status: COMPLETED
+                            generationId: 1f0bba44-923a-69b0-b519-62a6710d46a9
+                        - cursor: YXJyYXljb25uZWN0aW9uOjE=
+                          node:
+                            akUUID: b2c3d4e5-f6a7-8901-bcde-f12345678901
+                            status: FAILED
+                            generationId: 1f0b933e-b512-6640-8305-4835ab8cebfd
+                            failedReason:
+                              type: PROMPT_MODERATION_BLOCKED
+                              message: 'Content policy violation: Content involving minors combined with NSFW content is strictly prohibited. Please modify your prompt and try again.'
+                              affectedOutputCount: 1
+                promptModerationFailure:
+                  summary: Generation failed due to prompt moderation
+                  value:
+                    blueprintExecutionGenerations:
+                      pageInfo:
+                        hasNextPage: false
+                        hasPreviousPage: false
+                        startCursor: YXJyYXljb25uZWN0aW9uOjA=
+                        endCursor: YXJyYXljb25uZWN0aW9uOjA=
+                      edges:
+                        - cursor: YXJyYXljb25uZWN0aW9uOjA=
+                          node:
+                            akUUID: c3d4e5f6-a7b8-9012-cdef-123456789012
+                            status: FAILED
+                            generationId: 1f0b933e-b512-6640-8305-4835ab8cebfd
+                            failedReason:
+                              type: PROMPT_MODERATION_BLOCKED
+                              message: 'Content policy violation: Content involving minors combined with NSFW content is strictly prohibited. Please modify your prompt and try again.'
+                              affectedOutputCount: 4
+                notAccessible:
+                  summary: Blueprint Execution not accessible or not found
+                  value:
+                    blueprintExecutionGenerations:
+                      pageInfo:
+                        hasNextPage: false
+                        hasPreviousPage: false
+                        startCursor: 
+                        endCursor: 
+                      edges: [ ]
 components:
   schemas:
+    Cursor:
+      title: Cursor
+      type: string
+      description: An opaque cursor used for pagination
+    Blueprint:
+      title: Blueprint
+      type: object
+      properties:
+        akUUID:
+          type: string
+          description: Unique identifier for the Blueprint
+          example: c846413e-92ba-4302-84f8-47c667d4761f
+        createdAt:
+          type: string
+          description: Creation timestamp
+          format: date-time
+          example: '2025-10-29T21:31:47.9990000+00:00'
+        updatedAt:
+          type: string
+          description: Last update timestamp
+          format: date-time
+          example: '2025-12-19T02:34:44.7400000+00:00'
+        name:
+          type: string
+          description: Name of the Blueprint
+          example: Golden Hour Relight
+        description:
+          type: string
+          description: Description of the Blueprint
+          example: 'Relight an image with warm, golden tones of late afternoon sunlight for a soft and radiant glow.'
+        thumbnails:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: 'Thumbnail type name (e.g., thumbnailUrl, videoUrl, thumbnailUrlBanner, thumbnailUrlLandscape, thumbnailUrlExtremePortrait)'
+                example: thumbnailUrl
+              url:
+                type: string
+                description: URL of the thumbnail
+                example: https://cdn.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/goldenhour.jpg
+        teamId:
+          type: string
+          description: Team ID if Blueprint belongs to a team
+          nullable: true
+          example: 
+        official:
+          type: boolean
+          description: Whether this is an official Blueprint
+          example: true
+      description: A Blueprint object
+    BlueprintVersion:
+      title: BlueprintVersion
+      type: object
+      properties:
+        edges:
+          type: array
+          items:
+            type: object
+            properties:
+              cursor:
+                type: string
+                example: eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ==
+              node:
+                type: object
+                properties:
+                  akUUID:
+                    type: string
+                    format: uuid
+                    example: 956e9564-19f7-4968-b56d-05c2c567726f
+                  createdAt:
+                    type: string
+                    format: date-time
+                    example: '2025-11-27T05:13:21.8960000+00:00'
+                  updatedAt:
+                    type: string
+                    format: date-time
+                    example: '2025-11-27T05:13:21.8960000+00:00'
+                  cost:
+                    type: integer
+                    example: 160
+                  uiMetadata:
+                    type: object
+                    properties:
+                      inputs:
+                        type: array
+                        items:
+                          type: object
+                      outputs:
+                        type: array
+                        items:
+                          type: object
+                    additionalProperties: false
+                  uiMetadataSchemaVersion:
+                    type: string
+                    example: '21'
+                  models:
+                    type: array
+                    items:
+                      type: string
+                  executability:
+                    type: object
+                    properties:
+                      isExecutable:
+                        type: boolean
+                        example: true
+                      reasons:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            models:
+                              type: string
+                              example: gemini-2.5-flash-image
+                          additionalProperties: false
+                    additionalProperties: false
+                additionalProperties: false
+            additionalProperties: false
+        totalCount:
+          type: integer
+          example: 2
+        pageInfo:
+          type: object
+          properties:
+            hasNextPage:
+              type: boolean
+              example: false
+            hasPreviousPage:
+              type: boolean
+              example: false
+            startCursor:
+              type: string
+              example: eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ==
+            endCursor:
+              type: string
+              example: eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ==
+          additionalProperties: false
+      additionalProperties: false
+      description: A Blueprint Version object
+    NodeInput:
+      title: NodeInput
+      required:
+        - nodeId
+        - settingName
+        - value
+      type: object
+      properties:
+        nodeId:
+          type: string
+          description: The ID of the node in the Blueprint
+          format: uuid
+          example: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+        settingName:
+          enum:
+            - text
+            - imageUrl
+            - textVariables
+          type: string
+          description: "The type of setting to replace:\n- `text`: Direct text replacement (value is a string)\n- `imageUrl`: Image URL input (value is a URL string)\n- `textVariables`: Text with placeholder variables (value is an array of TextVariable)"
+          example: text
+        value:
+          oneOf:
+            - type: string
+              description: String value. Use for settingName='text' (direct text) or settingName='imageUrl' (image URL)
+            - type: array
+              items:
+                $ref: '#/components/schemas/TextVariable'
+              description: 'Array of TextVariable objects. Use only for settingName=''textVariables'' to replace {{placeholders}} in the Blueprint'
+          description: "The replacement value. Type depends on settingName:\n- `text`: string (the full text)\n- `imageUrl`: string (the image URL)\n- `textVariables`: array of TextVariable objects"
+          example: A futuristic cityscape at sunset
+      description: A node input object for customizing a Blueprint Execution
+    TextVariable:
+      title: TextVariable
+      required:
+        - name
+        - value
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the placeholder variable (without curly braces)
+          example: characterName
+        value:
+          type: string
+          description: The value to replace the placeholder with
+          example: Luna
+      description: A text variable for replacing placeholders in Blueprint templates
+    ApiError:
+      title: ApiError
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message
+        path:
+          type: array
+          items:
+            type: string
+          description: Path to the field that caused the error
+        locations:
+          type: array
+          items:
+            type: object
+            properties:
+              column:
+                type: integer
+              line:
+                type: integer
+          description: Location information for the error
+        extensions:
+          type: object
+          description: Additional error details and context
+      description: API error response structure
     apiCreditCost:
       title: Int
       type: integer
@@ -3615,6 +4438,123 @@ components:
         - FAILED
       type: string
       description: The status of the current task.
+    BlueprintExecutionStatus:
+      title: BlueprintExecutionStatus
+      enum:
+        - PENDING
+        - QUEUED
+        - COMPLETED
+        - FAILED
+      type: string
+      description: The status of a Blueprint Execution.
+    BlueprintExecution:
+      title: BlueprintExecution
+      required:
+        - akUUID
+        - status
+        - inputs
+        - public
+        - createdAt
+      type: object
+      properties:
+        akUUID:
+          allOf:
+            - $ref: '#/components/schemas/uuid'
+            - description: akUUID of the Blueprint Execution
+        status:
+          $ref: '#/components/schemas/BlueprintExecutionStatus'
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/NodeInput'
+          description: Inputs of the Blueprint Execution
+        public:
+          allOf:
+            - $ref: '#/components/schemas/public'
+            - description: Whether the Blueprint Execution is public
+        createdAt:
+          $ref: '#/components/schemas/timestamp'
+      description: Represents the Execution of a Blueprint Version
+    BlueprintExecutionGenerationsConnection:
+      title: BlueprintExecutionGenerationsConnection
+      required:
+        - pageInfo
+        - edges
+      type: object
+      properties:
+        pageInfo:
+          $ref: '#/components/schemas/pageInfo'
+        edges:
+          type: array
+          items:
+            $ref: '#/components/schemas/BlueprintExecutionGenerationEdge'
+          description: List of generation edges
+      description: A paginated connection of Blueprint Execution Generations
+    BlueprintExecutionGenerationEdge:
+      title: BlueprintExecutionGenerationEdge
+      required:
+        - cursor
+        - node
+      type: object
+      properties:
+        cursor:
+          $ref: '#/components/schemas/Cursor'
+        node:
+          $ref: '#/components/schemas/BlueprintExecutionGeneration'
+      description: An edge containing a Blueprint Execution Generation node
+    BlueprintExecutionGeneration:
+      title: BlueprintExecutionGeneration
+      required:
+        - akUUID
+        - status
+        - generationId
+      type: object
+      properties:
+        akUUID:
+          allOf:
+            - $ref: '#/components/schemas/uuid'
+            - description: Unique identifier for the Blueprint Execution Generation
+        status:
+          $ref: '#/components/schemas/BlueprintExecutionGenerationStatus'
+        generationId:
+          type: string
+          description: The generation ID associated with this execution generation
+          example: 1f0bba44-923a-69b0-b519-62a6710d46a9
+        failedReason:
+          $ref: '#/components/schemas/PromptModerationFailureReason'
+      description: Represents a single generation within a Blueprint Execution
+    BlueprintExecutionGenerationStatus:
+      title: BlueprintExecutionGenerationStatus
+      enum:
+        - PENDING
+        - COMPLETED
+        - FAILED
+      type: string
+      description: The status of a Blueprint Execution Generation
+    PromptModerationFailureReason:
+      title: PromptModerationFailureReason
+      required:
+        - type
+        - message
+        - affectedOutputCount
+      type: object
+      properties:
+        type:
+          enum:
+            - PROMPT_MODERATION_BLOCKED
+          type: string
+          description: The type of failure - PROMPT_MODERATION_BLOCKED indicates the prompt was blocked by content moderation
+          example: PROMPT_MODERATION_BLOCKED
+        message:
+          type: string
+          description: Human-readable message describing the failure
+          example: Generation blocked due to prompt moderation
+        affectedOutputCount:
+          type: integer
+          description: Number of outputs affected by this failure
+          example: 1
+      description: Details about a generation failure due to prompt moderation
+      nullable: true
     MODEL_ASSET_TEXTURE_TYPES:
       title: MODEL_ASSET_TEXTURE_TYPES
       enum:
@@ -3951,6 +4891,28 @@ components:
       type: boolean
       description: If ultra generation mode was used.
       nullable: true
+    pageInfo:
+      title: PageInfo
+      type: object
+      properties:
+        hasNextPage:
+          type: boolean
+          description: Whether there is a next page
+        hasPreviousPage:
+          type: boolean
+          description: Whether there is a previous page
+        startCursor:
+          allOf:
+            - $ref: '#/components/schemas/Cursor'
+          description: Cursor for the first item in the result set
+        endCursor:
+          allOf:
+            - $ref: '#/components/schemas/Cursor'
+          description: Cursor for the last item in the result set
+      description: Pagination information following the Relay cursor pagination spec
+    totalCount:
+      type: integer
+      description: Total number of results available
   securitySchemes:
     bearerAuth:
       type: http
@@ -3960,6 +4922,7 @@ components:
 security:
   - bearerAuth: [ ]
 tags:
+  - name: Blueprints
   - name: Dataset
   - name: Elements
   - name: Image
