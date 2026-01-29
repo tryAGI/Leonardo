@@ -63,7 +63,7 @@ namespace Leonardo
         /// How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("guidance_scale")]
-        public int? GuidanceScale { get; set; }
+        public double? GuidanceScale { get; set; }
 
         /// <summary>
         /// The input height of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.<br/>
@@ -480,7 +480,7 @@ namespace Leonardo
             global::System.Collections.Generic.IList<global::Leonardo.UserElementsInput>? userElements,
             bool? expandedDomain,
             bool? fantasyAvatar,
-            int? guidanceScale,
+            double? guidanceScale,
             int? height,
             bool? highContrast,
             bool? highResolution,

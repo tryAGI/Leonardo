@@ -40,6 +40,11 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
+        public BlueprintsClient Blueprints { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DatasetClient Dataset { get; }
 
         /// <summary>

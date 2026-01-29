@@ -40,6 +40,15 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
+        public BlueprintsClient Blueprints => new BlueprintsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DatasetClient Dataset => new DatasetClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

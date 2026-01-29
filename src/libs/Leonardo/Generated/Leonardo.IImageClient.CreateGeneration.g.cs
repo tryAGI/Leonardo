@@ -167,7 +167,7 @@ namespace Leonardo
             global::System.Collections.Generic.IList<global::Leonardo.UserElementsInput>? userElements = default,
             bool? expandedDomain = default,
             bool? fantasyAvatar = default,
-            int? guidanceScale = default,
+            double? guidanceScale = default,
             int? height = default,
             bool? highContrast = default,
             bool? highResolution = default,
