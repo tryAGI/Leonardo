@@ -16,11 +16,18 @@ namespace Leonardo
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// API Credits Cost for Random Prompt Generation. Available for Production API Users.<br/>
+        /// API Credits Cost for Random Prompt Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.<br/>
         /// Default Value: 4
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiCreditCost")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? ApiCreditCost { get; set; }
+
+        /// <summary>
+        /// The cost of the operation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
+        public global::Leonardo.Cost? Cost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,19 +42,18 @@ namespace Leonardo
         /// The improved prompt.<br/>
         /// Default Value: The improved prompt.
         /// </param>
-        /// <param name="apiCreditCost">
-        /// API Credits Cost for Random Prompt Generation. Available for Production API Users.<br/>
-        /// Default Value: 4
+        /// <param name="cost">
+        /// The cost of the operation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PromptImproveResponsePromptGeneration(
             string? prompt,
-            int? apiCreditCost)
+            global::Leonardo.Cost? cost)
         {
             this.Prompt = prompt;
-            this.ApiCreditCost = apiCreditCost;
+            this.Cost = cost;
         }
 
         /// <summary>

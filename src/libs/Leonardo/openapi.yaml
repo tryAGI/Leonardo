@@ -339,9 +339,19 @@ paths:
                         type: string
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Image Generation. Available for Production API Users.
+                        description: 'API Credits Cost for Image Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         nullable: true
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                sdGenerationJob:
+                  generationId: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   '/generations/{id}':
     get:
       tags:
@@ -763,9 +773,19 @@ paths:
                         type: string
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Texture Generation. Available for Production API Users.
+                        description: 'API Credits Cost for Texture Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         nullable: true
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                textureGenerationJob:
+                  id: b1c2d3e4-f5g6-7890-hijk-lm1234567890
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /generations-motion-svd:
     post:
       tags:
@@ -811,7 +831,16 @@ paths:
                         type: string
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                motionSvdGenerationJob:
+                  generationId: h7i8j9k0-l1m2-n3o4-pqrs-tu6789012345
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /generations-image-to-video:
     post:
       tags:
@@ -957,7 +986,16 @@ paths:
                         type: string
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                motionVideoGenerationJob:
+                  generationId: i8j9k0l1-m2n3-o4p5-qrst-uv7890123456
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /generations-text-to-video:
     post:
       tags:
@@ -1072,7 +1110,16 @@ paths:
                         type: string
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                motionVideoGenerationJob:
+                  generationId: j9k0l1m2-n3o4-p5q6-rstu-vw8901234567
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /generations-video-upscale:
     post:
       tags:
@@ -1120,7 +1167,17 @@ paths:
                         description: The ID of the upscale variation.
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                motionVideoGenerationJob:
+                  generationId: k0l1m2n3-o4p5-q6r7-stuv-wx9012345678
+                  variationId: var123456-7890-abcd-efgh-ijklmnopqrst
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /generations-lcm:
     post:
       tags:
@@ -1200,7 +1257,18 @@ paths:
                         $ref: '#/components/schemas/timestamp'
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                lcmGenerationJob:
+                  imageDataUrl:
+                    - 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD...'
+                  requestTimestamp: '1234567890'
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /lcm-instant-refine:
     post:
       tags:
@@ -1280,7 +1348,18 @@ paths:
                         $ref: '#/components/schemas/timestamp'
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                lcmGenerationJob:
+                  imageDataUrl:
+                    - 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD...'
+                  requestTimestamp: '1234567891'
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /lcm-inpainting:
     post:
       tags:
@@ -1365,7 +1444,18 @@ paths:
                         $ref: '#/components/schemas/timestamp'
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                lcmGenerationJob:
+                  imageDataUrl:
+                    - 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD...'
+                  requestTimestamp: '1234567892'
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /lcm-upscale:
     post:
       tags:
@@ -1468,7 +1558,21 @@ paths:
                         $ref: '#/components/schemas/timestamp'
                       apiCreditCost:
                         $ref: '#/components/schemas/apiCreditCost'
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                lcmGenerationJob:
+                  imageDataUrl:
+                    - 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD...'
+                  variationId:
+                    - var234567-8901-bcde-fghi-jklmnopqrstu
+                  generatedImageId: l1m2n3o4-p5q6-r7s8-tuvw-xy0123456789
+                  requestTimestamp: '1234567893'
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   '/generations-texture/model/{modelId}':
     get:
       tags:
@@ -2103,9 +2207,19 @@ paths:
                         type: string
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Unzoom Variation. Available for Production API Users.
+                        description: 'API Credits Cost for Unzoom Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         nullable: true
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                sdUnzoomJob:
+                  id: c2d3e4f5-g6h7-8901-ijkl-mn2345678901
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /variations/upscale:
     post:
       tags:
@@ -2142,9 +2256,19 @@ paths:
                         type: string
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Upscale Variation. Available for Production API Users.
+                        description: 'API Credits Cost for Upscale Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         nullable: true
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                sdUpscalerjob:
+                  id: d3e4f5g6-h7i8-9012-jklm-no3456789012
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /variations/nobg:
     post:
       tags:
@@ -2184,8 +2308,18 @@ paths:
                         $ref: '#/components/schemas/uuid'
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for No Background Variation. Available for Production API Users.
+                        description: 'API Credits Cost for No Background Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         nullable: true
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
+              example:
+                sdNobgJob:
+                  id: f5g6h7i8-j9k0-l1m2-nopq-rs4567890123
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /variations/universal-upscaler:
     post:
       tags:
@@ -2263,8 +2397,18 @@ paths:
                         $ref: '#/components/schemas/uuid'
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Universal Upscaler Variation. Available for Production API Users.
+                        description: 'API Credits Cost for Universal Upscaler Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         nullable: true
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
+              example:
+                universalUpscaler:
+                  id: g6h7i8j9-k0l1-m2n3-opqr-st5678901234
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   '/variations/{id}':
     get:
       tags:
@@ -2658,9 +2802,19 @@ paths:
                         type: string
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Model Training. Available for Production API Users.
+                        description: 'API Credits Cost for Model Training. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         nullable: true
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                sdTrainingJob:
+                  customModelId: m2n3o4p5-q6r7-s8t9-uvwx-yz1234567890
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   '/models/{id}':
     get:
       tags:
@@ -3122,9 +3276,19 @@ paths:
                         type: integer
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Model Training. Available for Production API Users.
+                        description: 'API Credits Cost for Model Training. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         nullable: true
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
                     nullable: true
+              example:
+                sdTrainingJob:
+                  userLoraId: 123456
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
     get:
       tags:
         - Elements
@@ -3189,8 +3353,18 @@ paths:
                         default: The random prompt generated.
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Random Prompt Generation. Available for Production API Users.
+                        description: 'API Credits Cost for Random Prompt Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         default: 4
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
+              example:
+                promptGeneration:
+                  prompt: A majestic dragon soaring through stormy clouds
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /prompt/improve:
     post:
       tags:
@@ -3241,8 +3415,18 @@ paths:
                         default: The improved prompt.
                       apiCreditCost:
                         type: integer
-                        description: API Credits Cost for Random Prompt Generation. Available for Production API Users.
+                        description: 'API Credits Cost for Random Prompt Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
                         default: 4
+                        deprecated: true
+                      cost:
+                        $ref: '#/components/schemas/cost'
+              example:
+                promptGeneration:
+                  prompt: 'A majestic dragon soaring through dramatic stormy clouds, photorealistic, cinematic lighting, 8k ultra detailed'
+                  apiCreditCost: 
+                  cost:
+                    amount: '0.0147'
+                    unit: DOLLARS
   /pricing-calculator:
     post:
       tags:
@@ -4100,6 +4284,21 @@ paths:
                       edges: [ ]
 components:
   schemas:
+    cost:
+      title: Cost
+      type: object
+      properties:
+        amount:
+          type: string
+          description: The amount of the cost.
+        unit:
+          enum:
+            - CREDITS
+            - DOLLARS
+          type: string
+          description: 'The unit of the cost. Can be CREDITS or DOLLARS. Note: DOLLARS unit only supports PAYG plan.'
+      description: The cost of the operation.
+      nullable: true
     Cursor:
       title: Cursor
       type: string
@@ -4320,8 +4519,9 @@ components:
     apiCreditCost:
       title: Int
       type: integer
-      description: 'API credits cost, available for Production API users.'
+      description: 'API credits cost, available for Production API users. Note: it will be deprecated. Please use the cost instead.'
       nullable: true
+      deprecated: true
     isVariation:
       title: Boolean
       type: boolean
