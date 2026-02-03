@@ -21,10 +21,17 @@ namespace Leonardo
         public string? VariationId { get; set; }
 
         /// <summary>
-        /// API credits cost, available for Production API users.
+        /// API credits cost, available for Production API users. Note: it will be deprecated. Please use the cost instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiCreditCost")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? ApiCreditCost { get; set; }
+
+        /// <summary>
+        /// The cost of the operation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
+        public global::Leonardo.Cost? Cost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,8 +46,8 @@ namespace Leonardo
         /// <param name="variationId">
         /// The ID of the upscale variation.
         /// </param>
-        /// <param name="apiCreditCost">
-        /// API credits cost, available for Production API users.
+        /// <param name="cost">
+        /// The cost of the operation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -48,11 +55,11 @@ namespace Leonardo
         public CreateVideoUpscaleResponseMotionVideoGenerationJob(
             string? generationId,
             string? variationId,
-            int? apiCreditCost)
+            global::Leonardo.Cost? cost)
         {
             this.GenerationId = generationId;
             this.VariationId = variationId;
-            this.ApiCreditCost = apiCreditCost;
+            this.Cost = cost;
         }
 
         /// <summary>

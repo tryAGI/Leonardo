@@ -39,10 +39,17 @@ namespace Leonardo
         public string? RequestTimestamp { get; set; }
 
         /// <summary>
-        /// API credits cost, available for Production API users.
+        /// API credits cost, available for Production API users. Note: it will be deprecated. Please use the cost instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiCreditCost")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? ApiCreditCost { get; set; }
+
+        /// <summary>
+        /// The cost of the operation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
+        public global::Leonardo.Cost? Cost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,8 +65,8 @@ namespace Leonardo
         /// <param name="variationId"></param>
         /// <param name="generatedImageId"></param>
         /// <param name="requestTimestamp"></param>
-        /// <param name="apiCreditCost">
-        /// API credits cost, available for Production API users.
+        /// <param name="cost">
+        /// The cost of the operation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -70,14 +77,14 @@ namespace Leonardo
             global::System.Collections.Generic.IList<string>? variationId,
             string? generatedImageId,
             string? requestTimestamp,
-            int? apiCreditCost)
+            global::Leonardo.Cost? cost)
         {
             this.ImageDataUrl = imageDataUrl;
             this.GenerationId = generationId;
             this.VariationId = variationId;
             this.GeneratedImageId = generatedImageId;
             this.RequestTimestamp = requestTimestamp;
-            this.ApiCreditCost = apiCreditCost;
+            this.Cost = cost;
         }
 
         /// <summary>

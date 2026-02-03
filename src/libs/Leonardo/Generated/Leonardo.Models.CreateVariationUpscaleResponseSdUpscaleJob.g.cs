@@ -15,10 +15,17 @@ namespace Leonardo
         public string? Id { get; set; }
 
         /// <summary>
-        /// API Credits Cost for Upscale Variation. Available for Production API Users.
+        /// API Credits Cost for Upscale Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiCreditCost")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? ApiCreditCost { get; set; }
+
+        /// <summary>
+        /// The cost of the operation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
+        public global::Leonardo.Cost? Cost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +37,18 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="CreateVariationUpscaleResponseSdUpscaleJob" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="apiCreditCost">
-        /// API Credits Cost for Upscale Variation. Available for Production API Users.
+        /// <param name="cost">
+        /// The cost of the operation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateVariationUpscaleResponseSdUpscaleJob(
             string? id,
-            int? apiCreditCost)
+            global::Leonardo.Cost? cost)
         {
             this.Id = id;
-            this.ApiCreditCost = apiCreditCost;
+            this.Cost = cost;
         }
 
         /// <summary>

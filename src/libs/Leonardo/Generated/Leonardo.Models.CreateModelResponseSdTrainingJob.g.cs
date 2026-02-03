@@ -15,10 +15,17 @@ namespace Leonardo
         public string? CustomModelId { get; set; }
 
         /// <summary>
-        /// API Credits Cost for Model Training. Available for Production API Users.
+        /// API Credits Cost for Model Training. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apiCreditCost")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? ApiCreditCost { get; set; }
+
+        /// <summary>
+        /// The cost of the operation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
+        public global::Leonardo.Cost? Cost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +37,18 @@ namespace Leonardo
         /// Initializes a new instance of the <see cref="CreateModelResponseSdTrainingJob" /> class.
         /// </summary>
         /// <param name="customModelId"></param>
-        /// <param name="apiCreditCost">
-        /// API Credits Cost for Model Training. Available for Production API Users.
+        /// <param name="cost">
+        /// The cost of the operation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateModelResponseSdTrainingJob(
             string? customModelId,
-            int? apiCreditCost)
+            global::Leonardo.Cost? cost)
         {
             this.CustomModelId = customModelId;
-            this.ApiCreditCost = apiCreditCost;
+            this.Cost = cost;
         }
 
         /// <summary>

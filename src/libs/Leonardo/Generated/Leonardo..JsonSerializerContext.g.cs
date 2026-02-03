@@ -13,6 +13,8 @@ namespace Leonardo
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[] 
         { 
+            typeof(global::Leonardo.JsonConverters.CostUnitJsonConverter),
+            typeof(global::Leonardo.JsonConverters.CostUnitNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.NodeInputSettingNameJsonConverter),
             typeof(global::Leonardo.JsonConverters.NodeInputSettingNameNullableJsonConverter),
             typeof(global::Leonardo.JsonConverters.SdVersionsJsonConverter),
