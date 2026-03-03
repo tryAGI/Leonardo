@@ -14,10 +14,12 @@ namespace Leonardo
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -1099,5 +1101,170 @@ namespace Leonardo
         /// 
         /// </summary>
         public global::Leonardo.GetBlueprintExecutionGenerationsResponse? Type268 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.BlueprintThumbnail>? ListType0 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.BlueprintVersionEdge>? ListType1 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<object>? ListType2 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<string>? ListType3 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.BlueprintVersionEdgeNodeExecutabilityReason>? ListType4 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Leonardo.OneOf<string, global::System.Collections.Generic.List<global::Leonardo.TextVariable>>? ListType5 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.TextVariable>? ListType6 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.ApiErrorLocation>? ListType7 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.NodeInput>? ListType8 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.BlueprintExecutionGenerationEdge>? ListType9 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.ControlnetInput>? ListType10 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.ElementInput>? ListType11 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.UserElementsInput>? ListType12 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.ListBlueprintsRequestPlatform>? ListType13 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<int>? ListType14 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetUserSelfResponseUserDetail>? ListType15 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage>? ListType16 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric>? ListType17 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElement>? ListType18 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetGenerationsByUserIdResponseGeneration>? ListType19 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImage>? ListType20 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric>? ListType21 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElement>? ListType22 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetTextureGenerationsByModelIdResponseModelAssetTextureGeneration>? ListType23 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage>? ListType24 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage>? ListType25 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.Get3DModelsByUserIdResponseModelAsset>? ListType26 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetVariationByIdResponseGeneratedImageVariationGenericItem>? ListType27 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetMotionVariationByIdResponseGeneratedImageVariationMotionItem>? ListType28 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetDatasetByIdResponseDatasetsByPkDatasetImage>? ListType29 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetCustomModelsByUserIdResponseCustomModel>? ListType30 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.ListPlatformModelsResponseCustomModel>? ListType31 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.GetCustomElementsByUserIdResponseUserLora>? ListType32 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.ListElementsResponseLora>? ListType33 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Leonardo.OneOf<global::Leonardo.ListBlueprintsResponse2, global::System.Collections.Generic.List<global::Leonardo.ApiError>>? ListType34 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.ListBlueprintsResponseBlueprintsEdge>? ListType35 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::Leonardo.ApiError>? ListType36 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintByIdResponse2, global::System.Collections.Generic.List<global::Leonardo.ApiError>>? ListType37 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintVersionsByBlueprintIdResponse2, global::System.Collections.Generic.List<global::Leonardo.ApiError>>? ListType38 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Leonardo.OneOf<global::Leonardo.ExecuteBlueprintResponse2, global::System.Collections.Generic.List<global::Leonardo.ApiError>>? ListType39 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintExecutionResponse2, global::System.Collections.Generic.List<global::Leonardo.ApiError>>? ListType40 { get; set; }
     }
 }
