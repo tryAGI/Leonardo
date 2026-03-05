@@ -11,11 +11,11 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        GENERATED,
+        Generated,
         /// <summary>
         /// 
         /// </summary>
-        UPLOADED,
+        Uploaded,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Leonardo
         {
             return value switch
             {
-                ControlnetInputInitImageType.GENERATED => "GENERATED",
-                ControlnetInputInitImageType.UPLOADED => "UPLOADED",
+                ControlnetInputInitImageType.Generated => "GENERATED",
+                ControlnetInputInitImageType.Uploaded => "UPLOADED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Leonardo
         {
             return value switch
             {
-                "GENERATED" => ControlnetInputInitImageType.GENERATED,
-                "UPLOADED" => ControlnetInputInitImageType.UPLOADED,
+                "GENERATED" => ControlnetInputInitImageType.Generated,
+                "UPLOADED" => ControlnetInputInitImageType.Uploaded,
                 _ => null,
             };
         }

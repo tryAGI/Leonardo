@@ -12,6 +12,7 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.PricingCalculatorResponse> PricingCalculatorAsync(
+
             global::Leonardo.PricingCalculatorRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

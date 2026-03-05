@@ -11,11 +11,11 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        GENERATED,
+        Generated,
         /// <summary>
         /// 
         /// </summary>
-        UPLOADED,
+        Uploaded,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Leonardo
         {
             return value switch
             {
-                CreateImageToVideoGenerationRequestImageType.GENERATED => "GENERATED",
-                CreateImageToVideoGenerationRequestImageType.UPLOADED => "UPLOADED",
+                CreateImageToVideoGenerationRequestImageType.Generated => "GENERATED",
+                CreateImageToVideoGenerationRequestImageType.Uploaded => "UPLOADED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Leonardo
         {
             return value switch
             {
-                "GENERATED" => CreateImageToVideoGenerationRequestImageType.GENERATED,
-                "UPLOADED" => CreateImageToVideoGenerationRequestImageType.UPLOADED,
+                "GENERATED" => CreateImageToVideoGenerationRequestImageType.Generated,
+                "UPLOADED" => CreateImageToVideoGenerationRequestImageType.Uploaded,
                 _ => null,
             };
         }

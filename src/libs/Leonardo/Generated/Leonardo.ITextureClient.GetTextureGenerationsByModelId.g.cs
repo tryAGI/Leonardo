@@ -20,6 +20,7 @@ namespace Leonardo
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.GetTextureGenerationsByModelIdResponse> GetTextureGenerationsByModelIdAsync(
             string modelId,
+
             global::Leonardo.GetTextureGenerationsByModelIdRequest request,
             int? offset = default,
             int? limit = default,

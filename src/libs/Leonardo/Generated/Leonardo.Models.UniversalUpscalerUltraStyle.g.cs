@@ -11,11 +11,11 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        ARTISTIC,
+        Artistic,
         /// <summary>
         /// 
         /// </summary>
-        REALISTIC,
+        Realistic,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Leonardo
         {
             return value switch
             {
-                UniversalUpscalerUltraStyle.ARTISTIC => "ARTISTIC",
-                UniversalUpscalerUltraStyle.REALISTIC => "REALISTIC",
+                UniversalUpscalerUltraStyle.Artistic => "ARTISTIC",
+                UniversalUpscalerUltraStyle.Realistic => "REALISTIC",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Leonardo
         {
             return value switch
             {
-                "ARTISTIC" => UniversalUpscalerUltraStyle.ARTISTIC,
-                "REALISTIC" => UniversalUpscalerUltraStyle.REALISTIC,
+                "ARTISTIC" => UniversalUpscalerUltraStyle.Artistic,
+                "REALISTIC" => UniversalUpscalerUltraStyle.Realistic,
                 _ => null,
             };
         }

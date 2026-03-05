@@ -11,19 +11,19 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        PENDING,
+        Pending,
         /// <summary>
         /// 
         /// </summary>
-        QUEUED,
+        Queued,
         /// <summary>
         /// 
         /// </summary>
-        COMPLETED,
+        Completed,
         /// <summary>
         /// 
         /// </summary>
-        FAILED,
+        Failed,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Leonardo
         {
             return value switch
             {
-                BlueprintExecutionStatus.PENDING => "PENDING",
-                BlueprintExecutionStatus.QUEUED => "QUEUED",
-                BlueprintExecutionStatus.COMPLETED => "COMPLETED",
-                BlueprintExecutionStatus.FAILED => "FAILED",
+                BlueprintExecutionStatus.Pending => "PENDING",
+                BlueprintExecutionStatus.Queued => "QUEUED",
+                BlueprintExecutionStatus.Completed => "COMPLETED",
+                BlueprintExecutionStatus.Failed => "FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Leonardo
         {
             return value switch
             {
-                "PENDING" => BlueprintExecutionStatus.PENDING,
-                "QUEUED" => BlueprintExecutionStatus.QUEUED,
-                "COMPLETED" => BlueprintExecutionStatus.COMPLETED,
-                "FAILED" => BlueprintExecutionStatus.FAILED,
+                "PENDING" => BlueprintExecutionStatus.Pending,
+                "QUEUED" => BlueprintExecutionStatus.Queued,
+                "COMPLETED" => BlueprintExecutionStatus.Completed,
+                "FAILED" => BlueprintExecutionStatus.Failed,
                 _ => null,
             };
         }

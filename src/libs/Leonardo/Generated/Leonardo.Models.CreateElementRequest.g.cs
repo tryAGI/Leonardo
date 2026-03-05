@@ -62,11 +62,11 @@ namespace Leonardo
         /// The base version to use if not using a custom model.<br/>
         /// Default Value: FLUX_DEV
         /// </summary>
-        /// <default>global::Leonardo.CreateElementRequestSdVersion.FLUXDEV</default>
+        /// <default>global::Leonardo.CreateElementRequestSdVersion.FluxDev</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateElementRequestSdVersionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Leonardo.CreateElementRequestSdVersion SdVersion { get; set; } = global::Leonardo.CreateElementRequestSdVersion.FLUXDEV;
+        public required global::Leonardo.CreateElementRequestSdVersion SdVersion { get; set; } = global::Leonardo.CreateElementRequestSdVersion.FluxDev;
 
         /// <summary>
         /// The number of times the entire training dataset is passed through the element.&lt;table&gt;&lt;tr&gt;&lt;th&gt;Model Type&lt;/th&gt;&lt;th&gt;Lora Focus&lt;/th&gt;&lt;th&gt;Min&lt;/th&gt;&lt;th&gt;Max&lt;/th&gt;&lt;th&gt;Default&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Default&lt;/td&gt;&lt;td&gt;General | Style | Character | Object&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;250&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan='3'&gt;FLUX_DEV&lt;/td&gt;&lt;td&gt;Style&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Object&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;td&gt;220&lt;/td&gt;&lt;td&gt;140&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Character&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;td&gt;135&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;General&lt;/td&gt;&lt;td colspan='3'&gt;NA&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;

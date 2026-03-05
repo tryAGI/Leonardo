@@ -29,6 +29,7 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.OneOf<global::Leonardo.ExecuteBlueprintResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>> ExecuteBlueprintAsync(
+
             global::Leonardo.ExecuteBlueprintRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

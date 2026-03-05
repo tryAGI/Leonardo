@@ -11,11 +11,11 @@ namespace Leonardo
         /// <summary>
         /// DOLLARS unit only supports PAYG plan.
         /// </summary>
-        CREDITS,
+        Credits,
         /// <summary>
         /// DOLLARS unit only supports PAYG plan.
         /// </summary>
-        DOLLARS,
+        Dollars,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Leonardo
         {
             return value switch
             {
-                CostUnit.CREDITS => "CREDITS",
-                CostUnit.DOLLARS => "DOLLARS",
+                CostUnit.Credits => "CREDITS",
+                CostUnit.Dollars => "DOLLARS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Leonardo
         {
             return value switch
             {
-                "CREDITS" => CostUnit.CREDITS,
-                "DOLLARS" => CostUnit.DOLLARS,
+                "CREDITS" => CostUnit.Credits,
+                "DOLLARS" => CostUnit.Dollars,
                 _ => null,
             };
         }

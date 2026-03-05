@@ -11,31 +11,31 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        KLMS,
+        Klms,
         /// <summary>
         /// 
         /// </summary>
-        EULERANCESTRALDISCRETE,
+        EulerAncestralDiscrete,
         /// <summary>
         /// 
         /// </summary>
-        EULERDISCRETE,
+        EulerDiscrete,
         /// <summary>
         /// 
         /// </summary>
-        DDIM,
+        Ddim,
         /// <summary>
         /// 
         /// </summary>
-        DPMSOLVER,
+        DpmSolver,
         /// <summary>
         /// 
         /// </summary>
-        PNDM,
+        Pndm,
         /// <summary>
         /// 
         /// </summary>
-        LEONARDO,
+        Leonardo,
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ namespace Leonardo
         {
             return value switch
             {
-                SdGenerationSchedulers.KLMS => "KLMS",
-                SdGenerationSchedulers.EULERANCESTRALDISCRETE => "EULER_ANCESTRAL_DISCRETE",
-                SdGenerationSchedulers.EULERDISCRETE => "EULER_DISCRETE",
-                SdGenerationSchedulers.DDIM => "DDIM",
-                SdGenerationSchedulers.DPMSOLVER => "DPM_SOLVER",
-                SdGenerationSchedulers.PNDM => "PNDM",
-                SdGenerationSchedulers.LEONARDO => "LEONARDO",
+                SdGenerationSchedulers.Klms => "KLMS",
+                SdGenerationSchedulers.EulerAncestralDiscrete => "EULER_ANCESTRAL_DISCRETE",
+                SdGenerationSchedulers.EulerDiscrete => "EULER_DISCRETE",
+                SdGenerationSchedulers.Ddim => "DDIM",
+                SdGenerationSchedulers.DpmSolver => "DPM_SOLVER",
+                SdGenerationSchedulers.Pndm => "PNDM",
+                SdGenerationSchedulers.Leonardo => "LEONARDO",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +67,13 @@ namespace Leonardo
         {
             return value switch
             {
-                "KLMS" => SdGenerationSchedulers.KLMS,
-                "EULER_ANCESTRAL_DISCRETE" => SdGenerationSchedulers.EULERANCESTRALDISCRETE,
-                "EULER_DISCRETE" => SdGenerationSchedulers.EULERDISCRETE,
-                "DDIM" => SdGenerationSchedulers.DDIM,
-                "DPM_SOLVER" => SdGenerationSchedulers.DPMSOLVER,
-                "PNDM" => SdGenerationSchedulers.PNDM,
-                "LEONARDO" => SdGenerationSchedulers.LEONARDO,
+                "KLMS" => SdGenerationSchedulers.Klms,
+                "EULER_ANCESTRAL_DISCRETE" => SdGenerationSchedulers.EulerAncestralDiscrete,
+                "EULER_DISCRETE" => SdGenerationSchedulers.EulerDiscrete,
+                "DDIM" => SdGenerationSchedulers.Ddim,
+                "DPM_SOLVER" => SdGenerationSchedulers.DpmSolver,
+                "PNDM" => SdGenerationSchedulers.Pndm,
+                "LEONARDO" => SdGenerationSchedulers.Leonardo,
                 _ => null,
             };
         }
