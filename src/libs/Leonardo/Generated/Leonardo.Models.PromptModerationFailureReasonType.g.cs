@@ -12,7 +12,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        PROMPTMODERATIONBLOCKED,
+        PromptModerationBlocked,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace Leonardo
         {
             return value switch
             {
-                PromptModerationFailureReasonType.PROMPTMODERATIONBLOCKED => "PROMPT_MODERATION_BLOCKED",
+                PromptModerationFailureReasonType.PromptModerationBlocked => "PROMPT_MODERATION_BLOCKED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace Leonardo
         {
             return value switch
             {
-                "PROMPT_MODERATION_BLOCKED" => PromptModerationFailureReasonType.PROMPTMODERATIONBLOCKED,
+                "PROMPT_MODERATION_BLOCKED" => PromptModerationFailureReasonType.PromptModerationBlocked,
                 _ => null,
             };
         }

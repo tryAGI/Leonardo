@@ -12,6 +12,7 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateVariationUpscaleResponse> CreateVariationUpscaleAsync(
+
             global::Leonardo.CreateVariationUpscaleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

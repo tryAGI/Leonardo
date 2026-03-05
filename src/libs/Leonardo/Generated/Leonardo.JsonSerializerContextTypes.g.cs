@@ -216,7 +216,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.MODELASSETTEXTURETYPES? Type47 { get; set; }
+        public global::Leonardo.ModelAssetTextureTypes? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -228,15 +228,15 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.VARIATIONTYPE? Type50 { get; set; }
+        public global::Leonardo.VariationType? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.MOTIONVARIATIONTYPE? Type51 { get; set; }
+        public global::Leonardo.MotionVariationType? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.MOTIONRESOLUTION? Type52 { get; set; }
+        public global::Leonardo.MotionResolution? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -452,43 +452,43 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsIMAGEGENERATION? Type106 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsImageGeneration? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? Type107 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONVIDEOGENERATION? Type108 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsMotionVideoGeneration? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsVEO3MOTIONVIDEOGENERATION? Type109 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsVeo3MotionVideoGeneration? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsVEO3MOTIONVIDEOGENERATIONResolution? Type110 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsVeo3MotionVideoGenerationResolution? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsLCMGENERATION? Type111 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsLcmGeneration? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsMODELTRAINING? Type112 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsModelTraining? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? Type113 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsTextureGeneration? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? Type114 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscaler? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALERULTRA? Type115 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscalerUltra? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>

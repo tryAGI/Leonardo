@@ -14,6 +14,7 @@ namespace Leonardo
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.UploadDatasetImageResponse> UploadDatasetImageAsync(
             string datasetId,
+
             global::Leonardo.UploadDatasetImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

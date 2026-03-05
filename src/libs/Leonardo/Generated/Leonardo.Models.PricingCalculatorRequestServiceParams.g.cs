@@ -12,61 +12,61 @@ namespace Leonardo
         /// Parameters for IMAGE_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("IMAGE_GENERATION")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsIMAGEGENERATION? IMAGEGENERATION { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsImageGeneration? ImageGeneration { get; set; }
 
         /// <summary>
         /// Parameters for FANTASY_AVATAR_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("FANTASY_AVATAR_GENERATION")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? FANTASYAVATARGENERATION { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration? FantasyAvatarGeneration { get; set; }
 
         /// <summary>
         /// Parameters for MOTION_SVD_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MOTION_SVD_GENERATION")]
-        public object? MOTIONSVDGENERATION { get; set; }
+        public object? MotionSvdGeneration { get; set; }
 
         /// <summary>
         /// Parameters for MOTION_VIDEO_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MOTION_VIDEO_GENERATION")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONVIDEOGENERATION? MOTIONVIDEOGENERATION { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsMotionVideoGeneration? MotionVideoGeneration { get; set; }
 
         /// <summary>
         /// Parameters for VEO3_MOTION_VIDEO_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("VEO3_MOTION_VIDEO_GENERATION")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsVEO3MOTIONVIDEOGENERATION? VEO3MOTIONVIDEOGENERATION { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsVeo3MotionVideoGeneration? Veo3MotionVideoGeneration { get; set; }
 
         /// <summary>
         /// Parameters for LCM_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("LCM_GENERATION")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsLCMGENERATION? LCMGENERATION { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsLcmGeneration? LcmGeneration { get; set; }
 
         /// <summary>
         /// Parameters for MODEL_TRAINING service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("MODEL_TRAINING")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsMODELTRAINING? MODELTRAINING { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsModelTraining? ModelTraining { get; set; }
 
         /// <summary>
         /// Parameters for TEXTURE_GENERATION service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("TEXTURE_GENERATION")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? TEXTUREGENERATION { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsTextureGeneration? TextureGeneration { get; set; }
 
         /// <summary>
         /// Parameters for UNIVERSAL_UPSCALER service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("UNIVERSAL_UPSCALER")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? UNIVERSALUPSCALER { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscaler? UniversalUpscaler { get; set; }
 
         /// <summary>
         /// Parameters for UNIVERSAL_UPSCALER_ULTRA service
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("UNIVERSAL_UPSCALER_ULTRA")]
-        public global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALERULTRA? UNIVERSALUPSCALERULTRA { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscalerUltra? UniversalUpscalerUltra { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,61 +77,61 @@ namespace Leonardo
         /// <summary>
         /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParams" /> class.
         /// </summary>
-        /// <param name="iMAGEGENERATION">
+        /// <param name="imageGeneration">
         /// Parameters for IMAGE_GENERATION service
         /// </param>
-        /// <param name="fANTASYAVATARGENERATION">
+        /// <param name="fantasyAvatarGeneration">
         /// Parameters for FANTASY_AVATAR_GENERATION service
         /// </param>
-        /// <param name="mOTIONSVDGENERATION">
+        /// <param name="motionSvdGeneration">
         /// Parameters for MOTION_SVD_GENERATION service
         /// </param>
-        /// <param name="mOTIONVIDEOGENERATION">
+        /// <param name="motionVideoGeneration">
         /// Parameters for MOTION_VIDEO_GENERATION service
         /// </param>
-        /// <param name="vEO3MOTIONVIDEOGENERATION">
+        /// <param name="veo3MotionVideoGeneration">
         /// Parameters for VEO3_MOTION_VIDEO_GENERATION service
         /// </param>
-        /// <param name="lCMGENERATION">
+        /// <param name="lcmGeneration">
         /// Parameters for LCM_GENERATION service
         /// </param>
-        /// <param name="mODELTRAINING">
+        /// <param name="modelTraining">
         /// Parameters for MODEL_TRAINING service
         /// </param>
-        /// <param name="tEXTUREGENERATION">
+        /// <param name="textureGeneration">
         /// Parameters for TEXTURE_GENERATION service
         /// </param>
-        /// <param name="uNIVERSALUPSCALER">
+        /// <param name="universalUpscaler">
         /// Parameters for UNIVERSAL_UPSCALER service
         /// </param>
-        /// <param name="uNIVERSALUPSCALERULTRA">
+        /// <param name="universalUpscalerUltra">
         /// Parameters for UNIVERSAL_UPSCALER_ULTRA service
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PricingCalculatorRequestServiceParams(
-            global::Leonardo.PricingCalculatorRequestServiceParamsIMAGEGENERATION? iMAGEGENERATION,
-            global::Leonardo.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? fANTASYAVATARGENERATION,
-            object? mOTIONSVDGENERATION,
-            global::Leonardo.PricingCalculatorRequestServiceParamsMOTIONVIDEOGENERATION? mOTIONVIDEOGENERATION,
-            global::Leonardo.PricingCalculatorRequestServiceParamsVEO3MOTIONVIDEOGENERATION? vEO3MOTIONVIDEOGENERATION,
-            global::Leonardo.PricingCalculatorRequestServiceParamsLCMGENERATION? lCMGENERATION,
-            global::Leonardo.PricingCalculatorRequestServiceParamsMODELTRAINING? mODELTRAINING,
-            global::Leonardo.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? tEXTUREGENERATION,
-            global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? uNIVERSALUPSCALER,
-            global::Leonardo.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALERULTRA? uNIVERSALUPSCALERULTRA)
+            global::Leonardo.PricingCalculatorRequestServiceParamsImageGeneration? imageGeneration,
+            global::Leonardo.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration? fantasyAvatarGeneration,
+            object? motionSvdGeneration,
+            global::Leonardo.PricingCalculatorRequestServiceParamsMotionVideoGeneration? motionVideoGeneration,
+            global::Leonardo.PricingCalculatorRequestServiceParamsVeo3MotionVideoGeneration? veo3MotionVideoGeneration,
+            global::Leonardo.PricingCalculatorRequestServiceParamsLcmGeneration? lcmGeneration,
+            global::Leonardo.PricingCalculatorRequestServiceParamsModelTraining? modelTraining,
+            global::Leonardo.PricingCalculatorRequestServiceParamsTextureGeneration? textureGeneration,
+            global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscaler? universalUpscaler,
+            global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscalerUltra? universalUpscalerUltra)
         {
-            this.IMAGEGENERATION = iMAGEGENERATION;
-            this.FANTASYAVATARGENERATION = fANTASYAVATARGENERATION;
-            this.MOTIONSVDGENERATION = mOTIONSVDGENERATION;
-            this.MOTIONVIDEOGENERATION = mOTIONVIDEOGENERATION;
-            this.VEO3MOTIONVIDEOGENERATION = vEO3MOTIONVIDEOGENERATION;
-            this.LCMGENERATION = lCMGENERATION;
-            this.MODELTRAINING = mODELTRAINING;
-            this.TEXTUREGENERATION = tEXTUREGENERATION;
-            this.UNIVERSALUPSCALER = uNIVERSALUPSCALER;
-            this.UNIVERSALUPSCALERULTRA = uNIVERSALUPSCALERULTRA;
+            this.ImageGeneration = imageGeneration;
+            this.FantasyAvatarGeneration = fantasyAvatarGeneration;
+            this.MotionSvdGeneration = motionSvdGeneration;
+            this.MotionVideoGeneration = motionVideoGeneration;
+            this.Veo3MotionVideoGeneration = veo3MotionVideoGeneration;
+            this.LcmGeneration = lcmGeneration;
+            this.ModelTraining = modelTraining;
+            this.TextureGeneration = textureGeneration;
+            this.UniversalUpscaler = universalUpscaler;
+            this.UniversalUpscalerUltra = universalUpscalerUltra;
         }
 
         /// <summary>

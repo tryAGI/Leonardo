@@ -29,6 +29,7 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.CreateModelResponse> CreateModelAsync(
+
             global::Leonardo.CreateModelRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

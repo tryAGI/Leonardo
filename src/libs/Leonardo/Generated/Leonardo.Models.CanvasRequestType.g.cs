@@ -11,19 +11,19 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        INPAINT,
+        Inpaint,
         /// <summary>
         /// 
         /// </summary>
-        OUTPAINT,
+        Outpaint,
         /// <summary>
         /// 
         /// </summary>
-        SKETCH2IMG,
+        Sketch2img,
         /// <summary>
         /// 
         /// </summary>
-        IMG2IMG,
+        Img2img,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Leonardo
         {
             return value switch
             {
-                CanvasRequestType.INPAINT => "INPAINT",
-                CanvasRequestType.OUTPAINT => "OUTPAINT",
-                CanvasRequestType.SKETCH2IMG => "SKETCH2IMG",
-                CanvasRequestType.IMG2IMG => "IMG2IMG",
+                CanvasRequestType.Inpaint => "INPAINT",
+                CanvasRequestType.Outpaint => "OUTPAINT",
+                CanvasRequestType.Sketch2img => "SKETCH2IMG",
+                CanvasRequestType.Img2img => "IMG2IMG",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Leonardo
         {
             return value switch
             {
-                "INPAINT" => CanvasRequestType.INPAINT,
-                "OUTPAINT" => CanvasRequestType.OUTPAINT,
-                "SKETCH2IMG" => CanvasRequestType.SKETCH2IMG,
-                "IMG2IMG" => CanvasRequestType.IMG2IMG,
+                "INPAINT" => CanvasRequestType.Inpaint,
+                "OUTPAINT" => CanvasRequestType.Outpaint,
+                "SKETCH2IMG" => CanvasRequestType.Sketch2img,
+                "IMG2IMG" => CanvasRequestType.Img2img,
                 _ => null,
             };
         }

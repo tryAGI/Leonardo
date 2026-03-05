@@ -29,6 +29,7 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.CreateElementResponse> CreateElementAsync(
+
             global::Leonardo.CreateElementRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -207,16 +208,16 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.CreateElementResponse> CreateElementAsync(
-            string name,
             string datasetId,
             string loraFocus,
             bool trainTextEncoder,
-            global::Leonardo.CreateElementRequestSdVersion sdVersion,
             int numTrainEpochs,
             double learningRate,
+            string name = "placeholder",
             string? description = default,
             string? instancePrompt = default,
             int? resolution = default,
+            global::Leonardo.CreateElementRequestSdVersion sdVersion = global::Leonardo.CreateElementRequestSdVersion.FluxDev,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Leonardo.CreateElementRequest

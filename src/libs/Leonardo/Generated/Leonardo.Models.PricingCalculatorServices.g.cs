@@ -11,43 +11,43 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        IMAGEGENERATION,
+        ImageGeneration,
         /// <summary>
         /// 
         /// </summary>
-        FANTASYAVATARGENERATION,
+        FantasyAvatarGeneration,
         /// <summary>
         /// 
         /// </summary>
-        MOTIONSVDGENERATION,
+        MotionSvdGeneration,
         /// <summary>
         /// 
         /// </summary>
-        MOTIONVIDEOGENERATION,
+        MotionVideoGeneration,
         /// <summary>
         /// 
         /// </summary>
-        VEO3MOTIONVIDEOGENERATION,
+        Veo3MotionVideoGeneration,
         /// <summary>
         /// 
         /// </summary>
-        LCMGENERATION,
+        LcmGeneration,
         /// <summary>
         /// 
         /// </summary>
-        MODELTRAINING,
+        ModelTraining,
         /// <summary>
         /// 
         /// </summary>
-        TEXTUREGENERATION,
+        TextureGeneration,
         /// <summary>
         /// 
         /// </summary>
-        UNIVERSALUPSCALER,
+        UniversalUpscaler,
         /// <summary>
         /// 
         /// </summary>
-        UNIVERSALUPSCALERULTRA,
+        UniversalUpscalerUltra,
     }
 
     /// <summary>
@@ -62,16 +62,16 @@ namespace Leonardo
         {
             return value switch
             {
-                PricingCalculatorServices.IMAGEGENERATION => "IMAGE_GENERATION",
-                PricingCalculatorServices.FANTASYAVATARGENERATION => "FANTASY_AVATAR_GENERATION",
-                PricingCalculatorServices.MOTIONSVDGENERATION => "MOTION_SVD_GENERATION",
-                PricingCalculatorServices.MOTIONVIDEOGENERATION => "MOTION_VIDEO_GENERATION",
-                PricingCalculatorServices.VEO3MOTIONVIDEOGENERATION => "VEO3_MOTION_VIDEO_GENERATION",
-                PricingCalculatorServices.LCMGENERATION => "LCM_GENERATION",
-                PricingCalculatorServices.MODELTRAINING => "MODEL_TRAINING",
-                PricingCalculatorServices.TEXTUREGENERATION => "TEXTURE_GENERATION",
-                PricingCalculatorServices.UNIVERSALUPSCALER => "UNIVERSAL_UPSCALER",
-                PricingCalculatorServices.UNIVERSALUPSCALERULTRA => "UNIVERSAL_UPSCALER_ULTRA",
+                PricingCalculatorServices.ImageGeneration => "IMAGE_GENERATION",
+                PricingCalculatorServices.FantasyAvatarGeneration => "FANTASY_AVATAR_GENERATION",
+                PricingCalculatorServices.MotionSvdGeneration => "MOTION_SVD_GENERATION",
+                PricingCalculatorServices.MotionVideoGeneration => "MOTION_VIDEO_GENERATION",
+                PricingCalculatorServices.Veo3MotionVideoGeneration => "VEO3_MOTION_VIDEO_GENERATION",
+                PricingCalculatorServices.LcmGeneration => "LCM_GENERATION",
+                PricingCalculatorServices.ModelTraining => "MODEL_TRAINING",
+                PricingCalculatorServices.TextureGeneration => "TEXTURE_GENERATION",
+                PricingCalculatorServices.UniversalUpscaler => "UNIVERSAL_UPSCALER",
+                PricingCalculatorServices.UniversalUpscalerUltra => "UNIVERSAL_UPSCALER_ULTRA",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,16 +82,16 @@ namespace Leonardo
         {
             return value switch
             {
-                "IMAGE_GENERATION" => PricingCalculatorServices.IMAGEGENERATION,
-                "FANTASY_AVATAR_GENERATION" => PricingCalculatorServices.FANTASYAVATARGENERATION,
-                "MOTION_SVD_GENERATION" => PricingCalculatorServices.MOTIONSVDGENERATION,
-                "MOTION_VIDEO_GENERATION" => PricingCalculatorServices.MOTIONVIDEOGENERATION,
-                "VEO3_MOTION_VIDEO_GENERATION" => PricingCalculatorServices.VEO3MOTIONVIDEOGENERATION,
-                "LCM_GENERATION" => PricingCalculatorServices.LCMGENERATION,
-                "MODEL_TRAINING" => PricingCalculatorServices.MODELTRAINING,
-                "TEXTURE_GENERATION" => PricingCalculatorServices.TEXTUREGENERATION,
-                "UNIVERSAL_UPSCALER" => PricingCalculatorServices.UNIVERSALUPSCALER,
-                "UNIVERSAL_UPSCALER_ULTRA" => PricingCalculatorServices.UNIVERSALUPSCALERULTRA,
+                "IMAGE_GENERATION" => PricingCalculatorServices.ImageGeneration,
+                "FANTASY_AVATAR_GENERATION" => PricingCalculatorServices.FantasyAvatarGeneration,
+                "MOTION_SVD_GENERATION" => PricingCalculatorServices.MotionSvdGeneration,
+                "MOTION_VIDEO_GENERATION" => PricingCalculatorServices.MotionVideoGeneration,
+                "VEO3_MOTION_VIDEO_GENERATION" => PricingCalculatorServices.Veo3MotionVideoGeneration,
+                "LCM_GENERATION" => PricingCalculatorServices.LcmGeneration,
+                "MODEL_TRAINING" => PricingCalculatorServices.ModelTraining,
+                "TEXTURE_GENERATION" => PricingCalculatorServices.TextureGeneration,
+                "UNIVERSAL_UPSCALER" => PricingCalculatorServices.UniversalUpscaler,
+                "UNIVERSAL_UPSCALER_ULTRA" => PricingCalculatorServices.UniversalUpscalerUltra,
                 _ => null,
             };
         }

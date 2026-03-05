@@ -29,6 +29,7 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.CreateGenerationResponse> CreateGenerationAsync(
+
             global::Leonardo.CreateGenerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -309,7 +310,6 @@ namespace Leonardo
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.CreateGenerationResponse> CreateGenerationAsync(
-            string prompt,
             bool? alchemy = default,
             double? contrastRatio = default,
             double? contrast = default,
@@ -335,6 +335,7 @@ namespace Leonardo
             string? photoRealVersion = default,
             double? photoRealStrength = default,
             global::Leonardo.SdGenerationStyle? presetStyle = default,
+            string prompt = "A majestic cat in the snow",
             bool? promptMagic = default,
             double? promptMagicStrength = default,
             string? promptMagicVersion = default,

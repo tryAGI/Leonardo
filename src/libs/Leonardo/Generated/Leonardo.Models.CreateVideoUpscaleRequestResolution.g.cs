@@ -11,7 +11,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        RESOLUTION720,
+        Resolution720,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Leonardo
         {
             return value switch
             {
-                CreateVideoUpscaleRequestResolution.RESOLUTION720 => "RESOLUTION_720",
+                CreateVideoUpscaleRequestResolution.Resolution720 => "RESOLUTION_720",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Leonardo
         {
             return value switch
             {
-                "RESOLUTION_720" => CreateVideoUpscaleRequestResolution.RESOLUTION720,
+                "RESOLUTION_720" => CreateVideoUpscaleRequestResolution.Resolution720,
                 _ => null,
             };
         }

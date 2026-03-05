@@ -19,8 +19,8 @@ namespace Leonardo
         /// Default Value: NORMAL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.MODELASSETTEXTURETYPESJsonConverter))]
-        public global::Leonardo.MODELASSETTEXTURETYPES? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.ModelAssetTextureTypesJsonConverter))]
+        public global::Leonardo.ModelAssetTextureTypes? Type { get; set; }
 
         /// <summary>
         /// 
@@ -48,7 +48,7 @@ namespace Leonardo
 #endif
         public GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage(
             string? id,
-            global::Leonardo.MODELASSETTEXTURETYPES? type,
+            global::Leonardo.ModelAssetTextureTypes? type,
             string? url)
         {
             this.Id = id;

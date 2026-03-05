@@ -157,7 +157,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(HttpClient, authorizations: Authorizations)
+        public x3dModelAssetsClient x3dModelAssets => new x3dModelAssetsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,

@@ -31,8 +31,8 @@ namespace Leonardo
         /// The type of variation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transformType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.VARIATIONTYPEJsonConverter))]
-        public global::Leonardo.VARIATIONTYPE? TransformType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.VariationTypeJsonConverter))]
+        public global::Leonardo.VariationType? TransformType { get; set; }
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace Leonardo
             string? createdAt,
             string? id,
             global::Leonardo.JobStatus? status,
-            global::Leonardo.VARIATIONTYPE? transformType,
+            global::Leonardo.VariationType? transformType,
             string? url)
         {
             this.CreatedAt = createdAt;

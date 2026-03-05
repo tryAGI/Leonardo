@@ -31,15 +31,15 @@ namespace Leonardo
         /// The type of motion variation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("motionTransformType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.MOTIONVARIATIONTYPEJsonConverter))]
-        public global::Leonardo.MOTIONVARIATIONTYPE? MotionTransformType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.MotionVariationTypeJsonConverter))]
+        public global::Leonardo.MotionVariationType? MotionTransformType { get; set; }
 
         /// <summary>
         /// The resolution of the upscaled video. RESOLUTION_720 is the only option for now.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.MOTIONRESOLUTIONJsonConverter))]
-        public global::Leonardo.MOTIONRESOLUTION? Resolution { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.MotionResolutionJsonConverter))]
+        public global::Leonardo.MotionResolution? Resolution { get; set; }
 
         /// <summary>
         /// 
@@ -75,8 +75,8 @@ namespace Leonardo
             string? createdAt,
             string? id,
             global::Leonardo.JobStatus? status,
-            global::Leonardo.MOTIONVARIATIONTYPE? motionTransformType,
-            global::Leonardo.MOTIONRESOLUTION? resolution,
+            global::Leonardo.MotionVariationType? motionTransformType,
+            global::Leonardo.MotionResolution? resolution,
             string? url)
         {
             this.CreatedAt = createdAt;
