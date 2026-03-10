@@ -10,10 +10,10 @@ C# SDK for the [Leonardo.AI](https://leonardo.ai/) image generation platform, au
 
 ```bash
 # Build the solution
-dotnet build Leonardo.sln
+dotnet build Leonardo.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build Leonardo.sln -c Release
+dotnet build Leonardo.slnx -c Release
 
 # Run integration tests (requires LEONARDO_API_KEY env var)
 dotnet test src/tests/Leonardo.IntegrationTests/Leonardo.IntegrationTests.csproj
