@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ImageId { get; set; }
+        public string ImageId { get; set; } = default!;
 
         /// <summary>
         /// Whether the generation is public or not

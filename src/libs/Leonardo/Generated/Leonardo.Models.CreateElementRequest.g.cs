@@ -15,7 +15,7 @@ namespace Leonardo
         /// <default>"placeholder"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "placeholder";
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// The description of the element.
@@ -28,7 +28,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datasetId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DatasetId { get; set; }
+        public string DatasetId { get; set; } = default!;
 
         /// <summary>
         /// Use a word that is closely related to what you're training that isn't too common. For example, instead of 'dog,' try something unique like 'jackthedog' or 'magicdonut'. Required for all non-FLUX_DEV models and FLUX_DEV Character model training.
@@ -41,7 +41,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lora_focus")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LoraFocus { get; set; }
+        public string LoraFocus { get; set; } = default!;
 
         /// <summary>
         /// Whether or not encode the train text.<br/>
@@ -49,7 +49,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("train_text_encoder")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool TrainTextEncoder { get; set; }
+        public bool TrainTextEncoder { get; set; } = default!;
 
         /// <summary>
         /// The resolution for training. Must be 1024.<br/>
@@ -66,21 +66,21 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("sd_version")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateElementRequestSdVersionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Leonardo.CreateElementRequestSdVersion SdVersion { get; set; } = global::Leonardo.CreateElementRequestSdVersion.FluxDev;
+        public global::Leonardo.CreateElementRequestSdVersion SdVersion { get; set; } = default!;
 
         /// <summary>
         /// The number of times the entire training dataset is passed through the element.&lt;table&gt;&lt;tr&gt;&lt;th&gt;Model Type&lt;/th&gt;&lt;th&gt;Lora Focus&lt;/th&gt;&lt;th&gt;Min&lt;/th&gt;&lt;th&gt;Max&lt;/th&gt;&lt;th&gt;Default&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Default&lt;/td&gt;&lt;td&gt;General | Style | Character | Object&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;250&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan='3'&gt;FLUX_DEV&lt;/td&gt;&lt;td&gt;Style&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;td&gt;60&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Object&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;td&gt;220&lt;/td&gt;&lt;td&gt;140&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Character&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;200&lt;/td&gt;&lt;td&gt;135&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;General&lt;/td&gt;&lt;td colspan='3'&gt;NA&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_train_epochs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumTrainEpochs { get; set; }
+        public int NumTrainEpochs { get; set; } = default!;
 
         /// <summary>
         /// The speed at which the model learns during training.&lt;table&gt;&lt;tr&gt;&lt;th&gt;Model Type&lt;/th&gt;&lt;th&gt;Lora Focus&lt;/th&gt;&lt;th&gt;Min&lt;/th&gt;&lt;th&gt;Max&lt;/th&gt;&lt;th&gt;Default&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Default&lt;/td&gt;&lt;td&gt;General | Style | Character | Object&lt;/td&gt;&lt;td&gt;0.00000001&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.000001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan='3'&gt;FLUX_DEV&lt;/td&gt;&lt;td&gt;Style&lt;/td&gt;&lt;td&gt;0.000001&lt;/td&gt;&lt;td&gt;0.00003&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Object&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;0.0004&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Character&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;0.0005&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;General&lt;/td&gt;&lt;td colspan='3'&gt;NA&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double LearningRate { get; set; }
+        public double LearningRate { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

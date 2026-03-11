@@ -15,7 +15,7 @@ namespace Leonardo
         /// <example>550e8400-e29b-41d4-a716-446655440000</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("akUUID")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid AkUUID { get; set; }
+        public global::System.Guid AkUUID { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

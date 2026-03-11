@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nodeInputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Leonardo.NodeInput> NodeInputs { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.NodeInput> NodeInputs { get; set; } = default!;
 
         /// <summary>
         /// Whether the resulting generations should be public<br/>
@@ -22,7 +22,7 @@ namespace Leonardo
         /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Public { get; set; }
+        public bool Public { get; set; } = default!;
 
         /// <summary>
         /// Optional list of collection IDs to add the generations to

@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("akUUID")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AkUUID { get; set; }
+        public string AkUUID { get; set; } = default!;
 
         /// <summary>
         /// Weight for the element<br/>

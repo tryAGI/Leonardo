@@ -13,14 +13,14 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("initExtension")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string InitExtension { get; set; }
+        public string InitExtension { get; set; } = default!;
 
         /// <summary>
         /// Has to be png, jpg, jpeg, or webp.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maskExtension")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MaskExtension { get; set; }
+        public string MaskExtension { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

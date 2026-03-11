@@ -13,21 +13,21 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageDataUrl")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ImageDataUrl { get; set; }
+        public string ImageDataUrl { get; set; } = default!;
 
         /// <summary>
         /// Image data of the mask layer used for inpainting. In base64 format. Prefix: `data:image/jpeg;base64,`. Mask should be white on black where generation is applied to the white area.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maskDataUrl")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MaskDataUrl { get; set; }
+        public string MaskDataUrl { get; set; } = default!;
 
         /// <summary>
         /// The prompt used to generate images
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
+        public string Prompt { get; set; } = default!;
 
         /// <summary>
         /// How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.

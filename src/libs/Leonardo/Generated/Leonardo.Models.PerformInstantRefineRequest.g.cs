@@ -13,14 +13,14 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageDataUrl")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ImageDataUrl { get; set; }
+        public string ImageDataUrl { get; set; } = default!;
 
         /// <summary>
         /// The prompt used to generate images
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
+        public string Prompt { get; set; } = default!;
 
         /// <summary>
         /// How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.

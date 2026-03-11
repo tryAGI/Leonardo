@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Type indicating whether the end frame image is uploaded or generated.
@@ -21,7 +21,7 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestEndFrameImageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImageType Type { get; set; }
+        public global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImageType Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

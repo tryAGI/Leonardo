@@ -13,14 +13,14 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursor")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Cursor { get; set; }
+        public string Cursor { get; set; } = default!;
 
         /// <summary>
         /// Represents a single generation within a Blueprint Execution
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Leonardo.BlueprintExecutionGeneration Node { get; set; }
+        public global::Leonardo.BlueprintExecutionGeneration Node { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

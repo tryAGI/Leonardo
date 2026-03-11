@@ -15,14 +15,14 @@ namespace Leonardo
         /// <example>550e8400-e29b-41d4-a716-446655440000</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("blueprintVersionId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid BlueprintVersionId { get; set; }
+        public global::System.Guid BlueprintVersionId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Leonardo.ExecuteBlueprintRequestInput Input { get; set; }
+        public global::Leonardo.ExecuteBlueprintRequestInput Input { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

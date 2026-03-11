@@ -24,7 +24,7 @@ namespace Leonardo
         /// <example>Generation blocked due to prompt moderation</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; }
+        public string Message { get; set; } = default!;
 
         /// <summary>
         /// Number of outputs affected by this failure<br/>
@@ -33,7 +33,7 @@ namespace Leonardo
         /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("affectedOutputCount")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AffectedOutputCount { get; set; }
+        public int AffectedOutputCount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

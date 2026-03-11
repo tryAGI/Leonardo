@@ -173,7 +173,7 @@ namespace Leonardo
         /// <default>"A majestic cat in the snow"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; } = "A majestic cat in the snow";
+        public string Prompt { get; set; } = default!;
 
         /// <summary>
         /// Enable to use Prompt Magic.

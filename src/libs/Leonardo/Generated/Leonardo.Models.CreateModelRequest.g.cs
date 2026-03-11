@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// The description of the model.
@@ -26,14 +26,14 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datasetId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string DatasetId { get; set; }
+        public string DatasetId { get; set; } = default!;
 
         /// <summary>
         /// The instance prompt to use during training.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instance_prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string InstancePrompt { get; set; }
+        public string InstancePrompt { get; set; } = default!;
 
         /// <summary>
         /// The category the most accurately reflects the model.<br/>
