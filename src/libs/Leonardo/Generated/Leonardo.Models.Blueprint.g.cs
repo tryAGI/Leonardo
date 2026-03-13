@@ -18,17 +18,17 @@ namespace Leonardo
 
         /// <summary>
         /// Creation timestamp<br/>
-        /// Example: 2025-10-29T21:31:47.9990000+00:00
+        /// Example: 2025-10-29T21:31:47.999Z
         /// </summary>
-        /// <example>2025-10-29T21:31:47.9990000+00:00</example>
+        /// <example>2025-10-29T21:31:47.999Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdAt")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Last update timestamp<br/>
-        /// Example: 2025-12-19T02:34:44.7400000+00:00
+        /// Example: 2025-12-19T02:34:44.740Z
         /// </summary>
-        /// <example>2025-12-19T02:34:44.7400000+00:00</example>
+        /// <example>2025-12-19T02:34:44.740Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updatedAt")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
@@ -55,8 +55,10 @@ namespace Leonardo
         public global::System.Collections.Generic.IList<global::Leonardo.BlueprintThumbnail>? Thumbnails { get; set; }
 
         /// <summary>
-        /// Team ID if Blueprint belongs to a team
+        /// Team ID if Blueprint belongs to a team<br/>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("teamId")]
         public string? TeamId { get; set; }
 
@@ -83,11 +85,11 @@ namespace Leonardo
         /// </param>
         /// <param name="createdAt">
         /// Creation timestamp<br/>
-        /// Example: 2025-10-29T21:31:47.9990000+00:00
+        /// Example: 2025-10-29T21:31:47.999Z
         /// </param>
         /// <param name="updatedAt">
         /// Last update timestamp<br/>
-        /// Example: 2025-12-19T02:34:44.7400000+00:00
+        /// Example: 2025-12-19T02:34:44.740Z
         /// </param>
         /// <param name="name">
         /// Name of the Blueprint<br/>
@@ -99,7 +101,8 @@ namespace Leonardo
         /// </param>
         /// <param name="thumbnails"></param>
         /// <param name="teamId">
-        /// Team ID if Blueprint belongs to a team
+        /// Team ID if Blueprint belongs to a team<br/>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="official">
         /// Whether this is an official Blueprint<br/>

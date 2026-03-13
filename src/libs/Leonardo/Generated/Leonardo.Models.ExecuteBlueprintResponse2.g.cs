@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("executeBlueprint")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.ExecuteBlueprintResponseExecuteBlueprint ExecuteBlueprint { get; set; } = default!;
+        public required global::Leonardo.ExecuteBlueprintResponseExecuteBlueprint ExecuteBlueprint { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

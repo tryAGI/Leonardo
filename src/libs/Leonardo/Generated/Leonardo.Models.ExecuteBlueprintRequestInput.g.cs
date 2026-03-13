@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nodeInputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Leonardo.NodeInput> NodeInputs { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Leonardo.NodeInput> NodeInputs { get; set; }
 
         /// <summary>
         /// Whether the resulting generations should be public<br/>
@@ -22,11 +22,13 @@ namespace Leonardo
         /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool Public { get; set; } = default!;
+        public required bool Public { get; set; }
 
         /// <summary>
-        /// Optional list of collection IDs to add the generations to
+        /// Optional list of collection IDs to add the generations to<br/>
+        /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("collectionIds")]
         public global::System.Collections.Generic.IList<int>? CollectionIds { get; set; }
 
@@ -47,7 +49,8 @@ namespace Leonardo
         /// Example: false
         /// </param>
         /// <param name="collectionIds">
-        /// Optional list of collection IDs to add the generations to
+        /// Optional list of collection IDs to add the generations to<br/>
+        /// Example: []
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -1,4 +1,4 @@
-openapi: 3.0.4
+openapi: '3.2.0'
 info:
   title: Rest Endpoints
   description: Leonardo.Ai API OpenAPI specification.
@@ -30,27 +30,31 @@ paths:
                       properties:
                         user:
                           title: users
-                          type: object
+                          type:
+                            - 'null'
+                            - object
                           properties:
                             id:
                               $ref: '#/components/schemas/uuid'
                             username:
                               title: String
-                              type: string
+                              type:
+                                - 'null'
+                                - string
                               description: Username of the user.
-                              nullable: true
                           description: columns and relationships of "users"
-                          nullable: true
                         tokenRenewalDate:
                           title: timestamp
-                          type: string
+                          type:
+                            - 'null'
+                            - string
                           description: User Plan Token Renewal Date.
-                          nullable: true
                         paidTokens:
                           title: Int
-                          type: integer
+                          type:
+                            - 'null'
+                            - integer
                           description: Current balance of paid tokens the user has.
-                          nullable: true
                         subscriptionTokens:
                           title: Int
                           type: integer
@@ -69,18 +73,20 @@ paths:
                           description: API Concurrency Slots.
                         apiPaidTokens:
                           title: Int
-                          type: integer
+                          type:
+                            - 'null'
+                            - integer
                           description: Current balance of API paid tokens the user has.
-                          nullable: true
                         apiSubscriptionTokens:
                           title: Int
                           type: integer
                           description: Current balance of Enterprise API subscriptions tokens the user has.
                         apiPlanTokenRenewalDate:
                           title: timestamp
-                          type: string
+                          type:
+                            - 'null'
+                            - string
                           description: API Plan Token Renewal Date.
-                          nullable: true
                       description: columns and relationships of "user_details"
   /generations:
     post:
@@ -100,117 +106,139 @@ paths:
               properties:
                 alchemy:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: 'Enable to use Alchemy. Note: The appropriate Alchemy version is selected for the specified model. For example, XL models will use Alchemy V2.'
                   default: true
-                  nullable: true
                 contrastRatio:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: Contrast Ratio to use with Alchemy. Must be a float between 0 and 1 inclusive.
-                  nullable: true
                 contrast:
                   title: Float
                   maximum: 4.5
                   minimum: 1
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: 'Adjusts the contrast level of the generated image. Used in Phoenix and Flux models. Accepts values [1.0, 1.3, 1.8, 2.5, 3, 3.5, 4, 4.5]. For Phoenix, if alchemy is true, contrast needs to be 2.5 or higher.'
-                  nullable: true
                   example: 3.5
                 controlnets:
-                  type: array
+                  type:
+                    - 'null'
+                    - array
                   items:
                     $ref: '#/components/schemas/controlnet_input'
-                  nullable: true
                 elements:
-                  type: array
+                  type:
+                    - 'null'
+                    - array
                   items:
                     $ref: '#/components/schemas/element_input'
-                  nullable: true
                 userElements:
-                  type: array
+                  type:
+                    - 'null'
+                    - array
                   items:
                     $ref: '#/components/schemas/user_elements_input'
-                  nullable: true
                 expandedDomain:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Enable to use the Expanded Domain feature of Alchemy.
-                  nullable: true
                 fantasyAvatar:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Enable to use the Fantasy Avatar feature.
-                  nullable: true
                 guidance_scale:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: How strongly the generation should reflect the prompt. 7 is recommended. Must be between 1 and 20.
-                  nullable: true
                 height:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The input height of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.'
                   default: 768
-                  nullable: true
                 highContrast:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: 'Enable to use the High Contrast feature of Prompt Magic. Note: Controls RAW mode. Set to false to enable RAW mode.'
-                  nullable: true
                 highResolution:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Enable to use the High Resolution feature of Prompt Magic.
-                  nullable: true
                 imagePrompts:
-                  type: array
+                  type:
+                    - 'null'
+                    - array
                   items:
                     title: String
-                    type: string
-                    nullable: true
-                  nullable: true
+                    type:
+                      - 'null'
+                      - string
                 imagePromptWeight:
                   title: Float
-                  type: number
-                  nullable: true
+                  type:
+                    - 'null'
+                    - number
                 init_generation_image_id:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The ID of an existing image to use in image2image.
-                  nullable: true
                 init_image_id:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The ID of an Init Image to use in image2image.
-                  nullable: true
                 init_strength:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: How strongly the generated images should reflect the original image in image2image. Must be a float between 0.1 and 0.9.
-                  nullable: true
                 modelId:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: 'The model ID used for image generation. If not provided, uses sd_version to determine the version of Stable Diffusion to use. In-app, model IDs are under the Finetune Models menu. Click on the platform model or your custom model, then click View More. For platform models, you can also use the List Platform Models API.'
                   default: b24e16ff-06e3-43eb-8d33-4416c2d75876
-                  nullable: true
                 negative_prompt:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The negative prompt used for the image generation
-                  nullable: true
                 num_images:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4.'
                   default: 4
-                  nullable: true
                 num_inference_steps:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The Step Count to use for the generation. Must be between 10 and 60. Default is 15.
-                  nullable: true
                 photoReal:
                   $ref: '#/components/schemas/photoRealArg'
                 photoRealVersion:
@@ -232,9 +260,10 @@ paths:
                   $ref: '#/components/schemas/promptMagicVersionArg'
                 public:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Whether the generated images should show in the community feed.
-                  nullable: true
                 scheduler:
                   $ref: '#/components/schemas/sd_generation_schedulers'
                 sd_version:
@@ -243,84 +272,98 @@ paths:
                   $ref: '#/components/schemas/seed'
                 tiling:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Whether the generated images should tile on all axis.
-                  nullable: true
                 transparency:
                   title: TransparencyType
                   enum:
                     - disabled
                     - foreground_only
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: Which type of transparency this image should use
-                  nullable: true
                 ultra:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: 'Enable to use Ultra mode. Note: can not be used with Alchemy.'
-                  nullable: true
                 unzoom:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Whether the generated images should be unzoomed (requires unzoomAmount and init_image_id to be set).
-                  nullable: true
                 unzoomAmount:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: How much the image should be unzoomed (requires an init_image_id and unzoom to be set to true).
-                  nullable: true
                 upscaleRatio:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: How much the image should be upscaled. (Enterprise Only)
-                  nullable: true
                 width:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The input width of the images. Must be between 32 and 1536 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features.'
                   default: 1024
-                  nullable: true
                 controlNet:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: This parameter will be deprecated in September 2024. Please use the controlnets array instead.
-                  nullable: true
                   deprecated: true
                 controlNetType:
                   $ref: '#/components/schemas/controlnet_type'
                 weighting:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: This parameter will be deprecated in September 2024. Please use the controlnets array instead.
-                  nullable: true
                   deprecated: true
                 canvasRequest:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Whether the generation is for the Canvas Editor feature.
-                  nullable: true
                 canvasRequestType:
                   $ref: '#/components/schemas/canvasRequestType'
                 canvasInitId:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The ID of an initial image to use in Canvas Editor request.
-                  nullable: true
                 canvasMaskId:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The ID of a mask image to use in Canvas Editor request.
-                  nullable: true
                 enhancePrompt:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: 'When enabled, your prompt is expanded to include more detail.'
-                  nullable: true
                 enhancePromptInstruction:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: 'When enhancePrompt is enabled, the prompt is enhanced based on the given instructions.'
-                  nullable: true
         required: true
       responses:
         '200':
@@ -332,23 +375,25 @@ paths:
                 properties:
                   sdGenerationJob:
                     title: SDGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       generationId:
                         title: String
                         type: string
                       apiCreditCost:
-                        type: integer
+                        type:
+                          - 'null'
+                          - integer
                         description: 'API Credits Cost for Image Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
-                        nullable: true
                         deprecated: true
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 sdGenerationJob:
                   generationId: a1b2c3d4-e5f6-7890-abcd-ef1234567890
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -377,7 +422,9 @@ paths:
                 properties:
                   generations_by_pk:
                     title: generations
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       createdAt:
                         $ref: '#/components/schemas/timestamp'
@@ -401,14 +448,16 @@ paths:
                                     $ref: '#/components/schemas/VARIATION_TYPE'
                                   url:
                                     title: String
-                                    type: string
-                                    nullable: true
+                                    type:
+                                      - 'null'
+                                      - string
                                 description: columns and relationships of "generated_image_variation_generic"
                             fantasyAvatar:
                               title: Boolean
-                              type: boolean
+                              type:
+                                - 'null'
+                                - boolean
                               description: If fantasyAvatar feature was used.
-                              nullable: true
                             id:
                               $ref: '#/components/schemas/uuid'
                             imageToVideo:
@@ -441,26 +490,27 @@ paths:
                               $ref: '#/components/schemas/bigint'
                             lora:
                               title: loras
-                              type: object
+                              type:
+                                - 'null'
+                                - object
                               properties:
                                 akUUID:
-                                  $ref: '#/components/schemas/lora'
+                                  $ref: '#/components/schemas/akUUID'
                                 baseModel:
                                   $ref: '#/components/schemas/sd_versions'
                                 description:
-                                  $ref: '#/components/schemas/lora'
+                                  $ref: '#/components/schemas/description'
                                 name:
-                                  $ref: '#/components/schemas/lora'
+                                  $ref: '#/components/schemas/name'
                                 urlImage:
-                                  $ref: '#/components/schemas/lora'
+                                  $ref: '#/components/schemas/urlImage'
                                 weightDefault:
-                                  $ref: '#/components/schemas/lora'
+                                  $ref: '#/components/schemas/weightDefault'
                                 weightMax:
-                                  $ref: '#/components/schemas/lora'
+                                  $ref: '#/components/schemas/weightMax'
                                 weightMin:
-                                  $ref: '#/components/schemas/lora'
+                                  $ref: '#/components/schemas/weightMin'
                               description: Element used for the generation.
-                              nullable: true
                             weightApplied:
                               $ref: '#/components/schemas/numeric'
                           description: This table captures the elements that are applied to Generations.
@@ -476,16 +526,18 @@ paths:
                         type: integer
                       inferenceSteps:
                         title: Int
-                        type: integer
-                        nullable: true
+                        type:
+                          - 'null'
+                          - integer
                       initStrength:
                         $ref: '#/components/schemas/float8'
                       modelId:
                         $ref: '#/components/schemas/uuid'
                       negativePrompt:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       photoReal:
                         $ref: '#/components/schemas/photoRealRes'
                       photoRealStrength:
@@ -515,7 +567,6 @@ paths:
                       ultra:
                         $ref: '#/components/schemas/sd_generation_ultra'
                     description: columns and relationships of "generations"
-                    nullable: true
     delete:
       tags:
         - Image
@@ -540,12 +591,13 @@ paths:
                 properties:
                   delete_generations_by_pk:
                     title: generations
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "generations"
-                    nullable: true
   '/generations/user/{userId}':
     get:
       tags:
@@ -606,8 +658,9 @@ paths:
                                       $ref: '#/components/schemas/VARIATION_TYPE'
                                     url:
                                       title: String
-                                      type: string
-                                      nullable: true
+                                      type:
+                                        - 'null'
+                                        - string
                                   description: columns and relationships of "generated_image_variation_generic"
                               id:
                                 $ref: '#/components/schemas/uuid'
@@ -641,26 +694,27 @@ paths:
                                 $ref: '#/components/schemas/bigint'
                               lora:
                                 title: elements
-                                type: object
+                                type:
+                                  - 'null'
+                                  - object
                                 properties:
                                   akUUID:
-                                    $ref: '#/components/schemas/lora'
+                                    $ref: '#/components/schemas/akUUID'
                                   baseModel:
                                     $ref: '#/components/schemas/sd_versions'
                                   description:
-                                    $ref: '#/components/schemas/lora'
+                                    $ref: '#/components/schemas/description'
                                   name:
-                                    $ref: '#/components/schemas/lora'
+                                    $ref: '#/components/schemas/name'
                                   urlImage:
-                                    $ref: '#/components/schemas/lora'
+                                    $ref: '#/components/schemas/urlImage'
                                   weightDefault:
-                                    $ref: '#/components/schemas/lora'
+                                    $ref: '#/components/schemas/weightDefault'
                                   weightMax:
-                                    $ref: '#/components/schemas/lora'
+                                    $ref: '#/components/schemas/weightMax'
                                   weightMin:
-                                    $ref: '#/components/schemas/lora'
+                                    $ref: '#/components/schemas/weightMin'
                                 description: Element used for the generation.
-                                nullable: true
                               weightApplied:
                                 $ref: '#/components/schemas/numeric'
                             description: 'This table captures the elements that are applied to a Generations, also the order and weightings used when applied.'
@@ -676,16 +730,18 @@ paths:
                           type: integer
                         inferenceSteps:
                           title: Int
-                          type: integer
-                          nullable: true
+                          type:
+                            - 'null'
+                            - integer
                         initStrength:
                           $ref: '#/components/schemas/float8'
                         modelId:
                           $ref: '#/components/schemas/uuid'
                         negativePrompt:
                           title: String
-                          type: string
-                          nullable: true
+                          type:
+                            - 'null'
+                            - string
                         photoReal:
                           $ref: '#/components/schemas/photoRealRes'
                         photoRealStrength:
@@ -731,30 +787,35 @@ paths:
               properties:
                 front_rotation_offset:
                   title: Int
-                  type: integer
-                  nullable: true
+                  type:
+                    - 'null'
+                    - integer
                 modelAssetId:
                   title: String
                   type: string
                 negative_prompt:
                   title: String
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
                 preview:
                   title: Boolean
-                  type: boolean
-                  nullable: true
+                  type:
+                    - 'null'
+                    - boolean
                 preview_direction:
                   title: String
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
                 prompt:
                   title: String
                   type: string
                 sd_version:
                   title: String
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
                 seed:
                   $ref: '#/components/schemas/seed'
       responses:
@@ -766,23 +827,25 @@ paths:
                 properties:
                   textureGenerationJob:
                     title: TextureGenerationJobOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         title: String
                         type: string
                       apiCreditCost:
-                        type: integer
+                        type:
+                          - 'null'
+                          - integer
                         description: 'API Credits Cost for Texture Generation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
-                        nullable: true
                         deprecated: true
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 textureGenerationJob:
                   id: b1c2d3e4-f5g6-7890-hijk-lm1234567890
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -824,7 +887,9 @@ paths:
                 properties:
                   motionSvdGenerationJob:
                     title: MotionSvdGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       generationId:
                         title: String
@@ -833,11 +898,10 @@ paths:
                         $ref: '#/components/schemas/apiCreditCost'
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 motionSvdGenerationJob:
                   generationId: h7i8j9k0-l1m2-n3o4-pqrs-tu6789012345
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -878,7 +942,9 @@ paths:
                   required:
                     - id
                     - type
-                  type: object
+                  type:
+                    - 'null'
+                    - object
                   properties:
                     id:
                       title: String
@@ -892,15 +958,14 @@ paths:
                       type: string
                       description: Type indicating whether the end frame image is uploaded or generated.
                   description: The end frame image. Supported only on kling2_1 model when used in conjunction with an init image.
-                  nullable: true
                 resolution:
                   title: String
                   enum:
                     - RESOLUTION_480
                     - RESOLUTION_720
                     - RESOLUTION_1080
+                  type: 'null'
                   description: The resolution of the output video. Acceptable values vary based on model
-                  nullable: true
                 model:
                   title: String
                   enum:
@@ -910,65 +975,75 @@ paths:
                     - VEO3FAST
                     - KLING2_1
                     - KLING2_5
+                  type: 'null'
                   description: The model to use for the video generation. Defaults to MOTION2 if not specified.
                   default: MOTION2
-                  nullable: true
                 frameInterpolation:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Smoothly blend frames for fluid video transitions using Interpolation.
-                  nullable: true
                 isPublic:
                   $ref: '#/components/schemas/public'
                 seed:
                   title: seed
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Motion 2.0.
-                  nullable: true
                 negativePrompt:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The negative prompt used for the video generation.
-                  nullable: true
                 promptEnhance:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Whether to enhance the prompt.
-                  nullable: true
                 duration:
                   title: Integer
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'Duration of the output video in seconds. Allowed values: 4, 6, or 8 on models VEO3 and VEO3FAST (default: 8) and 5 or 10 on model KLING2_5 (default: 5).'
-                  nullable: true
                 promptEnhanceInstruction:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: 'A natural language instruction used to modify the main prompt. For example, ''make it cinematic'', ''add a rainbow'', or ''change the subject to a cat''.'
-                  nullable: true
                 styleIds:
                   title: Array of Strings
-                  type: array
+                  type:
+                    - 'null'
+                    - array
                   items:
                     type: string
                   description: Predefined styles to enhance the prompt. This accepts a list of style uuids.
-                  nullable: true
                 elements:
                   title: Array of Element Inputs
-                  type: array
+                  type:
+                    - 'null'
+                    - array
                   items:
                     $ref: '#/components/schemas/element_input'
                   description: 'An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. '
-                  nullable: true
                 height:
                   title: Integer
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: Height of the output video. Acceptable values vary based on model
-                  nullable: true
                 width:
                   title: Integer
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: Width of the output video. Acceptable values vary based on model
-                  nullable: true
       responses:
         '200':
           description: Responses for POST /generations-image-to-video
@@ -979,7 +1054,9 @@ paths:
                 properties:
                   motionVideoGenerationJob:
                     title: MotionVideoGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       generationId:
                         title: String
@@ -988,11 +1065,10 @@ paths:
                         $ref: '#/components/schemas/apiCreditCost'
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 motionVideoGenerationJob:
                   generationId: i8j9k0l1-m2n3-o4p5-qrst-uv7890123456
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -1022,8 +1098,8 @@ paths:
                     - RESOLUTION_480
                     - RESOLUTION_720
                     - RESOLUTION_1080
+                  type: 'null'
                   description: The resolution of the output video. Acceptable values vary based on model
-                  nullable: true
                 model:
                   title: String
                   enum:
@@ -1033,66 +1109,76 @@ paths:
                     - VEO3FAST
                     - KLING2_1
                     - KLING2_5
+                  type: 'null'
                   description: The model to use for the video generation. Defaults to MOTION2 if not specified.
                   default: MOTION2
-                  nullable: true
                 frameInterpolation:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Smoothly blend frames for fluid video transitions using Interpolation.
-                  nullable: true
                 isPublic:
                   $ref: '#/components/schemas/public'
                 seed:
                   title: seed
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Motion 2.0 and 4294967293 for Veo3.
-                  nullable: true
                 negativePrompt:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The negative prompt used for the video generation.
-                  nullable: true
                 promptEnhance:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Whether to enhance the prompt.
-                  nullable: true
                 promptEnhanceInstruction:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: 'A natural language instruction used to modify the main prompt. For example, ''make it cinematic'', ''add a rainbow'', or ''change the subject to a cat''.'
-                  nullable: true
                 styleIds:
                   title: Array of Strings
-                  type: array
+                  type:
+                    - 'null'
+                    - array
                   items:
                     type: string
                   description: Predefined styles to enhance the prompt. This accepts a list of style uuids.
-                  nullable: true
                 height:
                   title: Integer
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: Height of the output video. Acceptable values vary based on model
-                  nullable: true
                 width:
                   title: Integer
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: Width of the output video. Acceptable values vary based on model
-                  nullable: true
                 duration:
                   title: Integer
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'Duration of the output video in seconds. Defaults to 8 seconds if not specified. Allowed values: 4, 6, or 8. Supported on models VEO3 and VEO3FAST.'
                   default: 8
-                  nullable: true
                 elements:
                   title: Array of Element Inputs
-                  type: array
+                  type:
+                    - 'null'
+                    - array
                   items:
                     $ref: '#/components/schemas/element_input'
                   description: 'An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. '
-                  nullable: true
       responses:
         '200':
           description: Responses for POST /generations-text-to-video
@@ -1103,7 +1189,9 @@ paths:
                 properties:
                   motionVideoGenerationJob:
                     title: MotionVideoGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       generationId:
                         title: String
@@ -1112,11 +1200,10 @@ paths:
                         $ref: '#/components/schemas/apiCreditCost'
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 motionVideoGenerationJob:
                   generationId: j9k0l1m2-n3o4-p5q6-rstu-vw8901234567
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -1156,7 +1243,9 @@ paths:
                 properties:
                   motionVideoGenerationJob:
                     title: MotionVideoGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       generationId:
                         title: String
@@ -1169,12 +1258,11 @@ paths:
                         $ref: '#/components/schemas/apiCreditCost'
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 motionVideoGenerationJob:
                   generationId: k0l1m2n3-o4p5-q6r7-stuv-wx9012345678
                   variationId: var123456-7890-abcd-efgh-ijklmnopqrst
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -1205,35 +1293,40 @@ paths:
                   description: The prompt used to generate images
                 guidance:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
-                  nullable: true
                 strength:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
-                  nullable: true
                 requestTimestamp:
                   $ref: '#/components/schemas/timestamp'
                 style:
                   $ref: '#/components/schemas/lcm_generation_style'
                 steps:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The number of steps to use for the generation. Must be between 4 and 16.
-                  nullable: true
                 width:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The output width of the image. Must be 512, 640 or 1024.'
                   default: 512
-                  nullable: true
                 height:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The output width of the image. Must be 512, 640 or 1024.'
                   default: 512
-                  nullable: true
                 seed:
                   $ref: '#/components/schemas/seed'
       responses:
@@ -1246,7 +1339,9 @@ paths:
                 properties:
                   lcmGenerationJob:
                     title: LcmGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       imageDataUrl:
                         title: Array of Strings
@@ -1259,13 +1354,12 @@ paths:
                         $ref: '#/components/schemas/apiCreditCost'
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 lcmGenerationJob:
                   imageDataUrl:
                     - 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD...'
                   requestTimestamp: '1234567890'
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -1296,35 +1390,40 @@ paths:
                   description: The prompt used to generate images
                 guidance:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
-                  nullable: true
                 strength:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
-                  nullable: true
                 requestTimestamp:
                   $ref: '#/components/schemas/timestamp'
                 style:
                   $ref: '#/components/schemas/lcm_generation_style'
                 steps:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The number of steps to use for the generation. Must be between 4 and 16.
-                  nullable: true
                 width:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The output width of the image. Must be 512, 640 or 1024.'
                   default: 512
-                  nullable: true
                 height:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The output width of the image. Must be 512, 640 or 1024.'
                   default: 512
-                  nullable: true
                 seed:
                   $ref: '#/components/schemas/seed'
       responses:
@@ -1337,7 +1436,9 @@ paths:
                 properties:
                   lcmGenerationJob:
                     title: LcmGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       imageDataUrl:
                         title: Array of Strings
@@ -1350,13 +1451,12 @@ paths:
                         $ref: '#/components/schemas/apiCreditCost'
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 lcmGenerationJob:
                   imageDataUrl:
                     - 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD...'
                   requestTimestamp: '1234567891'
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -1392,35 +1492,40 @@ paths:
                   description: The prompt used to generate images
                 guidance:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
-                  nullable: true
                 strength:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
-                  nullable: true
                 requestTimestamp:
                   $ref: '#/components/schemas/timestamp'
                 style:
                   $ref: '#/components/schemas/lcm_generation_style'
                 steps:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The number of steps to use for the generation. Must be between 4 and 16.
-                  nullable: true
                 width:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The output width of the image. Must be 512, 640 or 1024.'
                   default: 512
-                  nullable: true
                 height:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The output width of the image. Must be 512, 640 or 1024.'
                   default: 512
-                  nullable: true
                 seed:
                   $ref: '#/components/schemas/seed'
       responses:
@@ -1433,7 +1538,9 @@ paths:
                 properties:
                   lcmGenerationJob:
                     title: LcmGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       imageDataUrl:
                         title: Array of Strings
@@ -1446,13 +1553,12 @@ paths:
                         $ref: '#/components/schemas/apiCreditCost'
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 lcmGenerationJob:
                   imageDataUrl:
                     - 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD...'
                   requestTimestamp: '1234567892'
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -1483,47 +1589,54 @@ paths:
                   description: The prompt used to generate images
                 guidance:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: How strongly the generation should reflect the prompt. Must be a float between 0.5 and 20.
-                  nullable: true
                 strength:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: Creativity strength of generation. Higher strength will deviate more from the original image supplied in imageDataUrl. Must be a float between 0.1 and 1.
-                  nullable: true
                 requestTimestamp:
                   $ref: '#/components/schemas/timestamp'
                 style:
                   $ref: '#/components/schemas/lcm_generation_style'
                 steps:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The number of steps to use for the generation. Must be between 4 and 16.
-                  nullable: true
                 width:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The output width of the image. Must be 512, 640 or 1024.'
                   default: 512
-                  nullable: true
                 height:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: 'The output width of the image. Must be 512, 640 or 1024.'
                   default: 512
-                  nullable: true
                 seed:
                   $ref: '#/components/schemas/seed'
                 refineCreative:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Refine creative
-                  nullable: true
                 refineStrength:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: Must be a float between 0.5 and 0.9.
-                  nullable: true
       responses:
         '200':
           description: Responses for POST /lcm-upscale
@@ -1534,7 +1647,9 @@ paths:
                 properties:
                   lcmGenerationJob:
                     title: LcmGenerationOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       imageDataUrl:
                         title: Array of Strings
@@ -1560,7 +1675,6 @@ paths:
                         $ref: '#/components/schemas/apiCreditCost'
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 lcmGenerationJob:
                   imageDataUrl:
@@ -1569,7 +1683,7 @@ paths:
                     - var234567-8901-bcde-fghi-jklmnopqrstu
                   generatedImageId: l1m2n3o4-p5q6-r7s8-tuvw-xy0123456789
                   requestTimestamp: '1234567893'
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -1607,14 +1721,16 @@ paths:
               properties:
                 limit:
                   title: Int
-                  type: integer
-                  nullable: true
+                  type:
+                    - 'null'
+                    - integer
                 modelId:
                   $ref: '#/components/schemas/uuid'
                 offset:
                   title: Int
-                  type: integer
-                  nullable: true
+                  type:
+                    - 'null'
+                    - integer
       responses:
         '200':
           description: 'Responses for GET /api/rest/v1/generations-texture/model/{modelId}'
@@ -1648,8 +1764,9 @@ paths:
                             description: columns and relationships of "model_asset_texture_images"
                         negativePrompt:
                           title: String
-                          type: string
-                          nullable: true
+                          type:
+                            - 'null'
+                            - string
                         prompt:
                           title: String
                           type: string
@@ -1701,7 +1818,9 @@ paths:
                 properties:
                   model_asset_texture_generations_by_pk:
                     title: model_asset_texture_generations
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       createdAt:
                         $ref: '#/components/schemas/timestamp'
@@ -1723,8 +1842,9 @@ paths:
                           description: columns and relationships of "model_asset_texture_images"
                       negativePrompt:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       prompt:
                         title: String
                         type: string
@@ -1733,7 +1853,6 @@ paths:
                       status:
                         $ref: '#/components/schemas/job_status'
                     description: columns and relationships of "model_asset_texture_generations"
-                    nullable: true
     delete:
       tags:
         - Texture
@@ -1766,12 +1885,13 @@ paths:
                 properties:
                   delete_model_asset_texture_generations_by_pk:
                     title: model_asset_texture_generations
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "model_asset_texture_generations"
-                    nullable: true
   /models-3d/upload:
     post:
       tags:
@@ -1791,8 +1911,9 @@ paths:
                   type: string
                 name:
                   title: String
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
       responses:
         '200':
           description: Responses for POST /api/rest/v1/models-3d/upload
@@ -1802,25 +1923,30 @@ paths:
                 properties:
                   uploadModelAsset:
                     title: ModelAssetUploadOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       modelFields:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       modelId:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       modelKey:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       modelUrl:
                         title: String
-                        type: string
-                        nullable: true
-                    nullable: true
+                        type:
+                          - 'null'
+                          - string
   '/models-3d/user/{userId}':
     get:
       tags:
@@ -1876,8 +2002,9 @@ paths:
                           type: string
                         name:
                           title: String
-                          type: string
-                          nullable: true
+                          type:
+                            - 'null'
+                            - string
                         updatedAt:
                           $ref: '#/components/schemas/timestamp'
                         userId:
@@ -1926,7 +2053,9 @@ paths:
                 properties:
                   model_assets_by_pk:
                     title: model_assets
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       createdAt:
                         $ref: '#/components/schemas/timestamp'
@@ -1937,14 +2066,14 @@ paths:
                         type: string
                       name:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       updatedAt:
                         $ref: '#/components/schemas/timestamp'
                       userId:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "model_assets"
-                    nullable: true
     delete:
       tags:
         - 3D Model Assets
@@ -1977,12 +2106,13 @@ paths:
                 properties:
                   delete_model_assets_by_pk:
                     title: model_assets
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "model_assets"
-                    nullable: true
   /init-image:
     post:
       tags:
@@ -2014,25 +2144,30 @@ paths:
                 properties:
                   uploadInitImage:
                     title: InitImageUploadOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       fields:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       id:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       key:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       url:
                         title: String
-                        type: string
-                        nullable: true
-                    nullable: true
+                        type:
+                          - 'null'
+                          - string
   '/init-image/{id}':
     get:
       tags:
@@ -2058,7 +2193,9 @@ paths:
                 properties:
                   init_images_by_pk:
                     title: init_images
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       createdAt:
                         $ref: '#/components/schemas/timestamp'
@@ -2068,7 +2205,6 @@ paths:
                         title: String
                         type: string
                     description: columns and relationships of "init_images"
-                    nullable: true
     delete:
       tags:
         - Init Images
@@ -2093,12 +2229,13 @@ paths:
                 properties:
                   delete_init_images_by_pk:
                     title: init_images
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "init_images"
-                    nullable: true
   /canvas-init-image:
     post:
       tags:
@@ -2135,41 +2272,50 @@ paths:
                 properties:
                   uploadCanvasInitImage:
                     title: CanvasInitImageUploadOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       initImageId:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       initFields:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       initKey:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       initUrl:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       maskImageId:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       maskFields:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       maskKey:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       maskUrl:
                         title: String
-                        type: string
-                        nullable: true
-                    nullable: true
+                        type:
+                          - 'null'
+                          - string
   /variations/unzoom:
     post:
       tags:
@@ -2189,8 +2335,9 @@ paths:
                   type: string
                 isVariation:
                   title: Boolean
-                  type: boolean
-                  nullable: true
+                  type:
+                    - 'null'
+                    - boolean
       responses:
         '200':
           description: Responses for POST /api/rest/v1/variations/unzoom
@@ -2200,23 +2347,25 @@ paths:
                 properties:
                   sdUnzoomJob:
                     title: SDUnzoomOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         title: String
                         type: string
                       apiCreditCost:
-                        type: integer
+                        type:
+                          - 'null'
+                          - integer
                         description: 'API Credits Cost for Unzoom Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
-                        nullable: true
                         deprecated: true
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 sdUnzoomJob:
                   id: c2d3e4f5-g6h7-8901-ijkl-mn2345678901
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -2249,23 +2398,25 @@ paths:
                 properties:
                   sdUpscaleJob:
                     title: SDUpscaleJobOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         title: String
                         type: string
                       apiCreditCost:
-                        type: integer
+                        type:
+                          - 'null'
+                          - integer
                         description: 'API Credits Cost for Upscale Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
-                        nullable: true
                         deprecated: true
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 sdUpscalerjob:
                   id: d3e4f5g6-h7i8-9012-jklm-no3456789012
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -2307,16 +2458,17 @@ paths:
                       id:
                         $ref: '#/components/schemas/uuid'
                       apiCreditCost:
-                        type: integer
+                        type:
+                          - 'null'
+                          - integer
                         description: 'API Credits Cost for No Background Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
-                        nullable: true
                         deprecated: true
                       cost:
                         $ref: '#/components/schemas/cost'
               example:
                 sdNobgJob:
                   id: f5g6h7i8-j9k0-l1m2-nopq-rs4567890123
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -2336,50 +2488,58 @@ paths:
               properties:
                 creativityStrength:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The creativity strength of the universal upscaler. Must be between 1 and 10.
                   default: 5
-                  nullable: true
                 detailContrast:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The detail contrast of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle.
-                  nullable: true
                 generatedImageId:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The ID of the generated image.
-                  nullable: true
                 initImageId:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The ID of the init image uploaded.
-                  nullable: true
                 prompt:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The prompt for the universal upscaler.
-                  nullable: true
                 similarity:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The similarity of the universal upscaler. Must be between 1 and 10. Can only be used with ultraUpscaleStyle.
-                  nullable: true
                 ultraUpscaleStyle:
                   $ref: '#/components/schemas/universal_upscaler_ultra_style'
                 upscaleMultiplier:
                   title: Float
-                  type: number
+                  type:
+                    - 'null'
+                    - number
                   description: The upscale multiplier of the universal upscaler. Must be between 1.0 and 2.0.
                   default: 1.5
-                  nullable: true
                 upscalerStyle:
                   $ref: '#/components/schemas/universal_upscaler_style'
                 variationId:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The ID of the variation image.
-                  nullable: true
         required: true
       responses:
         '200':
@@ -2396,16 +2556,17 @@ paths:
                       id:
                         $ref: '#/components/schemas/uuid'
                       apiCreditCost:
-                        type: integer
+                        type:
+                          - 'null'
+                          - integer
                         description: 'API Credits Cost for Universal Upscaler Variation. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
-                        nullable: true
                         deprecated: true
                       cost:
                         $ref: '#/components/schemas/cost'
               example:
                 universalUpscaler:
                   id: g6h7i8j9-k0l1-m2n3-opqr-st5678901234
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -2448,8 +2609,9 @@ paths:
                           $ref: '#/components/schemas/VARIATION_TYPE'
                         url:
                           title: String
-                          type: string
-                          nullable: true
+                          type:
+                            - 'null'
+                            - string
                       description: columns and relationships of "generated_image_variation_generic"
   '/motion-variations/{id}':
     get:
@@ -2492,8 +2654,9 @@ paths:
                           $ref: '#/components/schemas/MOTION_RESOLUTION'
                         url:
                           title: String
-                          type: string
-                          nullable: true
+                          type:
+                            - 'null'
+                            - string
                       description: columns and relationships of "generated_image_variation_motion"
   /datasets:
     post:
@@ -2517,9 +2680,10 @@ paths:
                   description: The name of the dataset.
                 description:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: A description for the dataset.
-                  nullable: true
         required: true
       responses:
         '200':
@@ -2531,12 +2695,13 @@ paths:
                 properties:
                   insert_datasets_one:
                     title: datasets
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "datasets"
-                    nullable: true
   '/datasets/{id}':
     get:
       tags:
@@ -2562,7 +2727,9 @@ paths:
                 properties:
                   datasets_by_pk:
                     title: datasets
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       createdAt:
                         $ref: '#/components/schemas/timestamp'
@@ -2582,8 +2749,9 @@ paths:
                           description: columns and relationships of "dataset_images"
                       description:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       id:
                         $ref: '#/components/schemas/uuid'
                       name:
@@ -2592,7 +2760,6 @@ paths:
                       updatedAt:
                         $ref: '#/components/schemas/timestamp'
                     description: columns and relationships of "datasets"
-                    nullable: true
     delete:
       tags:
         - Dataset
@@ -2617,12 +2784,13 @@ paths:
                 properties:
                   delete_datasets_by_pk:
                     title: datasets
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "datasets"
-                    nullable: true
   '/datasets/{datasetId}/upload':
     post:
       tags:
@@ -2661,25 +2829,30 @@ paths:
                 properties:
                   uploadDatasetImage:
                     title: DatasetUploadOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       fields:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       id:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       key:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       url:
                         title: String
-                        type: string
-                        nullable: true
-                    nullable: true
+                        type:
+                          - 'null'
+                          - string
   '/datasets/{datasetId}/upload/gen':
     post:
       tags:
@@ -2718,13 +2891,15 @@ paths:
                 properties:
                   uploadDatasetImageFromGen:
                     title: DatasetGenUploadOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         title: String
-                        type: string
-                        nullable: true
-                    nullable: true
+                        type:
+                          - 'null'
+                          - string
   /models:
     post:
       tags:
@@ -2749,10 +2924,11 @@ paths:
                   description: The name of the model.
                 description:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The description of the model.
                   default: ''
-                  nullable: true
                 datasetId:
                   title: String
                   type: string
@@ -2765,23 +2941,25 @@ paths:
                   $ref: '#/components/schemas/custom_model_type'
                 nsfw:
                   title: Boolean
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Whether or not the model is NSFW.
                   default: false
-                  nullable: true
                 resolution:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The resolution for training. Must be 512 or 768.
                   default: 512
-                  nullable: true
                 sd_version:
                   title: sd_versions
                   enum:
                     - v1_5
                     - v2
+                  type: 'null'
                   description: 'The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5.'
-                  nullable: true
                 strength:
                   $ref: '#/components/schemas/strength'
         required: true
@@ -2795,23 +2973,25 @@ paths:
                 properties:
                   sdTrainingJob:
                     title: SDTrainingOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       customModelId:
                         title: String
                         type: string
                       apiCreditCost:
-                        type: integer
+                        type:
+                          - 'null'
+                          - integer
                         description: 'API Credits Cost for Model Training. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
-                        nullable: true
                         deprecated: true
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 sdTrainingJob:
                   customModelId: m2n3o4p5-q6r7-s8t9-uvwx-yz1234567890
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -2840,7 +3020,9 @@ paths:
                 properties:
                   custom_models_by_pk:
                     title: custom_models
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       createdAt:
                         $ref: '#/components/schemas/timestamp'
@@ -2851,8 +3033,9 @@ paths:
                         $ref: '#/components/schemas/uuid'
                       instancePrompt:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       modelHeight:
                         title: Int
                         type: integer
@@ -2874,7 +3057,6 @@ paths:
                       updatedAt:
                         $ref: '#/components/schemas/timestamp'
                     description: columns and relationships of "custom_models"
-                    nullable: true
     delete:
       tags:
         - Models
@@ -2899,12 +3081,13 @@ paths:
                 properties:
                   delete_custom_models_by_pk:
                     title: custom_models
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         $ref: '#/components/schemas/uuid'
                     description: columns and relationships of "custom_models"
-                    nullable: true
   '/models/user/{userId}':
     get:
       tags:
@@ -2928,10 +3111,14 @@ paths:
               schema:
                 properties:
                   custom_models:
-                    type: array
+                    type:
+                      - 'null'
+                      - array
                     items:
                       title: custom_models
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         createdAt:
                           $ref: '#/components/schemas/timestamp'
@@ -2942,8 +3129,9 @@ paths:
                           $ref: '#/components/schemas/uuid'
                         instancePrompt:
                           title: String
-                          type: string
-                          nullable: true
+                          type:
+                            - 'null'
+                            - string
                         modelHeight:
                           title: Int
                           type: integer
@@ -2965,8 +3153,6 @@ paths:
                         updatedAt:
                           $ref: '#/components/schemas/timestamp'
                       description: columns and relationships of "custom_models"
-                      nullable: true
-                    nullable: true
   /platformModels:
     get:
       tags:
@@ -2995,7 +3181,9 @@ paths:
                           type: boolean
                         generated_image:
                           title: generated_images
-                          type: object
+                          type:
+                            - 'null'
+                            - object
                           properties:
                             id:
                               $ref: '#/components/schemas/uuid'
@@ -3003,7 +3191,6 @@ paths:
                               title: String
                               type: string
                           description: columns and relationships of "generated_images"
-                          nullable: true
                         id:
                           $ref: '#/components/schemas/uuid'
                         name:
@@ -3038,7 +3225,9 @@ paths:
                 properties:
                   user_loras_by_pk:
                     title: user_loras
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       createdAt:
                         $ref: '#/components/schemas/timestamp'
@@ -3050,8 +3239,9 @@ paths:
                         type: integer
                       instancePrompt:
                         title: String
-                        type: string
-                        nullable: true
+                        type:
+                          - 'null'
+                          - string
                       resolution:
                         title: Int
                         type: integer
@@ -3078,7 +3268,6 @@ paths:
                       updatedAt:
                         $ref: '#/components/schemas/timestamp'
                     description: columns and relationships of "user_loras".
-                    nullable: true
     delete:
       tags:
         - Elements
@@ -3103,13 +3292,14 @@ paths:
                 properties:
                   delete_user_loras_by_pk:
                     title: user_loras
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       id:
                         title: Int
                         type: integer
                     description: columns and relationships of "user_loras".
-                    nullable: true
   '/elements/user/{userId}':
     get:
       tags:
@@ -3133,10 +3323,14 @@ paths:
               schema:
                 properties:
                   user_loras:
-                    type: array
+                    type:
+                      - 'null'
+                      - array
                     items:
                       title: user_loras
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         createdAt:
                           $ref: '#/components/schemas/timestamp'
@@ -3148,8 +3342,9 @@ paths:
                           type: integer
                         instancePrompt:
                           title: String
-                          type: string
-                          nullable: true
+                          type:
+                            - 'null'
+                            - string
                         resolution:
                           title: Int
                           type: integer
@@ -3176,8 +3371,6 @@ paths:
                         updatedAt:
                           $ref: '#/components/schemas/timestamp'
                       description: columns and relationships of "user_loras".
-                      nullable: true
-                    nullable: true
   /elements:
     post:
       tags:
@@ -3207,10 +3400,11 @@ paths:
                   default: placeholder
                 description:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The description of the element.
                   default: ''
-                  nullable: true
                 datasetId:
                   title: String
                   type: string
@@ -3218,10 +3412,11 @@ paths:
                   default: ''
                 instance_prompt:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: 'Use a word that is closely related to what you''re training that isn''t too common. For example, instead of ''dog,'' try something unique like ''jackthedog'' or ''magicdonut''. Required for all non-FLUX_DEV models and FLUX_DEV Character model training.'
                   default: ''
-                  nullable: true
                 lora_focus:
                   title: String
                   type: string
@@ -3233,10 +3428,11 @@ paths:
                   default: true
                 resolution:
                   title: Int
-                  type: integer
+                  type:
+                    - 'null'
+                    - integer
                   description: The resolution for training. Must be 1024.
                   default: 1024
-                  nullable: true
                 sd_version:
                   title: sd_versions
                   enum:
@@ -3269,23 +3465,25 @@ paths:
                 properties:
                   sdTrainingJob:
                     title: SDTrainingOutput
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       userLoraId:
                         title: Int
                         type: integer
                       apiCreditCost:
-                        type: integer
+                        type:
+                          - 'null'
+                          - integer
                         description: 'API Credits Cost for Model Training. Available for Production API Users. Note: it will be deprecated. Please use the cost instead.'
-                        nullable: true
                         deprecated: true
                       cost:
                         $ref: '#/components/schemas/cost'
-                    nullable: true
               example:
                 sdTrainingJob:
                   userLoraId: 123456
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -3309,23 +3507,23 @@ paths:
                       type: object
                       properties:
                         akUUID:
-                          $ref: '#/components/schemas/lora'
+                          $ref: '#/components/schemas/akUUID'
                         baseModel:
                           $ref: '#/components/schemas/sd_versions'
                         creatorName:
-                          $ref: '#/components/schemas/lora'
+                          $ref: '#/components/schemas/creatorName'
                         description:
-                          $ref: '#/components/schemas/lora'
+                          $ref: '#/components/schemas/description'
                         name:
-                          $ref: '#/components/schemas/lora'
+                          $ref: '#/components/schemas/name'
                         urlImage:
-                          $ref: '#/components/schemas/lora'
+                          $ref: '#/components/schemas/urlImage'
                         weightDefault:
-                          $ref: '#/components/schemas/lora'
+                          $ref: '#/components/schemas/weightDefault'
                         weightMax:
-                          $ref: '#/components/schemas/lora'
+                          $ref: '#/components/schemas/weightMax'
                         weightMin:
-                          $ref: '#/components/schemas/lora'
+                          $ref: '#/components/schemas/weightMin'
                       description: columns and relationships of "elements".
   /prompt/random:
     post:
@@ -3361,7 +3559,7 @@ paths:
               example:
                 promptGeneration:
                   prompt: A majestic dragon soaring through stormy clouds
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -3387,13 +3585,15 @@ paths:
                   description: The prompt to improve.
                 promptInstructions:
                   title: String
-                  type: string
+                  type:
+                    - 'null'
+                    - string
                   description: The prompt is improved based on the given instructions.
-                  nullable: true
                 isVideo:
-                  type: boolean
+                  type:
+                    - 'null'
+                    - boolean
                   description: Specifies whether the prompt is for a video generation. Defaults to false (image prompt).
-                  nullable: true
                   example: true
         required: true
       responses:
@@ -3423,7 +3623,7 @@ paths:
               example:
                 promptGeneration:
                   prompt: 'A majestic dragon soaring through dramatic stormy clouds, photorealistic, cinematic lighting, 8k ultra detailed'
-                  apiCreditCost: 
+                  apiCreditCost: null
                   cost:
                     amount: '0.0147'
                     unit: DOLLARS
@@ -3448,7 +3648,9 @@ paths:
                   properties:
                     IMAGE_GENERATION:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         imageHeight:
                           $ref: '#/components/schemas/imageHeight'
@@ -3472,9 +3674,10 @@ paths:
                           description: Enable to use Alchemy.
                         photoRealMode:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use PhotoReal. Requires enabling alchemy.
-                          nullable: true
                         photoRealStrength:
                           $ref: '#/components/schemas/photoRealStrengthArg'
                         photoRealVersion:
@@ -3485,59 +3688,70 @@ paths:
                           description: Enable to use high resolution.
                         loraCount:
                           title: Int
-                          type: integer
+                          type:
+                            - 'null'
+                            - integer
                           description: The number of elements used for the generation.
-                          nullable: true
                         isModelCustom:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use custom model.
-                          nullable: true
                         controlnetsCost:
                           title: Int
-                          type: integer
+                          type:
+                            - 'null'
+                            - integer
                           description: The total cost of controlnets input.
-                          nullable: true
                         isPhoenix:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use Phoenix model.
-                          nullable: true
                         isSDXL:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use SDXL model.
-                          nullable: true
                         isSDXLLightning:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use SDXL Lightning model.
-                          nullable: true
                         isUltra:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use Ultra mode.
-                          nullable: true
                         isFluxSchnell:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use Flux Schnell model.
-                          nullable: true
                         isFluxDev:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use Flux Dev model.
-                          nullable: true
                         isFluxKontext:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable to use Flux Kontext model.
-                          nullable: true
                       description: Parameters for IMAGE_GENERATION service
-                      nullable: true
                     FANTASY_AVATAR_GENERATION:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         imageHeight:
                           $ref: '#/components/schemas/imageHeight'
@@ -3546,25 +3760,28 @@ paths:
                         numImages:
                           $ref: '#/components/schemas/numImages'
                       description: Parameters for FANTASY_AVATAR_GENERATION service
-                      nullable: true
                     MOTION_SVD_GENERATION:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       description: Parameters for MOTION_SVD_GENERATION service
-                      nullable: true
                     MOTION_VIDEO_GENERATION:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         resolution:
                           title: String
                           type: string
                           description: The resolution of the video. Must be RESOLUTION_480 or RESOLUTION_720.
                       description: Parameters for MOTION_VIDEO_GENERATION service
-                      nullable: true
                     VEO3_MOTION_VIDEO_GENERATION:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         resolution:
                           title: String
@@ -3573,36 +3790,42 @@ paths:
                           type: string
                           description: The resolution of the video. Supported resolution for VEO3 is RESOLUTION_720.
                       description: Parameters for VEO3_MOTION_VIDEO_GENERATION service
-                      nullable: true
                     LCM_GENERATION:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         height:
                           title: Int
-                          type: integer
+                          type:
+                            - 'null'
+                            - integer
                           description: 'The output height of the image. Must be 512, 640 or 1024.'
-                          nullable: true
                         width:
                           title: Int
-                          type: integer
+                          type:
+                            - 'null'
+                            - integer
                           description: 'The output width of the image. Must be 512, 640 or 1024.'
-                          nullable: true
                         instantRefine:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable for instant upscale
-                          nullable: true
                         refine:
                           title: Boolean
-                          type: boolean
+                          type:
+                            - 'null'
+                            - boolean
                           description: Enable for normal alchemy upscale
-                          nullable: true
                       description: Parameters for LCM_GENERATION service
-                      nullable: true
                     MODEL_TRAINING:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         resolution:
                           title: Int
@@ -3612,37 +3835,41 @@ paths:
                           title: sd_version
                           enum:
                             - FLUX_DEV
+                          type: 'null'
                           description: The model for the training. Can be set to 'FLUX_DEV' for FLUX_DEV specific pricing or can be omitted.
-                          nullable: true
                         datasetImageCount:
                           title: Int
-                          type: integer
+                          type:
+                            - 'null'
+                            - integer
                           description: The number of images in the training dataset when sd_version is set to 'FLUX_DEV'. Must be between 1 and 50.
-                          nullable: true
                       description: Parameters for MODEL_TRAINING service
-                      nullable: true
                     TEXTURE_GENERATION:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         preview:
                           title: Boolean
                           type: boolean
                       description: Parameters for TEXTURE_GENERATION service
-                      nullable: true
                     UNIVERSAL_UPSCALER:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         megapixel:
                           title: Int
                           type: integer
                           description: The maximum upscaled image size is 20 megapixels.
                       description: Parameters for UNIVERSAL_UPSCALER service
-                      nullable: true
                     UNIVERSAL_UPSCALER_ULTRA:
                       title: Object
-                      type: object
+                      type:
+                        - 'null'
+                        - object
                       properties:
                         inputWidth:
                           title: Int
@@ -3657,7 +3884,6 @@ paths:
                           type: number
                           description: The upscale multiplier of the universal upscaler. Must be between 1.00 and 2.00.
                       description: Parameters for UNIVERSAL_UPSCALER_ULTRA service
-                      nullable: true
                   description: Parameters for the service
       responses:
         '200':
@@ -3669,13 +3895,14 @@ paths:
                 properties:
                   calculateProductionApiServiceCost:
                     title: calculateProductionApiServiceCost
-                    type: object
+                    type:
+                      - 'null'
+                      - object
                     properties:
                       cost:
                         title: Int
                         type: integer
                         description: API service cost to generate the image.
-                    nullable: true
   /blueprints:
     get:
       tags:
@@ -3779,8 +4006,8 @@ paths:
                         - cursor: eyJjcmVhdGVkQXQiOiIyMDI2LTAxLTA3VDAzOjA4OjMwLjk3MVoiLCJha1VVSUQiOiJiM2VjN2VjZi1mYzYzLTRlZmMtODc0NS1mZGNmZDA1OWYwM2EifQ==
                           node:
                             akUUID: b3ec7ecf-fc63-4efc-8745-fdcfd059f03a
-                            createdAt: '2026-01-07T03:08:30.9710000+00:00'
-                            updatedAt: '2026-01-13T01:01:43.9890000+00:00'
+                            createdAt: '2026-01-07T03:08:30.971Z'
+                            updatedAt: '2026-01-13T01:01:43.989Z'
                             name: Detailed Recipe with Tags
                             description: Create an editorial photo of the dish with its ingredients around it and their names printed as physical labels.
                             thumbnails:
@@ -3792,7 +4019,7 @@ paths:
                                 url: https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-d53597.webp
                               - name: thumbnailUrlExtremePortrait
                                 url: https://cdn.dev.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/thumbnail-1d8a28.webp
-                            teamId: 
+                            teamId: null
                             official: true
                       totalCount: 1
                       pageInfo:
@@ -3857,10 +4084,10 @@ paths:
                       thumbnails:
                         - name: thumbnailUrl
                           url: https://cdn.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/goldenhour.jpg
-                      teamId: 
+                      teamId: null
                       official: true
-                      createdAt: '2025-10-29T21:31:47.9990000+00:00'
-                      updatedAt: '2025-12-19T02:34:44.7400000+00:00'
+                      createdAt: '2025-10-29T21:31:47.999Z'
+                      updatedAt: '2025-12-19T02:34:44.740Z'
                 badRequest:
                   summary: Bad request error
                   value:
@@ -3929,8 +4156,8 @@ paths:
                         - cursor: eyJjcmVhdGVkQXQiOiIyMDI1LTExLTI3VDA1OjEzOjIxLjg5NloiLCJha1VVSUQiOiI5NTZlOTU2NC0xOWY3LTQ5NjgtYjU2ZC0wNWMyYzU2NzcyNmYifQ==
                           node:
                             akUUID: 956e9564-19f7-4968-b56d-05c2c567726f
-                            createdAt: '2025-11-27T05:13:21.8960000+00:00'
-                            updatedAt: '2025-11-27T05:13:21.8960000+00:00'
+                            createdAt: '2025-11-27T05:13:21.896Z'
+                            updatedAt: '2025-11-27T05:13:21.896Z'
                             cost: 160
                             uiMetadata:
                               inputs:
@@ -4026,6 +4253,7 @@ paths:
                       items:
                         $ref: '#/components/schemas/bigint'
                       description: Optional list of collection IDs to add the generations to
+                      example: [ ]
             example:
               blueprintVersionId: 550e8400-e29b-41d4-a716-446655440000
               input:
@@ -4152,7 +4380,7 @@ paths:
                           nodeId: 0b5c7344-ccc2-4ee8-9003-8ad3f1a76127
                           settingName: textVariables
                       public: false
-                      createdAt: '2025-11-05T04:51:04.1370000+00:00'
+                      createdAt: '2025-11-05T04:51:04.137Z'
                 badRequest:
                   summary: Bad request error
                   value:
@@ -4279,14 +4507,16 @@ paths:
                       pageInfo:
                         hasNextPage: false
                         hasPreviousPage: false
-                        startCursor: 
-                        endCursor: 
+                        startCursor: null
+                        endCursor: null
                       edges: [ ]
 components:
   schemas:
     cost:
       title: Cost
-      type: object
+      type:
+        - 'null'
+        - object
       properties:
         amount:
           type: string
@@ -4298,7 +4528,6 @@ components:
           type: string
           description: 'The unit of the cost. Can be CREDITS or DOLLARS. Note: DOLLARS unit only supports PAYG plan.'
       description: The cost of the operation.
-      nullable: true
     Cursor:
       title: Cursor
       type: string
@@ -4315,12 +4544,12 @@ components:
           type: string
           description: Creation timestamp
           format: date-time
-          example: '2025-10-29T21:31:47.9990000+00:00'
+          example: '2025-10-29T21:31:47.999Z'
         updatedAt:
           type: string
           description: Last update timestamp
           format: date-time
-          example: '2025-12-19T02:34:44.7400000+00:00'
+          example: '2025-12-19T02:34:44.740Z'
         name:
           type: string
           description: Name of the Blueprint
@@ -4343,10 +4572,11 @@ components:
                 description: URL of the thumbnail
                 example: https://cdn.leonardo.ai/blueprint_assets/official/384ab5c8-55d8-47a1-be22-6a274913c324/thumbnails/goldenhour.jpg
         teamId:
-          type: string
+          type:
+            - 'null'
+            - string
           description: Team ID if Blueprint belongs to a team
-          nullable: true
-          example: 
+          example: null
         official:
           type: boolean
           description: Whether this is an official Blueprint
@@ -4374,11 +4604,11 @@ components:
                   createdAt:
                     type: string
                     format: date-time
-                    example: '2025-11-27T05:13:21.8960000+00:00'
+                    example: '2025-11-27T05:13:21.896Z'
                   updatedAt:
                     type: string
                     format: date-time
-                    example: '2025-11-27T05:13:21.8960000+00:00'
+                    example: '2025-11-27T05:13:21.896Z'
                   cost:
                     type: integer
                     example: 160
@@ -4518,25 +4748,29 @@ components:
       description: API error response structure
     apiCreditCost:
       title: Int
-      type: integer
+      type:
+        - 'null'
+        - integer
       description: 'API credits cost, available for Production API users. Note: it will be deprecated. Please use the cost instead.'
-      nullable: true
       deprecated: true
     isVariation:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: If it is a variation image.
-      nullable: true
     isInitImage:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: 'If it is an init image uploaded by the user. This image is uploaded from endpoint: Upload init image.'
-      nullable: true
     imageToVideo:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: If it is an image to video generation.
-      nullable: true
     sd_versions:
       title: sd_versions
       enum:
@@ -4557,69 +4791,83 @@ components:
       type: object
       properties:
         akUUID:
-          type: string
+          type:
+            - 'null'
+            - string
           description: Unique identifier for the element. Elements can be found from the List Elements endpoint.
-          nullable: true
         creatorName:
-          type: string
+          type:
+            - 'null'
+            - string
           description: Name of the creator of the element
-          nullable: true
         name:
-          type: string
+          type:
+            - 'null'
+            - string
           description: Name of the element
-          nullable: true
         description:
-          type: string
+          type:
+            - 'null'
+            - string
           description: Description for the element
-          nullable: true
         urlImage:
-          type: string
+          type:
+            - 'null'
+            - string
           description: URL of the element image
-          nullable: true
         baseModel:
-          type: string
+          type:
+            - 'null'
+            - string
           description: Base model version for the element
-          nullable: true
         weightDefault:
-          type: integer
+          type:
+            - 'null'
+            - integer
           description: Default weight for the element
-          nullable: true
         weightMin:
-          type: integer
+          type:
+            - 'null'
+            - integer
           description: Minimum weight for the element
-          nullable: true
         weightMax:
-          type: integer
+          type:
+            - 'null'
+            - integer
           description: Maximum weight for the element
-          nullable: true
         __typename:
           type: string
           description: Type name for introspection purposes
     motion:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: If generation is of motion type.
-      nullable: true
     motionModel:
       title: String
-      type: string
+      type:
+        - 'null'
+        - string
       description: The name of the motion model.
-      nullable: true
     motionMP4URL:
       title: String
-      type: string
+      type:
+        - 'null'
+        - string
       description: The URL of the motion MP4.
-      nullable: true
     motionStrength:
       title: Int
-      type: integer
+      type:
+        - 'null'
+        - integer
       description: The motion strength.
-      nullable: true
     public:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: Whether the generation is public or not
-      nullable: true
     strength:
       title: strength
       enum:
@@ -4737,7 +4985,9 @@ components:
         - type
         - message
         - affectedOutputCount
-      type: object
+      type:
+        - 'null'
+        - object
       properties:
         type:
           enum:
@@ -4754,7 +5004,6 @@ components:
           description: Number of outputs affected by this failure
           example: 1
       description: Details about a generation failure due to prompt moderation
-      nullable: true
     MODEL_ASSET_TEXTURE_TYPES:
       title: MODEL_ASSET_TEXTURE_TYPES
       enum:
@@ -4843,9 +5092,10 @@ components:
           description: ID of the controlnet. A list of compatible IDs can be found in our guides.
         weight:
           title: Float
-          type: number
+          type:
+            - 'null'
+            - number
           description: Weight for the controlnet
-          nullable: true
         strengthType:
           enum:
             - Low
@@ -4853,9 +5103,10 @@ components:
             - High
             - Ultra
             - Max
-          type: string
+          type:
+            - 'null'
+            - string
           description: 'Strength type for the controlnet. Can only be used for Style, Character and Content Reference controlnets.'
-          nullable: true
     element_input:
       title: element_input
       required:
@@ -4868,41 +5119,48 @@ components:
           description: Unique identifier for element. Elements can be found from the List Elements endpoint.
         weight:
           title: Float
-          type: number
+          type:
+            - 'null'
+            - number
           description: Weight for the element
-          default: 1
-          nullable: true
+          default: 1.0
     user_elements_input:
       title: user_elements_input
       type: object
       properties:
         userLoraId:
           title: Int
-          type: number
+          type:
+            - 'null'
+            - number
           description: Unique identifier for user custom element.
-          nullable: true
         weight:
           title: Float
-          type: number
+          type:
+            - 'null'
+            - number
           description: Weight for the element
-          nullable: true
     float8:
       title: float8
-      type: number
-      nullable: true
+      type:
+        - 'null'
+        - number
     numeric:
       title: numeric
-      type: number
-      nullable: true
+      type:
+        - 'null'
+        - number
     bigint:
       title: bigint
-      type: integer
-      nullable: true
+      type:
+        - 'null'
+        - integer
     seed:
       title: seed
-      type: integer
+      type:
+        - 'null'
+        - integer
       description: Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
-      nullable: true
     sd_generation_style:
       title: sd_generation_style
       enum:
@@ -4937,10 +5195,11 @@ components:
         - STOCK_PHOTO
         - VIBRANT
         - UNPROCESSED
-      type: string
+      type:
+        - 'null'
+        - string
       description: 'The style to generate images with. When photoReal is enabled, refer to the Guide section for a full list. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE.'
       default: DYNAMIC
-      nullable: true
     lcm_generation_style:
       title: lcm_generation_style
       enum:
@@ -4958,9 +5217,10 @@ components:
         - SKETCH_COLOR
         - VIBRANT
         - NONE
-      type: string
+      type:
+        - 'null'
+        - string
       description: The style to generate LCM images with.
-      nullable: true
     universal_upscaler_style:
       title: universal_upscaler_style
       enum:
@@ -4968,18 +5228,20 @@ components:
         - CINEMATIC
         - 2D ART & ILLUSTRATION
         - CG ART & GAME ASSETS
-      type: string
+      type:
+        - 'null'
+        - string
       description: The style to upscale images using universal upscaler with. Can not be used with ultraUpscaleStyle.
       default: GENERAL
-      nullable: true
     universal_upscaler_ultra_style:
       title: universal_upscaler_ultra_style
       enum:
         - ARTISTIC
         - REALISTIC
-      type: string
+      type:
+        - 'null'
+        - string
       description: The ultra style to upscale images using universal upscaler with. Can not be used with upscalerStyle.
-      nullable: true
     controlnet_type:
       title: controlnet_type
       enum:
@@ -4992,63 +5254,75 @@ components:
     uuid:
       title: uuid
       pattern: '[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}'
-      type: string
-      nullable: true
+      type:
+        - 'null'
+        - string
     photoRealArg:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: Enable the photoReal feature. Requires enabling alchemy and unspecifying modelId (for photoRealVersion V1).
-      nullable: true
     photoRealVersion:
       title: String
-      type: string
+      type:
+        - 'null'
+        - string
       description: The version of photoReal to use. Must be v1 or v2.
-      nullable: true
     photoRealRes:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: If photoReal feature was used.
-      nullable: true
     photoRealStrengthArg:
       title: Float
-      type: number
+      type:
+        - 'null'
+        - number
       description: 'Depth of field of photoReal. Must be 0.55 for low, 0.5 for medium, or 0.45 for high. Defaults to 0.55 if not specified.'
-      nullable: true
     photoRealStrengthRes:
       title: Float
-      type: number
+      type:
+        - 'null'
+        - number
       description: 'Depth of field of photoReal used. 0.55 is low, 0.5 is medium, and 0.45 is high. Default is 0.55.'
-      nullable: true
     promptMagicArg:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: Enable to use Prompt Magic.
-      nullable: true
     promptMagicRes:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: If prompt magic was used.
-      nullable: true
     promptMagicVersionArg:
       title: String
-      type: string
+      type:
+        - 'null'
+        - string
       description: 'Prompt magic version v2 or v3, for use when promptMagic: true'
-      nullable: true
     promptMagicVersionRes:
       title: String
-      type: string
+      type:
+        - 'null'
+        - string
       description: Version of prompt magic used.
-      nullable: true
     promptMagicStrengthArg:
       title: Float
-      type: number
+      type:
+        - 'null'
+        - number
       description: Strength of prompt magic. Must be a float between 0.1 and 1.0
-      nullable: true
     promptMagicStrengthRes:
       title: Float
-      type: number
+      type:
+        - 'null'
+        - number
       description: Strength of prompt magic used.
-      nullable: true
     pricingCalculatorServices:
       title: pricingCalculatorServices
       enum:
@@ -5083,14 +5357,16 @@ components:
         - OUTPAINT
         - SKETCH2IMG
         - IMG2IMG
-      type: string
+      type:
+        - 'null'
+        - string
       description: The type of request for the Canvas Editor.
-      nullable: true
     sd_generation_ultra:
       title: Boolean
-      type: boolean
+      type:
+        - 'null'
+        - boolean
       description: If ultra generation mode was used.
-      nullable: true
     pageInfo:
       title: PageInfo
       type: object

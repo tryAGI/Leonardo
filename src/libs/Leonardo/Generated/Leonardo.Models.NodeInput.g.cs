@@ -17,7 +17,7 @@ namespace Leonardo
         /// <example>a1b2c3d4-e5f6-7890-abcd-ef1234567890</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("nodeId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid NodeId { get; set; } = default!;
+        public required global::System.Guid NodeId { get; set; }
 
         /// <summary>
         /// The type of setting to replace:<br/>
@@ -30,7 +30,7 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("settingName")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.NodeInputSettingNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.NodeInputSettingName SettingName { get; set; } = default!;
+        public required global::Leonardo.NodeInputSettingName SettingName { get; set; }
 
         /// <summary>
         /// The replacement value. Type depends on settingName:<br/>
@@ -43,7 +43,7 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Leonardo.TextVariable>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.OneOf<string, global::System.Collections.Generic.IList<global::Leonardo.TextVariable>> Value { get; set; } = default!;
+        public required global::Leonardo.OneOf<string, global::System.Collections.Generic.IList<global::Leonardo.TextVariable>> Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

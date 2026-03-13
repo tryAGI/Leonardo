@@ -16,7 +16,7 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("akUUID")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.AllOfJsonConverter<string, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.AllOf<string, object> AkUUID { get; set; } = default!;
+        public required global::Leonardo.AllOf<string, object> AkUUID { get; set; }
 
         /// <summary>
         /// The status of a Blueprint Execution Generation
@@ -24,7 +24,7 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.BlueprintExecutionGenerationStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.BlueprintExecutionGenerationStatus Status { get; set; } = default!;
+        public required global::Leonardo.BlueprintExecutionGenerationStatus Status { get; set; }
 
         /// <summary>
         /// The generation ID associated with this execution generation<br/>
@@ -33,7 +33,7 @@ namespace Leonardo
         /// <example>1f0bba44-923a-69b0-b519-62a6710d46a9</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("generationId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string GenerationId { get; set; } = default!;
+        public required string GenerationId { get; set; }
 
         /// <summary>
         /// Details about a generation failure due to prompt moderation

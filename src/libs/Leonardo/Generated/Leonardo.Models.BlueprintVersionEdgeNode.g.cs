@@ -16,16 +16,16 @@ namespace Leonardo
         public global::System.Guid? AkUUID { get; set; }
 
         /// <summary>
-        /// Example: 2025-11-27T05:13:21.8960000+00:00
+        /// Example: 2025-11-27T05:13:21.896Z
         /// </summary>
-        /// <example>2025-11-27T05:13:21.8960000+00:00</example>
+        /// <example>2025-11-27T05:13:21.896Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdAt")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// Example: 2025-11-27T05:13:21.8960000+00:00
+        /// Example: 2025-11-27T05:13:21.896Z
         /// </summary>
-        /// <example>2025-11-27T05:13:21.8960000+00:00</example>
+        /// <example>2025-11-27T05:13:21.896Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updatedAt")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
@@ -74,10 +74,10 @@ namespace Leonardo
         /// Example: 956e9564-19f7-4968-b56d-05c2c567726f
         /// </param>
         /// <param name="createdAt">
-        /// Example: 2025-11-27T05:13:21.8960000+00:00
+        /// Example: 2025-11-27T05:13:21.896Z
         /// </param>
         /// <param name="updatedAt">
-        /// Example: 2025-11-27T05:13:21.8960000+00:00
+        /// Example: 2025-11-27T05:13:21.896Z
         /// </param>
         /// <param name="cost">
         /// Example: 160

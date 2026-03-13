@@ -15,7 +15,7 @@ namespace Leonardo
         /// <example>characterName</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The value to replace the placeholder with<br/>
@@ -24,7 +24,7 @@ namespace Leonardo
         /// <example>Luna</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Value { get; set; } = default!;
+        public required string Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

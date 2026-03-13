@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Prompt { get; set; } = default!;
+        public required string Prompt { get; set; }
 
         /// <summary>
         /// The prompt is improved based on the given instructions.

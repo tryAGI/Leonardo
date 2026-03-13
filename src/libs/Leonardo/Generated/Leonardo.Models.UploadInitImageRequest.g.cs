@@ -13,7 +13,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extension")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Extension { get; set; } = default!;
+        public required string Extension { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

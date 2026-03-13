@@ -13,11 +13,11 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("akUUID")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string AkUUID { get; set; } = default!;
+        public required string AkUUID { get; set; }
 
         /// <summary>
         /// Weight for the element<br/>
-        /// Default Value: 1
+        /// Default Value: 1.0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
         public double? Weight { get; set; }
@@ -36,7 +36,7 @@ namespace Leonardo
         /// </param>
         /// <param name="weight">
         /// Weight for the element<br/>
-        /// Default Value: 1
+        /// Default Value: 1.0
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

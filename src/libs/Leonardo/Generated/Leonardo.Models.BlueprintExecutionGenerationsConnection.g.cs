@@ -13,14 +13,14 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pageInfo")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.PageInfo PageInfo { get; set; } = default!;
+        public required global::Leonardo.PageInfo PageInfo { get; set; }
 
         /// <summary>
         /// List of generation edges
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("edges")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Leonardo.BlueprintExecutionGenerationEdge> Edges { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Leonardo.BlueprintExecutionGenerationEdge> Edges { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

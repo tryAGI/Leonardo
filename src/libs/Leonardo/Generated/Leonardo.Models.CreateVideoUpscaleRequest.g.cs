@@ -20,7 +20,7 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sourceGenerationId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string SourceGenerationId { get; set; } = default!;
+        public required string SourceGenerationId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

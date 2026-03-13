@@ -16,7 +16,7 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("akUUID")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.AllOfJsonConverter<string, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.AllOf<string, object> AkUUID { get; set; } = default!;
+        public required global::Leonardo.AllOf<string, object> AkUUID { get; set; }
 
         /// <summary>
         /// The status of a Blueprint Execution.
@@ -24,14 +24,14 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.BlueprintExecutionStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.BlueprintExecutionStatus Status { get; set; } = default!;
+        public required global::Leonardo.BlueprintExecutionStatus Status { get; set; }
 
         /// <summary>
         /// Inputs of the Blueprint Execution
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Leonardo.NodeInput> Inputs { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Leonardo.NodeInput> Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -39,14 +39,14 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.AllOfJsonConverter<bool?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.AllOf<bool?, object> Public { get; set; } = default!;
+        public required global::Leonardo.AllOf<bool?, object> Public { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdAt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CreatedAt { get; set; } = default!;
+        public required string CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,14 +13,14 @@ namespace Leonardo
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Prompt { get; set; } = default!;
+        public required string Prompt { get; set; }
 
         /// <summary>
         /// The ID of the image, supports generated images and init images. Use only image or imageId with imageType.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageId")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ImageId { get; set; } = default!;
+        public required string ImageId { get; set; }
 
         /// <summary>
         /// Type indicating whether the init image is uploaded or generated. Use only image or imageId with imageType.
@@ -28,7 +28,7 @@ namespace Leonardo
         [global::System.Text.Json.Serialization.JsonPropertyName("imageType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestImageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Leonardo.CreateImageToVideoGenerationRequestImageType ImageType { get; set; } = default!;
+        public required global::Leonardo.CreateImageToVideoGenerationRequestImageType ImageType { get; set; }
 
         /// <summary>
         /// The end frame image. Supported only on kling2_1 model when used in conjunction with an init image.
