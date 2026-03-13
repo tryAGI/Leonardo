@@ -1,15 +1,10 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
-AUTO_SDK_VERSION="0.29.1-dev.28"
-
-if dotnet tool list --global | grep -q '^autosdk\.cli '; then
-  dotnet tool update --global autosdk.cli --version "$AUTO_SDK_VERSION"
-else
-  dotnet tool install --global autosdk.cli --version "$AUTO_SDK_VERSION"
-fi
+dotnet tool install --global autosdk.cli --prerelease
 curl -o openapi.yaml https://api-docs-nine-delta.vercel.app/cloud/openapi.json
 dotnet run --project ../../helpers/FixOpenApiSpec openapi.yaml
+if [ $? -ne 0 ]; then
+  echo "Failed, exiting..."
+  exit 1
+fi
 rm -rf Generated
 autosdk generate openapi.yaml \
   --namespace Leonardo \
