@@ -8,7 +8,7 @@ fi
 rm -rf Generated
 autosdk generate openapi.yaml \
   --namespace Leonardo \
-  --clientClassName LeonardoApi \
+  --clientClassName LeonardoClient \
   --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations

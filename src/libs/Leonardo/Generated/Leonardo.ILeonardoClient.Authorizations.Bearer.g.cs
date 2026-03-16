@@ -3,7 +3,7 @@
 
 namespace Leonardo
 {
-    public partial interface ILeonardoApi
+    public partial interface ILeonardoClient
     {
         /// <summary>
         /// Authorize using bearer authentication.

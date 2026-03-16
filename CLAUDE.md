@@ -37,7 +37,7 @@ The SDK code is **entirely auto-generated** — do not manually edit files in `s
 
 | Project | Purpose |
 |---------|---------|
-| `src/libs/Leonardo/` | Main SDK library (`LeonardoApi`) |
+| `src/libs/Leonardo/` | Main SDK library (`LeonardoClient`) |
 | `src/tests/Leonardo.IntegrationTests/` | Integration tests against real Leonardo API |
 | `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
 | `src/helpers/GenerateDocs/` | Documentation generator from integration tests |

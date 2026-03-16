@@ -3,7 +3,7 @@
 
 namespace Leonardo
 {
-    public sealed partial class LeonardoApi
+    public sealed partial class LeonardoClient
     {
         /// <inheritdoc/>
         public void AuthorizeUsingBearer(
