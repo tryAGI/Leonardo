@@ -180,7 +180,7 @@ namespace Leonardo
         /// </param>
         /// <param name="contrast">
         /// Adjusts the contrast level of the generated image. Used in Phoenix and Flux models. Accepts values [1.0, 1.3, 1.8, 2.5, 3, 3.5, 4, 4.5]. For Phoenix, if alchemy is true, contrast needs to be 2.5 or higher.<br/>
-        /// Example: 3.5
+        /// Example: 3.5F
         /// </param>
         /// <param name="controlnets"></param>
         /// <param name="elements"></param>
