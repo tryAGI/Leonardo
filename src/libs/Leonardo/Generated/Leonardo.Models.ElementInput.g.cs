@@ -17,7 +17,7 @@ namespace Leonardo
 
         /// <summary>
         /// Weight for the element<br/>
-        /// Default Value: 1.0
+        /// Default Value: 1F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
         public double? Weight { get; set; }
@@ -36,7 +36,7 @@ namespace Leonardo
         /// </param>
         /// <param name="weight">
         /// Weight for the element<br/>
-        /// Default Value: 1.0
+        /// Default Value: 1F
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
