@@ -29,7 +29,6 @@ cd src/libs/Leonardo && ./generate.sh
 The SDK code is **entirely auto-generated** — do not manually edit files in `src/libs/Leonardo/Generated/`.
 
 1. `src/libs/Leonardo/openapi.yaml` — the Leonardo OpenAPI spec (fetched from `https://api-docs-nine-delta.vercel.app/cloud/openapi.json`)
-2. `src/helpers/FixOpenApiSpec/` — converts OpenAPI 3.1 → 3.0 format for compatibility
 3. `src/libs/Leonardo/generate.sh` — orchestrates: download spec → fix spec → run AutoSDK CLI → output to `Generated/`
 4. CI auto-updates the spec every 3 hours and creates PRs if changes are detected
 
@@ -39,8 +38,6 @@ The SDK code is **entirely auto-generated** — do not manually edit files in `s
 |---------|---------|
 | `src/libs/Leonardo/` | Main SDK library (`LeonardoClient`) |
 | `src/tests/Leonardo.IntegrationTests/` | Integration tests against real Leonardo API |
-| `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
-| `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
 
 ### Build Configuration
 
