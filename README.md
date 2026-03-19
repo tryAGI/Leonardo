@@ -30,6 +30,9 @@ var response = await api.Image.GetGenerationByIdAsync(createResponse.SdGeneratio
 var url = response.GenerationsByPk?.GeneratedImages?.ElementAtOrDefault(0)?.Url;
 ```
 
+<!-- EXAMPLES:START -->
+<!-- EXAMPLES:END -->
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/Leonardo/issues  
