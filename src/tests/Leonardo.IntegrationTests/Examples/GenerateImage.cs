@@ -1,3 +1,9 @@
+/*
+order: 10
+title: Generate Image
+slug: generate-image
+*/
+
 namespace Leonardo.IntegrationTests;
 
 public partial class Tests
