@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Create upscale<br/>
         /// This endpoint will create an upscale for the provided image ID

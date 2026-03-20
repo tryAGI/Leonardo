@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateSVDMotionGenerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create SVD Motion Generation<br/>
         /// This endpoint will generate a SVD motion generation.

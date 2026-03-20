@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Upload 3D Model<br/>
         /// This endpoint returns presigned details to upload a 3D model to S3

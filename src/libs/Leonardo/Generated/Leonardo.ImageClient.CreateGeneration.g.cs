@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Create a Generation of Images<br/>
         /// This endpoint will generate images

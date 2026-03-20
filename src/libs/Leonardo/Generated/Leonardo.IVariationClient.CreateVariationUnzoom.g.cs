@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateVariationUnzoomRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create unzoom<br/>
         /// This endpoint will create an unzoom variation for the provided image ID

@@ -17,7 +17,6 @@ namespace Leonardo
 
             global::Leonardo.DeleteTextureGenerationByIdRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Delete Texture Generation by ID<br/>
         /// This endpoint deletes the specific texture generation.

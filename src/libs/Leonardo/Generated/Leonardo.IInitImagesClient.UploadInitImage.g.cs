@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.UploadInitImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload init image<br/>
         /// This endpoint returns presigned details to upload an init image to S3

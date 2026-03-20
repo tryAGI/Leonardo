@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Create LCM Generation<br/>
         /// This endpoint will generate a LCM image generation.

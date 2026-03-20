@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Calculating API Cost<br/>
         /// This endpoint returns the cost used for generating images using a particular service type.

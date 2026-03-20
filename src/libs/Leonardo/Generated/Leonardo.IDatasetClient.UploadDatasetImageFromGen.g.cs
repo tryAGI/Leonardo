@@ -17,7 +17,6 @@ namespace Leonardo
 
             global::Leonardo.UploadDatasetImageFromGenRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload a Single Generated Image to a Dataset<br/>
         /// This endpoint will upload a previously generated image to the dataset

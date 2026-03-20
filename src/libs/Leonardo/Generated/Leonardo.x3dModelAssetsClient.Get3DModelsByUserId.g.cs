@@ -206,7 +206,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Get 3D models by user ID<br/>
         /// This endpoint returns all 3D models by a specific user

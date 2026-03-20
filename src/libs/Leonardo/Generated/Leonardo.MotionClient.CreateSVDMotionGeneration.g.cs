@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Create SVD Motion Generation<br/>
         /// This endpoint will generate a SVD motion generation.

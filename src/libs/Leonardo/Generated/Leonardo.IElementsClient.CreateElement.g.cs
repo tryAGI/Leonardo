@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateElementRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Train a Custom Element<br/>
         /// This endpoint will train a new custom element.

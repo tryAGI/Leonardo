@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Create Texture Generation<br/>
         /// This endpoint will generate a texture generation.

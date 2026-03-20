@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.PricingCalculatorRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Calculating API Cost<br/>
         /// This endpoint returns the cost used for generating images using a particular service type.

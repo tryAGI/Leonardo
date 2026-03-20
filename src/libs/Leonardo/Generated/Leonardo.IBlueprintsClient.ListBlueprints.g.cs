@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.ListBlueprintsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// List Blueprints<br/>
         /// Returns a list of Blueprints. Use either forward pagination (first/after) or backward pagination (last/before), but not both. Note: This endpoint uses a request body to support complex filtering parameters

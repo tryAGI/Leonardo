@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateModelRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Train a Custom Model<br/>
         /// This endpoint will train a new custom model

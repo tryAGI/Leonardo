@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Create using Universal Upscaler<br/>
         /// This endpoint will create a high resolution image using Universal Upscaler

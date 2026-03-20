@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateUniversalUpscalerJobRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create using Universal Upscaler<br/>
         /// This endpoint will create a high resolution image using Universal Upscaler

@@ -186,7 +186,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Delete Texture Generation by ID<br/>
         /// This endpoint deletes the specific texture generation.

@@ -25,7 +25,6 @@ namespace Leonardo
             int? offset = default,
             int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Get 3D models by user ID<br/>
         /// This endpoint returns all 3D models by a specific user
