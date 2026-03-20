@@ -30,6 +30,24 @@ var response = await api.Image.GetGenerationByIdAsync(createResponse.SdGeneratio
 var url = response.GenerationsByPk?.GeneratedImages?.ElementAtOrDefault(0)?.Url;
 ```
 
+<!-- EXAMPLES:START -->
+### Generate Image
+
+
+```csharp
+using var api = GetAuthorizedClient();
+
+var createResponse = await api.Image.CreateGenerationAsync(
+    prompt: "Generate cat");
+
+await Task.Delay(TimeSpan.FromSeconds(15));
+
+var response = await api.Image.GetGenerationByIdAsync(createResponse.SdGenerationJob?.GenerationId ?? throw new InvalidOperationException("GenerationId is null"));
+
+var url = response.GenerationsByPk?.GeneratedImages?.ElementAtOrDefault(0)?.Url;
+```
+<!-- EXAMPLES:END -->
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/Leonardo/issues  

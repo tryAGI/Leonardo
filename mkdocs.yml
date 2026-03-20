@@ -2,7 +2,8 @@ site_name: OpenAI .NET Documentation
 nav:
 - Overview: index.md
 # EXAMPLES:START
-
+- Examples:
+  - Generate Image: examples/generate-image.md
 # EXAMPLES:END
 
 #  - Quick Start: QuickStart.md
