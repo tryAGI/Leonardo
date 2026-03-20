@@ -206,7 +206,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Get texture generations by 3D Model ID<br/>
         /// This endpoint gets the specific texture generations by the 3d model id.

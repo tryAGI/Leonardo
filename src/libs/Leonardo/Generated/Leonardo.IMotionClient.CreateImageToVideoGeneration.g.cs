@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateImageToVideoGenerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a video generation from an image<br/>
         /// This endpoint will generate a video using an uploaded or generated image.

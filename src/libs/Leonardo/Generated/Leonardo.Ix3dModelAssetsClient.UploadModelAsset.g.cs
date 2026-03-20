@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.UploadModelAssetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload 3D Model<br/>
         /// This endpoint returns presigned details to upload a 3D model to S3

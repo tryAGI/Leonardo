@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Perform inpainting on a LCM image<br/>
         /// This endpoint will perform a inpainting on a LCM image

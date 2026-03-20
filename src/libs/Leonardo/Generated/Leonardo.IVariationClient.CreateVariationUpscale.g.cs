@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateVariationUpscaleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create upscale<br/>
         /// This endpoint will create an upscale for the provided image ID

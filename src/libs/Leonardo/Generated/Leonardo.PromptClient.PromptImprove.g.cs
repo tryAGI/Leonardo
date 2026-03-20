@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Improve a Prompt<br/>
         /// This endpoint returns a improved prompt

@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.PromptImproveRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Improve a Prompt<br/>
         /// This endpoint returns a improved prompt

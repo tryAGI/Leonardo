@@ -186,7 +186,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Delete 3D Model by ID<br/>
         /// This endpoint deletes the specific 3D Model

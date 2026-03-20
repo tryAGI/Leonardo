@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Perform Alchemy Upscale on a LCM image<br/>
         /// This endpoint will perform Alchemy Upscale on a LCM image

@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateGenerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Generation of Images<br/>
         /// This endpoint will generate images

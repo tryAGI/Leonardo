@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Train a Custom Element<br/>
         /// This endpoint will train a new custom element.

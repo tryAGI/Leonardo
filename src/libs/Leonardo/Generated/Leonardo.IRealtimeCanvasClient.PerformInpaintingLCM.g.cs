@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.PerformInpaintingLCMRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Perform inpainting on a LCM image<br/>
         /// This endpoint will perform a inpainting on a LCM image

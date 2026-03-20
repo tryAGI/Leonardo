@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Train a Custom Model<br/>
         /// This endpoint will train a new custom model

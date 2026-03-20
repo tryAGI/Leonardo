@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateVariationNoBGRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create no background<br/>
         /// This endpoint will create a no background variation of the provided image ID

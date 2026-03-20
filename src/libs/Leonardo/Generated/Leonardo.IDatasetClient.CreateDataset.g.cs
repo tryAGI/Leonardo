@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateDatasetRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Dataset<br/>
         /// This endpoint creates a new dataset

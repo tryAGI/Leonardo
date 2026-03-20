@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateTextureGenerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Texture Generation<br/>
         /// This endpoint will generate a texture generation.

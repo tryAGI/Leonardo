@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Perform instant refine on a LCM image<br/>
         /// This endpoint will perform instant refine on a LCM image

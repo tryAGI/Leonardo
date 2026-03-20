@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateVideoUpscaleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upscale a generated video<br/>
         /// This endpoint will upscale a generated video to a higher resolution.

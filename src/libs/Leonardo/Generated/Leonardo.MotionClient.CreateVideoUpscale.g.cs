@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Upscale a generated video<br/>
         /// This endpoint will upscale a generated video to a higher resolution.

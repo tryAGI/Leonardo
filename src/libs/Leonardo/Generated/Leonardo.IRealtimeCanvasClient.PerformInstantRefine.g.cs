@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.PerformInstantRefineRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Perform instant refine on a LCM image<br/>
         /// This endpoint will perform instant refine on a LCM image

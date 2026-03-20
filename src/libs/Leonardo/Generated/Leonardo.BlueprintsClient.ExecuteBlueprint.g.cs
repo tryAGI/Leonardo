@@ -218,7 +218,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Execute a Blueprint<br/>
         /// Execute a Blueprint Version with custom node inputs. This endpoint triggers the execution of the specified Blueprint Version and returns a Blueprint Execution ID to track the job.

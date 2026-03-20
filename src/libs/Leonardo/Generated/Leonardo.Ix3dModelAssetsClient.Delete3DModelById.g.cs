@@ -17,7 +17,6 @@ namespace Leonardo
 
             global::Leonardo.Delete3DModelByIdRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Delete 3D Model by ID<br/>
         /// This endpoint deletes the specific 3D Model

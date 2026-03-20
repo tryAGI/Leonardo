@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Create no background<br/>
         /// This endpoint will create a no background variation of the provided image ID

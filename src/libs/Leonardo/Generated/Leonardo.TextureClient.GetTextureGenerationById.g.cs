@@ -206,7 +206,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Get Texture Generation by ID<br/>
         /// This endpoint gets the specific texture generation.

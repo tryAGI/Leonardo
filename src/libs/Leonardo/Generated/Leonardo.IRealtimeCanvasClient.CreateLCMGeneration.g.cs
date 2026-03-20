@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.CreateLCMGenerationRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create LCM Generation<br/>
         /// This endpoint will generate a LCM image generation.

@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Create a video generation from a text prompt<br/>
         /// This endpoint will generate a video using a text prompt

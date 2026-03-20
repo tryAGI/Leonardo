@@ -180,7 +180,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Upload init image<br/>
         /// This endpoint returns presigned details to upload an init image to S3

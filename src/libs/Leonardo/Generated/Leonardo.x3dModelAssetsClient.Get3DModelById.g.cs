@@ -206,7 +206,6 @@ namespace Leonardo
                 }
             }
         }
-
         /// <summary>
         /// Get 3D Model by ID<br/>
         /// This endpoint gets the specific 3D model

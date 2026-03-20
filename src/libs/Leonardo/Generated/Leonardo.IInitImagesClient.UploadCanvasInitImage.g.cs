@@ -15,7 +15,6 @@ namespace Leonardo
 
             global::Leonardo.UploadCanvasInitImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Upload Canvas Editor init and mask image<br/>
         /// This endpoint returns presigned details to upload an init image and a mask image to S3
