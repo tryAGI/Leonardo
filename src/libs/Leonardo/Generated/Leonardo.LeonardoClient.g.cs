@@ -85,7 +85,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public MotionClient Motion => new MotionClient(HttpClient, authorizations: Authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -94,7 +94,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
+        public MotionClient Motion => new MotionClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
