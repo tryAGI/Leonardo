@@ -11,7 +11,15 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
         Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Max,
         /// <summary>
         /// 
         /// </summary>
@@ -19,15 +27,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        High,
-        /// <summary>
-        /// 
-        /// </summary>
         Ultra,
-        /// <summary>
-        /// 
-        /// </summary>
-        Max,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Leonardo
         {
             return value switch
             {
-                ControlnetInputStrengthType.Low => "Low",
-                ControlnetInputStrengthType.Mid => "Mid",
                 ControlnetInputStrengthType.High => "High",
-                ControlnetInputStrengthType.Ultra => "Ultra",
+                ControlnetInputStrengthType.Low => "Low",
                 ControlnetInputStrengthType.Max => "Max",
+                ControlnetInputStrengthType.Mid => "Mid",
+                ControlnetInputStrengthType.Ultra => "Ultra",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Leonardo
         {
             return value switch
             {
-                "Low" => ControlnetInputStrengthType.Low,
-                "Mid" => ControlnetInputStrengthType.Mid,
                 "High" => ControlnetInputStrengthType.High,
-                "Ultra" => ControlnetInputStrengthType.Ultra,
+                "Low" => ControlnetInputStrengthType.Low,
                 "Max" => ControlnetInputStrengthType.Max,
+                "Mid" => ControlnetInputStrengthType.Mid,
+                "Ultra" => ControlnetInputStrengthType.Ultra,
                 _ => null,
             };
         }

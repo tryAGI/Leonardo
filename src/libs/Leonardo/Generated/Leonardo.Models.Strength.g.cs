@@ -12,7 +12,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        VeryLow,
+        High,
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +24,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        High,
+        VeryLow,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace Leonardo
         {
             return value switch
             {
-                Strength.VeryLow => "VERY_LOW",
+                Strength.High => "HIGH",
                 Strength.Low => "LOW",
                 Strength.Medium => "MEDIUM",
-                Strength.High => "HIGH",
+                Strength.VeryLow => "VERY_LOW",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace Leonardo
         {
             return value switch
             {
-                "VERY_LOW" => Strength.VeryLow,
+                "HIGH" => Strength.High,
                 "LOW" => Strength.Low,
                 "MEDIUM" => Strength.Medium,
-                "HIGH" => Strength.High,
+                "VERY_LOW" => Strength.VeryLow,
                 _ => null,
             };
         }

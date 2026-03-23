@@ -12,11 +12,15 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        Sdxl09,
+        AlbedoXl,
         /// <summary>
         /// 
         /// </summary>
-        Sdxl10,
+        FluxDev,
+        /// <summary>
+        /// 
+        /// </summary>
+        KinoXl,
         /// <summary>
         /// 
         /// </summary>
@@ -28,19 +32,15 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
+        Sdxl09,
+        /// <summary>
+        /// 
+        /// </summary>
+        Sdxl10,
+        /// <summary>
+        /// 
+        /// </summary>
         VisionXl,
-        /// <summary>
-        /// 
-        /// </summary>
-        KinoXl,
-        /// <summary>
-        /// 
-        /// </summary>
-        AlbedoXl,
-        /// <summary>
-        /// 
-        /// </summary>
-        FluxDev,
     }
 
     /// <summary>
@@ -55,14 +55,14 @@ namespace Leonardo
         {
             return value switch
             {
-                CreateElementRequestSdVersion.Sdxl09 => "SDXL_0_9",
-                CreateElementRequestSdVersion.Sdxl10 => "SDXL_1_0",
-                CreateElementRequestSdVersion.LeonardoDiffusionXl => "LEONARDO_DIFFUSION_XL",
-                CreateElementRequestSdVersion.LeonardoLightningXl => "LEONARDO_LIGHTNING_XL",
-                CreateElementRequestSdVersion.VisionXl => "VISION_XL",
-                CreateElementRequestSdVersion.KinoXl => "KINO_XL",
                 CreateElementRequestSdVersion.AlbedoXl => "ALBEDO_XL",
                 CreateElementRequestSdVersion.FluxDev => "FLUX_DEV",
+                CreateElementRequestSdVersion.KinoXl => "KINO_XL",
+                CreateElementRequestSdVersion.LeonardoDiffusionXl => "LEONARDO_DIFFUSION_XL",
+                CreateElementRequestSdVersion.LeonardoLightningXl => "LEONARDO_LIGHTNING_XL",
+                CreateElementRequestSdVersion.Sdxl09 => "SDXL_0_9",
+                CreateElementRequestSdVersion.Sdxl10 => "SDXL_1_0",
+                CreateElementRequestSdVersion.VisionXl => "VISION_XL",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +73,14 @@ namespace Leonardo
         {
             return value switch
             {
-                "SDXL_0_9" => CreateElementRequestSdVersion.Sdxl09,
-                "SDXL_1_0" => CreateElementRequestSdVersion.Sdxl10,
-                "LEONARDO_DIFFUSION_XL" => CreateElementRequestSdVersion.LeonardoDiffusionXl,
-                "LEONARDO_LIGHTNING_XL" => CreateElementRequestSdVersion.LeonardoLightningXl,
-                "VISION_XL" => CreateElementRequestSdVersion.VisionXl,
-                "KINO_XL" => CreateElementRequestSdVersion.KinoXl,
                 "ALBEDO_XL" => CreateElementRequestSdVersion.AlbedoXl,
                 "FLUX_DEV" => CreateElementRequestSdVersion.FluxDev,
+                "KINO_XL" => CreateElementRequestSdVersion.KinoXl,
+                "LEONARDO_DIFFUSION_XL" => CreateElementRequestSdVersion.LeonardoDiffusionXl,
+                "LEONARDO_LIGHTNING_XL" => CreateElementRequestSdVersion.LeonardoLightningXl,
+                "SDXL_0_9" => CreateElementRequestSdVersion.Sdxl09,
+                "SDXL_1_0" => CreateElementRequestSdVersion.Sdxl10,
+                "VISION_XL" => CreateElementRequestSdVersion.VisionXl,
                 _ => null,
             };
         }
