@@ -11,15 +11,19 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        V15,
+        Flux,
         /// <summary>
         /// 
         /// </summary>
-        V2,
+        FluxDev,
         /// <summary>
         /// 
         /// </summary>
-        V3,
+        Kino20,
+        /// <summary>
+        /// 
+        /// </summary>
+        Phoenix,
         /// <summary>
         /// 
         /// </summary>
@@ -39,19 +43,15 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        Phoenix,
+        V15,
         /// <summary>
         /// 
         /// </summary>
-        Flux,
+        V2,
         /// <summary>
         /// 
         /// </summary>
-        FluxDev,
-        /// <summary>
-        /// 
-        /// </summary>
-        Kino20,
+        V3,
     }
 
     /// <summary>
@@ -66,17 +66,17 @@ namespace Leonardo
         {
             return value switch
             {
-                SdVersions.V15 => "v1_5",
-                SdVersions.V2 => "v2",
-                SdVersions.V3 => "v3",
+                SdVersions.Flux => "FLUX",
+                SdVersions.FluxDev => "FLUX_DEV",
+                SdVersions.Kino20 => "KINO_2_0",
+                SdVersions.Phoenix => "PHOENIX",
                 SdVersions.Sdxl08 => "SDXL_0_8",
                 SdVersions.Sdxl09 => "SDXL_0_9",
                 SdVersions.Sdxl10 => "SDXL_1_0",
                 SdVersions.SdxlLightning => "SDXL_LIGHTNING",
-                SdVersions.Phoenix => "PHOENIX",
-                SdVersions.Flux => "FLUX",
-                SdVersions.FluxDev => "FLUX_DEV",
-                SdVersions.Kino20 => "KINO_2_0",
+                SdVersions.V15 => "v1_5",
+                SdVersions.V2 => "v2",
+                SdVersions.V3 => "v3",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -87,17 +87,17 @@ namespace Leonardo
         {
             return value switch
             {
-                "v1_5" => SdVersions.V15,
-                "v2" => SdVersions.V2,
-                "v3" => SdVersions.V3,
+                "FLUX" => SdVersions.Flux,
+                "FLUX_DEV" => SdVersions.FluxDev,
+                "KINO_2_0" => SdVersions.Kino20,
+                "PHOENIX" => SdVersions.Phoenix,
                 "SDXL_0_8" => SdVersions.Sdxl08,
                 "SDXL_0_9" => SdVersions.Sdxl09,
                 "SDXL_1_0" => SdVersions.Sdxl10,
                 "SDXL_LIGHTNING" => SdVersions.SdxlLightning,
-                "PHOENIX" => SdVersions.Phoenix,
-                "FLUX" => SdVersions.Flux,
-                "FLUX_DEV" => SdVersions.FluxDev,
-                "KINO_2_0" => SdVersions.Kino20,
+                "v1_5" => SdVersions.V15,
+                "v2" => SdVersions.V2,
+                "v3" => SdVersions.V3,
                 _ => null,
             };
         }

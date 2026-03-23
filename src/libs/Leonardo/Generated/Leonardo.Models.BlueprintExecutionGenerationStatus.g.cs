@@ -11,15 +11,15 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        Pending,
-        /// <summary>
-        /// 
-        /// </summary>
         Completed,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pending,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Leonardo
         {
             return value switch
             {
-                BlueprintExecutionGenerationStatus.Pending => "PENDING",
                 BlueprintExecutionGenerationStatus.Completed => "COMPLETED",
                 BlueprintExecutionGenerationStatus.Failed => "FAILED",
+                BlueprintExecutionGenerationStatus.Pending => "PENDING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Leonardo
         {
             return value switch
             {
-                "PENDING" => BlueprintExecutionGenerationStatus.Pending,
                 "COMPLETED" => BlueprintExecutionGenerationStatus.Completed,
                 "FAILED" => BlueprintExecutionGenerationStatus.Failed,
+                "PENDING" => BlueprintExecutionGenerationStatus.Pending,
                 _ => null,
             };
         }

@@ -11,11 +11,11 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        Android,
+        Api,
         /// <summary>
         /// 
         /// </summary>
-        Ios,
+        Android,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        Api,
+        Ios,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Leonardo
         {
             return value switch
             {
-                ListBlueprintsRequestPlatform.Android => "Android",
-                ListBlueprintsRequestPlatform.Ios => "iOS",
-                ListBlueprintsRequestPlatform.Web => "Web",
                 ListBlueprintsRequestPlatform.Api => "API",
+                ListBlueprintsRequestPlatform.Android => "Android",
+                ListBlueprintsRequestPlatform.Web => "Web",
+                ListBlueprintsRequestPlatform.Ios => "iOS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Leonardo
         {
             return value switch
             {
-                "Android" => ListBlueprintsRequestPlatform.Android,
-                "iOS" => ListBlueprintsRequestPlatform.Ios,
-                "Web" => ListBlueprintsRequestPlatform.Web,
                 "API" => ListBlueprintsRequestPlatform.Api,
+                "Android" => ListBlueprintsRequestPlatform.Android,
+                "Web" => ListBlueprintsRequestPlatform.Web,
+                "iOS" => ListBlueprintsRequestPlatform.Ios,
                 _ => null,
             };
         }

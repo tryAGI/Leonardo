@@ -13,13 +13,13 @@ namespace Leonardo
     public enum NodeInputSettingName
     {
         /// <summary>
-        /// Direct text replacement (value is a string)
-        /// </summary>
-        Text,
-        /// <summary>
         /// Image URL input (value is a URL string)
         /// </summary>
         ImageUrl,
+        /// <summary>
+        /// Direct text replacement (value is a string)
+        /// </summary>
+        Text,
         /// <summary>
         /// Text with placeholder variables (value is an array of TextVariable)
         /// </summary>
@@ -38,8 +38,8 @@ namespace Leonardo
         {
             return value switch
             {
-                NodeInputSettingName.Text => "text",
                 NodeInputSettingName.ImageUrl => "imageUrl",
+                NodeInputSettingName.Text => "text",
                 NodeInputSettingName.TextVariables => "textVariables",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -51,8 +51,8 @@ namespace Leonardo
         {
             return value switch
             {
-                "text" => NodeInputSettingName.Text,
                 "imageUrl" => NodeInputSettingName.ImageUrl,
+                "text" => NodeInputSettingName.Text,
                 "textVariables" => NodeInputSettingName.TextVariables,
                 _ => null,
             };

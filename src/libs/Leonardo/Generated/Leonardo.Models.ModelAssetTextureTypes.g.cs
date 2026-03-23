@@ -16,19 +16,19 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        Normal,
-        /// <summary>
-        /// 
-        /// </summary>
-        Roughness,
-        /// <summary>
-        /// 
-        /// </summary>
         Displacement,
         /// <summary>
         /// 
         /// </summary>
         HdrpMask,
+        /// <summary>
+        /// 
+        /// </summary>
+        Normal,
+        /// <summary>
+        /// 
+        /// </summary>
+        Roughness,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace Leonardo
             return value switch
             {
                 ModelAssetTextureTypes.Albedo => "ALBEDO",
-                ModelAssetTextureTypes.Normal => "NORMAL",
-                ModelAssetTextureTypes.Roughness => "ROUGHNESS",
                 ModelAssetTextureTypes.Displacement => "DISPLACEMENT",
                 ModelAssetTextureTypes.HdrpMask => "HDRP_MASK",
+                ModelAssetTextureTypes.Normal => "NORMAL",
+                ModelAssetTextureTypes.Roughness => "ROUGHNESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,10 +59,10 @@ namespace Leonardo
             return value switch
             {
                 "ALBEDO" => ModelAssetTextureTypes.Albedo,
-                "NORMAL" => ModelAssetTextureTypes.Normal,
-                "ROUGHNESS" => ModelAssetTextureTypes.Roughness,
                 "DISPLACEMENT" => ModelAssetTextureTypes.Displacement,
                 "HDRP_MASK" => ModelAssetTextureTypes.HdrpMask,
+                "NORMAL" => ModelAssetTextureTypes.Normal,
+                "ROUGHNESS" => ModelAssetTextureTypes.Roughness,
                 _ => null,
             };
         }
