@@ -44,10 +44,6 @@ namespace Leonardo
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptModerationFailureReason" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of failure - PROMPT_MODERATION_BLOCKED indicates the prompt was blocked by content moderation<br/>
-        /// Example: PROMPT_MODERATION_BLOCKED
-        /// </param>
         /// <param name="message">
         /// Human-readable message describing the failure<br/>
         /// Example: Generation blocked due to prompt moderation
@@ -55,6 +51,10 @@ namespace Leonardo
         /// <param name="affectedOutputCount">
         /// Number of outputs affected by this failure<br/>
         /// Example: 1
+        /// </param>
+        /// <param name="type">
+        /// The type of failure - PROMPT_MODERATION_BLOCKED indicates the prompt was blocked by content moderation<br/>
+        /// Example: PROMPT_MODERATION_BLOCKED
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,9 +64,9 @@ namespace Leonardo
             int affectedOutputCount,
             global::Leonardo.PromptModerationFailureReasonType type)
         {
+            this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.AffectedOutputCount = affectedOutputCount;
-            this.Type = type;
         }
 
         /// <summary>

@@ -31,11 +31,11 @@ namespace Leonardo
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateVideoUpscaleRequest" /> class.
         /// </summary>
-        /// <param name="resolution">
-        /// The resolution of the upscaled video. RESOLUTION_720 is the only option for now.
-        /// </param>
         /// <param name="sourceGenerationId">
         /// The ID of the source video generation to upscale.
+        /// </param>
+        /// <param name="resolution">
+        /// The resolution of the upscaled video. RESOLUTION_720 is the only option for now.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace Leonardo
             string sourceGenerationId,
             global::Leonardo.CreateVideoUpscaleRequestResolution resolution)
         {
-            this.SourceGenerationId = sourceGenerationId ?? throw new global::System.ArgumentNullException(nameof(sourceGenerationId));
             this.Resolution = resolution;
+            this.SourceGenerationId = sourceGenerationId ?? throw new global::System.ArgumentNullException(nameof(sourceGenerationId));
         }
 
         /// <summary>
