@@ -83,14 +83,14 @@ namespace Leonardo
         /// <param name="name">
         /// The name of the model.
         /// </param>
-        /// <param name="description">
-        /// The description of the model.
-        /// </param>
         /// <param name="datasetId">
         /// The ID of the dataset to train the model on.
         /// </param>
         /// <param name="instancePrompt">
         /// The instance prompt to use during training.
+        /// </param>
+        /// <param name="description">
+        /// The description of the model.
         /// </param>
         /// <param name="modelType">
         /// The category the most accurately reflects the model.<br/>
@@ -126,9 +126,9 @@ namespace Leonardo
             global::Leonardo.Strength? strength)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
             this.DatasetId = datasetId ?? throw new global::System.ArgumentNullException(nameof(datasetId));
             this.InstancePrompt = instancePrompt ?? throw new global::System.ArgumentNullException(nameof(instancePrompt));
-            this.Description = description;
             this.ModelType = modelType;
             this.Nsfw = nsfw;
             this.Resolution = resolution;
