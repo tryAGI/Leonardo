@@ -373,6 +373,7 @@ namespace Leonardo
             string? enhancePromptInstruction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.CreateGenerationRequest
             {
                 Alchemy = alchemy,

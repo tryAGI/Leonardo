@@ -197,6 +197,7 @@ namespace Leonardo
             string maskExtension,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.UploadCanvasInitImageRequest
             {
                 InitExtension = initExtension,

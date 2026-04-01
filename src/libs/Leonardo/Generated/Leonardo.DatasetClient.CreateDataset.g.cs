@@ -197,6 +197,7 @@ namespace Leonardo
             string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.CreateDatasetRequest
             {
                 Name = name,

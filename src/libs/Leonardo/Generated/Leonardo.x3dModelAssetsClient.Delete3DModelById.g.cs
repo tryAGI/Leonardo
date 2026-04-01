@@ -199,6 +199,7 @@ namespace Leonardo
             string? requestId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.Delete3DModelByIdRequest
             {
                 Id = requestId,

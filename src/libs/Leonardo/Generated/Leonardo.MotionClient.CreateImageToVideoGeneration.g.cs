@@ -258,6 +258,7 @@ namespace Leonardo
             int? width = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.CreateImageToVideoGenerationRequest
             {
                 Prompt = prompt,

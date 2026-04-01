@@ -191,6 +191,7 @@ namespace Leonardo
             string id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.CreateVariationUpscaleRequest
             {
                 Id = id,
