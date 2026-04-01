@@ -229,7 +229,6 @@ namespace Leonardo
             global::Leonardo.Strength? strength = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Leonardo.CreateModelRequest
             {
                 Name = name,

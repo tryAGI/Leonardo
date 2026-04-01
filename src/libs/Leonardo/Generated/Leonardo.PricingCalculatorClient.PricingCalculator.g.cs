@@ -197,7 +197,6 @@ namespace Leonardo
             global::Leonardo.PricingCalculatorRequestServiceParams? serviceParams = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Leonardo.PricingCalculatorRequest
             {
                 Service = service,

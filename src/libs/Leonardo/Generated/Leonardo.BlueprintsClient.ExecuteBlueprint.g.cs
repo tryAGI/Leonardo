@@ -234,7 +234,6 @@ namespace Leonardo
             global::Leonardo.ExecuteBlueprintRequestInput input,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Leonardo.ExecuteBlueprintRequest
             {
                 BlueprintVersionId = blueprintVersionId,
