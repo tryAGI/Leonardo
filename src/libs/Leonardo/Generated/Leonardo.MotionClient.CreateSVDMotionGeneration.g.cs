@@ -209,7 +209,6 @@ namespace Leonardo
             int? motionStrength = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Leonardo.CreateSVDMotionGenerationRequest
             {
                 ImageId = imageId,

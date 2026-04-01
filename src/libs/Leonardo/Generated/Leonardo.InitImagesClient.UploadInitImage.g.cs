@@ -193,7 +193,6 @@ namespace Leonardo
             string extension,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Leonardo.UploadInitImageRequest
             {
                 Extension = extension,

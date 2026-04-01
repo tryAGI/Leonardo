@@ -201,7 +201,6 @@ namespace Leonardo
             string generatedImageId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Leonardo.UploadDatasetImageFromGenRequest
             {
                 GeneratedImageId = generatedImageId,

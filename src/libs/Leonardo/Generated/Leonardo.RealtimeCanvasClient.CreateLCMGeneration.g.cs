@@ -229,7 +229,6 @@ namespace Leonardo
             int? seed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Leonardo.CreateLCMGenerationRequest
             {
                 ImageDataUrl = imageDataUrl,
