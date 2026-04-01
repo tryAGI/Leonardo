@@ -231,6 +231,7 @@ namespace Leonardo
             int? requestOffset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.GetTextureGenerationsByModelIdRequest
             {
                 Limit = requestLimit,

@@ -193,6 +193,7 @@ namespace Leonardo
             bool? isVariation = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.CreateVariationNoBGRequest
             {
                 Id = id,

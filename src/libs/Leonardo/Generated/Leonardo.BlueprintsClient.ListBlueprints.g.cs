@@ -217,6 +217,7 @@ namespace Leonardo
             global::System.Collections.Generic.IList<string>? categories = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Leonardo.ListBlueprintsRequest
             {
                 First = first,
