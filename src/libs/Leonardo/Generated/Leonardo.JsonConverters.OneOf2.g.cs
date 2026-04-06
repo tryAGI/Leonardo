@@ -3,7 +3,7 @@
 namespace Leonardo.JsonConverters
 {
     /// <inheritdoc />
-    public class OneOfJsonConverter<T1, T2> : global::System.Text.Json.Serialization.JsonConverter<global::Leonardo.OneOf<T1, T2>>
+    public class OneOfJsonConverter<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T1, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T2> : global::System.Text.Json.Serialization.JsonConverter<global::Leonardo.OneOf<T1, T2>>
     {
         /// <inheritdoc />
         public override global::Leonardo.OneOf<T1, T2> Read(
