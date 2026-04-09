@@ -5,6 +5,25 @@ namespace Leonardo
 {
     public partial class ModelsClient
     {
+
+
+        private static readonly global::Leonardo.EndPointSecurityRequirement s_ListPlatformModelsSecurityRequirement0 =
+            new global::Leonardo.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Leonardo.EndPointAuthorizationRequirement[]
+                {                    new global::Leonardo.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Leonardo.EndPointSecurityRequirement[] s_ListPlatformModelsSecurityRequirements =
+            new global::Leonardo.EndPointSecurityRequirement[]
+            {                s_ListPlatformModelsSecurityRequirement0,
+            };
         partial void PrepareListPlatformModelsArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListPlatformModelsRequest(
@@ -33,9 +52,15 @@ namespace Leonardo
             PrepareListPlatformModelsArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Leonardo.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListPlatformModelsSecurityRequirements,
+                operationName: "ListPlatformModelsAsync");
+
             var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: "/platformModels",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace Leonardo
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

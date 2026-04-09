@@ -6,6 +6,7 @@ namespace Leonardo
     public sealed partial class LeonardoClient
     {
         /// <inheritdoc cref="LeonardoClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Leonardo.EndPointAuthorization}?, bool)"/>
+
         public LeonardoClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

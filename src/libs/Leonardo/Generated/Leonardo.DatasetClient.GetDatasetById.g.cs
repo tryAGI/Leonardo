@@ -5,6 +5,25 @@ namespace Leonardo
 {
     public partial class DatasetClient
     {
+
+
+        private static readonly global::Leonardo.EndPointSecurityRequirement s_GetDatasetByIdSecurityRequirement0 =
+            new global::Leonardo.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Leonardo.EndPointAuthorizationRequirement[]
+                {                    new global::Leonardo.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Leonardo.EndPointSecurityRequirement[] s_GetDatasetByIdSecurityRequirements =
+            new global::Leonardo.EndPointSecurityRequirement[]
+            {                s_GetDatasetByIdSecurityRequirement0,
+            };
         partial void PrepareGetDatasetByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -38,9 +57,15 @@ namespace Leonardo
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::Leonardo.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetDatasetByIdSecurityRequirements,
+                operationName: "GetDatasetByIdAsync");
+
             var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/datasets/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -50,7 +75,7 @@ namespace Leonardo
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

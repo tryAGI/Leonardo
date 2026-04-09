@@ -5,6 +5,25 @@ namespace Leonardo
 {
     public partial class BlueprintsClient
     {
+
+
+        private static readonly global::Leonardo.EndPointSecurityRequirement s_GetBlueprintExecutionGenerationsSecurityRequirement0 =
+            new global::Leonardo.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Leonardo.EndPointAuthorizationRequirement[]
+                {                    new global::Leonardo.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Leonardo.EndPointSecurityRequirement[] s_GetBlueprintExecutionGenerationsSecurityRequirements =
+            new global::Leonardo.EndPointSecurityRequirement[]
+            {                s_GetBlueprintExecutionGenerationsSecurityRequirement0,
+            };
         partial void PrepareGetBlueprintExecutionGenerationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? id,
@@ -62,6 +81,12 @@ namespace Leonardo
                 last: ref last,
                 before: ref before);
 
+
+            var __authorizations = global::Leonardo.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetBlueprintExecutionGenerationsSecurityRequirements,
+                operationName: "GetBlueprintExecutionGenerationsAsync");
+
             var __pathBuilder = new global::Leonardo.PathBuilder(
                 path: $"/blueprint-executions/{id}/generations",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,7 +95,7 @@ namespace Leonardo
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("last", last?.ToString())
                 .AddOptionalParameter("before", before) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -80,7 +105,7 @@ namespace Leonardo
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
