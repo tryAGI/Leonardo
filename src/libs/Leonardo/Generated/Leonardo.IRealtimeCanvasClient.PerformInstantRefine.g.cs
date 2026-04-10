@@ -9,11 +9,13 @@ namespace Leonardo
         /// This endpoint will perform instant refine on a LCM image
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.PerformInstantRefineResponse> PerformInstantRefineAsync(
 
             global::Leonardo.PerformInstantRefineRequest request,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Perform instant refine on a LCM image<br/>
@@ -49,6 +51,7 @@ namespace Leonardo
         /// <param name="seed">
         /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.PerformInstantRefineResponse> PerformInstantRefineAsync(
@@ -62,6 +65,7 @@ namespace Leonardo
             int? width = default,
             int? height = default,
             int? seed = default,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

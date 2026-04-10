@@ -16,6 +16,7 @@ namespace Leonardo
         /// </param>
         /// <param name="userId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.Get3DModelsByUserIdResponse> Get3DModelsByUserIdAsync(
@@ -24,6 +25,7 @@ namespace Leonardo
             global::Leonardo.Get3DModelsByUserIdRequest request,
             int? offset = default,
             int? limit = default,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get 3D models by user ID<br/>
@@ -37,6 +39,7 @@ namespace Leonardo
         /// </param>
         /// <param name="userId"></param>
         /// <param name="requestUserId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.Get3DModelsByUserIdResponse> Get3DModelsByUserIdAsync(
@@ -44,6 +47,7 @@ namespace Leonardo
             int? offset = default,
             int? limit = default,
             string? requestUserId = default,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

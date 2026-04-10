@@ -9,11 +9,13 @@ namespace Leonardo
         /// This endpoint will generate a video using an uploaded or generated image.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateImageToVideoGenerationResponse> CreateImageToVideoGenerationAsync(
 
             global::Leonardo.CreateImageToVideoGenerationRequest request,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a video generation from an image<br/>
@@ -71,6 +73,7 @@ namespace Leonardo
         /// <param name="width">
         /// Width of the output video. Acceptable values vary based on model
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateImageToVideoGenerationResponse> CreateImageToVideoGenerationAsync(
@@ -91,6 +94,7 @@ namespace Leonardo
             global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? elements = default,
             int? height = default,
             int? width = default,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

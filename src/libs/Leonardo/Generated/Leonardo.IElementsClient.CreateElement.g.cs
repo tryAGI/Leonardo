@@ -9,11 +9,13 @@ namespace Leonardo
         /// This endpoint will train a new custom element.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateElementResponse> CreateElementAsync(
 
             global::Leonardo.CreateElementRequest request,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Train a Custom Element<br/>
@@ -53,6 +55,7 @@ namespace Leonardo
         /// <param name="learningRate">
         /// The speed at which the model learns during training.&lt;table&gt;&lt;tr&gt;&lt;th&gt;Model Type&lt;/th&gt;&lt;th&gt;Lora Focus&lt;/th&gt;&lt;th&gt;Min&lt;/th&gt;&lt;th&gt;Max&lt;/th&gt;&lt;th&gt;Default&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Default&lt;/td&gt;&lt;td&gt;General | Style | Character | Object&lt;/td&gt;&lt;td&gt;0.00000001&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.000001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td rowspan='3'&gt;FLUX_DEV&lt;/td&gt;&lt;td&gt;Style&lt;/td&gt;&lt;td&gt;0.000001&lt;/td&gt;&lt;td&gt;0.00003&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Object&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;0.0004&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Character&lt;/td&gt;&lt;td&gt;0.00001&lt;/td&gt;&lt;td&gt;0.001&lt;/td&gt;&lt;td&gt;0.0005&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;General&lt;/td&gt;&lt;td colspan='3'&gt;NA&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateElementResponse> CreateElementAsync(
@@ -66,6 +69,7 @@ namespace Leonardo
             string? instancePrompt = default,
             int? resolution = default,
             global::Leonardo.CreateElementRequestSdVersion sdVersion = global::Leonardo.CreateElementRequestSdVersion.FluxDev,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

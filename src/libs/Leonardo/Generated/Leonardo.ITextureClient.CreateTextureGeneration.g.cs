@@ -9,11 +9,13 @@ namespace Leonardo
         /// This endpoint will generate a texture generation.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateTextureGenerationResponse> CreateTextureGenerationAsync(
 
             global::Leonardo.CreateTextureGenerationRequest request,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Texture Generation<br/>
@@ -29,6 +31,7 @@ namespace Leonardo
         /// <param name="seed">
         /// Apply a fixed seed to maintain consistency across generation sets. The maximum seed value is 2147483637 for Flux and 9999999998 for other models
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.CreateTextureGenerationResponse> CreateTextureGenerationAsync(
@@ -40,6 +43,7 @@ namespace Leonardo
             string? prompt = default,
             string? sdVersion = default,
             int? seed = default,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
