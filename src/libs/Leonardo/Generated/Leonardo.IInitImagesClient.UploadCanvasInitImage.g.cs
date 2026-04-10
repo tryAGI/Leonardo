@@ -9,11 +9,13 @@ namespace Leonardo
         /// This endpoint returns presigned details to upload an init image and a mask image to S3
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.UploadCanvasInitImageResponse> UploadCanvasInitImageAsync(
 
             global::Leonardo.UploadCanvasInitImageRequest request,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload Canvas Editor init and mask image<br/>
@@ -25,11 +27,13 @@ namespace Leonardo
         /// <param name="maskExtension">
         /// Has to be png, jpg, jpeg, or webp.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.UploadCanvasInitImageResponse> UploadCanvasInitImageAsync(
             string initExtension,
             string maskExtension,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

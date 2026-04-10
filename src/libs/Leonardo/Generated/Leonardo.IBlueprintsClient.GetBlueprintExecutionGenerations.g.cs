@@ -17,6 +17,7 @@ namespace Leonardo
         /// <param name="before">
         /// An opaque cursor used for pagination
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Leonardo.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Leonardo.GetBlueprintExecutionGenerationsResponse> GetBlueprintExecutionGenerationsAsync(
@@ -25,6 +26,7 @@ namespace Leonardo
             string? after = default,
             int? last = default,
             string? before = default,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
