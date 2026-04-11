@@ -1,0 +1,268 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Execute a Blueprint",
+      "Slug": "executeblueprint",
+      "Description": "Execute a Blueprint Version with custom node inputs. This endpoint triggers the execution of the specified Blueprint Version and returns a Blueprint Execution ID to track the job.",
+      "Language": "csharp",
+      "Code": "using var client = new LeonardoClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Leonardo.ExecuteBlueprintRequest\u003E(\n    @\u0022{\n  \u0022\u0022blueprintVersionId\u0022\u0022: \u0022\u0022550e8400-e29b-41d4-a716-446655440000\u0022\u0022,\n  \u0022\u0022input\u0022\u0022: {\n    \u0022\u0022nodeInputs\u0022\u0022: [\n      {\n        \u0022\u0022nodeId\u0022\u0022: \u0022\u0022a1b2c3d4-e5f6-7890-abcd-ef1234567890\u0022\u0022,\n        \u0022\u0022settingName\u0022\u0022: \u0022\u0022text\u0022\u0022,\n        \u0022\u0022value\u0022\u0022: \u0022\u0022A futuristic cityscape at sunset\u0022\u0022\n      },\n      {\n        \u0022\u0022nodeId\u0022\u0022: \u0022\u0022b2c3d4e5-f6a7-8901-bcde-f12345678901\u0022\u0022,\n        \u0022\u0022settingName\u0022\u0022: \u0022\u0022textVariables\u0022\u0022,\n        \u0022\u0022value\u0022\u0022: [\n          {\n            \u0022\u0022name\u0022\u0022: \u0022\u0022characterName\u0022\u0022,\n            \u0022\u0022value\u0022\u0022: \u0022\u0022Luna\u0022\u0022\n          },\n          {\n            \u0022\u0022name\u0022\u0022: \u0022\u0022outfit\u0022\u0022,\n            \u0022\u0022value\u0022\u0022: \u0022\u0022cyberpunk armor\u0022\u0022\n          }\n        ]\n      },\n      {\n        \u0022\u0022nodeId\u0022\u0022: \u0022\u0022c3d4e5f6-a7b8-9012-cdef-123456789012\u0022\u0022,\n        \u0022\u0022settingName\u0022\u0022: \u0022\u0022imageUrl\u0022\u0022,\n        \u0022\u0022value\u0022\u0022: \u0022\u0022https://cdn.leonardo.ai/users/example/image.png\u0022\u0022\n      }\n    ],\n    \u0022\u0022public\u0022\u0022: false,\n    \u0022\u0022collectionIds\u0022\u0022: []\n  }\n}\u0022)!;\n\nvar response = await client.Blueprints.ExecuteBlueprintAsync(\n    request: request\n);\n\n// Example response:\n// [\n//   {\n//     \u0022message\u0022: \u0022An error occurred.\u0022,\n//     \u0022path\u0022: [\n//       \u0022executeBlueprint\u0022\n//     ],\n//     \u0022locations\u0022: [\n//       {\n//         \u0022column\u0022: 70,\n//         \u0022line\u0022: 1\n//       }\n//     ],\n//     \u0022extensions\u0022: {\n//       \u0022code\u0022: \u0022BadRequestException\u0022,\n//       \u0022details\u0022: {\n//         \u0022message\u0022: \u0022Bad request. Please check your input.\u0022,\n//         \u0022statusCode\u0022: 400\n//       }\n//     }\n//   }\n// ]",
+      "Format": "sdk",
+      "OperationId": "executeBlueprint",
+      "Setup": "This example assumes \u0060using Leonardo;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 2,
+      "Title": "Get Blueprint by ID",
+      "Slug": "getblueprintbyid",
+      "Description": "Returns a single Blueprint by its akUUID",
+      "Language": "http",
+      "Code": "### Get Blueprint by ID\n# @name getBlueprintById\nGET {{host}}/blueprints/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successfully retrieved Blueprint\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getBlueprintById",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "Get Blueprint Execution by ID",
+      "Slug": "getblueprintexecution",
+      "Description": "Retrieves details of a specific Blueprint Execution by its akUUID",
+      "Language": "http",
+      "Code": "### Get Blueprint Execution by ID\n# @name getBlueprintExecution\nGET {{host}}/blueprint-executions/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successfully retrieved Blueprint Execution\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getBlueprintExecution",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "Get Blueprint Execution Generations by Execution ID",
+      "Slug": "getblueprintexecutiongenerations",
+      "Description": "Retrieves paginated generations for a specific Blueprint Execution, including their statuses and any prompt moderation failure details.",
+      "Language": "http",
+      "Code": "### Get Blueprint Execution Generations by Execution ID\n# @name getBlueprintExecutionGenerations\nGET {{host}}/blueprint-executions/{{id}}/generations?first={{first}}\u0026after={{after}}\u0026last={{last}}\u0026before={{before}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successfully retrieved Blueprint Execution Generations\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getBlueprintExecutionGenerations",
+      "Setup": null
+    },
+    {
+      "Order": 5,
+      "Title": "Get Blueprint Versions by Blueprint ID",
+      "Slug": "getblueprintversionsbyblueprintid",
+      "Description": "Returns all versions of a Blueprint by its akUUID",
+      "Language": "http",
+      "Code": "### Get Blueprint Versions by Blueprint ID\n# @name getBlueprintVersionsByBlueprintId\nGET {{host}}/blueprints/{{id}}/versions\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successfully retrieved Blueprint Versions\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getBlueprintVersionsByBlueprintId",
+      "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "List Blueprints",
+      "Slug": "listblueprints",
+      "Description": "Returns a list of Blueprints. Use either forward pagination (first/after) or backward pagination (last/before), but not both. Note: This endpoint uses a request body to support complex filtering parameters",
+      "Language": "csharp",
+      "Code": "using var client = new LeonardoClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Leonardo.ListBlueprintsRequest\u003E(\n    @\u0022{\n  \u0022\u0022first\u0022\u0022: 10,\n  \u0022\u0022after\u0022\u0022: \u0022\u0022eyJjcmVhdGVkQXQiOiIyMDI1LTEwLTI5VDIxOjMxOjQ3Ljk5OVoiLCJha1VVSUQiOiJjODQ2NDEzZS05MmJhLTQzMDItODRmOC00N2M2NjdkNDc2MWYifQ==\u0022\u0022,\n  \u0022\u0022platforms\u0022\u0022: [\n    \u0022\u0022iOS\u0022\u0022,\n    \u0022\u0022Android\u0022\u0022\n  ],\n  \u0022\u0022categories\u0022\u0022: [\n    \u0022\u0022social-media\u0022\u0022\n  ]\n}\u0022)!;\n\nvar response = await client.Blueprints.ListBlueprintsAsync(\n    request: request\n);\n\n// Example response:\n// [\n//   {\n//     \u0022extensions\u0022: {\n//       \u0022code\u0022: \u0022BadRequestException\u0022,\n//       \u0022details\u0022: {\n//         \u0022message\u0022: \u0022Bad request. Please check your input.\u0022,\n//         \u0022statusCode\u0022: 400\n//       }\n//     },\n//     \u0022locations\u0022: [\n//       {\n//         \u0022column\u0022: 97,\n//         \u0022line\u0022: 1\n//       }\n//     ],\n//     \u0022message\u0022: \u0022An error occurred.\u0022,\n//     \u0022path\u0022: [\n//       \u0022blueprints\u0022\n//     ]\n//   }\n// ]",
+      "Format": "sdk",
+      "OperationId": "listBlueprints",
+      "Setup": "This example assumes \u0060using Leonardo;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 7,
+      "Title": "Train a Custom Element",
+      "Slug": "createelement",
+      "Description": "This endpoint will train a new custom element.",
+      "Language": "http",
+      "Code": "### Train a Custom Element\n# @name createElement\nPOST {{host}}/elements\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022placeholder\u0022,\n  \u0022description\u0022: \u0022\u0022,\n  \u0022datasetId\u0022: \u0022\u0022,\n  \u0022instance_prompt\u0022: \u0022\u0022,\n  \u0022lora_focus\u0022: \u0022string\u0022,\n  \u0022train_text_encoder\u0022: true,\n  \u0022resolution\u0022: 1024,\n  \u0022sd_version\u0022: \u0022FLUX_DEV\u0022,\n  \u0022num_train_epochs\u0022: 0,\n  \u0022learning_rate\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /elements.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createElement",
+      "Setup": null
+    },
+    {
+      "Order": 8,
+      "Title": "Create a Generation of Images",
+      "Slug": "creategeneration",
+      "Description": "This endpoint will generate images",
+      "Language": "http",
+      "Code": "### Create a Generation of Images\n# @name createGeneration\nPOST {{host}}/generations\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022alchemy\u0022: true,\n  \u0022contrastRatio\u0022: 0,\n  \u0022contrast\u0022: 3.5,\n  \u0022controlnets\u0022: [\n    {\n      \u0022initImageId\u0022: \u0022string\u0022,\n      \u0022initImageType\u0022: \u0022GENERATED\u0022,\n      \u0022preprocessorId\u0022: 0,\n      \u0022weight\u0022: 0,\n      \u0022strengthType\u0022: \u0022Low\u0022\n    }\n  ],\n  \u0022elements\u0022: [\n    {\n      \u0022akUUID\u0022: \u0022string\u0022,\n      \u0022weight\u0022: 1.0\n    }\n  ],\n  \u0022userElements\u0022: [\n    {\n      \u0022userLoraId\u0022: 0,\n      \u0022weight\u0022: 0\n    }\n  ],\n  \u0022expandedDomain\u0022: true,\n  \u0022fantasyAvatar\u0022: true,\n  \u0022guidance_scale\u0022: 0,\n  \u0022height\u0022: 768,\n  \u0022highContrast\u0022: true,\n  \u0022highResolution\u0022: true,\n  \u0022imagePrompts\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022imagePromptWeight\u0022: 0,\n  \u0022init_generation_image_id\u0022: \u0022string\u0022,\n  \u0022init_image_id\u0022: \u0022string\u0022,\n  \u0022init_strength\u0022: 0,\n  \u0022modelId\u0022: \u0022b24e16ff-06e3-43eb-8d33-4416c2d75876\u0022,\n  \u0022negative_prompt\u0022: \u0022string\u0022,\n  \u0022num_images\u0022: 4,\n  \u0022num_inference_steps\u0022: 0,\n  \u0022photoReal\u0022: true,\n  \u0022photoRealVersion\u0022: \u0022string\u0022,\n  \u0022photoRealStrength\u0022: 0,\n  \u0022presetStyle\u0022: \u0022DYNAMIC\u0022,\n  \u0022prompt\u0022: \u0022A majestic cat in the snow\u0022,\n  \u0022promptMagic\u0022: true,\n  \u0022promptMagicStrength\u0022: 0,\n  \u0022promptMagicVersion\u0022: \u0022string\u0022,\n  \u0022public\u0022: true,\n  \u0022scheduler\u0022: \u0022KLMS\u0022,\n  \u0022sd_version\u0022: \u0022v1_5\u0022,\n  \u0022seed\u0022: 0,\n  \u0022tiling\u0022: true,\n  \u0022transparency\u0022: \u0022disabled\u0022,\n  \u0022ultra\u0022: true,\n  \u0022unzoom\u0022: true,\n  \u0022unzoomAmount\u0022: 0,\n  \u0022upscaleRatio\u0022: 0,\n  \u0022width\u0022: 1024,\n  \u0022controlNet\u0022: true,\n  \u0022controlNetType\u0022: \u0022POSE\u0022,\n  \u0022weighting\u0022: 0,\n  \u0022canvasRequest\u0022: true,\n  \u0022canvasRequestType\u0022: \u0022INPAINT\u0022,\n  \u0022canvasInitId\u0022: \u0022string\u0022,\n  \u0022canvasMaskId\u0022: \u0022string\u0022,\n  \u0022enhancePrompt\u0022: true,\n  \u0022enhancePromptInstruction\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Responses for POST /generations\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createGeneration",
+      "Setup": null
+    },
+    {
+      "Order": 9,
+      "Title": "Train a Custom Model",
+      "Slug": "createmodel",
+      "Description": "This endpoint will train a new custom model",
+      "Language": "http",
+      "Code": "### Train a Custom Model\n# @name createModel\nPOST {{host}}/models\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022\u0022,\n  \u0022datasetId\u0022: \u0022string\u0022,\n  \u0022instance_prompt\u0022: \u0022string\u0022,\n  \u0022modelType\u0022: \u0022GENERAL\u0022,\n  \u0022nsfw\u0022: false,\n  \u0022resolution\u0022: 512,\n  \u0022sd_version\u0022: \u0022v1_5\u0022,\n  \u0022strength\u0022: \u0022MEDIUM\u0022\n}\n\n## Responses\n# 200\n# Description: Responses for POST /models\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createModel",
+      "Setup": null
+    },
+    {
+      "Order": 10,
+      "Title": "Create a video generation from an image",
+      "Slug": "createimagetovideogeneration",
+      "Description": "This endpoint will generate a video using an uploaded or generated image.",
+      "Language": "http",
+      "Code": "### Create a video generation from an image\n# @name createImageToVideoGeneration\nPOST {{host}}/generations-image-to-video\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022imageId\u0022: \u0022string\u0022,\n  \u0022imageType\u0022: \u0022GENERATED\u0022,\n  \u0022endFrameImage\u0022: {\n    \u0022id\u0022: \u0022string\u0022,\n    \u0022type\u0022: \u0022GENERATED\u0022\n  },\n  \u0022resolution\u0022: \u0022RESOLUTION_480\u0022,\n  \u0022model\u0022: \u0022MOTION2\u0022,\n  \u0022frameInterpolation\u0022: true,\n  \u0022isPublic\u0022: true,\n  \u0022seed\u0022: 0,\n  \u0022negativePrompt\u0022: \u0022string\u0022,\n  \u0022promptEnhance\u0022: true,\n  \u0022duration\u0022: 0,\n  \u0022promptEnhanceInstruction\u0022: \u0022string\u0022,\n  \u0022styleIds\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022elements\u0022: [\n    {\n      \u0022akUUID\u0022: \u0022string\u0022,\n      \u0022weight\u0022: 1.0\n    }\n  ],\n  \u0022height\u0022: 0,\n  \u0022width\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /generations-image-to-video\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createImageToVideoGeneration",
+      "Setup": null
+    },
+    {
+      "Order": 11,
+      "Title": "Create SVD Motion Generation",
+      "Slug": "createsvdmotiongeneration",
+      "Description": "This endpoint will generate a SVD motion generation.",
+      "Language": "http",
+      "Code": "### Create SVD Motion Generation\n# @name createSVDMotionGeneration\nPOST {{host}}/generations-motion-svd\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022imageId\u0022: \u0022string\u0022,\n  \u0022isPublic\u0022: true,\n  \u0022isInitImage\u0022: true,\n  \u0022isVariation\u0022: true,\n  \u0022motionStrength\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /generations-motion-svd\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createSVDMotionGeneration",
+      "Setup": null
+    },
+    {
+      "Order": 12,
+      "Title": "Create a video generation from a text prompt",
+      "Slug": "createtexttovideogeneration",
+      "Description": "This endpoint will generate a video using a text prompt",
+      "Language": "http",
+      "Code": "### Create a video generation from a text prompt\n# @name createTextToVideoGeneration\nPOST {{host}}/generations-text-to-video\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022resolution\u0022: \u0022RESOLUTION_480\u0022,\n  \u0022model\u0022: \u0022MOTION2\u0022,\n  \u0022frameInterpolation\u0022: true,\n  \u0022isPublic\u0022: true,\n  \u0022seed\u0022: 0,\n  \u0022negativePrompt\u0022: \u0022string\u0022,\n  \u0022promptEnhance\u0022: true,\n  \u0022promptEnhanceInstruction\u0022: \u0022string\u0022,\n  \u0022styleIds\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022height\u0022: 0,\n  \u0022width\u0022: 0,\n  \u0022duration\u0022: 8,\n  \u0022elements\u0022: [\n    {\n      \u0022akUUID\u0022: \u0022string\u0022,\n      \u0022weight\u0022: 1.0\n    }\n  ]\n}\n\n## Responses\n# 200\n# Description: Responses for POST /generations-text-to-video\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createTextToVideoGeneration",
+      "Setup": null
+    },
+    {
+      "Order": 13,
+      "Title": "Upscale a generated video",
+      "Slug": "createvideoupscale",
+      "Description": "This endpoint will upscale a generated video to a higher resolution.",
+      "Language": "http",
+      "Code": "### Upscale a generated video\n# @name createVideoUpscale\nPOST {{host}}/generations-video-upscale\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022resolution\u0022: \u0022RESOLUTION_720\u0022,\n  \u0022sourceGenerationId\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Responses for POST /generations-text-to-video\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createVideoUpscale",
+      "Setup": null
+    },
+    {
+      "Order": 14,
+      "Title": "Improve a Prompt",
+      "Slug": "promptimprove",
+      "Description": "This endpoint returns a improved prompt",
+      "Language": "http",
+      "Code": "### Improve a Prompt\n# @name promptImprove\nPOST {{host}}/prompt/improve\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022promptInstructions\u0022: \u0022string\u0022,\n  \u0022isVideo\u0022: true\n}\n\n## Responses\n# 200\n# Description: Responses for POST /prompt/improve\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "promptImprove",
+      "Setup": null
+    },
+    {
+      "Order": 15,
+      "Title": "Generate a Random prompt",
+      "Slug": "promptrandom",
+      "Description": "This endpoint returns a random prompt",
+      "Language": "csharp",
+      "Code": "using var client = new LeonardoClient(apiKey);\nvar response = await client.Prompt.PromptRandomAsync();\n\n// Example response:\n// {\n//   \u0022promptGeneration\u0022: {\n//     \u0022prompt\u0022: \u0022A majestic dragon soaring through stormy clouds\u0022,\n//     \u0022apiCreditCost\u0022: null,\n//     \u0022cost\u0022: {\n//       \u0022amount\u0022: \u00220.0147\u0022,\n//       \u0022unit\u0022: \u0022DOLLARS\u0022\n//     }\n//   }\n// }",
+      "Format": "sdk",
+      "OperationId": "promptRandom",
+      "Setup": "This example assumes \u0060using Leonardo;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 16,
+      "Title": "Create LCM Generation",
+      "Slug": "createlcmgeneration",
+      "Description": "This endpoint will generate a LCM image generation.",
+      "Language": "http",
+      "Code": "### Create LCM Generation\n# @name createLCMGeneration\nPOST {{host}}/generations-lcm\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022imageDataUrl\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022guidance\u0022: 0,\n  \u0022strength\u0022: 0,\n  \u0022requestTimestamp\u0022: \u0022string\u0022,\n  \u0022style\u0022: \u0022ANIME\u0022,\n  \u0022steps\u0022: 0,\n  \u0022width\u0022: 512,\n  \u0022height\u0022: 512,\n  \u0022seed\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /generations-lcm\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createLCMGeneration",
+      "Setup": null
+    },
+    {
+      "Order": 17,
+      "Title": "Perform Alchemy Upscale on a LCM image",
+      "Slug": "performalchemyupscalelcm",
+      "Description": "This endpoint will perform Alchemy Upscale on a LCM image",
+      "Language": "http",
+      "Code": "### Perform Alchemy Upscale on a LCM image\n# @name performAlchemyUpscaleLCM\nPOST {{host}}/lcm-upscale\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022imageDataUrl\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022guidance\u0022: 0,\n  \u0022strength\u0022: 0,\n  \u0022requestTimestamp\u0022: \u0022string\u0022,\n  \u0022style\u0022: \u0022ANIME\u0022,\n  \u0022steps\u0022: 0,\n  \u0022width\u0022: 512,\n  \u0022height\u0022: 512,\n  \u0022seed\u0022: 0,\n  \u0022refineCreative\u0022: true,\n  \u0022refineStrength\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /lcm-upscale\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "performAlchemyUpscaleLCM",
+      "Setup": null
+    },
+    {
+      "Order": 18,
+      "Title": "Perform inpainting on a LCM image",
+      "Slug": "performinpaintinglcm",
+      "Description": "This endpoint will perform a inpainting on a LCM image",
+      "Language": "http",
+      "Code": "### Perform inpainting on a LCM image\n# @name performInpaintingLCM\nPOST {{host}}/lcm-inpainting\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022imageDataUrl\u0022: \u0022string\u0022,\n  \u0022maskDataUrl\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022guidance\u0022: 0,\n  \u0022strength\u0022: 0,\n  \u0022requestTimestamp\u0022: \u0022string\u0022,\n  \u0022style\u0022: \u0022ANIME\u0022,\n  \u0022steps\u0022: 0,\n  \u0022width\u0022: 512,\n  \u0022height\u0022: 512,\n  \u0022seed\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /lcm-inpainting\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "performInpaintingLCM",
+      "Setup": null
+    },
+    {
+      "Order": 19,
+      "Title": "Perform instant refine on a LCM image",
+      "Slug": "performinstantrefine",
+      "Description": "This endpoint will perform instant refine on a LCM image",
+      "Language": "http",
+      "Code": "### Perform instant refine on a LCM image\n# @name performInstantRefine\nPOST {{host}}/lcm-instant-refine\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022imageDataUrl\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022guidance\u0022: 0,\n  \u0022strength\u0022: 0,\n  \u0022requestTimestamp\u0022: \u0022string\u0022,\n  \u0022style\u0022: \u0022ANIME\u0022,\n  \u0022steps\u0022: 0,\n  \u0022width\u0022: 512,\n  \u0022height\u0022: 512,\n  \u0022seed\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /lcm-instant-refine\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "performInstantRefine",
+      "Setup": null
+    },
+    {
+      "Order": 20,
+      "Title": "Create Texture Generation",
+      "Slug": "createtexturegeneration",
+      "Description": "This endpoint will generate a texture generation.",
+      "Language": "http",
+      "Code": "### Create Texture Generation\n# @name createTextureGeneration\nPOST {{host}}/generations-texture\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022front_rotation_offset\u0022: 0,\n  \u0022modelAssetId\u0022: \u0022string\u0022,\n  \u0022negative_prompt\u0022: \u0022string\u0022,\n  \u0022preview\u0022: true,\n  \u0022preview_direction\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022sd_version\u0022: \u0022string\u0022,\n  \u0022seed\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /api/rest/v1/generations-texture\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createTextureGeneration",
+      "Setup": null
+    },
+    {
+      "Order": 21,
+      "Title": "Create using Universal Upscaler",
+      "Slug": "createuniversalupscalerjob",
+      "Description": "This endpoint will create a high resolution image using Universal Upscaler",
+      "Language": "http",
+      "Code": "### Create using Universal Upscaler\n# @name CreateUniversalUpscalerJob\nPOST {{host}}/variations/universal-upscaler\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022creativityStrength\u0022: 5,\n  \u0022detailContrast\u0022: 0,\n  \u0022generatedImageId\u0022: \u0022string\u0022,\n  \u0022initImageId\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022similarity\u0022: 0,\n  \u0022ultraUpscaleStyle\u0022: \u0022ARTISTIC\u0022,\n  \u0022upscaleMultiplier\u0022: 1.5,\n  \u0022upscalerStyle\u0022: \u0022GENERAL\u0022,\n  \u0022variationId\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Responses for POST /variations/universal-upscaler\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "CreateUniversalUpscalerJob",
+      "Setup": null
+    },
+    {
+      "Order": 22,
+      "Title": "Create no background",
+      "Slug": "createvariationnobg",
+      "Description": "This endpoint will create a no background variation of the provided image ID",
+      "Language": "http",
+      "Code": "### Create no background\n# @name createVariationNoBG\nPOST {{host}}/variations/nobg\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022id\u0022: \u0022string\u0022,\n  \u0022isVariation\u0022: true\n}\n\n## Responses\n# 200\n# Description: Responses for POST /variations/nobg\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createVariationNoBG",
+      "Setup": null
+    },
+    {
+      "Order": 23,
+      "Title": "Create unzoom",
+      "Slug": "createvariationunzoom",
+      "Description": "This endpoint will create an unzoom variation for the provided image ID",
+      "Language": "http",
+      "Code": "### Create unzoom\n# @name createVariationUnzoom\nPOST {{host}}/variations/unzoom\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022id\u0022: \u0022string\u0022,\n  \u0022isVariation\u0022: true\n}\n\n## Responses\n# 200\n# Description: Responses for POST /api/rest/v1/variations/unzoom\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createVariationUnzoom",
+      "Setup": null
+    },
+    {
+      "Order": 24,
+      "Title": "Create upscale",
+      "Slug": "createvariationupscale",
+      "Description": "This endpoint will create an upscale for the provided image ID",
+      "Language": "http",
+      "Code": "### Create upscale\n# @name createVariationUpscale\nPOST {{host}}/variations/upscale\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022id\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Responses for POST /variations/upscale\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createVariationUpscale",
+      "Setup": null
+    }
+  ]
+}
