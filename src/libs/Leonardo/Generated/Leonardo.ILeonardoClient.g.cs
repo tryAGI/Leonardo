@@ -73,6 +73,11 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
+        public MediaClient Media { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ModelsClient Models { get; }
 
         /// <summary>
