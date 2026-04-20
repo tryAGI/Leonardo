@@ -45,10 +45,6 @@ namespace Leonardo
 
             typeof(global::Leonardo.JsonConverters.PromptModerationFailureReasonTypeNullableJsonConverter),
 
-            typeof(global::Leonardo.JsonConverters.ModelAssetTextureTypesJsonConverter),
-
-            typeof(global::Leonardo.JsonConverters.ModelAssetTextureTypesNullableJsonConverter),
-
             typeof(global::Leonardo.JsonConverters.CustomModelTypeJsonConverter),
 
             typeof(global::Leonardo.JsonConverters.CustomModelTypeNullableJsonConverter),
@@ -201,7 +197,6 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.BlueprintExecutionGenerationStatus), TypeInfoPropertyName = "BlueprintExecutionGenerationStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PromptModerationFailureReason))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PromptModerationFailureReasonType), TypeInfoPropertyName = "PromptModerationFailureReasonType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.ModelAssetTextureTypes), TypeInfoPropertyName = "ModelAssetTextureTypes2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CustomModelType), TypeInfoPropertyName = "CustomModelType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.SdGenerationSchedulers), TypeInfoPropertyName = "SdGenerationSchedulers2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.VariationType), TypeInfoPropertyName = "VariationType2")]
@@ -225,7 +220,6 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Leonardo.ElementInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Leonardo.UserElementsInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateGenerationRequestTransparency), TypeInfoPropertyName = "CreateGenerationRequestTransparency2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateTextureGenerationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateSVDMotionGenerationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateImageToVideoGenerationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateImageToVideoGenerationRequestImageType), TypeInfoPropertyName = "CreateImageToVideoGenerationRequestImageType2")]
@@ -238,9 +232,6 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformInstantRefineRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformInpaintingLCMRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformAlchemyUpscaleLCMRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetTextureGenerationsByModelIdRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetTextureGenerationByIdRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.DeleteTextureGenerationByIdRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.UploadModelAssetRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.Get3DModelsByUserIdRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.Get3DModelByIdRequest))]
@@ -304,8 +295,6 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElement>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElement))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElementLora))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateTextureGenerationResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateTextureGenerationResponseTextureGenerationJob))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateSVDMotionGenerationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateSVDMotionGenerationResponseMotionSvdGenerationJob))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateImageToVideoGenerationResponse))]
@@ -322,17 +311,6 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformInpaintingLCMResponseLcmGenerationJob))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformAlchemyUpscaleLCMResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformAlchemyUpscaleLCMResponseLcmGenerationJob))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetTextureGenerationsByModelIdResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Leonardo.GetTextureGenerationsByModelIdResponseModelAssetTextureGeneration>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetTextureGenerationsByModelIdResponseModelAssetTextureGeneration))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Leonardo.GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetTextureGenerationByIdResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPk))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Leonardo.GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.DeleteTextureGenerationByIdResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.DeleteTextureGenerationByIdResponseDeleteModelAssetTextureGenerationsByPk))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.UploadModelAssetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.UploadModelAssetResponseUploadModelAsset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.Get3DModelsByUserIdResponse))]
@@ -453,9 +431,6 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElement>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.GetTextureGenerationsByModelIdResponseModelAssetTextureGeneration>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.Get3DModelsByUserIdResponseModelAsset>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.GetVariationByIdResponseGeneratedImageVariationGenericItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.GetMotionVariationByIdResponseGeneratedImageVariationMotionItem>))]

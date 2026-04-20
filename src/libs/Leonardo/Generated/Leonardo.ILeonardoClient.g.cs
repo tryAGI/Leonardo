@@ -103,11 +103,6 @@ namespace Leonardo
         /// <summary>
         /// 
         /// </summary>
-        public TextureClient Texture { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public UserClient User { get; }
 
         /// <summary>
