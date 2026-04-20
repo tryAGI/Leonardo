@@ -211,17 +211,6 @@
     },
     {
       "Order": 20,
-      "Title": "Create Texture Generation",
-      "Slug": "createtexturegeneration",
-      "Description": "This endpoint will generate a texture generation.",
-      "Language": "http",
-      "Code": "### Create Texture Generation\n# @name createTextureGeneration\nPOST {{host}}/generations-texture\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022front_rotation_offset\u0022: 0,\n  \u0022modelAssetId\u0022: \u0022string\u0022,\n  \u0022negative_prompt\u0022: \u0022string\u0022,\n  \u0022preview\u0022: true,\n  \u0022preview_direction\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022sd_version\u0022: \u0022string\u0022,\n  \u0022seed\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /api/rest/v1/generations-texture\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "createTextureGeneration",
-      "Setup": null
-    },
-    {
-      "Order": 21,
       "Title": "Create using Universal Upscaler",
       "Slug": "createuniversalupscalerjob",
       "Description": "This endpoint will create a high resolution image using Universal Upscaler",
@@ -232,7 +221,7 @@
       "Setup": null
     },
     {
-      "Order": 22,
+      "Order": 21,
       "Title": "Create no background",
       "Slug": "createvariationnobg",
       "Description": "This endpoint will create a no background variation of the provided image ID",
@@ -243,7 +232,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 22,
       "Title": "Create unzoom",
       "Slug": "createvariationunzoom",
       "Description": "This endpoint will create an unzoom variation for the provided image ID",
@@ -254,7 +243,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 23,
       "Title": "Create upscale",
       "Slug": "createvariationupscale",
       "Description": "This endpoint will create an upscale for the provided image ID",
