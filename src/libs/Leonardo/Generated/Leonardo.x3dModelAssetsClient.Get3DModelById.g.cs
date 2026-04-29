@@ -159,7 +159,7 @@ namespace Leonardo
                     httpRequestMessage: __httpRequest,
                     offset: offset,
                     limit: limit,
-                    id: id,
+                    id: id!,
                     request: request);
 
                 return __httpRequest;
