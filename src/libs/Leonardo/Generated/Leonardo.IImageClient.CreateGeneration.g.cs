@@ -23,6 +23,19 @@ namespace Leonardo
         /// Create a Generation of Images<br/>
         /// This endpoint will generate images
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Leonardo.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Leonardo.AutoSDKHttpResponse<global::Leonardo.CreateGenerationResponse>> CreateGenerationAsResponseAsync(
+
+            global::Leonardo.CreateGenerationRequest request,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Generation of Images<br/>
+        /// This endpoint will generate images
+        /// </summary>
         /// <param name="alchemy">
         /// Enable to use Alchemy. Note: The appropriate Alchemy version is selected for the specified model. For example, XL models will use Alchemy V2.<br/>
         /// Default Value: true

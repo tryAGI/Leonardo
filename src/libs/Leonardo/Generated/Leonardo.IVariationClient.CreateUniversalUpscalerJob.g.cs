@@ -21,6 +21,19 @@ namespace Leonardo
         /// Create using Universal Upscaler<br/>
         /// This endpoint will create a high resolution image using Universal Upscaler
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Leonardo.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Leonardo.AutoSDKHttpResponse<global::Leonardo.CreateUniversalUpscalerJobResponse>> CreateUniversalUpscalerJobAsResponseAsync(
+
+            global::Leonardo.CreateUniversalUpscalerJobRequest request,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create using Universal Upscaler<br/>
+        /// This endpoint will create a high resolution image using Universal Upscaler
+        /// </summary>
         /// <param name="creativityStrength">
         /// The creativity strength of the universal upscaler. Must be between 1 and 10.<br/>
         /// Default Value: 5
