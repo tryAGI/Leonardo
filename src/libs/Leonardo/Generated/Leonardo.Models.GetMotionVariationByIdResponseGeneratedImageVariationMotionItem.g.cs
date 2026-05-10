@@ -93,5 +93,6 @@ namespace Leonardo
         public GetMotionVariationByIdResponseGeneratedImageVariationMotionItem()
         {
         }
+
     }
 }

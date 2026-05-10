@@ -68,5 +68,6 @@ namespace Leonardo
         public PerformInpaintingLCMResponseLcmGenerationJob()
         {
         }
+
     }
 }

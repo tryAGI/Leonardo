@@ -223,5 +223,6 @@ namespace Leonardo
         public CreateImageToVideoGenerationRequest()
         {
         }
+
     }
 }

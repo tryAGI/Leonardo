@@ -39,5 +39,6 @@ namespace Leonardo
         public GetUserSelfResponse()
         {
         }
+
     }
 }

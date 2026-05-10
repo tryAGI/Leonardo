@@ -148,5 +148,6 @@ namespace Leonardo
         public CreateUniversalUpscalerJobRequest()
         {
         }
+
     }
 }

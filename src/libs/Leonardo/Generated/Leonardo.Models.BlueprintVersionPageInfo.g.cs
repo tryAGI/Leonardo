@@ -78,5 +78,6 @@ namespace Leonardo
         public BlueprintVersionPageInfo()
         {
         }
+
     }
 }

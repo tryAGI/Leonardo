@@ -117,5 +117,6 @@ namespace Leonardo
         public BlueprintVersionEdgeNode()
         {
         }
+
     }
 }
