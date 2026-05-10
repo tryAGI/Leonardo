@@ -39,5 +39,6 @@ namespace Leonardo
         public Get3DModelsByUserIdResponse()
         {
         }
+
     }
 }

@@ -157,5 +157,6 @@ namespace Leonardo
         public PerformInpaintingLCMRequest()
         {
         }
+
     }
 }

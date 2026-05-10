@@ -59,5 +59,6 @@ namespace Leonardo
         public CreateVariationNoBGResponseSdNobgJob()
         {
         }
+
     }
 }

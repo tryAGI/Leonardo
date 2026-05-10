@@ -64,5 +64,6 @@ namespace Leonardo
         public PromptRandomResponsePromptGeneration()
         {
         }
+
     }
 }

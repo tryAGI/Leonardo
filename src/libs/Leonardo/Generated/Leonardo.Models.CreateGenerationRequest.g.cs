@@ -574,5 +574,6 @@ namespace Leonardo
         public CreateGenerationRequest()
         {
         }
+
     }
 }

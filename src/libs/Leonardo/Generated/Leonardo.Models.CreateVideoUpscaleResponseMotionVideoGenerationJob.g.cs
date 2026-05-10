@@ -70,5 +70,6 @@ namespace Leonardo
         public CreateVideoUpscaleResponseMotionVideoGenerationJob()
         {
         }
+
     }
 }

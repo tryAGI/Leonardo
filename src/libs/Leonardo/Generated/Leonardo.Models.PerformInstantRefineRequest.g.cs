@@ -145,5 +145,6 @@ namespace Leonardo
         public PerformInstantRefineRequest()
         {
         }
+
     }
 }

@@ -54,5 +54,6 @@ namespace Leonardo
         public CreateVideoUpscaleRequest()
         {
         }
+
     }
 }

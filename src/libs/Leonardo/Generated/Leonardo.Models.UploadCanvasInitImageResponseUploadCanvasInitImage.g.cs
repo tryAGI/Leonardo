@@ -102,5 +102,6 @@ namespace Leonardo
         public UploadCanvasInitImageResponseUploadCanvasInitImage()
         {
         }
+
     }
 }

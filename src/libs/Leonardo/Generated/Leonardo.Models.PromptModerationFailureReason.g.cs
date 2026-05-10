@@ -75,5 +75,6 @@ namespace Leonardo
         public PromptModerationFailureReason()
         {
         }
+
     }
 }

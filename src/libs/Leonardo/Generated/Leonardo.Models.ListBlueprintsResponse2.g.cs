@@ -40,5 +40,6 @@ namespace Leonardo
         public ListBlueprintsResponse2()
         {
         }
+
     }
 }
