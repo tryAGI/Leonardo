@@ -113,10 +113,6 @@ namespace Leonardo
 
             typeof(global::Leonardo.JsonConverters.CreateImageToVideoGenerationRequestEndFrameImageTypeNullableJsonConverter),
 
-            typeof(global::Leonardo.JsonConverters.CreateVideoUpscaleRequestResolutionJsonConverter),
-
-            typeof(global::Leonardo.JsonConverters.CreateVideoUpscaleRequestResolutionNullableJsonConverter),
-
             typeof(global::Leonardo.JsonConverters.CreateElementRequestSdVersionJsonConverter),
 
             typeof(global::Leonardo.JsonConverters.CreateElementRequestSdVersionNullableJsonConverter),
@@ -226,8 +222,6 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateImageToVideoGenerationRequestEndFrameImageType), TypeInfoPropertyName = "CreateImageToVideoGenerationRequestEndFrameImageType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateTextToVideoGenerationRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateVideoUpscaleRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateVideoUpscaleRequestResolution), TypeInfoPropertyName = "CreateVideoUpscaleRequestResolution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateLCMGenerationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformInstantRefineRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformInpaintingLCMRequest))]
@@ -301,8 +295,6 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateImageToVideoGenerationResponseMotionVideoGenerationJob))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateTextToVideoGenerationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateTextToVideoGenerationResponseMotionVideoGenerationJob))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateVideoUpscaleResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateVideoUpscaleResponseMotionVideoGenerationJob))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateLCMGenerationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateLCMGenerationResponseLcmGenerationJob))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.PerformInstantRefineResponse))]
