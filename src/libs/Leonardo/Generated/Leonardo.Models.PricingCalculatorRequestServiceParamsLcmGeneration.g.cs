@@ -74,5 +74,6 @@ namespace Leonardo
         public PricingCalculatorRequestServiceParamsLcmGeneration()
         {
         }
+
     }
 }

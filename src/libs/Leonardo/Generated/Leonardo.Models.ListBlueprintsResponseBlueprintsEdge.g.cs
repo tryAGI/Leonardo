@@ -52,5 +52,6 @@ namespace Leonardo
         public ListBlueprintsResponseBlueprintsEdge()
         {
         }
+
     }
 }

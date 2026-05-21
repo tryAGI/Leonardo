@@ -95,5 +95,6 @@ namespace Leonardo
         public PerformAlchemyUpscaleLCMResponseLcmGenerationJob()
         {
         }
+
     }
 }

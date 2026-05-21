@@ -60,5 +60,6 @@ namespace Leonardo
         public TextVariable()
         {
         }
+
     }
 }

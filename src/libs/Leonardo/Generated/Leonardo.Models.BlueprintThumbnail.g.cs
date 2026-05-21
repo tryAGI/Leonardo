@@ -58,5 +58,6 @@ namespace Leonardo
         public BlueprintThumbnail()
         {
         }
+
     }
 }

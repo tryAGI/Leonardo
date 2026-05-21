@@ -274,5 +274,6 @@ namespace Leonardo
         public GetGenerationsByUserIdResponseGeneration()
         {
         }
+
     }
 }

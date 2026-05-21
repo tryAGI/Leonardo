@@ -51,5 +51,6 @@ namespace Leonardo
         public BlueprintVersionEdge()
         {
         }
+
     }
 }

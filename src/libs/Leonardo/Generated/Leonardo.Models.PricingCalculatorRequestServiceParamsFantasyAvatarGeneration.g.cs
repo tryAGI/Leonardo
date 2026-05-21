@@ -63,5 +63,6 @@ namespace Leonardo
         public PricingCalculatorRequestServiceParamsFantasyAvatarGeneration()
         {
         }
+
     }
 }

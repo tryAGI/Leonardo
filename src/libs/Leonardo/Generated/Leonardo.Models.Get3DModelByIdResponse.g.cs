@@ -41,5 +41,6 @@ namespace Leonardo
         public Get3DModelByIdResponse()
         {
         }
+
     }
 }

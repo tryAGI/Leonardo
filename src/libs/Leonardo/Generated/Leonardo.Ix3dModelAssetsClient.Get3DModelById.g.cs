@@ -38,6 +38,29 @@ namespace Leonardo
         /// Default Value: 10
         /// </param>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Leonardo.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Leonardo.AutoSDKHttpResponse<global::Leonardo.Get3DModelByIdResponse>> Get3DModelByIdAsResponseAsync(
+            string id,
+
+            global::Leonardo.Get3DModelByIdRequest request,
+            int? offset = default,
+            int? limit = default,
+            global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get 3D Model by ID<br/>
+        /// This endpoint gets the specific 3D model
+        /// </summary>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="id"></param>
         /// <param name="requestId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

@@ -55,5 +55,6 @@ namespace Leonardo
         public CreateImageToVideoGenerationRequestEndFrameImage()
         {
         }
+
     }
 }

@@ -189,5 +189,6 @@ namespace Leonardo
         public CreateTextToVideoGenerationRequest()
         {
         }
+
     }
 }

@@ -272,5 +272,6 @@ namespace Leonardo
         public PricingCalculatorRequestServiceParamsImageGeneration()
         {
         }
+
     }
 }

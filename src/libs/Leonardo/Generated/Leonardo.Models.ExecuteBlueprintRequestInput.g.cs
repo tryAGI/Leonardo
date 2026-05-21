@@ -71,5 +71,6 @@ namespace Leonardo
         public ExecuteBlueprintRequestInput()
         {
         }
+
     }
 }

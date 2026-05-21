@@ -72,5 +72,6 @@ namespace Leonardo
         public GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric()
         {
         }
+
     }
 }

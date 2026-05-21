@@ -130,5 +130,6 @@ namespace Leonardo
         public GetGenerationsByUserIdResponseGenerationGeneratedImage()
         {
         }
+
     }
 }

@@ -49,5 +49,6 @@ namespace Leonardo
         public CreateVariationNoBGRequest()
         {
         }
+
     }
 }

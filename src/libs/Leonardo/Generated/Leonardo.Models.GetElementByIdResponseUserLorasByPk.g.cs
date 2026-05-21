@@ -150,5 +150,6 @@ namespace Leonardo
         public GetElementByIdResponseUserLorasByPk()
         {
         }
+
     }
 }
