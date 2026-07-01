@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// Leonardo.Ai API OpenAPI specification.<br/>
+    /// Leonardo.Ai API OpenAPI specification (v1.0).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
