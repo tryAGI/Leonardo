@@ -43,7 +43,7 @@ namespace Leonardo
 
         /// <summary>
         /// Upload media<br/>
-        /// This endpoint returns presigned details to upload a media file to S3
+        /// This endpoint returns presigned POST credentials to upload a video or audio file directly to S3.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,7 +66,7 @@ namespace Leonardo
         }
         /// <summary>
         /// Upload media<br/>
-        /// This endpoint returns presigned details to upload a media file to S3
+        /// This endpoint returns presigned POST credentials to upload a video or audio file directly to S3.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -369,17 +369,15 @@ namespace Leonardo
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Leonardo.ApiException(
+                                    throw global::Leonardo.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -416,17 +414,15 @@ namespace Leonardo
                                     {
                                     }
 
-                                    throw new global::Leonardo.ApiException(
+                                    throw global::Leonardo.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -439,22 +435,32 @@ namespace Leonardo
         }
         /// <summary>
         /// Upload media<br/>
-        /// This endpoint returns presigned details to upload a media file to S3
+        /// This endpoint returns presigned POST credentials to upload a video or audio file directly to S3.
         /// </summary>
         /// <param name="extension">
-        /// The file extension of the media file to upload. Supported extensions: mp4, mov.
+        /// The file extension of the media file to upload. Supported extensions for video: `mp4`, `mov`. Supported for audio: `mp3`, `wav`.
+        /// </param>
+        /// <param name="originalFilename">
+        /// Original file name for display. Required for audio uploads (`mp3`, `wav`). Optional for video.
+        /// </param>
+        /// <param name="teamId">
+        /// Optional team UUID. When set, the upload is associated with that team and the caller must be a member.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Leonardo.UploadMediaResponse> UploadMediaAsync(
             string extension,
+            string? originalFilename = default,
+            string? teamId = default,
             global::Leonardo.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Leonardo.UploadMediaRequest
             {
                 Extension = extension,
+                OriginalFilename = originalFilename,
+                TeamId = teamId,
             };
 
             return await UploadMediaAsync(
