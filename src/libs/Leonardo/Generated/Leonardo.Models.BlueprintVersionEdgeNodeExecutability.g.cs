@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BlueprintVersionEdgeNodeExecutability
     {
@@ -16,7 +16,7 @@ namespace Leonardo
         public bool? IsExecutable { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasons")]
         public global::System.Collections.Generic.IList<global::Leonardo.BlueprintVersionEdgeNodeExecutabilityReason>? Reasons { get; set; }

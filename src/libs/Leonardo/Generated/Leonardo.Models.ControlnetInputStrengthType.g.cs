@@ -9,23 +9,23 @@ namespace Leonardo
     public enum ControlnetInputStrengthType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Max,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ultra,
     }

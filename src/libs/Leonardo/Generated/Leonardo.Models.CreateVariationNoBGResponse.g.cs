@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateVariationNoBGResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sdNobgJob")]
         public global::Leonardo.CreateVariationNoBGResponseSdNobgJob? SdNobgJob { get; set; }

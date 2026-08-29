@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetUploadedMediaByIdResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploaded_media_by_pk")]
         public global::Leonardo.GetUploadedMediaByIdResponseUploadedMediaByPk? UploadedMediaByPk { get; set; }

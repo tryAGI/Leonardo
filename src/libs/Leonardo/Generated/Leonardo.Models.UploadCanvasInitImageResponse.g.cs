@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UploadCanvasInitImageResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploadCanvasInitImage")]
         public global::Leonardo.UploadCanvasInitImageResponseUploadCanvasInitImage? UploadCanvasInitImage { get; set; }

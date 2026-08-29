@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ExecuteBlueprintRequestInput
     {
@@ -30,7 +30,7 @@ namespace Leonardo
         /// </summary>
         /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("collectionIds")]
-        public global::System.Collections.Generic.IList<int>? CollectionIds { get; set; }
+        public global::System.Collections.Generic.IList<int?>? CollectionIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,7 +58,7 @@ namespace Leonardo
         public ExecuteBlueprintRequestInput(
             global::System.Collections.Generic.IList<global::Leonardo.NodeInput> nodeInputs,
             bool @public,
-            global::System.Collections.Generic.IList<int>? collectionIds)
+            global::System.Collections.Generic.IList<int?>? collectionIds)
         {
             this.NodeInputs = nodeInputs ?? throw new global::System.ArgumentNullException(nameof(nodeInputs));
             this.Public = @public;

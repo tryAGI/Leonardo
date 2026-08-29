@@ -9,15 +9,15 @@ namespace Leonardo
     public enum ControlnetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canny,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Depth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pose,
     }

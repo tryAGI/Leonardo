@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class GetGenerationByIdResponseGenerationsByPkGeneratedImage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generated_image_variation_generics")]
         public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric>? GeneratedImageVariationGenerics { get; set; }
@@ -21,7 +21,7 @@ namespace Leonardo
         public bool? FantasyAvatar { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -33,7 +33,7 @@ namespace Leonardo
         public bool? ImageToVideo { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("likeCount")]
         public int? LikeCount { get; set; }
@@ -63,13 +63,13 @@ namespace Leonardo
         public int? MotionStrength { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nsfw")]
         public bool? Nsfw { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }

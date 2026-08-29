@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateTextToVideoGenerationResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("motionVideoGenerationJob")]
         public global::Leonardo.CreateTextToVideoGenerationResponseMotionVideoGenerationJob? MotionVideoGenerationJob { get; set; }

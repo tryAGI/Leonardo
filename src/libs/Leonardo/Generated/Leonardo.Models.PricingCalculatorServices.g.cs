@@ -9,43 +9,43 @@ namespace Leonardo
     public enum PricingCalculatorServices
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FantasyAvatarGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LcmGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelTraining,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MotionSvdGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MotionVideoGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextureGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UniversalUpscaler,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UniversalUpscalerUltra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Veo3MotionVideoGeneration,
     }

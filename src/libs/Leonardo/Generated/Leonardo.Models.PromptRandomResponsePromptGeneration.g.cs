@@ -6,7 +6,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PromptRandomResponsePromptGeneration
     {

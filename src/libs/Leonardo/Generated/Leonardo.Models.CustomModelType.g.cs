@@ -10,59 +10,59 @@ namespace Leonardo
     public enum CustomModelType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Buildings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Characters,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Environments,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fashion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GameItems,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         General,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GraphicalElements,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Illustrations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Photography,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PixelArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProductDesign,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Textures,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UiElements,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vector,
     }

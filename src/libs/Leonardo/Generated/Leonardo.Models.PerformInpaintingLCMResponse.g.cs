@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PerformInpaintingLCMResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lcmGenerationJob")]
         public global::Leonardo.PerformInpaintingLCMResponseLcmGenerationJob? LcmGenerationJob { get; set; }

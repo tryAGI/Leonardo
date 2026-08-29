@@ -6,7 +6,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateGenerationRequest
     {
@@ -32,19 +32,19 @@ namespace Leonardo
         public double? Contrast { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controlnets")]
         public global::System.Collections.Generic.IList<global::Leonardo.ControlnetInput>? Controlnets { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elements")]
         public global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? Elements { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("userElements")]
         public global::System.Collections.Generic.IList<global::Leonardo.UserElementsInput>? UserElements { get; set; }
@@ -87,13 +87,13 @@ namespace Leonardo
         public bool? HighResolution { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imagePrompts")]
-        public global::System.Collections.Generic.IList<string>? ImagePrompts { get; set; }
+        public global::System.Collections.Generic.IList<string?>? ImagePrompts { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imagePromptWeight")]
         public double? ImagePromptWeight { get; set; }
@@ -486,7 +486,7 @@ namespace Leonardo
             int? height,
             bool? highContrast,
             bool? highResolution,
-            global::System.Collections.Generic.IList<string>? imagePrompts,
+            global::System.Collections.Generic.IList<string?>? imagePrompts,
             double? imagePromptWeight,
             string? initGenerationImageId,
             string? initImageId,

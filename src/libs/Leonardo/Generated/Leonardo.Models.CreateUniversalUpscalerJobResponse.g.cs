@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateUniversalUpscalerJobResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("universalUpscaler")]
         public global::Leonardo.CreateUniversalUpscalerJobResponseUniversalUpscaler? UniversalUpscaler { get; set; }

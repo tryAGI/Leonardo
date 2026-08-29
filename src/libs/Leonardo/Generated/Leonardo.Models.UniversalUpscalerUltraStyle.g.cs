@@ -9,11 +9,11 @@ namespace Leonardo
     public enum UniversalUpscalerUltraStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Artistic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Realistic,
     }

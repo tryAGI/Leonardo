@@ -78,7 +78,7 @@ namespace Leonardo
         /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </param>
         /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations.
         /// </param>
         /// <param name="height">
         /// Height of the output video. Acceptable values vary based on model

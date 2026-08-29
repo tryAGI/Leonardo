@@ -4,15 +4,15 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetCustomElementsByUserIdResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_loras")]
-        public global::System.Collections.Generic.IList<global::Leonardo.GetCustomElementsByUserIdResponseUserLora>? UserLoras { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetCustomElementsByUserIdResponseUserLora?>? UserLoras { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace Leonardo
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetCustomElementsByUserIdResponse(
-            global::System.Collections.Generic.IList<global::Leonardo.GetCustomElementsByUserIdResponseUserLora>? userLoras)
+            global::System.Collections.Generic.IList<global::Leonardo.GetCustomElementsByUserIdResponseUserLora?>? userLoras)
         {
             this.UserLoras = userLoras;
         }

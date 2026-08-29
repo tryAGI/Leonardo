@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class ListBlueprintsResponse2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("blueprints")]
         [global::System.Text.Json.Serialization.JsonRequired]

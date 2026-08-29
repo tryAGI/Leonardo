@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class DeleteElementByIdResponseDeleteUserLorasByPk
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int? Id { get; set; }

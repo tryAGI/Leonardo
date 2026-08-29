@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateTextToVideoGenerationRequest
     {
@@ -90,7 +90,7 @@ namespace Leonardo
         public int? Duration { get; set; }
 
         /// <summary>
-        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elements")]
         public global::System.Collections.Generic.IList<global::Leonardo.ElementInput>? Elements { get; set; }
@@ -146,7 +146,7 @@ namespace Leonardo
         /// Default Value: 8
         /// </param>
         /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

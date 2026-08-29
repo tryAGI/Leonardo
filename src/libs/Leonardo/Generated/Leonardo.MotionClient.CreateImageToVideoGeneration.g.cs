@@ -139,7 +139,7 @@ namespace Leonardo
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -369,17 +369,15 @@ namespace Leonardo
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Leonardo.ApiException(
+                                    throw global::Leonardo.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -416,17 +414,15 @@ namespace Leonardo
                                     {
                                     }
 
-                                    throw new global::Leonardo.ApiException(
+                                    throw global::Leonardo.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -485,7 +481,7 @@ namespace Leonardo
         /// Predefined styles to enhance the prompt. This accepts a list of style uuids.
         /// </param>
         /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations.
         /// </param>
         /// <param name="height">
         /// Height of the output video. Acceptable values vary based on model

@@ -9,47 +9,47 @@ namespace Leonardo
     public enum SdVersions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FluxDev,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kino20,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Phoenix,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sdxl08,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sdxl09,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sdxl10,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SdxlLightning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V15,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V3,
     }

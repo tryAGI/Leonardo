@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BlueprintVersionEdgeNode
     {
@@ -37,7 +37,7 @@ namespace Leonardo
         public int? Cost { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uiMetadata")]
         public global::Leonardo.BlueprintVersionEdgeNodeUiMetadata? UiMetadata { get; set; }
@@ -50,13 +50,13 @@ namespace Leonardo
         public string? UiMetadataSchemaVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("models")]
         public global::System.Collections.Generic.IList<string>? Models { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("executability")]
         public global::Leonardo.BlueprintVersionEdgeNodeExecutability? Executability { get; set; }

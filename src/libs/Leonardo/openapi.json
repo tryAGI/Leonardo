@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "description": "Leonardo.Ai API OpenAPI specification.",
+    "description": "Leonardo.Ai API OpenAPI specification (v1.0).",
     "title": "Rest Endpoints",
     "version": "v1.0.0"
   },
@@ -1054,88 +1054,6 @@
         }
       }
     },
-    "/generations-motion-svd": {
-      "post": {
-        "tags": ["Motion"],
-        "summary": "Create SVD Motion Generation",
-        "description": "This endpoint will generate a SVD motion generation.",
-        "operationId": "createSVDMotionGeneration",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "imageId": {
-                    "nullable": false,
-                    "title": "String",
-                    "type": "string",
-                    "description": "The ID of the image, supports generated images, variation images, and init images."
-                  },
-                  "isPublic": {
-                    "$ref": "#/components/schemas/public"
-                  },
-                  "isInitImage": {
-                    "$ref": "#/components/schemas/isInitImage"
-                  },
-                  "isVariation": {
-                    "$ref": "#/components/schemas/isVariation"
-                  },
-                  "motionStrength": {
-                    "$ref": "#/components/schemas/motionStrength"
-                  }
-                },
-                "type": "object",
-                "required": ["imageId"]
-              }
-            }
-          },
-          "description": "Query parameters can also be provided in the request body as a JSON object",
-          "required": false
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "motionSvdGenerationJob": {
-                      "nullable": true,
-                      "properties": {
-                        "generationId": {
-                          "nullable": false,
-                          "title": "String",
-                          "type": "string"
-                        },
-                        "apiCreditCost": {
-                          "$ref": "#/components/schemas/apiCreditCost"
-                        },
-                        "cost": {
-                          "$ref": "#/components/schemas/cost"
-                        }
-                      },
-                      "title": "MotionSvdGenerationOutput",
-                      "type": "object"
-                    }
-                  }
-                },
-                "example": {
-                  "motionSvdGenerationJob": {
-                    "generationId": "h7i8j9k0-l1m2-n3o4-pqrs-tu6789012345",
-                    "apiCreditCost": null,
-                    "cost": {
-                      "amount": "0.0147",
-                      "unit": "DOLLARS"
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Responses for POST /generations-motion-svd"
-          }
-        }
-      }
-    },
     "/generations-image-to-video": {
       "post": {
         "tags": ["Motion"],
@@ -2025,9 +1943,7 @@
                     "imageDataUrl": [
                       "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD..."
                     ],
-                    "variationId": [
-                      "var234567-8901-bcde-fghi-jklmnopqrstu"
-                    ],
+                    "variationId": ["var234567-8901-bcde-fghi-jklmnopqrstu"],
                     "generatedImageId": "l1m2n3o4-p5q6-r7s8-tuvw-xy0123456789",
                     "requestTimestamp": "1234567893",
                     "apiCreditCost": null,
@@ -2440,7 +2356,7 @@
       "post": {
         "tags": ["Media"],
         "summary": "Upload media",
-        "description": "This endpoint returns presigned details to upload a media file to S3",
+        "description": "This endpoint returns presigned POST credentials to upload a video or audio file directly to S3.",
         "operationId": "uploadMedia",
         "requestBody": {
           "content": {
@@ -2451,7 +2367,19 @@
                     "nullable": false,
                     "title": "String",
                     "type": "string",
-                    "description": "The file extension of the media file to upload. Supported extensions: mp4, mov."
+                    "description": "The file extension of the media file to upload. Supported extensions for video: `mp4`, `mov`. Supported for audio: `mp3`, `wav`."
+                  },
+                  "originalFilename": {
+                    "nullable": true,
+                    "title": "String",
+                    "type": "string",
+                    "description": "Original file name for display. Required for audio uploads (`mp3`, `wav`). Optional for video."
+                  },
+                  "teamId": {
+                    "nullable": true,
+                    "title": "String",
+                    "type": "string",
+                    "description": "Optional team UUID. When set, the upload is associated with that team and the caller must be a member."
                   }
                 },
                 "required": ["extension"],

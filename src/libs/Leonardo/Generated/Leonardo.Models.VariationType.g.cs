@@ -9,23 +9,23 @@ namespace Leonardo
     public enum VariationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inpaint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nobg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outpaint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unzoom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Upscale,
     }

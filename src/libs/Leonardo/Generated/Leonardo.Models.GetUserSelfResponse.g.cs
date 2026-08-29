@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetUserSelfResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_details")]
         public global::System.Collections.Generic.IList<global::Leonardo.GetUserSelfResponseUserDetail>? UserDetails { get; set; }

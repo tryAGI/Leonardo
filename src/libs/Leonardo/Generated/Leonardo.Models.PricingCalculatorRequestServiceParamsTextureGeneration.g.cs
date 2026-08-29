@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class PricingCalculatorRequestServiceParamsTextureGeneration
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preview")]
         public bool? Preview { get; set; }

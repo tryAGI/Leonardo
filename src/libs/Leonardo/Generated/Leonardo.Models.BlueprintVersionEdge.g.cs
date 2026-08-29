@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BlueprintVersionEdge
     {
@@ -16,7 +16,7 @@ namespace Leonardo
         public string? Cursor { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node")]
         public global::Leonardo.BlueprintVersionEdgeNode? Node { get; set; }

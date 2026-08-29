@@ -10,7 +10,7 @@ namespace Leonardo
     public enum PromptModerationFailureReasonType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptModerationBlocked,
     }

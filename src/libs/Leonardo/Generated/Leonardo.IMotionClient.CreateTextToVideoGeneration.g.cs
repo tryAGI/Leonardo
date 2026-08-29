@@ -76,7 +76,7 @@ namespace Leonardo
         /// Default Value: 8
         /// </param>
         /// <param name="elements">
-        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations. 
+        /// An array of elements/loras objects that will be applied sequentially to the output. Elements are only supported for Motion2.0 generations.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

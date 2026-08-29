@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -29,7 +29,7 @@ namespace Leonardo
         public global::Leonardo.VariationType? TransformType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
