@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetGenerationsByUserIdResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generations")]
         public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGeneration>? Generations { get; set; }

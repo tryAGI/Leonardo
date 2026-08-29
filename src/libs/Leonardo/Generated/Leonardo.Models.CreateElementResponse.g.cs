@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateElementResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sdTrainingJob")]
         public global::Leonardo.CreateElementResponseSdTrainingJob? SdTrainingJob { get; set; }

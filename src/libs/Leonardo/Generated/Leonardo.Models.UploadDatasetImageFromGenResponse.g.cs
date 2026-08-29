@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UploadDatasetImageFromGenResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploadDatasetImageFromGen")]
         public global::Leonardo.UploadDatasetImageFromGenResponseUploadDatasetImageFromGen? UploadDatasetImageFromGen { get; set; }

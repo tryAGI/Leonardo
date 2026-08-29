@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateVariationUpscaleRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

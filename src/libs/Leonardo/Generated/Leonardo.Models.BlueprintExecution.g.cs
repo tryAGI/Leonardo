@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class BlueprintExecution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("akUUID")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.AllOfJsonConverter<string, object>))]
@@ -32,7 +32,7 @@ namespace Leonardo
         public required global::System.Collections.Generic.IList<global::Leonardo.NodeInput> Inputs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Leonardo.JsonConverters.AllOfJsonConverter<bool?, object>))]
@@ -40,7 +40,7 @@ namespace Leonardo
         public required global::Leonardo.AllOf<bool?, object> Public { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createdAt")]
         [global::System.Text.Json.Serialization.JsonRequired]

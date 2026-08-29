@@ -9,7 +9,7 @@ namespace Leonardo
     public enum PricingCalculatorRequestServiceParamsVeo3MotionVideoGenerationResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Resolution720,
     }

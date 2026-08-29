@@ -9,11 +9,11 @@ namespace Leonardo
     public enum CreateGenerationRequestTransparency
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ForegroundOnly,
     }

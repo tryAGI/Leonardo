@@ -10,35 +10,35 @@ namespace Leonardo
     public enum CreateElementRequestSdVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlbedoXl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FluxDev,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KinoXl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LeonardoDiffusionXl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LeonardoLightningXl,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sdxl09,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sdxl10,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VisionXl,
     }

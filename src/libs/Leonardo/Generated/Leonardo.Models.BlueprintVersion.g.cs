@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class BlueprintVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("edges")]
         public global::System.Collections.Generic.IList<global::Leonardo.BlueprintVersionEdge>? Edges { get; set; }
@@ -22,7 +22,7 @@ namespace Leonardo
         public int? TotalCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pageInfo")]
         public global::Leonardo.BlueprintVersionPageInfo? PageInfo { get; set; }

@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DeleteUploadedMediaByIdResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete_uploaded_media_by_pk")]
         public global::Leonardo.DeleteUploadedMediaByIdResponseDeleteUploadedMediaByPk? DeleteUploadedMediaByPk { get; set; }

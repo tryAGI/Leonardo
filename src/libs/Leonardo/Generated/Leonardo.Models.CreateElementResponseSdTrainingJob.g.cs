@@ -6,12 +6,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateElementResponseSdTrainingJob
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("userLoraId")]
         public int? UserLoraId { get; set; }

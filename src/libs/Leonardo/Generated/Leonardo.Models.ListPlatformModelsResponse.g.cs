@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListPlatformModelsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_models")]
         public global::System.Collections.Generic.IList<global::Leonardo.ListPlatformModelsResponseCustomModel>? CustomModels { get; set; }

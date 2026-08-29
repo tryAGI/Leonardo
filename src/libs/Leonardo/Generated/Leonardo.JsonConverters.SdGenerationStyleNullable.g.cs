@@ -20,7 +20,7 @@ namespace Leonardo.JsonConverters
                     {
                         return global::Leonardo.SdGenerationStyleExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

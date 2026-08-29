@@ -10,19 +10,19 @@ namespace Leonardo
     public enum UniversalUpscalerStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2dArt_Illustration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CgArt_GameAssets,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cinematic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         General,
     }

@@ -20,7 +20,7 @@ namespace Leonardo.JsonConverters
                     {
                         return global::Leonardo.CustomModelTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -188,7 +188,7 @@ namespace Leonardo
             int? height = default,
             bool? highContrast = default,
             bool? highResolution = default,
-            global::System.Collections.Generic.IList<string>? imagePrompts = default,
+            global::System.Collections.Generic.IList<string?>? imagePrompts = default,
             double? imagePromptWeight = default,
             string? initGenerationImageId = default,
             string? initImageId = default,

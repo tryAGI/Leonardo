@@ -6,18 +6,18 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateLCMGenerationResponseLcmGenerationJob
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imageDataUrl")]
         public global::System.Collections.Generic.IList<string>? ImageDataUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requestTimestamp")]
         public string? RequestTimestamp { get; set; }

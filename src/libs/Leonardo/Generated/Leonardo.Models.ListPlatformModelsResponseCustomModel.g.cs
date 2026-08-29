@@ -9,13 +9,13 @@ namespace Leonardo
     public sealed partial class ListPlatformModelsResponseCustomModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("featured")]
         public bool? Featured { get; set; }
@@ -27,19 +27,19 @@ namespace Leonardo
         public global::Leonardo.ListPlatformModelsResponseCustomModelGeneratedImage? GeneratedImage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nsfw")]
         public bool? Nsfw { get; set; }

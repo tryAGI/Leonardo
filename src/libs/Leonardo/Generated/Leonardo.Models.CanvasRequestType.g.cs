@@ -9,19 +9,19 @@ namespace Leonardo
     public enum CanvasRequestType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Img2img,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inpaint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outpaint,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sketch2img,
     }

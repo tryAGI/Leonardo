@@ -9,31 +9,31 @@ namespace Leonardo
     public enum SdGenerationSchedulers
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ddim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DpmSolver,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EulerAncestralDiscrete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EulerDiscrete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Klms,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Leonardo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pndm,
     }

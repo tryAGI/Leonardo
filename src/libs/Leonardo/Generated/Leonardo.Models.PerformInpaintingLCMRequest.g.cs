@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PerformInpaintingLCMRequest
     {
@@ -42,7 +42,7 @@ namespace Leonardo
         public double? Strength { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requestTimestamp")]
         public string? RequestTimestamp { get; set; }

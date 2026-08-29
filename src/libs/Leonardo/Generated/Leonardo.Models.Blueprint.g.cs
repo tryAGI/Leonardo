@@ -49,7 +49,7 @@ namespace Leonardo
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thumbnails")]
         public global::System.Collections.Generic.IList<global::Leonardo.BlueprintThumbnail>? Thumbnails { get; set; }

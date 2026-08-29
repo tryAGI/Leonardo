@@ -9,7 +9,7 @@ namespace Leonardo
     public enum MotionResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Resolution720,
     }

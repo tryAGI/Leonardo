@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListElementsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("loras")]
         public global::System.Collections.Generic.IList<global::Leonardo.ListElementsResponseLora>? Loras { get; set; }

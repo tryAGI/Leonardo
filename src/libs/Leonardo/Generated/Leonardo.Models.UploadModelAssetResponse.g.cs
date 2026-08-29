@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UploadModelAssetResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uploadModelAsset")]
         public global::Leonardo.UploadModelAssetResponseUploadModelAsset? UploadModelAsset { get; set; }

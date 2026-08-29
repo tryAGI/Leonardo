@@ -9,7 +9,7 @@ namespace Leonardo
     public sealed partial class GetGenerationByIdResponseGenerationsByPkGenerationElement
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Leonardo
         public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElementLora? Lora { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weightApplied")]
         public double? WeightApplied { get; set; }

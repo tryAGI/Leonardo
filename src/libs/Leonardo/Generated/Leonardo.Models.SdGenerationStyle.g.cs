@@ -10,127 +10,127 @@ namespace Leonardo
     public enum SdGenerationStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bokeh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cinematic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CinematicCloseup,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Creative,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dynamic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Environment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fashion,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Film,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Food,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         General,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hdr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Illustration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Leonardo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LongExposure,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Macro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minimalistic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Monochrome,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Moody,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Neutral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Photography,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Portrait,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Raytraced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Render3d,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Retro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SketchBw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SketchColor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StockPhoto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unprocessed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vibrant,
     }

@@ -4,7 +4,7 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ExecuteBlueprintRequest
     {
@@ -18,7 +18,7 @@ namespace Leonardo
         public required global::System.Guid BlueprintVersionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]

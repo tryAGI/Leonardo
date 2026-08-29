@@ -9,11 +9,11 @@ namespace Leonardo
     public enum CreateImageToVideoGenerationRequestImageType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Generated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uploaded,
     }

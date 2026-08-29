@@ -4,12 +4,12 @@
 namespace Leonardo
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateVariationUnzoomResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sdUnzoomJob")]
         public global::Leonardo.CreateVariationUnzoomResponseSdUnzoomJob? SdUnzoomJob { get; set; }

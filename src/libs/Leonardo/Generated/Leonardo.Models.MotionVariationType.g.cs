@@ -9,7 +9,7 @@ namespace Leonardo
     public enum MotionVariationType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Upscale,
     }

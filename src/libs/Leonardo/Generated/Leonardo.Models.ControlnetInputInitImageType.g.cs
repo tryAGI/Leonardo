@@ -9,11 +9,11 @@ namespace Leonardo
     public enum ControlnetInputInitImageType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Generated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uploaded,
     }

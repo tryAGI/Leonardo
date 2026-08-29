@@ -9,59 +9,59 @@ namespace Leonardo
     public enum LcmGenerationStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cinematic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigitalArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dynamic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Environment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FantasyArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Illustration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Photography,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Raytraced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Render3d,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SketchBw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SketchColor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vibrant,
     }

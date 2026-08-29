@@ -112,17 +112,6 @@
     },
     {
       "Order": 11,
-      "Title": "Create SVD Motion Generation",
-      "Slug": "createsvdmotiongeneration",
-      "Description": "This endpoint will generate a SVD motion generation.",
-      "Language": "http",
-      "Code": "### Create SVD Motion Generation\n# @name createSVDMotionGeneration\nPOST {{host}}/generations-motion-svd\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022imageId\u0022: \u0022string\u0022,\n  \u0022isPublic\u0022: true,\n  \u0022isInitImage\u0022: true,\n  \u0022isVariation\u0022: true,\n  \u0022motionStrength\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /generations-motion-svd\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "createSVDMotionGeneration",
-      "Setup": null
-    },
-    {
-      "Order": 12,
       "Title": "Create a video generation from a text prompt",
       "Slug": "createtexttovideogeneration",
       "Description": "This endpoint will generate a video using a text prompt",
@@ -133,7 +122,7 @@
       "Setup": null
     },
     {
-      "Order": 13,
+      "Order": 12,
       "Title": "Improve a Prompt",
       "Slug": "promptimprove",
       "Description": "This endpoint returns a improved prompt",
@@ -144,7 +133,7 @@
       "Setup": null
     },
     {
-      "Order": 14,
+      "Order": 13,
       "Title": "Generate a Random prompt",
       "Slug": "promptrandom",
       "Description": "This endpoint returns a random prompt",
@@ -155,7 +144,7 @@
       "Setup": "This example assumes \u0060using Leonardo;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 15,
+      "Order": 14,
       "Title": "Create LCM Generation",
       "Slug": "createlcmgeneration",
       "Description": "This endpoint will generate a LCM image generation.",
@@ -166,7 +155,7 @@
       "Setup": null
     },
     {
-      "Order": 16,
+      "Order": 15,
       "Title": "Perform Alchemy Upscale on a LCM image",
       "Slug": "performalchemyupscalelcm",
       "Description": "This endpoint will perform Alchemy Upscale on a LCM image",
@@ -177,7 +166,7 @@
       "Setup": null
     },
     {
-      "Order": 17,
+      "Order": 16,
       "Title": "Perform inpainting on a LCM image",
       "Slug": "performinpaintinglcm",
       "Description": "This endpoint will perform a inpainting on a LCM image",
@@ -188,7 +177,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 17,
       "Title": "Perform instant refine on a LCM image",
       "Slug": "performinstantrefine",
       "Description": "This endpoint will perform instant refine on a LCM image",
@@ -199,7 +188,7 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 18,
       "Title": "Create using Universal Upscaler",
       "Slug": "createuniversalupscalerjob",
       "Description": "This endpoint will create a high resolution image using Universal Upscaler",
@@ -210,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 20,
+      "Order": 19,
       "Title": "Create no background",
       "Slug": "createvariationnobg",
       "Description": "This endpoint will create a no background variation of the provided image ID",
@@ -221,7 +210,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 20,
       "Title": "Create unzoom",
       "Slug": "createvariationunzoom",
       "Description": "This endpoint will create an unzoom variation for the provided image ID",
@@ -232,7 +221,7 @@
       "Setup": null
     },
     {
-      "Order": 22,
+      "Order": 21,
       "Title": "Create upscale",
       "Slug": "createvariationupscale",
       "Description": "This endpoint will create an upscale for the provided image ID",
