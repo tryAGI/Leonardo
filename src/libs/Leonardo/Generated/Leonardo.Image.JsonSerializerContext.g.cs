@@ -1,19 +1,14 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace Leonardo
 {
     /// <summary>
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
@@ -34,7 +29,9 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.ElementInput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.UserElementsInput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.SdGenerationStyle), TypeInfoPropertyName = "SdGenerationStyle2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.ControlnetType), TypeInfoPropertyName = "ControlnetType2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CanvasRequestType), TypeInfoPropertyName = "CanvasRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateGenerationRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Leonardo.ControlnetInput>))]
@@ -76,7 +73,9 @@ namespace Leonardo
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.ControlnetInputStrengthType?), TypeInfoPropertyName = "NullableControlnetInputStrengthType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.SdGenerationStyle?), TypeInfoPropertyName = "NullableSdGenerationStyle2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.ControlnetType?), TypeInfoPropertyName = "NullableControlnetType2")]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CanvasRequestType?), TypeInfoPropertyName = "NullableCanvasRequestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Leonardo.CreateGenerationRequestTransparency?), TypeInfoPropertyName = "NullableCreateGenerationRequestTransparency2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Leonardo.ControlnetInput>))]
