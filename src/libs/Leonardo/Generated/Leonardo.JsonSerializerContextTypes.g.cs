@@ -337,699 +337,687 @@ namespace Leonardo
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PerformInpaintingLCMRequest? Type76 { get; set; }
+        public global::Leonardo.PerformAlchemyUpscaleLCMRequest? Type76 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PerformAlchemyUpscaleLCMRequest? Type77 { get; set; }
+        public global::Leonardo.UploadModelAssetRequest? Type77 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadModelAssetRequest? Type78 { get; set; }
+        public global::Leonardo.Get3DModelsByUserIdRequest? Type78 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Get3DModelsByUserIdRequest? Type79 { get; set; }
+        public global::Leonardo.Get3DModelByIdRequest? Type79 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Get3DModelByIdRequest? Type80 { get; set; }
+        public global::Leonardo.Delete3DModelByIdRequest? Type80 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Delete3DModelByIdRequest? Type81 { get; set; }
+        public global::Leonardo.UploadInitImageRequest? Type81 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadInitImageRequest? Type82 { get; set; }
+        public global::Leonardo.UploadMediaRequest? Type82 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadMediaRequest? Type83 { get; set; }
+        public global::Leonardo.UploadCanvasInitImageRequest? Type83 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadCanvasInitImageRequest? Type84 { get; set; }
+        public global::Leonardo.CreateVariationUnzoomRequest? Type84 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationUnzoomRequest? Type85 { get; set; }
+        public global::Leonardo.CreateVariationUpscaleRequest? Type85 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationUpscaleRequest? Type86 { get; set; }
+        public global::Leonardo.CreateVariationNoBGRequest? Type86 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationNoBGRequest? Type87 { get; set; }
+        public global::Leonardo.CreateUniversalUpscalerJobRequest? Type87 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateUniversalUpscalerJobRequest? Type88 { get; set; }
+        public global::Leonardo.CreateDatasetRequest? Type88 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateDatasetRequest? Type89 { get; set; }
+        public global::Leonardo.UploadDatasetImageRequest? Type89 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadDatasetImageRequest? Type90 { get; set; }
+        public global::Leonardo.UploadDatasetImageFromGenRequest? Type90 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadDatasetImageFromGenRequest? Type91 { get; set; }
+        public global::Leonardo.CreateModelRequest? Type91 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateModelRequest? Type92 { get; set; }
+        public global::Leonardo.CreateElementRequest? Type92 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateElementRequest? Type93 { get; set; }
+        public global::Leonardo.CreateElementRequestSdVersion? Type93 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateElementRequestSdVersion? Type94 { get; set; }
+        public global::Leonardo.PromptImproveRequest? Type94 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PromptImproveRequest? Type95 { get; set; }
+        public global::Leonardo.PricingCalculatorRequest? Type95 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequest? Type96 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParams? Type96 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParams? Type97 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsImageGeneration? Type97 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsImageGeneration? Type98 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration? Type98 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsFantasyAvatarGeneration? Type99 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsMotionVideoGeneration? Type99 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsMotionVideoGeneration? Type100 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsVeo3MotionVideoGeneration? Type100 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsVeo3MotionVideoGeneration? Type101 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsVeo3MotionVideoGenerationResolution? Type101 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsVeo3MotionVideoGenerationResolution? Type102 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsLcmGeneration? Type102 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsLcmGeneration? Type103 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsModelTraining? Type103 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsModelTraining? Type104 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsTextureGeneration? Type104 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsTextureGeneration? Type105 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscaler? Type105 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscaler? Type106 { get; set; }
+        public global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscalerUltra? Type106 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorRequestServiceParamsUniversalUpscalerUltra? Type107 { get; set; }
+        public global::Leonardo.ListBlueprintsRequest? Type107 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListBlueprintsRequest? Type108 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.ListBlueprintsRequestPlatform>? Type108 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.ListBlueprintsRequestPlatform>? Type109 { get; set; }
+        public global::Leonardo.ListBlueprintsRequestPlatform? Type109 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListBlueprintsRequestPlatform? Type110 { get; set; }
+        public global::Leonardo.ExecuteBlueprintRequest? Type110 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ExecuteBlueprintRequest? Type111 { get; set; }
+        public global::Leonardo.ExecuteBlueprintRequestInput? Type111 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ExecuteBlueprintRequestInput? Type112 { get; set; }
+        public global::System.Collections.Generic.IList<int?>? Type112 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<int?>? Type113 { get; set; }
+        public global::Leonardo.GetUserSelfResponse? Type113 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetUserSelfResponse? Type114 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetUserSelfResponseUserDetail>? Type114 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetUserSelfResponseUserDetail>? Type115 { get; set; }
+        public global::Leonardo.GetUserSelfResponseUserDetail? Type115 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetUserSelfResponseUserDetail? Type116 { get; set; }
+        public global::Leonardo.GetUserSelfResponseUserDetailUser? Type116 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetUserSelfResponseUserDetailUser? Type117 { get; set; }
+        public global::Leonardo.CreateGenerationResponse? Type117 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateGenerationResponse? Type118 { get; set; }
+        public global::Leonardo.CreateGenerationResponseSdGenerationJob? Type118 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateGenerationResponseSdGenerationJob? Type119 { get; set; }
+        public global::Leonardo.GetGenerationByIdResponse? Type119 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationByIdResponse? Type120 { get; set; }
+        public global::Leonardo.GetGenerationByIdResponseGenerationsByPk? Type120 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationByIdResponseGenerationsByPk? Type121 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage>? Type121 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage>? Type122 { get; set; }
+        public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage? Type122 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImage? Type123 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric>? Type123 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric>? Type124 { get; set; }
+        public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric? Type124 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric? Type125 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElement>? Type125 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElement>? Type126 { get; set; }
+        public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElement? Type126 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElement? Type127 { get; set; }
+        public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElementLora? Type127 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationByIdResponseGenerationsByPkGenerationElementLora? Type128 { get; set; }
+        public global::Leonardo.DeleteGenerationByIdResponse? Type128 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteGenerationByIdResponse? Type129 { get; set; }
+        public global::Leonardo.DeleteGenerationByIdResponseDeleteGenerationsByPk? Type129 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteGenerationByIdResponseDeleteGenerationsByPk? Type130 { get; set; }
+        public global::Leonardo.GetGenerationsByUserIdResponse? Type130 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationsByUserIdResponse? Type131 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGeneration>? Type131 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGeneration>? Type132 { get; set; }
+        public global::Leonardo.GetGenerationsByUserIdResponseGeneration? Type132 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationsByUserIdResponseGeneration? Type133 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImage>? Type133 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImage>? Type134 { get; set; }
+        public global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImage? Type134 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImage? Type135 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric>? Type135 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric>? Type136 { get; set; }
+        public global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric? Type136 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric? Type137 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElement>? Type137 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElement>? Type138 { get; set; }
+        public global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElement? Type138 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElement? Type139 { get; set; }
+        public global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElementLora? Type139 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetGenerationsByUserIdResponseGenerationGenerationElementLora? Type140 { get; set; }
+        public global::Leonardo.CreateImageToVideoGenerationResponse? Type140 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateImageToVideoGenerationResponse? Type141 { get; set; }
+        public global::Leonardo.CreateImageToVideoGenerationResponseMotionVideoGenerationJob? Type141 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateImageToVideoGenerationResponseMotionVideoGenerationJob? Type142 { get; set; }
+        public global::Leonardo.CreateTextToVideoGenerationResponse? Type142 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateTextToVideoGenerationResponse? Type143 { get; set; }
+        public global::Leonardo.CreateTextToVideoGenerationResponseMotionVideoGenerationJob? Type143 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateTextToVideoGenerationResponseMotionVideoGenerationJob? Type144 { get; set; }
+        public global::Leonardo.CreateLCMGenerationResponse? Type144 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateLCMGenerationResponse? Type145 { get; set; }
+        public global::Leonardo.CreateLCMGenerationResponseLcmGenerationJob? Type145 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateLCMGenerationResponseLcmGenerationJob? Type146 { get; set; }
+        public global::Leonardo.PerformInstantRefineResponse? Type146 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PerformInstantRefineResponse? Type147 { get; set; }
+        public global::Leonardo.PerformInstantRefineResponseLcmGenerationJob? Type147 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PerformInstantRefineResponseLcmGenerationJob? Type148 { get; set; }
+        public global::Leonardo.PerformAlchemyUpscaleLCMResponse? Type148 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PerformInpaintingLCMResponse? Type149 { get; set; }
+        public global::Leonardo.PerformAlchemyUpscaleLCMResponseLcmGenerationJob? Type149 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PerformInpaintingLCMResponseLcmGenerationJob? Type150 { get; set; }
+        public global::Leonardo.UploadModelAssetResponse? Type150 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PerformAlchemyUpscaleLCMResponse? Type151 { get; set; }
+        public global::Leonardo.UploadModelAssetResponseUploadModelAsset? Type151 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PerformAlchemyUpscaleLCMResponseLcmGenerationJob? Type152 { get; set; }
+        public global::Leonardo.Get3DModelsByUserIdResponse? Type152 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadModelAssetResponse? Type153 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.Get3DModelsByUserIdResponseModelAsset>? Type153 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadModelAssetResponseUploadModelAsset? Type154 { get; set; }
+        public global::Leonardo.Get3DModelsByUserIdResponseModelAsset? Type154 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Get3DModelsByUserIdResponse? Type155 { get; set; }
+        public global::Leonardo.Get3DModelByIdResponse? Type155 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.Get3DModelsByUserIdResponseModelAsset>? Type156 { get; set; }
+        public global::Leonardo.Get3DModelByIdResponseModelAssetsByPk? Type156 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Get3DModelsByUserIdResponseModelAsset? Type157 { get; set; }
+        public global::Leonardo.Delete3DModelByIdResponse? Type157 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Get3DModelByIdResponse? Type158 { get; set; }
+        public global::Leonardo.Delete3DModelByIdResponseDeleteModelAssetsByPk? Type158 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Get3DModelByIdResponseModelAssetsByPk? Type159 { get; set; }
+        public global::Leonardo.UploadInitImageResponse? Type159 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Delete3DModelByIdResponse? Type160 { get; set; }
+        public global::Leonardo.UploadInitImageResponseUploadInitImage? Type160 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.Delete3DModelByIdResponseDeleteModelAssetsByPk? Type161 { get; set; }
+        public global::Leonardo.UploadMediaResponse? Type161 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadInitImageResponse? Type162 { get; set; }
+        public global::Leonardo.UploadMediaResponseUploadMedia? Type162 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadInitImageResponseUploadInitImage? Type163 { get; set; }
+        public global::Leonardo.GetUploadedMediaByIdResponse? Type163 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadMediaResponse? Type164 { get; set; }
+        public global::Leonardo.GetUploadedMediaByIdResponseUploadedMediaByPk? Type164 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadMediaResponseUploadMedia? Type165 { get; set; }
+        public global::Leonardo.DeleteUploadedMediaByIdResponse? Type165 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetUploadedMediaByIdResponse? Type166 { get; set; }
+        public global::Leonardo.DeleteUploadedMediaByIdResponseDeleteUploadedMediaByPk? Type166 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetUploadedMediaByIdResponseUploadedMediaByPk? Type167 { get; set; }
+        public global::Leonardo.GetInitImageByIdResponse? Type167 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteUploadedMediaByIdResponse? Type168 { get; set; }
+        public global::Leonardo.GetInitImageByIdResponseInitImagesByPk? Type168 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteUploadedMediaByIdResponseDeleteUploadedMediaByPk? Type169 { get; set; }
+        public global::Leonardo.DeleteInitImageByIdResponse? Type169 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetInitImageByIdResponse? Type170 { get; set; }
+        public global::Leonardo.DeleteInitImageByIdResponseDeleteInitImagesByPk? Type170 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetInitImageByIdResponseInitImagesByPk? Type171 { get; set; }
+        public global::Leonardo.UploadCanvasInitImageResponse? Type171 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteInitImageByIdResponse? Type172 { get; set; }
+        public global::Leonardo.UploadCanvasInitImageResponseUploadCanvasInitImage? Type172 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteInitImageByIdResponseDeleteInitImagesByPk? Type173 { get; set; }
+        public global::Leonardo.CreateVariationUnzoomResponse? Type173 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadCanvasInitImageResponse? Type174 { get; set; }
+        public global::Leonardo.CreateVariationUnzoomResponseSdUnzoomJob? Type174 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadCanvasInitImageResponseUploadCanvasInitImage? Type175 { get; set; }
+        public global::Leonardo.CreateVariationUpscaleResponse? Type175 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationUnzoomResponse? Type176 { get; set; }
+        public global::Leonardo.CreateVariationUpscaleResponseSdUpscaleJob? Type176 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationUnzoomResponseSdUnzoomJob? Type177 { get; set; }
+        public global::Leonardo.CreateVariationNoBGResponse? Type177 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationUpscaleResponse? Type178 { get; set; }
+        public global::Leonardo.CreateVariationNoBGResponseSdNobgJob? Type178 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationUpscaleResponseSdUpscaleJob? Type179 { get; set; }
+        public global::Leonardo.CreateUniversalUpscalerJobResponse? Type179 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationNoBGResponse? Type180 { get; set; }
+        public global::Leonardo.CreateUniversalUpscalerJobResponseUniversalUpscaler? Type180 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateVariationNoBGResponseSdNobgJob? Type181 { get; set; }
+        public global::Leonardo.GetVariationByIdResponse? Type181 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateUniversalUpscalerJobResponse? Type182 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetVariationByIdResponseGeneratedImageVariationGenericItem>? Type182 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateUniversalUpscalerJobResponseUniversalUpscaler? Type183 { get; set; }
+        public global::Leonardo.GetVariationByIdResponseGeneratedImageVariationGenericItem? Type183 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetVariationByIdResponse? Type184 { get; set; }
+        public global::Leonardo.GetMotionVariationByIdResponse? Type184 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetVariationByIdResponseGeneratedImageVariationGenericItem>? Type185 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetMotionVariationByIdResponseGeneratedImageVariationMotionItem>? Type185 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetVariationByIdResponseGeneratedImageVariationGenericItem? Type186 { get; set; }
+        public global::Leonardo.GetMotionVariationByIdResponseGeneratedImageVariationMotionItem? Type186 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetMotionVariationByIdResponse? Type187 { get; set; }
+        public global::Leonardo.CreateDatasetResponse? Type187 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetMotionVariationByIdResponseGeneratedImageVariationMotionItem>? Type188 { get; set; }
+        public global::Leonardo.CreateDatasetResponseInsertDatasetsOne? Type188 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetMotionVariationByIdResponseGeneratedImageVariationMotionItem? Type189 { get; set; }
+        public global::Leonardo.GetDatasetByIdResponse? Type189 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateDatasetResponse? Type190 { get; set; }
+        public global::Leonardo.GetDatasetByIdResponseDatasetsByPk? Type190 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateDatasetResponseInsertDatasetsOne? Type191 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetDatasetByIdResponseDatasetsByPkDatasetImage>? Type191 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetDatasetByIdResponse? Type192 { get; set; }
+        public global::Leonardo.GetDatasetByIdResponseDatasetsByPkDatasetImage? Type192 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetDatasetByIdResponseDatasetsByPk? Type193 { get; set; }
+        public global::Leonardo.DeleteDatasetByIdResponse? Type193 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetDatasetByIdResponseDatasetsByPkDatasetImage>? Type194 { get; set; }
+        public global::Leonardo.DeleteDatasetByIdResponseDeleteDatasetsByPk? Type194 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetDatasetByIdResponseDatasetsByPkDatasetImage? Type195 { get; set; }
+        public global::Leonardo.UploadDatasetImageResponse? Type195 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteDatasetByIdResponse? Type196 { get; set; }
+        public global::Leonardo.UploadDatasetImageResponseUploadDatasetImage? Type196 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteDatasetByIdResponseDeleteDatasetsByPk? Type197 { get; set; }
+        public global::Leonardo.UploadDatasetImageFromGenResponse? Type197 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadDatasetImageResponse? Type198 { get; set; }
+        public global::Leonardo.UploadDatasetImageFromGenResponseUploadDatasetImageFromGen? Type198 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadDatasetImageResponseUploadDatasetImage? Type199 { get; set; }
+        public global::Leonardo.CreateModelResponse? Type199 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadDatasetImageFromGenResponse? Type200 { get; set; }
+        public global::Leonardo.CreateModelResponseSdTrainingJob? Type200 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.UploadDatasetImageFromGenResponseUploadDatasetImageFromGen? Type201 { get; set; }
+        public global::Leonardo.GetModelByIdResponse? Type201 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateModelResponse? Type202 { get; set; }
+        public global::Leonardo.GetModelByIdResponseCustomModelsByPk? Type202 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateModelResponseSdTrainingJob? Type203 { get; set; }
+        public global::Leonardo.DeleteModelByIdResponse? Type203 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetModelByIdResponse? Type204 { get; set; }
+        public global::Leonardo.DeleteModelByIdResponseDeleteCustomModelsByPk? Type204 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetModelByIdResponseCustomModelsByPk? Type205 { get; set; }
+        public global::Leonardo.GetCustomModelsByUserIdResponse? Type205 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteModelByIdResponse? Type206 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetCustomModelsByUserIdResponseCustomModel?>? Type206 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteModelByIdResponseDeleteCustomModelsByPk? Type207 { get; set; }
+        public global::Leonardo.GetCustomModelsByUserIdResponseCustomModel? Type207 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetCustomModelsByUserIdResponse? Type208 { get; set; }
+        public global::Leonardo.ListPlatformModelsResponse? Type208 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetCustomModelsByUserIdResponseCustomModel?>? Type209 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.ListPlatformModelsResponseCustomModel>? Type209 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetCustomModelsByUserIdResponseCustomModel? Type210 { get; set; }
+        public global::Leonardo.ListPlatformModelsResponseCustomModel? Type210 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListPlatformModelsResponse? Type211 { get; set; }
+        public global::Leonardo.ListPlatformModelsResponseCustomModelGeneratedImage? Type211 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.ListPlatformModelsResponseCustomModel>? Type212 { get; set; }
+        public global::Leonardo.GetElementByIdResponse? Type212 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListPlatformModelsResponseCustomModel? Type213 { get; set; }
+        public global::Leonardo.GetElementByIdResponseUserLorasByPk? Type213 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListPlatformModelsResponseCustomModelGeneratedImage? Type214 { get; set; }
+        public global::Leonardo.DeleteElementByIdResponse? Type214 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetElementByIdResponse? Type215 { get; set; }
+        public global::Leonardo.DeleteElementByIdResponseDeleteUserLorasByPk? Type215 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetElementByIdResponseUserLorasByPk? Type216 { get; set; }
+        public global::Leonardo.GetCustomElementsByUserIdResponse? Type216 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteElementByIdResponse? Type217 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.GetCustomElementsByUserIdResponseUserLora?>? Type217 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.DeleteElementByIdResponseDeleteUserLorasByPk? Type218 { get; set; }
+        public global::Leonardo.GetCustomElementsByUserIdResponseUserLora? Type218 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetCustomElementsByUserIdResponse? Type219 { get; set; }
+        public global::Leonardo.CreateElementResponse? Type219 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.GetCustomElementsByUserIdResponseUserLora?>? Type220 { get; set; }
+        public global::Leonardo.CreateElementResponseSdTrainingJob? Type220 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetCustomElementsByUserIdResponseUserLora? Type221 { get; set; }
+        public global::Leonardo.ListElementsResponse? Type221 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateElementResponse? Type222 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.ListElementsResponseLora>? Type222 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.CreateElementResponseSdTrainingJob? Type223 { get; set; }
+        public global::Leonardo.ListElementsResponseLora? Type223 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListElementsResponse? Type224 { get; set; }
+        public global::Leonardo.PromptRandomResponse? Type224 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.ListElementsResponseLora>? Type225 { get; set; }
+        public global::Leonardo.PromptRandomResponsePromptGeneration? Type225 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListElementsResponseLora? Type226 { get; set; }
+        public global::Leonardo.PromptImproveResponse? Type226 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PromptRandomResponse? Type227 { get; set; }
+        public global::Leonardo.PromptImproveResponsePromptGeneration? Type227 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PromptRandomResponsePromptGeneration? Type228 { get; set; }
+        public global::Leonardo.PricingCalculatorResponse? Type228 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PromptImproveResponse? Type229 { get; set; }
+        public global::Leonardo.PricingCalculatorResponseCalculateProductionApiServiceCost? Type229 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PromptImproveResponsePromptGeneration? Type230 { get; set; }
+        public global::Leonardo.OneOf<global::Leonardo.ListBlueprintsResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type230 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorResponse? Type231 { get; set; }
+        public global::Leonardo.ListBlueprintsResponse2? Type231 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.PricingCalculatorResponseCalculateProductionApiServiceCost? Type232 { get; set; }
+        public global::Leonardo.ListBlueprintsResponseBlueprints? Type232 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.OneOf<global::Leonardo.ListBlueprintsResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type233 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.ListBlueprintsResponseBlueprintsEdge>? Type233 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListBlueprintsResponse2? Type234 { get; set; }
+        public global::Leonardo.ListBlueprintsResponseBlueprintsEdge? Type234 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListBlueprintsResponseBlueprints? Type235 { get; set; }
+        public global::System.Collections.Generic.IList<global::Leonardo.ApiError>? Type235 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.ListBlueprintsResponseBlueprintsEdge>? Type236 { get; set; }
+        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintByIdResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type236 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ListBlueprintsResponseBlueprintsEdge? Type237 { get; set; }
+        public global::Leonardo.GetBlueprintByIdResponse2? Type237 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Leonardo.ApiError>? Type238 { get; set; }
+        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintVersionsByBlueprintIdResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type238 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintByIdResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type239 { get; set; }
+        public global::Leonardo.GetBlueprintVersionsByBlueprintIdResponse2? Type239 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetBlueprintByIdResponse2? Type240 { get; set; }
+        public global::Leonardo.OneOf<global::Leonardo.ExecuteBlueprintResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type240 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintVersionsByBlueprintIdResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type241 { get; set; }
+        public global::Leonardo.ExecuteBlueprintResponse2? Type241 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.GetBlueprintVersionsByBlueprintIdResponse2? Type242 { get; set; }
+        public global::Leonardo.ExecuteBlueprintResponseExecuteBlueprint? Type242 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.OneOf<global::Leonardo.ExecuteBlueprintResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type243 { get; set; }
+        public global::Leonardo.ExecuteBlueprintResponse3? Type243 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ExecuteBlueprintResponse2? Type244 { get; set; }
+        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintExecutionResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type244 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ExecuteBlueprintResponseExecuteBlueprint? Type245 { get; set; }
+        public global::Leonardo.GetBlueprintExecutionResponse2? Type245 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Leonardo.ExecuteBlueprintResponse3? Type246 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Leonardo.OneOf<global::Leonardo.GetBlueprintExecutionResponse2, global::System.Collections.Generic.IList<global::Leonardo.ApiError>>? Type247 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Leonardo.GetBlueprintExecutionResponse2? Type248 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Leonardo.GetBlueprintExecutionGenerationsResponse? Type249 { get; set; }
+        public global::Leonardo.GetBlueprintExecutionGenerationsResponse? Type246 { get; set; }
 
         /// <summary>
         ///
