@@ -167,17 +167,6 @@
     },
     {
       "Order": 16,
-      "Title": "Perform inpainting on a LCM image",
-      "Slug": "performinpaintinglcm",
-      "Description": "This endpoint will perform a inpainting on a LCM image",
-      "Language": "http",
-      "Code": "### Perform inpainting on a LCM image\n# @name performInpaintingLCM\nPOST {{host}}/lcm-inpainting\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022imageDataUrl\u0022: \u0022string\u0022,\n  \u0022maskDataUrl\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022guidance\u0022: 0,\n  \u0022strength\u0022: 0,\n  \u0022requestTimestamp\u0022: \u0022string\u0022,\n  \u0022style\u0022: \u0022ANIME\u0022,\n  \u0022steps\u0022: 0,\n  \u0022width\u0022: 512,\n  \u0022height\u0022: 512,\n  \u0022seed\u0022: 0\n}\n\n## Responses\n# 200\n# Description: Responses for POST /lcm-inpainting\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "performInpaintingLCM",
-      "Setup": null
-    },
-    {
-      "Order": 17,
       "Title": "Perform instant refine on a LCM image",
       "Slug": "performinstantrefine",
       "Description": "This endpoint will perform instant refine on a LCM image",
@@ -188,7 +177,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 17,
       "Title": "Create using Universal Upscaler",
       "Slug": "createuniversalupscalerjob",
       "Description": "This endpoint will create a high resolution image using Universal Upscaler",
@@ -199,7 +188,7 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 18,
       "Title": "Create no background",
       "Slug": "createvariationnobg",
       "Description": "This endpoint will create a no background variation of the provided image ID",
@@ -210,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 20,
+      "Order": 19,
       "Title": "Create unzoom",
       "Slug": "createvariationunzoom",
       "Description": "This endpoint will create an unzoom variation for the provided image ID",
@@ -221,7 +210,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 20,
       "Title": "Create upscale",
       "Slug": "createvariationupscale",
       "Description": "This endpoint will create an upscale for the provided image ID",
